@@ -1,0 +1,7 @@
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\bin\Debug\Library.dll.config
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\bin\Debug\Library.dll
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\bin\Debug\Library.pdb
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\bin\Debug\MySql.Data.dll
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\obj\Debug\Library.csprojResolveAssemblyReference.cache
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\obj\Debug\Library.dll
+C:\Proyectos Android\Ceramica_Carrillo\CeramicaCarrillo\Library\obj\Debug\Library.pdb
