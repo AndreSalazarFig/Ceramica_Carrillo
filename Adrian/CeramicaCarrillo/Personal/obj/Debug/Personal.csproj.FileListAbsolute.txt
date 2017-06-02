@@ -1,0 +1,13 @@
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.csprojResolveAssemblyReference.cache
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.frmPersonal.resources
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.Properties.Resources.resources
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.csproj.GenerateResource.Cache
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\Personal.exe.config
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\Personal.exe
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\Personal.pdb
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\EntityFramework.dll
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\EntityFramework.xml
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.exe
+C:\Users\Stree\Documents\Visual Studio 2017\Projects\CeramicaCarrillo\Personal\obj\Debug\Personal.pdb
