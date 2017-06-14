@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDCarrilloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Actividades">
+    <Key>
+      <PropertyRef Name="IdActividad" />
+    </Key>
+    <Property Name="IdActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="FechaLimite" Type="date" />
+    <Property Name="IdPersonal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Anomalias">
+    <Key>
+      <PropertyRef Name="IdAnomalias" />
+    </Key>
+    <Property Name="IdAnomalias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Fecha" Type="date" />
+    <Property Name="IdPersonal" Type="int" Nullable="false" />
+    <Property Name="IdProductos" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="IdFolio" />
+      <PropertyRef Name="IdProductos" />
+    </Key>
+    <Property Name="IdFolio" Type="int" Nullable="false" />
+    <Property Name="IdProductos" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Folio">
+    <Key>
+      <PropertyRef Name="IdFolio" />
+    </Key>
+    <Property Name="IdFolio" Type="int" Nullable="false" />
+    <Property Name="TotalVenta" Type="float" />
+    <Property Name="FechaVenta" Type="date" />
+    <Property Name="IdPersonal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Personal">
+    <Key>
+      <PropertyRef Name="IdPersonal" />
+    </Key>
+    <Property Name="IdPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Apellido" Type="varchar" MaxLength="100" />
+    <Property Name="Telefono" Type="varchar" MaxLength="15" />
+    <Property Name="Movil" Type="varchar" MaxLength="15" />
+    <Property Name="Direccion" Type="varchar" MaxLength="100" />
+    <Property Name="FechaNacimiento" Type="date" />
+    <Property Name="Puesto" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Productos">
+    <Key>
+      <PropertyRef Name="IdProductos" />
+    </Key>
+    <Property Name="IdProductos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="PrecioCompra" Type="float" />
+    <Property Name="PrecioVenta" Type="float" />
+    <Property Name="Unidades" Type="int" />
+    <Property Name="Foto" Type="image" />
+  </EntityType>
+  <EntityType Name="Solicitudes">
+    <Key>
+      <PropertyRef Name="idSolicitudes" />
+    </Key>
+    <Property Name="idSolicitudes" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar(max)" />
+    <Property Name="Status" Type="varchar" MaxLength="20" />
+    <Property Name="IdPersonal" Type="int" Nullable="false" />
+    <Property Name="IdProductos" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="RefFolio8">
+    <End Role="Folio" Type="Self.Folio" Multiplicity="1" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folio">
+        <PropertyRef Name="IdFolio" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdFolio" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPersonal1">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="IdPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPersonal4">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Anomalias" Type="Self.Anomalias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Anomalias">
+        <PropertyRef Name="IdPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPersonal6">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Actividades" Type="Self.Actividades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Actividades">
+        <PropertyRef Name="IdPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefPersonal7">
+    <End Role="Personal" Type="Self.Personal" Multiplicity="1" />
+    <End Role="Folio" Type="Self.Folio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personal">
+        <PropertyRef Name="IdPersonal" />
+      </Principal>
+      <Dependent Role="Folio">
+        <PropertyRef Name="IdPersonal" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProductos10">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProductos" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdProductos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProductos2">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="Solicitudes" Type="Self.Solicitudes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProductos" />
+      </Principal>
+      <Dependent Role="Solicitudes">
+        <PropertyRef Name="IdProductos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefProductos5">
+    <End Role="Productos" Type="Self.Productos" Multiplicity="1" />
+    <End Role="Anomalias" Type="Self.Anomalias" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Productos">
+        <PropertyRef Name="IdProductos" />
+      </Principal>
+      <Dependent Role="Anomalias">
+        <PropertyRef Name="IdProductos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDCarrilloModelStoreContainer">
+    <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Anomalias" EntityType="Self.Anomalias" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Folio" EntityType="Self.Folio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Personal" EntityType="Self.Personal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Productos" EntityType="Self.Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Solicitudes" EntityType="Self.Solicitudes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DetalleVenta].[IdFolio] AS [IdFolio], 
+    [DetalleVenta].[IdProductos] AS [IdProductos]
+    FROM [dbo].[DetalleVenta] AS [DetalleVenta]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="RefFolio8" Association="Self.RefFolio8">
+      <End Role="Folio" EntitySet="Folio" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="RefPersonal1" Association="Self.RefPersonal1">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="RefPersonal4" Association="Self.RefPersonal4">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Anomalias" EntitySet="Anomalias" />
+    </AssociationSet>
+    <AssociationSet Name="RefPersonal6" Association="Self.RefPersonal6">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Actividades" EntitySet="Actividades" />
+    </AssociationSet>
+    <AssociationSet Name="RefPersonal7" Association="Self.RefPersonal7">
+      <End Role="Personal" EntitySet="Personal" />
+      <End Role="Folio" EntitySet="Folio" />
+    </AssociationSet>
+    <AssociationSet Name="RefProductos10" Association="Self.RefProductos10">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="RefProductos2" Association="Self.RefProductos2">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Solicitudes" EntitySet="Solicitudes" />
+    </AssociationSet>
+    <AssociationSet Name="RefProductos5" Association="Self.RefProductos5">
+      <End Role="Productos" EntitySet="Productos" />
+      <End Role="Anomalias" EntitySet="Anomalias" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
