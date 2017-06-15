@@ -50,6 +50,8 @@
     <NavigationProperty Name="Anomalias" Relationship="Self.RefPersonal4" FromRole="Personal" ToRole="Anomalias" />
     <NavigationProperty Name="Folio" Relationship="Self.RefPersonal7" FromRole="Personal" ToRole="Folio" />
     <NavigationProperty Name="Solicitudes" Relationship="Self.RefPersonal1" FromRole="Personal" ToRole="Solicitudes" />
+    <Property Name="Cuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Productos">
     <Key>

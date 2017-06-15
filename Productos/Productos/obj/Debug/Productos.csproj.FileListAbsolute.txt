@@ -223,3 +223,8 @@ C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.c
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.exe.licenses
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.exe
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.pdb
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.Login.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\Productos.exe.manifest
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\Productos.application
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.exe.manifest
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.application

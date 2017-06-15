@@ -37,9 +37,15 @@
             this.btnEliminar = new DevExpress.XtraBars.BarButtonItem();
             this.btnRestaurar = new DevExpress.XtraBars.BarButtonItem();
             this.btnGuardar = new DevExpress.XtraBars.BarButtonItem();
+            this.txtIDBuscar = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.txtNombreBuscar = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.btnBorrarBusqueda = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label9 = new System.Windows.Forms.Label();
@@ -69,21 +75,15 @@
             this.PrecioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Foto = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.txtIDBuscar = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.txtNombreBuscar = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemTextEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
-            this.btnBorrarBusqueda = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picImagen)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -170,6 +170,43 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGuardar_Click);
             // 
+            // txtIDBuscar
+            // 
+            this.txtIDBuscar.Caption = "ID";
+            this.txtIDBuscar.Edit = this.repositoryItemTextEdit1;
+            this.txtIDBuscar.Id = 21;
+            this.txtIDBuscar.Name = "txtIDBuscar";
+            this.txtIDBuscar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.txtIDBuscar.EditValueChanged += new System.EventHandler(this.txtIDBuscar_EditValueChanged);
+            // 
+            // repositoryItemTextEdit1
+            // 
+            this.repositoryItemTextEdit1.AutoHeight = false;
+            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
+            // 
+            // txtNombreBuscar
+            // 
+            this.txtNombreBuscar.Caption = "Nombre";
+            this.txtNombreBuscar.Edit = this.repositoryItemTextEdit2;
+            this.txtNombreBuscar.Id = 22;
+            this.txtNombreBuscar.Name = "txtNombreBuscar";
+            this.txtNombreBuscar.EditValueChanged += new System.EventHandler(this.txtNombreBuscar_EditValueChanged);
+            // 
+            // repositoryItemTextEdit2
+            // 
+            this.repositoryItemTextEdit2.AutoHeight = false;
+            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
+            // 
+            // btnBorrarBusqueda
+            // 
+            this.btnBorrarBusqueda.Caption = "Borrar";
+            this.btnBorrarBusqueda.Id = 23;
+            this.btnBorrarBusqueda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnBorrarBusqueda.ImageOptions.Image")));
+            this.btnBorrarBusqueda.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnBorrarBusqueda.ImageOptions.LargeImage")));
+            this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
+            this.btnBorrarBusqueda.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrarBusqueda_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -199,6 +236,14 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "Imprimir y Exportar";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.txtIDBuscar);
+            this.ribbonPageGroup3.ItemLinks.Add(this.txtNombreBuscar);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnBorrarBusqueda);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            this.ribbonPageGroup3.Text = "Busquedas";
             // 
             // barButtonItem1
             // 
@@ -487,51 +532,6 @@
             this.Foto.Name = "Foto";
             this.Foto.ReadOnly = true;
             // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.txtIDBuscar);
-            this.ribbonPageGroup3.ItemLinks.Add(this.txtNombreBuscar);
-            this.ribbonPageGroup3.ItemLinks.Add(this.btnBorrarBusqueda);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "Busquedas";
-            // 
-            // txtIDBuscar
-            // 
-            this.txtIDBuscar.Caption = "ID";
-            this.txtIDBuscar.Edit = this.repositoryItemTextEdit1;
-            this.txtIDBuscar.Id = 21;
-            this.txtIDBuscar.Name = "txtIDBuscar";
-            this.txtIDBuscar.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
-            this.txtIDBuscar.EditValueChanged += new System.EventHandler(this.txtIDBuscar_EditValueChanged);
-            // 
-            // repositoryItemTextEdit1
-            // 
-            this.repositoryItemTextEdit1.AutoHeight = false;
-            this.repositoryItemTextEdit1.Name = "repositoryItemTextEdit1";
-            // 
-            // txtNombreBuscar
-            // 
-            this.txtNombreBuscar.Caption = "Nombre";
-            this.txtNombreBuscar.Edit = this.repositoryItemTextEdit2;
-            this.txtNombreBuscar.Id = 22;
-            this.txtNombreBuscar.Name = "txtNombreBuscar";
-            this.txtNombreBuscar.EditValueChanged += new System.EventHandler(this.txtNombreBuscar_EditValueChanged);
-            // 
-            // repositoryItemTextEdit2
-            // 
-            this.repositoryItemTextEdit2.AutoHeight = false;
-            this.repositoryItemTextEdit2.Name = "repositoryItemTextEdit2";
-            // 
-            // btnBorrarBusqueda
-            // 
-            this.btnBorrarBusqueda.Caption = "Borrar";
-            this.btnBorrarBusqueda.Id = 23;
-            this.btnBorrarBusqueda.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.btnBorrarBusqueda.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
-            this.btnBorrarBusqueda.Name = "btnBorrarBusqueda";
-            this.btnBorrarBusqueda.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBorrarBusqueda_ItemClick);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -545,8 +545,11 @@
             this.Ribbon = this.ribbonControl;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
@@ -554,8 +557,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemTextEdit2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

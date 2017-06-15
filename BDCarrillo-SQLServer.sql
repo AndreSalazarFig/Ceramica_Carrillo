@@ -1,3 +1,4 @@
+
 /*
  * ER/Studio 8.0 SQL Code Generation
  * Company :      UTM
@@ -90,8 +91,6 @@ CREATE TABLE Folio(
 )
 go
 
-
-
 IF OBJECT_ID('Folio') IS NOT NULL
     PRINT '<<< CREATED TABLE Folio >>>'
 ELSE
@@ -106,6 +105,8 @@ CREATE TABLE Personal(
     IdPersonal         int             IDENTITY(1,1),
     Nombre             varchar(50)     NULL,
     Apellido           varchar(100)    NULL,
+	Cuenta             varchar(20)    NULL,
+	Contrasena         varchar(20)    NULL,
     Telefono           varchar(15)     NULL,
     Movil              varchar(15)     NULL,
     Direccion          varchar(100)    NULL,

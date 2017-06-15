@@ -46,6 +46,8 @@ advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene defini
     <Property Name="IdPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="varchar" MaxLength="50" />
     <Property Name="Apellido" Type="varchar" MaxLength="100" />
+    <Property Name="Cuenta" Type="varchar" MaxLength="20" />
+    <Property Name="Contrasena" Type="varchar" MaxLength="20" />
     <Property Name="Telefono" Type="varchar" MaxLength="15" />
     <Property Name="Movil" Type="varchar" MaxLength="15" />
     <Property Name="Direccion" Type="varchar" MaxLength="100" />

@@ -45,9 +45,9 @@ namespace Productos
             txtId.Text = string.Empty;
             txtNombre.Text = string.Empty;
             txtDescripcion.Text = string.Empty;
-            txtPrecioCompra.Text = string.Empty;
-            txtPrecioVenta.Text = string.Empty;
-            txtUnidades.Text = string.Empty;
+            txtPrecioCompra.Text = "0";
+            txtPrecioVenta.Text = "0";
+            txtUnidades.Text = "0";
             picImagen.Image = null;
             txtNombre.Focus();
             llenarTabla();
@@ -129,16 +129,23 @@ namespace Productos
 
         private void btnGuardar_Click(object sender, ItemClickEventArgs e)
         {
-            bdcarrillo.Productos.Add(RecuperarDatos());
-            bdcarrillo.SaveChanges();
-            limpiarControles();
-            activar_desactivarBotones(0);
+            try
+            {
+                bdcarrillo.Productos.Add(RecuperarDatos());
+                bdcarrillo.SaveChanges();
+                limpiarControles();
+                activar_desactivarBotones(0);
+            }
+            catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
         }
 
         private void llenarTabla()
         {
-            var datos = (from u in bdcarrillo.Productos select u);
-            gvDatos.DataSource = datos.ToList();
+            try
+            {
+                var datos = (from u in bdcarrillo.Productos select u);
+                gvDatos.DataSource = datos.ToList();
+            } catch (Exception e) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
         }
 
         private void btnCancelar_Click(object sender, ItemClickEventArgs e)
@@ -149,32 +156,40 @@ namespace Productos
 
         private void btnEditar_Click(object sender, ItemClickEventArgs e)
         {
-            var edicion = bdcarrillo.Productos.Find(Convert.ToInt32(txtId.Text));
-            if (edicion != null)
+            try
             {
-                var productos = RecuperarDatos();
-                edicion.Nombre = productos.Nombre;
-                edicion.Descripcion = productos.Descripcion;
-                edicion.PrecioCompra = productos.PrecioCompra;
-                edicion.PrecioVenta = productos.PrecioVenta;
-                edicion.Unidades = productos.Unidades;
-                if (productos.Foto != null)
+                var edicion = bdcarrillo.Productos.Find(Convert.ToInt32(txtId.Text));
+                if (edicion != null)
                 {
-                    edicion.Foto = productos.Foto;
+                    var productos = RecuperarDatos();
+                    edicion.Nombre = productos.Nombre;
+                    edicion.Descripcion = productos.Descripcion;
+                    edicion.PrecioCompra = productos.PrecioCompra;
+                    edicion.PrecioVenta = productos.PrecioVenta;
+                    edicion.Unidades = productos.Unidades;
+                    if (productos.Foto != null)
+                    {
+                        edicion.Foto = productos.Foto;
+                    }
+                    bdcarrillo.SaveChanges();
+                    limpiarControles();
+                    activar_desactivarBotones(0);
                 }
-                bdcarrillo.SaveChanges();
-                limpiarControles();
-                activar_desactivarBotones(0);
             }
+            catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
         }
 
         private void btnEliminar_Click(object sender, ItemClickEventArgs e)
         {
-            var eliminar = bdcarrillo.Productos.Find(Convert.ToInt32(txtId.Text));
-            bdcarrillo.Productos.Remove(eliminar);
-            bdcarrillo.SaveChanges();
-            limpiarControles();
-            activar_desactivarBotones(0);
+            try
+            {
+                var eliminar = bdcarrillo.Productos.Find(Convert.ToInt32(txtId.Text));
+                bdcarrillo.Productos.Remove(eliminar);
+                bdcarrillo.SaveChanges();
+                limpiarControles();
+                activar_desactivarBotones(0);
+            }
+            catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
         }
 
         private void txtIDBuscar_EditValueChanged(object sender, EventArgs e)
@@ -196,48 +211,58 @@ namespace Productos
 
         private void Buscar()
         {
-            llenarTabla();
-            int id = -1;
-            string nombre = "";
             try
             {
-                if (txtIDBuscar.EditValue != null || txtIDBuscar.EditValue.ToString() != "")
+                llenarTabla();
+                int id = -1;
+                string nombre = "";
+                try
                 {
-                    id = Convert.ToInt32(txtIDBuscar.EditValue);
+                    if (txtIDBuscar.EditValue != null || txtIDBuscar.EditValue.ToString() != "")
+                    {
+                        id = Convert.ToInt32(txtIDBuscar.EditValue);
+                    }
+                    if (txtNombreBuscar.EditValue != null || txtNombreBuscar.EditValue.ToString() != "")
+                    {
+                        nombre = txtNombreBuscar.EditValue.ToString();
+                    }
+
                 }
-                if (txtNombreBuscar.EditValue != null || txtNombreBuscar.EditValue.ToString() != "")
-                {
-                    nombre = txtNombreBuscar.EditValue.ToString();
-                }
-            
-            } catch (Exception) {  }
-            if (id > -1 && nombre != "")
-            {
-                var datos = (from u in bdcarrillo.Productos
-                             where u.IdProductos == id && u.Nombre == nombre
-                             select u);
-                gvDatos.DataSource = datos.ToList();
-            }
-            else
-            {
-                if (nombre != "")
+                catch (Exception) { }
+                if (id > -1 && nombre != "")
                 {
                     var datos = (from u in bdcarrillo.Productos
-                                 where u.Nombre == nombre
+                                 where u.IdProductos == id && u.Nombre == nombre
                                  select u);
                     gvDatos.DataSource = datos.ToList();
                 }
                 else
                 {
-                    if (id > -1)
+                    if (nombre != "")
                     {
                         var datos = (from u in bdcarrillo.Productos
-                                     where u.IdProductos == id
+                                     where u.Nombre == nombre
                                      select u);
                         gvDatos.DataSource = datos.ToList();
                     }
+                    else
+                    {
+                        if (id > -1)
+                        {
+                            var datos = (from u in bdcarrillo.Productos
+                                         where u.IdProductos == id
+                                         select u);
+                            gvDatos.DataSource = datos.ToList();
+                        }
+                    }
                 }
             }
+            catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

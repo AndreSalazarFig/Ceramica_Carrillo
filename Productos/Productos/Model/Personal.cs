@@ -31,6 +31,8 @@ namespace Productos.Model
         public string Direccion { get; set; }
         public Nullable<System.DateTime> FechaNacimiento { get; set; }
         public string Puesto { get; set; }
+        public string Cuenta { get; set; }
+        public string Contrasena { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Actividades> Actividades { get; set; }

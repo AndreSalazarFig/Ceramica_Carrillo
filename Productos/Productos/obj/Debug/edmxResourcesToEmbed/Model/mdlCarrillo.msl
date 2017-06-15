@@ -36,6 +36,8 @@
     <EntitySetMapping Name="Personal">
       <EntityTypeMapping TypeName="BDCarrilloModel.Personal">
         <MappingFragment StoreEntitySet="Personal">
+          <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+          <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
           <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Apellido" ColumnName="Apellido" />

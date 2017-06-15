@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BDCarrilloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="BDCarrilloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Actividades">
           <Key>
             <PropertyRef Name="IdActividad" />
@@ -51,6 +51,8 @@ advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene defini
           <Property Name="IdPersonal" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="50" />
           <Property Name="Apellido" Type="varchar" MaxLength="100" />
+          <Property Name="Cuenta" Type="varchar" MaxLength="20" />
+          <Property Name="Contrasena" Type="varchar" MaxLength="20" />
           <Property Name="Telefono" Type="varchar" MaxLength="15" />
           <Property Name="Movil" Type="varchar" MaxLength="15" />
           <Property Name="Direccion" Type="varchar" MaxLength="100" />
@@ -221,8 +223,7 @@ advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene defini
             <End Role="Anomalias" EntitySet="Anomalias" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="BDCarrilloModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -276,6 +277,8 @@ advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene defini
           <NavigationProperty Name="Anomalias" Relationship="Self.RefPersonal4" FromRole="Personal" ToRole="Anomalias" />
           <NavigationProperty Name="Folio" Relationship="Self.RefPersonal7" FromRole="Personal" ToRole="Folio" />
           <NavigationProperty Name="Solicitudes" Relationship="Self.RefPersonal1" FromRole="Personal" ToRole="Solicitudes" />
+          <Property Name="Cuenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Contrasena" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Productos">
           <Key>
@@ -457,6 +460,8 @@ advertencia 6002: La tabla o vista 'BDCarrillo.dbo.DetalleVenta' no tiene defini
           <EntitySetMapping Name="Personal">
             <EntityTypeMapping TypeName="BDCarrilloModel.Personal">
               <MappingFragment StoreEntitySet="Personal">
+                <ScalarProperty Name="Contrasena" ColumnName="Contrasena" />
+                <ScalarProperty Name="Cuenta" ColumnName="Cuenta" />
                 <ScalarProperty Name="IdPersonal" ColumnName="IdPersonal" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
