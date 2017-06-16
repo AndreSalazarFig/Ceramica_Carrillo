@@ -1,0 +1,72 @@
+La descripción del producto se obtiene en base de las siguientes 2 tablas:
+
+Tipo de producto:
+- Nombre de tipo
+	Ejemplo:
+		-Resina
+		-Cerámica
+
+Categorías de productos:
+- Nombre de categoría
+	Ejemplo:
+		-Boda
+		-Primera Comunión
+		-XV años
+		-Bautizo
+		-Dulceros
+
+
+*******Agregar en la gestión de productos el precio de mayoreo como una columna nueva y eliminar la columna de imágenes.
+
+Hacer la importación de los productos a partir de un archivo excel con las siguientes columnnas:
+	-Codigo
+	-Descripcion
+	-Precio Costo
+	-Precio Venta
+	-Precio Mayoreo
+	-Inventario
+
+********
+
+
+
+
+
+
+
+
+
+Módulos del Sistema:
+
+Ventas:
+	-Punto de venta
+	-Sistema de apartado:
+		- fecha del apartado
+		- fecha de entrega
+		- No. Folio
+		- Productos
+		- Cantidad
+		- Precio
+		- Importe
+			Sistema de Abono:
+			-fecha del abono
+			-monto
+		- total
+Bodega:
+	-Agregar Productos (bodeguero)
+	-Gestión de productos (administrador)
+	-Defectos/Anomalías:
+		-producto
+		-describir la situación
+Estadísticas:
+	-Estadísticas generales:
+		-Ventas/Compras:
+			- 2 gráficos:
+				1. Compras: mes/año
+				2. Ventas: mes/año
+		
+Sistema:
+	-Avisos:
+		-Cambios de productos
+		-Registros de anomalías o defectos:
+			-mensajes de respuesta
