@@ -166,20 +166,24 @@ namespace Productos.GUI
 
         private Model.Categorias RecuperarDatosCategoria()
         {
-            var IDTipo = (from tbTipos in bdcarrillo.TipoProductos
-                         where tbTipos.NombreTipo == cbxTiposProducto.SelectedItem.ToString().Trim()
-                         select tbTipos).ToList().FirstOrDefault();
-
-            oCategorias = new Model.Categorias()
+            try
             {
-                NombreCategoria = txtNombreCategoria.Text.Trim(),
-                idTipoProducto = IDTipo.idTipoProducto
-            };
+                var IDTipo = (from tbTipos in bdcarrillo.TipoProductos
+                              where tbTipos.NombreTipo == cbxTiposProducto.SelectedItem.ToString().Trim()
+                              select tbTipos).ToList().FirstOrDefault();
 
-            if (txtIDCategoria.Text != "")
-            {
-                oCategorias.idCategoria = Convert.ToInt32(txtIDCategoria.Text);
+                oCategorias = new Model.Categorias()
+                {
+                    NombreCategoria = txtNombreCategoria.Text.Trim(),
+                    idTipoProducto = IDTipo.idTipoProducto
+                };
+
+                if (txtIDCategoria.Text != "")
+                {
+                    oCategorias.idCategoria = Convert.ToInt32(txtIDCategoria.Text);
+                }
             }
+            catch(Exception e) { }
             
             return oCategorias;
         }
@@ -207,14 +211,18 @@ namespace Productos.GUI
 
         private void VistaCategorias()
         {
-            dtgVistaCategorias.DataSource = (from tbCategoria in bdcarrillo.Categorias
-                                             join tbTipos in bdcarrillo.TipoProductos on tbCategoria.idTipoProducto equals tbTipos.idTipoProducto
-                                             select new
-                                             {
-                                                 tbCategoria.idCategoria,
-                                                 tbCategoria.NombreCategoria,
-                                                 tbTipos.NombreTipo
-                                             }).ToList();
+            try
+            {
+                dtgVistaCategorias.DataSource = (from tbCategoria in bdcarrillo.Categorias
+                                                 join tbTipos in bdcarrillo.TipoProductos on tbCategoria.idTipoProducto equals tbTipos.idTipoProducto
+                                                 select new
+                                                 {
+                                                     tbCategoria.idCategoria,
+                                                     tbCategoria.NombreCategoria,
+                                                     tbTipos.NombreTipo
+                                                 }).ToList();
+            }
+            catch(Exception e) { }
         }
 
         private void llenarComboTipos()

@@ -27,7 +27,7 @@ namespace Productos.GUI
             CargarInfo();
         }
 
-        #region Métodos para el CRUD de Categorias
+        #region Métodos para el CRUD de Productos
 
         private void GuardarProducto()
         {
@@ -82,8 +82,10 @@ namespace Productos.GUI
         private Model.Productos RecuperarDatosProducto()
         {
             var IDCategoria = (from tbCategoria in bdcarrillo.Categorias
-                          where tbCategoria.NombreCategoria == cbxCategoria.SelectedItem.ToString().Trim()
-                          select tbCategoria).ToList().FirstOrDefault();
+                               join tbTipo in bdcarrillo.TipoProductos on tbCategoria.idTipoProducto equals tbTipo.idTipoProducto
+                               let CategoriaTipo = tbCategoria.NombreCategoria + "-" + tbTipo.NombreTipo
+                               where CategoriaTipo == cbxCategoria.SelectedItem.ToString().Trim()
+                               select tbCategoria).ToList().FirstOrDefault();
 
             oProducto = new Model.Productos()
             {
@@ -95,7 +97,7 @@ namespace Productos.GUI
 
             if (txtIDProducto.Text != "")
             {
-                oProducto.idCategoria = Convert.ToInt32(txtIDProducto.Text);
+                oProducto.IdProductos = Convert.ToInt32(txtIDProducto.Text);
             }
 
             return oProducto;
@@ -105,8 +107,8 @@ namespace Productos.GUI
         {
             txtIDProducto.Text = "";
             txtDescripcion.Text = "";
-            txtPrecioVenta.Text = "";
-            txtPrecioMayoreo.Text = "";
+            txtPrecioVenta.Text = "1";
+            txtPrecioMayoreo.Text = "1";
             cbxCategoria.SelectedIndex = 0;
         }
 
@@ -116,11 +118,16 @@ namespace Productos.GUI
 
             if (posicion >= 0)
             {
-                txtIDProducto.Text = dtgVistaProductos.Rows[posicion].Cells[0].Value.ToString().Trim();
-                txtDescripcion.Text = dtgVistaProductos.Rows[posicion].Cells[1].Value.ToString().Trim();
-                txtPrecioVenta.Text = dtgVistaProductos.Rows[posicion].Cells[2].Value.ToString().Trim();
-                txtPrecioMayoreo.Text = dtgVistaProductos.Rows[posicion].Cells[3].Value.ToString().Trim(); ;
-                cbxCategoria.SelectedItem = dtgVistaProductos.Rows[posicion].Cells[5].Value.ToString().Trim();
+                try
+                {
+                    limpiarControlesProductos();
+                    txtIDProducto.Text = dtgVistaProductos.Rows[posicion].Cells[0].Value.ToString().Trim();
+                    txtDescripcion.Text = dtgVistaProductos.Rows[posicion].Cells[1].Value.ToString().Trim();
+                    txtPrecioVenta.Text = dtgVistaProductos.Rows[posicion].Cells[2].Value.ToString().Trim();
+                    txtPrecioMayoreo.Text = dtgVistaProductos.Rows[posicion].Cells[3].Value.ToString().Trim(); ;
+                    cbxCategoria.SelectedItem = dtgVistaProductos.Rows[posicion].Cells[5].Value.ToString().Trim();
+                }
+                catch (Exception a){ }
 
                 OnOffBotones('T');
             }
@@ -128,17 +135,21 @@ namespace Productos.GUI
 
         private void VistaProductos()
         {
-            dtgVistaProductos.DataSource = (from tbtbProductos in bdcarrillo.Productos
-                                             join tbCategorias in bdcarrillo.Categorias on tbtbProductos.idCategoria equals tbCategorias.idCategoria
-                                             select new
-                                             {
-                                                 tbtbProductos.IdProductos,
-                                                 tbtbProductos.Descripcion,
-                                                 tbtbProductos.PrecioVenta,
-                                                 tbtbProductos.PrecioMayoreo,
-                                                 tbtbProductos.Unidades,
-                                                 tbCategorias.NombreCategoria
-                                             }).ToList();
+            dtgVistaProductos.DataSource = (from tbProductos in bdcarrillo.Productos
+                                            join tbCategorias in bdcarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
+                                            from tbRight1 in tbLeft1.DefaultIfEmpty()
+                                            join tbTipos in bdcarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
+                                            from tbRight2 in tbLeft2.DefaultIfEmpty()
+                                            let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
+                                            select new
+                                            {
+                                                tbProductos.IdProductos,
+                                                tbProductos.Descripcion,
+                                                tbProductos.PrecioVenta,
+                                                tbProductos.PrecioMayoreo,
+                                                tbProductos.Unidades,
+                                                CategoriaTipo
+                                            }).ToList();
         }
 
         private void llenarComboCategorias()
@@ -147,14 +158,23 @@ namespace Productos.GUI
 
             cbxCategoria.Properties.Items.Add("Seleccionar");
 
-            foreach (var Tipo in bdcarrillo.Categorias)
+            var CategoriasTipos = (from tbCategorias in bdcarrillo.Categorias
+                                   join tbTipos in bdcarrillo.TipoProductos on tbCategorias.idTipoProducto equals tbTipos.idTipoProducto
+                                   select new
+                                   {
+                                       tbCategorias.NombreCategoria, tbTipos.NombreTipo
+                                   });
+
+            foreach (var CategoriaTipo in CategoriasTipos)
             {
-                cbxCategoria.Properties.Items.Add(Tipo.NombreCategoria);
+                cbxCategoria.Properties.Items.Add(CategoriaTipo.NombreCategoria + "-" + CategoriaTipo.NombreTipo);
             }
+
+            cbxCategoria.SelectedIndex = 0;
         }
 
         #endregion
-        
+
         #region Otros métodos y eventos
 
         private void OnOffBotones(Char OnOff)
@@ -202,7 +222,8 @@ namespace Productos.GUI
                     EliminarProducto();
                     break;
             }
-            }
-        #endregion
         }
+
+        #endregion
+    }
 }

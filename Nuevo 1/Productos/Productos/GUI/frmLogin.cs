@@ -26,8 +26,8 @@ namespace Productos.GUI
             try
             {
                 var cantidad = (from u in bdCarrillo.Personal
-                                where u.Usuario == txtUsuario.Text/*"administrador"*/
-                                && u.Contrasena == txtContraseña.Text/*"p0nc14n0"*/
+                                where u.Usuario == /*txtUsuario.Text*/"administrador"
+                                && u.Contrasena == /*txtContraseña.Text*/"p0nc14n0"
                                 select u).Count();
                 if (cantidad > 0)
                 {
