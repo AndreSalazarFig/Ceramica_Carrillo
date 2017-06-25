@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraUCProductos));
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.windowsUIButtonPanelMain = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.txtDescripcion = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -51,12 +51,15 @@
             this.PrecioMayoreo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidades = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.txtUnidades = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDescripcion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioMayoreo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioVenta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCategoria.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVistaProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // windowsUIButtonPanelMain
@@ -76,15 +79,15 @@
             this.windowsUIButtonPanelMain.AppearanceButton.Pressed.Options.UseFont = true;
             this.windowsUIButtonPanelMain.AppearanceButton.Pressed.Options.UseForeColor = true;
             this.windowsUIButtonPanelMain.BackColor = System.Drawing.Color.Transparent;
-            windowsUIButtonImageOptions1.ImageUri.Uri = "New;Size32x32;GrayScaled";
-            windowsUIButtonImageOptions2.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions2.Image")));
-            windowsUIButtonImageOptions3.ImageUri.Uri = "Edit;Size32x32;GrayScaled";
-            windowsUIButtonImageOptions4.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions5.ImageUri.Uri = "New;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions6.Image = ((System.Drawing.Image)(resources.GetObject("windowsUIButtonImageOptions6.Image")));
+            windowsUIButtonImageOptions7.ImageUri.Uri = "Edit;Size32x32;GrayScaled";
+            windowsUIButtonImageOptions8.ImageUri.Uri = "Edit/Delete;Size32x32;GrayScaled";
             this.windowsUIButtonPanelMain.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Nuevo", true, windowsUIButtonImageOptions1),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Guardar", true, windowsUIButtonImageOptions2),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Editar", true, windowsUIButtonImageOptions3),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Eliminar", true, windowsUIButtonImageOptions4)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Nuevo", true, windowsUIButtonImageOptions5),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Guardar", true, windowsUIButtonImageOptions6),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Editar", true, windowsUIButtonImageOptions7),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Eliminar", true, windowsUIButtonImageOptions8)});
             this.windowsUIButtonPanelMain.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanelMain.EnableImageTransparency = true;
             this.windowsUIButtonPanelMain.ForeColor = System.Drawing.Color.Black;
@@ -101,14 +104,14 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(125, 41);
+            this.txtDescripcion.Location = new System.Drawing.Point(172, 27);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(132, 20);
             this.txtDescripcion.TabIndex = 6;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(44, 44);
+            this.labelControl1.Location = new System.Drawing.Point(91, 30);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(54, 13);
             this.labelControl1.TabIndex = 7;
@@ -133,7 +136,7 @@
             // 
             // labelControl3
             // 
-            this.labelControl3.Location = new System.Drawing.Point(290, 44);
+            this.labelControl3.Location = new System.Drawing.Point(35, 56);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(110, 13);
             this.labelControl3.TabIndex = 11;
@@ -141,7 +144,7 @@
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(44, 70);
+            this.labelControl2.Location = new System.Drawing.Point(356, 30);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(75, 13);
             this.labelControl2.TabIndex = 9;
@@ -149,7 +152,7 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(290, 70);
+            this.labelControl4.Location = new System.Drawing.Point(342, 56);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(89, 13);
             this.labelControl4.TabIndex = 13;
@@ -162,7 +165,7 @@
             0,
             0,
             0});
-            this.txtPrecioMayoreo.Location = new System.Drawing.Point(406, 67);
+            this.txtPrecioMayoreo.Location = new System.Drawing.Point(458, 53);
             this.txtPrecioMayoreo.Name = "txtPrecioMayoreo";
             this.txtPrecioMayoreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -188,7 +191,7 @@
             0,
             0,
             0});
-            this.txtPrecioVenta.Location = new System.Drawing.Point(125, 67);
+            this.txtPrecioVenta.Location = new System.Drawing.Point(458, 27);
             this.txtPrecioVenta.Name = "txtPrecioVenta";
             this.txtPrecioVenta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -209,7 +212,7 @@
             // 
             // cbxCategoria
             // 
-            this.cbxCategoria.Location = new System.Drawing.Point(406, 41);
+            this.cbxCategoria.Location = new System.Drawing.Point(172, 53);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -283,11 +286,47 @@
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             // 
+            // labelControl6
+            // 
+            this.labelControl6.Location = new System.Drawing.Point(101, 82);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(44, 13);
+            this.labelControl6.TabIndex = 23;
+            this.labelControl6.Text = "Unidades";
+            // 
+            // txtUnidades
+            // 
+            this.txtUnidades.EditValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtUnidades.Location = new System.Drawing.Point(172, 79);
+            this.txtUnidades.Name = "txtUnidades";
+            this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtUnidades.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtUnidades.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtUnidades.Properties.MaxValue = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.txtUnidades.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtUnidades.Size = new System.Drawing.Size(132, 20);
+            this.txtUnidades.TabIndex = 24;
+            // 
             // frmXtraUCProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            this.Controls.Add(this.txtUnidades);
+            this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.dtgVistaProductos);
             this.Controls.Add(this.cbxCategoria);
             this.Controls.Add(this.txtPrecioMayoreo);
@@ -308,6 +347,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtPrecioVenta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCategoria.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVistaProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUnidades.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PrecioMayoreo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidades;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.SpinEdit txtUnidades;
     }
 }

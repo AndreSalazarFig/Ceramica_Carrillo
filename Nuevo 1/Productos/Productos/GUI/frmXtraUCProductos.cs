@@ -54,6 +54,7 @@ namespace Productos.GUI
                     edicion.Descripcion = producto.Descripcion;
                     edicion.PrecioVenta = producto.PrecioVenta;
                     edicion.PrecioMayoreo = producto.PrecioMayoreo;
+                    edicion.Unidades = producto.Unidades;
                     edicion.idCategoria = producto.idCategoria;
 
                     bdcarrillo.SaveChanges();
@@ -92,6 +93,7 @@ namespace Productos.GUI
                 Descripcion = txtDescripcion.Text.Trim(),
                 PrecioVenta = Double.Parse(txtPrecioVenta.Text.Trim()),
                 PrecioMayoreo = Double.Parse(txtPrecioMayoreo.Text.Trim()),
+                Unidades = Convert.ToInt32(txtUnidades.Text.Trim()),
                 idCategoria = IDCategoria.idCategoria
             };
 
@@ -109,6 +111,7 @@ namespace Productos.GUI
             txtDescripcion.Text = "";
             txtPrecioVenta.Text = "1";
             txtPrecioMayoreo.Text = "1";
+            txtUnidades.Text = "1";
             cbxCategoria.SelectedIndex = 0;
         }
 
@@ -124,7 +127,8 @@ namespace Productos.GUI
                     txtIDProducto.Text = dtgVistaProductos.Rows[posicion].Cells[0].Value.ToString().Trim();
                     txtDescripcion.Text = dtgVistaProductos.Rows[posicion].Cells[1].Value.ToString().Trim();
                     txtPrecioVenta.Text = dtgVistaProductos.Rows[posicion].Cells[2].Value.ToString().Trim();
-                    txtPrecioMayoreo.Text = dtgVistaProductos.Rows[posicion].Cells[3].Value.ToString().Trim(); ;
+                    txtPrecioMayoreo.Text = dtgVistaProductos.Rows[posicion].Cells[3].Value.ToString().Trim();
+                    txtUnidades.Text = dtgVistaProductos.Rows[posicion].Cells[4].Value.ToString().Trim();
                     cbxCategoria.SelectedItem = dtgVistaProductos.Rows[posicion].Cells[5].Value.ToString().Trim();
                 }
                 catch (Exception a){ }
