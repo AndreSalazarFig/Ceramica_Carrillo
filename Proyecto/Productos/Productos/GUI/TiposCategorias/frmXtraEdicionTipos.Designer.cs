@@ -76,7 +76,7 @@
             // 
             this.txtNombreTipo.Location = new System.Drawing.Point(81, 42);
             this.txtNombreTipo.Name = "txtNombreTipo";
-            this.txtNombreTipo.Properties.NullValuePrompt = "Descripción del producto";
+            this.txtNombreTipo.Properties.NullValuePrompt = "Ejemplo: Cerámica";
             this.txtNombreTipo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtNombreTipo.Properties.ShowNullValuePromptWhenFocused = true;
             this.txtNombreTipo.Size = new System.Drawing.Size(332, 20);
@@ -173,6 +173,7 @@
             this.Ribbon = this.ribCtrlMenuTiposEdicion;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-----";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraEdicionTipos_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuTiposEdicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosTipo)).EndInit();
             this.lyCtrlDatosTipo.ResumeLayout(false);

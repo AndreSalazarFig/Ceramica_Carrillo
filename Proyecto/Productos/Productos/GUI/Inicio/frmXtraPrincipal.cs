@@ -16,24 +16,25 @@ namespace Productos.GUI.Inicio
 {
     public partial class frmXtraPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        XtraUserControl ProductosUC;
-        XtraUserControl CategoriasTiposUC;
+        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static String strNombreUsuario;
+        public static Boolean boolAdministrador;
+        XtraUserControl frmProductosUC;
+        XtraUserControl frmCategoriasTiposUC;
 
         public frmXtraPrincipal()
         {
             InitializeComponent();
 
-            ProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
-            CategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
-            
+            CargarFormularios();
             //accordionCtrlNavegacion.SelectedElement = btnProductos;
         }
 
-        XtraUserControl CreateUserControl(String NombreUserControl, XtraUserControl XtraUC)
+        XtraUserControl CreateUserControl(String strNombreUserControl, XtraUserControl frmXtraUC)
         {
-            XtraUserControl result = XtraUC;
-            result.Name = NombreUserControl + "UC";
-            result.Text = NombreUserControl;
+            XtraUserControl result = frmXtraUC;
+            result.Name = strNombreUserControl + "UC";
+            result.Text = strNombreUserControl;
             //LabelControl label = new LabelControl();
             //label.Parent = result;
             //label.Appearance.Font = new Font("Tahoma", 25.25F);
@@ -50,23 +51,23 @@ namespace Productos.GUI.Inicio
         {
             if (e.Element == null) return;
             //XtraUserControl userControl = e.Element.Text == "Productos" ? employeesUserControl : customersUserControl;
-            XtraUserControl userControl = null;
+            XtraUserControl frmUserControl = null;
 
             switch (e.Element.Text)
             {
                 case "Productos":
-                    userControl = ProductosUC;
+                    frmUserControl = frmProductosUC;
                     break;
                 case "Tipos y Categorías":
-                    userControl = CategoriasTiposUC;
+                    frmUserControl = frmCategoriasTiposUC;
                     break;
                 default:
-                    userControl = null;
+                    frmUserControl = null;
                     break;
             }
 
-            tabbedView.AddDocument(userControl);
-            tabbedView.ActivateDocument(userControl);
+            tabbedView.AddDocument(frmUserControl);
+            tabbedView.ActivateDocument(frmUserControl);
         }
 
         //void barButtonNavigation_ItemClick(object sender, ItemClickEventArgs e)
@@ -114,12 +115,25 @@ namespace Productos.GUI.Inicio
             switch (e.Document.Caption)
             {
                 case "Productos":
-                    ProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
+                    frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
                     break;
                 case "Tipos y Categorías":
-                    CategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
+                    frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
                     break;
             }
+        }
+
+        private void CargarFormularios()
+        {
+            Productos.frmXtraUCProductos.bdCarrillo = bdCarrillo;
+            Productos.frmXtraUCProductos.strNombreUsuario = strNombreUsuario;
+            Productos.frmXtraUCProductos.boolAdministrador = boolAdministrador;
+
+            TiposCategorias.frmXtraUCTiposCategorias.boolAdministrador = boolAdministrador;
+            TiposCategorias.frmXtraUCTiposCategorias.bdCarrillo = bdCarrillo;
+
+            frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
+            frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)

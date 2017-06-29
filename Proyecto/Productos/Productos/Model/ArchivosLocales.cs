@@ -96,6 +96,16 @@ namespace Productos.Model
 
             switch (Accion)
             {
+                case 'A':
+                    MSG = Informacion + " al reportar la anomalía.";
+                    Botones = MessageBoxButtons.OK;
+                    Icono = MessageBoxIcon.Information;
+                    break;
+                case 'B':
+                    MSG = Informacion + " al registrar la compra.";
+                    Botones = MessageBoxButtons.OK;
+                    Icono = MessageBoxIcon.Information;
+                    break;
                 case 'S':
                     MSG = Informacion + " al guardar los datos.";
                     Botones = MessageBoxButtons.OK;
@@ -115,6 +125,11 @@ namespace Productos.Model
                     MSG = "Se descartaran los cambios realizados ¿Desea continuar?";
                     Botones = MessageBoxButtons.YesNo;
                     Icono = MessageBoxIcon.Question;
+                    break;
+                case 'X':
+                    MSG = "Se eliminará el registro seleccionado ¿Desea continuar?";
+                    Botones = MessageBoxButtons.YesNo;
+                    Icono = MessageBoxIcon.Warning;
                     break;
                 default:
                     MSG = "Ha ocurrido un error inesperado.\r" +

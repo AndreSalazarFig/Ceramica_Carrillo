@@ -175,6 +175,8 @@
             this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtUnidades.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtUnidades.Properties.IsFloatValue = false;
+            this.txtUnidades.Properties.Mask.EditMask = "N00";
             this.txtUnidades.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.txtUnidades.Properties.MaxValue = new decimal(new int[] {
             999999,
@@ -289,23 +291,25 @@
             // 
             this.btnCancelarProducto.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarProducto.Appearance.Options.UseFont = true;
-            this.btnCancelarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("Cancelar.ImageOptions.Image")));
+            this.btnCancelarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarProducto.ImageOptions.Image")));
             this.btnCancelarProducto.Location = new System.Drawing.Point(382, 227);
             this.btnCancelarProducto.Name = "btnCancelarProducto";
             this.btnCancelarProducto.Size = new System.Drawing.Size(134, 45);
             this.btnCancelarProducto.TabIndex = 25;
             this.btnCancelarProducto.Text = "Cancelar";
+            this.btnCancelarProducto.Click += new System.EventHandler(this.btnCancelarProducto_Click);
             // 
             // btnGuardarProducto
             // 
             this.btnGuardarProducto.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProducto.Appearance.Options.UseFont = true;
-            this.btnGuardarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardar.ImageOptions.Image")));
+            this.btnGuardarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarProducto.ImageOptions.Image")));
             this.btnGuardarProducto.Location = new System.Drawing.Point(109, 227);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
             this.btnGuardarProducto.Size = new System.Drawing.Size(134, 45);
             this.btnGuardarProducto.TabIndex = 24;
             this.btnGuardarProducto.Text = "Guardar";
+            this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
             // 
             // frmXtraEdicionProductos
             // 
@@ -326,6 +330,7 @@
             this.Ribbon = this.ribCtrlMenuProductosEdicion;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-----";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraEdicionProductos_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuProductosEdicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosProducto)).EndInit();

@@ -165,10 +165,12 @@
             this.ClientSize = new System.Drawing.Size(790, 595);
             this.Controls.Add(this.dockPanelNavegacion);
             this.Controls.Add(this.ribCtrlMenuPrincipal);
+            this.MaximizeBox = false;
             this.Name = "frmXtraPrincipal";
             this.Ribbon = this.ribCtrlMenuPrincipal;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cerámica Carrillo";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraPrincipal_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).EndInit();
             this.dockPanelNavegacion.ResumeLayout(false);

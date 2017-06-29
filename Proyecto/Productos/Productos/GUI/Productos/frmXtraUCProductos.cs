@@ -17,224 +17,170 @@ namespace Productos.GUI.Productos
 {
     public partial class frmXtraUCProductos : DevExpress.XtraEditors.XtraUserControl
     {
-        Model.BDCarrilloEntities bdcarrillo = new Model.BDCarrilloEntities();
-        //Model.Productos oProducto;
+        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static String strNombreUsuario;
+        public static Boolean boolAdministrador;
+        List<String> lstDatosProducto = null;
+        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
 
         public frmXtraUCProductos()
         {
             InitializeComponent();
 
-            //CargarInfo();
-            VistaProductos();
+            CargarInfo();
         }
-
-        //#region Métodos para el CRUD de Productos
-
-        //private void GuardarProducto()
-        //{
-        //    try
-        //    {
-        //        bdcarrillo.Productos.Add(RecuperarDatosProducto());
-        //        bdcarrillo.SaveChanges();
-        //        limpiarControlesProductos();
-        //        VistaProductos();
-        //        OnOffBotones('F');
-        //    }
-        //    catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
-        //}
-
-        //private void EditarProducto()
-        //{
-        //    try
-        //    {
-        //        var edicion = bdcarrillo.Productos.Find(Convert.ToInt32(txtIDProducto.Text));
-
-        //        if (edicion != null)
-        //        {
-        //            var producto = RecuperarDatosProducto();
-        //            edicion.Descripcion = producto.Descripcion;
-        //            edicion.PrecioVenta = producto.PrecioVenta;
-        //            edicion.PrecioMayoreo = producto.PrecioMayoreo;
-        //            edicion.Unidades = producto.Unidades;
-        //            edicion.idCategoria = producto.idCategoria;
-
-        //            bdcarrillo.SaveChanges();
-        //            limpiarControlesProductos();
-        //            VistaProductos();
-        //            OnOffBotones('F');
-        //        }
-        //    }
-        //    catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
-        //}
-
-        //private void EliminarProducto()
-        //{
-        //    try
-        //    {
-        //        var eliminar = bdcarrillo.Productos.Find(Convert.ToInt32(txtIDProducto.Text));
-        //        bdcarrillo.Productos.Remove(eliminar);
-        //        bdcarrillo.SaveChanges();
-        //        limpiarControlesProductos();
-        //        VistaProductos();
-        //        OnOffBotones('F');
-        //    }
-        //    catch (Exception a) { MessageBox.Show("Error al realizar la operación. Esto se puede ocacionar por una falta de conexión a la red. \rCompruebe que esté conectado a la red."); }
-        //}
-
-        //private Model.Productos RecuperarDatosProducto()
-        //{
-        //    var IDCategoria = (from tbCategoria in bdcarrillo.Categorias
-        //                       join tbTipo in bdcarrillo.TipoProductos on tbCategoria.idTipoProducto equals tbTipo.idTipoProducto
-        //                       let CategoriaTipo = tbCategoria.NombreCategoria + "-" + tbTipo.NombreTipo
-        //                       where CategoriaTipo == cbxCategoria.SelectedItem.ToString().Trim()
-        //                       select tbCategoria).ToList().FirstOrDefault();
-
-        //    oProducto = new Model.Productos()
-        //    {
-        //        Descripcion = txtDescripcion.Text.Trim(),
-        //        PrecioVenta = Double.Parse(txtPrecioVenta.Text.Trim()),
-        //        PrecioMayoreo = Double.Parse(txtPrecioMayoreo.Text.Trim()),
-        //        Unidades = Convert.ToInt32(txtUnidades.Text.Trim()),
-        //        idCategoria = IDCategoria.idCategoria
-        //    };
-
-        //    if (txtIDProducto.Text != "")
-        //    {
-        //        oProducto.IdProductos = Convert.ToInt32(txtIDProducto.Text);
-        //    }
-
-        //    return oProducto;
-        //}
-
-        //private void limpiarControlesProductos()
-        //{
-        //    txtIDProducto.Text = "";
-        //    txtDescripcion.Text = "";
-        //    txtPrecioVenta.Text = "1";
-        //    txtPrecioMayoreo.Text = "1";
-        //    txtUnidades.Text = "1";
-        //    cbxCategoria.SelectedIndex = 0;
-        //}
-
-        //private void dtgVistaProductos_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        //{
-        //    int posicion = e.RowIndex;
-
-        //    if (posicion >= 0)
-        //    {
-        //        try
-        //        {
-        //            limpiarControlesProductos();
-        //            txtIDProducto.Text = dtgVistaProductos.Rows[posicion].Cells[0].Value.ToString().Trim();
-        //            txtDescripcion.Text = dtgVistaProductos.Rows[posicion].Cells[1].Value.ToString().Trim();
-        //            txtPrecioVenta.Text = dtgVistaProductos.Rows[posicion].Cells[2].Value.ToString().Trim();
-        //            txtPrecioMayoreo.Text = dtgVistaProductos.Rows[posicion].Cells[3].Value.ToString().Trim();
-        //            txtUnidades.Text = dtgVistaProductos.Rows[posicion].Cells[4].Value.ToString().Trim();
-        //            cbxCategoria.SelectedItem = dtgVistaProductos.Rows[posicion].Cells[5].Value.ToString().Trim();
-        //        }
-        //        catch (Exception a){ }
-
-        //        OnOffBotones('T');
-        //    }
-        //}
-
-        private void VistaProductos()
-        {
-            dtgVistaProductos.DataSource = (from tbProductos in bdcarrillo.Productos
-                                            join tbCategorias in bdcarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
-                                            from tbRight1 in tbLeft1.DefaultIfEmpty()
-                                            join tbTipos in bdcarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
-                                            from tbRight2 in tbLeft2.DefaultIfEmpty()
-                                            let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
-                                            select new
-                                            {
-                                                tbProductos.IdProductos,
-                                                tbProductos.Descripcion,
-                                                tbProductos.PrecioVenta,
-                                                tbProductos.PrecioMayoreo,
-                                                tbProductos.Unidades,
-                                                tbProductos.Status,
-                                                CategoriaTipo
-                                            }).ToList();
-        }
-
+        
         private void btnAgregarProductos_Click(object sender, EventArgs e)
         {
-            
+            AbrirFormularioEdicion("Agregar Tipo de Producto", 'N');
+        }
+        
+        private void ItemButtonAccionesProductos_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            try
+            {
+                Int32 IndexFila = dtgVistaProductos.FindRow(dtgVistaProductos.GetFocusedRow());
+
+                switch (e.Button.Tag.ToString())
+                {
+                    case "EditarProducto":
+                        GetDatosEdicion(IndexFila);
+                        AbrirFormularioEdicion("Editar Producto", 'U');
+                        break;
+                    case "EliminarProducto":
+                        EliminarProducto(IndexFila);
+                        break;
+                    case "ReportarAnomalias":
+                        AbrirFormularioAnomalias(IndexFila);
+                        break;
+                    case "AgregarCompras":
+                        AbrirFormularioCompras(IndexFila);
+                        break;
+                }
+            }
+            catch (Exception f)
+            {
+                oExtras.Mensajes('*', "");
+            }
         }
 
-        //private void llenarComboCategorias()
-        //{
-        //    cbxCategoria.Properties.Items.Clear();
+        private void AbrirFormularioEdicion(String strTitulo, Char chAccion)
+        {
+            frmXtraEdicionProductos.strFormTitulo = strTitulo;
+            frmXtraEdicionProductos.chAccion = chAccion;
+            frmXtraEdicionProductos.lstDatosProducto = lstDatosProducto;
+            frmXtraEdicionProductos.bdCarrillo = bdCarrillo;
 
-        //    cbxCategoria.Properties.Items.Add("Seleccionar");
+            frmXtraEdicionProductos frm = new frmXtraEdicionProductos();
 
-        //    var CategoriasTipos = (from tbCategorias in bdcarrillo.Categorias
-        //                           join tbTipos in bdcarrillo.TipoProductos on tbCategorias.idTipoProducto equals tbTipos.idTipoProducto
-        //                           select new
-        //                           {
-        //                               tbCategorias.NombreCategoria, tbTipos.NombreTipo
-        //                           });
+            frm.ShowDialog();
 
-        //    foreach (var CategoriaTipo in CategoriasTipos)
-        //    {
-        //        cbxCategoria.Properties.Items.Add(CategoriaTipo.NombreCategoria + "-" + CategoriaTipo.NombreTipo);
-        //    }
+            lstDatosProducto = null;
 
-        //    cbxCategoria.SelectedIndex = 0;
-        //}
+            VistaDatos();
+        }
 
-        //#endregion
+        private void AbrirFormularioAnomalias(Int32 IndexFila)
+        {
+            Anomalias.frmXtraAnomalias.strProducto = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim();
+            Anomalias.frmXtraAnomalias.strUsuario = strNombreUsuario;
 
-        //#region Otros métodos y eventos
+            Anomalias.frmXtraAnomalias.bdCarrillo = bdCarrillo;
 
-        //private void OnOffBotones(Char OnOff)
-        //{
-        //    switch (OnOff)
-        //    {
-        //        case 'T':
-        //            windowsUIButtonPanelMain.Buttons[1].Properties.Enabled = false;
-        //            windowsUIButtonPanelMain.Buttons[2].Properties.Enabled = true;
-        //            windowsUIButtonPanelMain.Buttons[3].Properties.Enabled = true;
-        //            break;
-        //        case 'F':
-        //            windowsUIButtonPanelMain.Buttons[1].Properties.Enabled = true;
-        //            windowsUIButtonPanelMain.Buttons[2].Properties.Enabled = false;
-        //            windowsUIButtonPanelMain.Buttons[3].Properties.Enabled = false;
-        //            break;
-        //    }
-        //}
+            Anomalias.frmXtraAnomalias frm = new Anomalias.frmXtraAnomalias();
 
-        //private void CargarInfo()
-        //{
-        //    dtgVistaProductos.AutoGenerateColumns = false;
+            frm.ShowDialog();
 
-        //    limpiarControlesProductos();
-        //    VistaProductos();
-        //    llenarComboCategorias();
-        //    OnOffBotones('F');
-        //}
+            VistaDatos();
+        }
 
-        //private void windowsUIButtonPanelMain_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        //{
-        //    switch (e.Button.Properties.Caption)
-        //    {
-        //        case "Nuevo":
-        //            limpiarControlesProductos();
-        //            OnOffBotones('F');
-        //            break;
-        //        case "Guardar":
-        //            GuardarProducto();
-        //            break;
-        //        case "Editar":
-        //            EditarProducto();
-        //            break;
-        //        case "Eliminar":
-        //            EliminarProducto();
-        //            break;
-        //    }
-        //}
+        private void AbrirFormularioCompras(Int32 IndexFila)
+        {
+            Compras.frmXtraCompras.strProducto = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim();
+            
+            Compras.frmXtraCompras.bdCarrillo = bdCarrillo;
 
-        //#endregion
+            Compras.frmXtraCompras frm = new Compras.frmXtraCompras();
+
+            frm.ShowDialog();
+
+            VistaDatos();
+        }
+
+        private void GetDatosEdicion(Int32 IndexFila)
+        {
+            lstDatosProducto = new List<string>();
+
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, IdProductos).ToString().Trim());
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim());
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioVenta).ToString().Trim());
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioMayoreo).ToString().Trim());
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, Unidades).ToString().Trim());
+            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, CategoriaTipo).ToString().Trim());
+        }
+
+        private void EliminarProducto(Int32 IndexFila)
+        {
+            try
+            {
+                if (oExtras.Mensajes('X', "") == DialogResult.Yes)
+                {
+                    Int32 IDProducto = Convert.ToInt32(dtgVistaProductos.GetRowCellValue(IndexFila, IdProductos).ToString().Trim());
+
+                    var edicion = bdCarrillo.Productos.Find(IDProducto);
+
+                    if (edicion != null)
+                    {
+                        edicion.Status = false;
+
+                        bdCarrillo.SaveChanges();
+
+                        oExtras.Mensajes('D', "Éxito");
+                    }
+
+                    VistaDatos();
+                }
+            }
+            catch (Exception f)
+            {
+                oExtras.Mensajes('D', "Error");
+            }
+        }
+
+        private void Administrador()
+        {
+            if (boolAdministrador != true)
+            {
+                ItemButtonAccionesProductos.Buttons[0].Enabled = false;
+                ItemButtonAccionesProductos.Buttons[1].Enabled = false;
+            }
+        }
+
+        private void VistaDatos()
+        {
+            dtgVista.DataSource = (from tbProductos in bdCarrillo.Productos
+                                   join tbCategorias in bdCarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
+                                   from tbRight1 in tbLeft1.DefaultIfEmpty()
+                                   join tbTipos in bdCarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
+                                   from tbRight2 in tbLeft2.DefaultIfEmpty()
+                                   let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
+                                   where tbProductos.Status == true
+                                   select new
+                                   {
+                                       tbProductos.IdProductos,
+                                       tbProductos.Descripcion,
+                                       tbProductos.PrecioVenta,
+                                       tbProductos.PrecioMayoreo,
+                                       tbProductos.Unidades,
+                                       tbProductos.Status,
+                                       CategoriaTipo
+                                   }).ToList();
+        }
+
+        private void CargarInfo()
+        {
+            Administrador();
+            VistaDatos();
+        }
     }
 }

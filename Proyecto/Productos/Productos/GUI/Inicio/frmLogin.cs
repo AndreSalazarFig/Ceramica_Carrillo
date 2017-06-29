@@ -13,8 +13,9 @@ namespace Productos.GUI.Inicio
 {
     public partial class frmLogin : Form
     {
-
         BDCarrilloEntities bdCarrillo = new BDCarrilloEntities();
+        String strNombreUsuario;
+        Boolean boolAdministrador;
 
         public frmLogin()
         {
@@ -25,14 +26,23 @@ namespace Productos.GUI.Inicio
         {
             try
             {
-                var cantidad = (from u in bdCarrillo.Personal
-                                where u.Usuario == /*txtUsuario.Text*/"administrador"
-                                && u.Contrasena == /*txtContraseña.Text*/"p0nc14n0"
-                                select u).Count();
-                if (cantidad > 0)
+                var Usuario = (from tbUsuarios in bdCarrillo.Personal
+                               where tbUsuarios.Usuario == txtUsuario.Text/*"administrador"*/
+                                     && tbUsuarios.Contrasena == txtContraseña.Text/*"p0nc14n0"*/
+                               select tbUsuarios).ToList();
+
+                if (Usuario.Count() > 0)
                 {
-                    //Form1 frm = new Form1();
+                    frmXtraPrincipal.bdCarrillo = bdCarrillo;
+                    strNombreUsuario = Usuario.FirstOrDefault().Usuario;
+
+                    boolAdministrador = (Usuario.FirstOrDefault().Puesto.Trim() == "Administrador") ? true : false;
+
+                    frmXtraPrincipal.strNombreUsuario = strNombreUsuario;
+                    frmXtraPrincipal.boolAdministrador = boolAdministrador;
+
                     frmXtraPrincipal frm = new frmXtraPrincipal();
+
                     frm.Show();
                     this.Hide();
                 }
