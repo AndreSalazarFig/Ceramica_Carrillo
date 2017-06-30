@@ -1115,14 +1115,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Productos.exe" size="193504">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Productos.exe" size="290784">
       <assemblyIdentity name="Productos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WEesB8lfAH4TzvJEy1xlmFKzuzkSZfEqlr/W80XYiLQ=</dsig:DigestValue>
+        <dsig:DigestValue>XNgJc3sPC6XB8Vy4ZS662AWTMsWYN0/pcudGUqtu3xo=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

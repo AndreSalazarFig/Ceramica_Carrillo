@@ -21,7 +21,7 @@ namespace Productos
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
-            UserLookAndFeel.Default.SetSkinStyle("DevExpress Style");
+            UserLookAndFeel.Default.SetSkinStyle("VS2010");
             Application.Run(new GUI.Inicio.frmLogin());
         }
     }

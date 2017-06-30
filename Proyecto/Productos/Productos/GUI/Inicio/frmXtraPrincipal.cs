@@ -21,13 +21,13 @@ namespace Productos.GUI.Inicio
         public static Boolean boolAdministrador;
         XtraUserControl frmProductosUC;
         XtraUserControl frmCategoriasTiposUC;
+        XtraUserControl frmPuntoVentaUC;
 
         public frmXtraPrincipal()
         {
             InitializeComponent();
 
             CargarFormularios();
-            //accordionCtrlNavegacion.SelectedElement = btnProductos;
         }
 
         XtraUserControl CreateUserControl(String strNombreUserControl, XtraUserControl frmXtraUC)
@@ -35,15 +35,6 @@ namespace Productos.GUI.Inicio
             XtraUserControl result = frmXtraUC;
             result.Name = strNombreUserControl + "UC";
             result.Text = strNombreUserControl;
-            //LabelControl label = new LabelControl();
-            //label.Parent = result;
-            //label.Appearance.Font = new Font("Tahoma", 25.25F);
-            //label.Appearance.ForeColor = Color.Gray;
-            //label.Dock = System.Windows.Forms.DockStyle.Fill;
-            //label.AutoSizeMode = LabelAutoSizeMode.None;
-            //label.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            //label.Appearance.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
-            //label.Text = NombreUserControl;
             return result;
         }
 
@@ -60,6 +51,9 @@ namespace Productos.GUI.Inicio
                     break;
                 case "Tipos y Categorías":
                     frmUserControl = frmCategoriasTiposUC;
+                    break;
+                case "Punto de Venta":
+                    frmUserControl = frmPuntoVentaUC;
                     break;
                 default:
                     frmUserControl = null;
@@ -120,6 +114,9 @@ namespace Productos.GUI.Inicio
                 case "Tipos y Categorías":
                     frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
                     break;
+                case "Punto de Venta":
+                    frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
+                    break;
             }
         }
 
@@ -132,8 +129,11 @@ namespace Productos.GUI.Inicio
             TiposCategorias.frmXtraUCTiposCategorias.boolAdministrador = boolAdministrador;
             TiposCategorias.frmXtraUCTiposCategorias.bdCarrillo = bdCarrillo;
 
+            Ventas.frmXtraUCPuntoVenta.datos = bdCarrillo;
+
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
+            frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)

@@ -152,6 +152,12 @@
     <Compile Include="GUI\Productos\frmXtraUCProductos.Designer.cs">
       <DependentUpon>frmXtraUCProductos.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Ventas\frmXtraUCPuntoVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Ventas\frmXtraUCPuntoVenta.Designer.cs">
+      <DependentUpon>frmXtraUCPuntoVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Actividades.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
@@ -234,6 +240,9 @@
       <DependentUpon>frmXtraUCTiposCategorias.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Ventas\frmXtraUCPuntoVenta.resx">
+      <DependentUpon>frmXtraUCPuntoVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -243,6 +252,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="App.config" />
     <EntityDeploy Include="Model\mdlCarrillo.edmx">
@@ -290,6 +300,7 @@
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>
       <LastGenOutput>mdlCarrillo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\carritoC.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
