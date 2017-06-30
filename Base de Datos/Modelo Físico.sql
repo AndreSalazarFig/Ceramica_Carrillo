@@ -4,7 +4,7 @@
  * Project :      Modelo Relacional.DM1
  * Author :       ANDRE
  *
- * Date Created : Monday, June 26, 2017 20:41:00
+ * Date Created : Friday, June 30, 2017 15:41:58
  * Target DBMS : Microsoft SQL Server 2008
  */
 
@@ -44,6 +44,7 @@ CREATE TABLE Anomalias(
     IdAnomalias    int             IDENTITY(1,1),
     Descripcion    varchar(max)    NOT NULL,
     Fecha          date            NOT NULL,
+    Respuesta      varchar(max)    NULL,
     IdPersonal     int             NOT NULL,
     IdProductos    int             NOT NULL,
     CONSTRAINT PK8 PRIMARY KEY NONCLUSTERED (IdAnomalias)
@@ -106,7 +107,7 @@ go
  */
 
 CREATE TABLE DetalleFolio(
-    IdDetalle      int      NOT NULL,
+    IdDetalle      int      IDENTITY(1,1),
     IdFolio        int      NOT NULL,
     IdProductos    int      NOT NULL,
     Unidades       int      NOT NULL,
@@ -129,7 +130,7 @@ go
  */
 
 CREATE TABLE Folio(
-    IdFolio       int      NOT NULL,
+    IdFolio       int      IDENTITY(1,1),
     TotalVenta    float    NOT NULL,
     FechaVenta    date     NOT NULL,
     IdPersonal    int      NOT NULL,
@@ -331,4 +332,6 @@ ALTER TABLE Solicitudes ADD CONSTRAINT RefProductos2
     REFERENCES Productos(IdProductos)
 go
 
-
+INSERT INTO Personal(Nombre, Apellido, Usuario, Contrasena, Movil, Puesto)
+VALUES('Ponciano','Carrillo','administrador','p0nc14n0','7341043252','Administrador')
+go
