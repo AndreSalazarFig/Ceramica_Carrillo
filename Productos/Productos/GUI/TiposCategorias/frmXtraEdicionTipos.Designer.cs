@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraEdicionTipos));
-            this.ribCtrlMenuTiposEdicion = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.lyCtrlDatosTipo = new DevExpress.XtraLayout.LayoutControl();
             this.txtNombreTipo = new DevExpress.XtraEditors.TextEdit();
             this.lyCtrlGroupDatosTipo = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -39,7 +38,6 @@
             this.btnGuardarTipo = new DevExpress.XtraEditors.SimpleButton();
             this.lblIDTipo = new DevExpress.XtraEditors.LabelControl();
             this.txtIDTipo = new DevExpress.XtraEditors.TextEdit();
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuTiposEdicion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosTipo)).BeginInit();
             this.lyCtrlDatosTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreTipo.Properties)).BeginInit();
@@ -49,37 +47,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtIDTipo.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribCtrlMenuTiposEdicion
-            // 
-            this.ribCtrlMenuTiposEdicion.ExpandCollapseItem.Id = 0;
-            this.ribCtrlMenuTiposEdicion.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribCtrlMenuTiposEdicion.ExpandCollapseItem});
-            this.ribCtrlMenuTiposEdicion.Location = new System.Drawing.Point(0, 0);
-            this.ribCtrlMenuTiposEdicion.MaxItemId = 1;
-            this.ribCtrlMenuTiposEdicion.Name = "ribCtrlMenuTiposEdicion";
-            this.ribCtrlMenuTiposEdicion.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuTiposEdicion.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuTiposEdicion.Size = new System.Drawing.Size(485, 49);
-            // 
             // lyCtrlDatosTipo
             // 
             this.lyCtrlDatosTipo.Controls.Add(this.txtNombreTipo);
-            this.lyCtrlDatosTipo.Location = new System.Drawing.Point(24, 70);
+            this.lyCtrlDatosTipo.Location = new System.Drawing.Point(24, 22);
             this.lyCtrlDatosTipo.Name = "lyCtrlDatosTipo";
             this.lyCtrlDatosTipo.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(564, 20, 450, 400);
             this.lyCtrlDatosTipo.Root = this.lyCtrlGroupDatosTipo;
-            this.lyCtrlDatosTipo.Size = new System.Drawing.Size(437, 88);
+            this.lyCtrlDatosTipo.Size = new System.Drawing.Size(345, 88);
             this.lyCtrlDatosTipo.TabIndex = 24;
             this.lyCtrlDatosTipo.Text = "layoutControl1";
             // 
             // txtNombreTipo
             // 
-            this.txtNombreTipo.Location = new System.Drawing.Point(81, 42);
+            this.txtNombreTipo.Location = new System.Drawing.Point(81, 37);
             this.txtNombreTipo.Name = "txtNombreTipo";
             this.txtNombreTipo.Properties.NullValuePrompt = "Ejemplo: Cerámica";
             this.txtNombreTipo.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtNombreTipo.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtNombreTipo.Size = new System.Drawing.Size(332, 20);
+            this.txtNombreTipo.Size = new System.Drawing.Size(240, 20);
             this.txtNombreTipo.StyleController = this.lyCtrlDatosTipo;
             this.txtNombreTipo.TabIndex = 7;
             // 
@@ -91,7 +77,7 @@
             this.lyGroupBoxDatosTipo});
             this.lyCtrlGroupDatosTipo.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatosTipo.Name = "lyCtrlGroupDatosTipo";
-            this.lyCtrlGroupDatosTipo.Size = new System.Drawing.Size(437, 88);
+            this.lyCtrlGroupDatosTipo.Size = new System.Drawing.Size(345, 88);
             this.lyCtrlGroupDatosTipo.TextVisible = false;
             // 
             // lyGroupBoxDatosTipo
@@ -101,7 +87,7 @@
             this.CtrlItemNombreTipo});
             this.lyGroupBoxDatosTipo.Location = new System.Drawing.Point(0, 0);
             this.lyGroupBoxDatosTipo.Name = "lyGroupBoxDatosTipo";
-            this.lyGroupBoxDatosTipo.Size = new System.Drawing.Size(417, 68);
+            this.lyGroupBoxDatosTipo.Size = new System.Drawing.Size(325, 68);
             this.lyGroupBoxDatosTipo.Text = "Datos del Tipo de Producto";
             // 
             // CtrlItemNombreTipo
@@ -109,7 +95,7 @@
             this.CtrlItemNombreTipo.Control = this.txtNombreTipo;
             this.CtrlItemNombreTipo.Location = new System.Drawing.Point(0, 0);
             this.CtrlItemNombreTipo.Name = "CtrlItemNombreTipo";
-            this.CtrlItemNombreTipo.Size = new System.Drawing.Size(393, 26);
+            this.CtrlItemNombreTipo.Size = new System.Drawing.Size(301, 31);
             this.CtrlItemNombreTipo.Text = "Descripción";
             this.CtrlItemNombreTipo.TextSize = new System.Drawing.Size(54, 13);
             // 
@@ -118,7 +104,7 @@
             this.btnCancelarTipo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarTipo.Appearance.Options.UseFont = true;
             this.btnCancelarTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarTipo.ImageOptions.Image")));
-            this.btnCancelarTipo.Location = new System.Drawing.Point(267, 208);
+            this.btnCancelarTipo.Location = new System.Drawing.Point(223, 146);
             this.btnCancelarTipo.Name = "btnCancelarTipo";
             this.btnCancelarTipo.Size = new System.Drawing.Size(134, 45);
             this.btnCancelarTipo.TabIndex = 29;
@@ -130,7 +116,7 @@
             this.btnGuardarTipo.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarTipo.Appearance.Options.UseFont = true;
             this.btnGuardarTipo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarTipo.ImageOptions.Image")));
-            this.btnGuardarTipo.Location = new System.Drawing.Point(71, 208);
+            this.btnGuardarTipo.Location = new System.Drawing.Point(36, 146);
             this.btnGuardarTipo.Name = "btnGuardarTipo";
             this.btnGuardarTipo.Size = new System.Drawing.Size(134, 45);
             this.btnGuardarTipo.TabIndex = 28;
@@ -139,7 +125,7 @@
             // 
             // lblIDTipo
             // 
-            this.lblIDTipo.Location = new System.Drawing.Point(12, 271);
+            this.lblIDTipo.Location = new System.Drawing.Point(12, 208);
             this.lblIDTipo.Name = "lblIDTipo";
             this.lblIDTipo.Size = new System.Drawing.Size(11, 13);
             this.lblIDTipo.TabIndex = 27;
@@ -148,7 +134,7 @@
             // 
             // txtIDTipo
             // 
-            this.txtIDTipo.Location = new System.Drawing.Point(29, 268);
+            this.txtIDTipo.Location = new System.Drawing.Point(29, 205);
             this.txtIDTipo.Name = "txtIDTipo";
             this.txtIDTipo.Size = new System.Drawing.Size(26, 20);
             this.txtIDTipo.TabIndex = 26;
@@ -158,23 +144,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 296);
+            this.ClientSize = new System.Drawing.Size(384, 233);
             this.Controls.Add(this.btnCancelarTipo);
             this.Controls.Add(this.btnGuardarTipo);
             this.Controls.Add(this.lblIDTipo);
             this.Controls.Add(this.txtIDTipo);
             this.Controls.Add(this.lyCtrlDatosTipo);
-            this.Controls.Add(this.ribCtrlMenuTiposEdicion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(495, 301);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(495, 301);
             this.Name = "frmXtraEdicionTipos";
-            this.Ribbon = this.ribCtrlMenuTiposEdicion;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-----";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraEdicionTipos_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuTiposEdicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosTipo)).EndInit();
             this.lyCtrlDatosTipo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtNombreTipo.Properties)).EndInit();
@@ -188,7 +170,6 @@
         }
 
         #endregion
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribCtrlMenuTiposEdicion;
         private DevExpress.XtraLayout.LayoutControl lyCtrlDatosTipo;
         private DevExpress.XtraEditors.TextEdit txtNombreTipo;
         private DevExpress.XtraLayout.LayoutControlGroup lyCtrlGroupDatosTipo;

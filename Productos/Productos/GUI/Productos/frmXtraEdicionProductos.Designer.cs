@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraEdicionProductos));
-            this.ribCtrlMenuProductosEdicion = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.lblIDProducto = new DevExpress.XtraEditors.LabelControl();
             this.txtIDProducto = new DevExpress.XtraEditors.TextEdit();
             this.lyCtrlDatosProducto = new DevExpress.XtraLayout.LayoutControl();
@@ -45,9 +44,12 @@
             this.CtrlitemPrecioMayoreo = new DevExpress.XtraLayout.LayoutControlItem();
             this.CtrlItemCategoria = new DevExpress.XtraLayout.LayoutControlItem();
             this.CtrlItemUnidades = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.btnCancelarProducto = new DevExpress.XtraEditors.SimpleButton();
             this.btnGuardarProducto = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuProductosEdicion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProducto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosProducto)).BeginInit();
             this.lyCtrlDatosProducto.SuspendLayout();
@@ -63,19 +65,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlitemPrecioMayoreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemCategoria)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemUnidades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
             this.SuspendLayout();
-            // 
-            // ribCtrlMenuProductosEdicion
-            // 
-            this.ribCtrlMenuProductosEdicion.ExpandCollapseItem.Id = 0;
-            this.ribCtrlMenuProductosEdicion.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribCtrlMenuProductosEdicion.ExpandCollapseItem});
-            this.ribCtrlMenuProductosEdicion.Location = new System.Drawing.Point(0, 0);
-            this.ribCtrlMenuProductosEdicion.MaxItemId = 1;
-            this.ribCtrlMenuProductosEdicion.Name = "ribCtrlMenuProductosEdicion";
-            this.ribCtrlMenuProductosEdicion.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuProductosEdicion.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuProductosEdicion.Size = new System.Drawing.Size(624, 49);
             // 
             // lblIDProducto
             // 
@@ -101,11 +95,11 @@
             this.lyCtrlDatosProducto.Controls.Add(this.txtUnidades);
             this.lyCtrlDatosProducto.Controls.Add(this.cbxCategoria);
             this.lyCtrlDatosProducto.Controls.Add(this.txtDescripcion);
-            this.lyCtrlDatosProducto.Location = new System.Drawing.Point(24, 70);
+            this.lyCtrlDatosProducto.Location = new System.Drawing.Point(10, 12);
             this.lyCtrlDatosProducto.Name = "lyCtrlDatosProducto";
             this.lyCtrlDatosProducto.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(564, 20, 450, 400);
             this.lyCtrlDatosProducto.Root = this.lyCtrlGroupDatosProducto;
-            this.lyCtrlDatosProducto.Size = new System.Drawing.Size(577, 134);
+            this.lyCtrlDatosProducto.Size = new System.Drawing.Size(570, 149);
             this.lyCtrlDatosProducto.TabIndex = 23;
             this.lyCtrlDatosProducto.Text = "layoutControl1";
             // 
@@ -116,7 +110,7 @@
             0,
             0,
             0});
-            this.txtPrecioMayoreo.Location = new System.Drawing.Point(137, 90);
+            this.txtPrecioMayoreo.Location = new System.Drawing.Point(159, 105);
             this.txtPrecioMayoreo.Name = "txtPrecioMayoreo";
             this.txtPrecioMayoreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -132,7 +126,7 @@
             0,
             0,
             0});
-            this.txtPrecioMayoreo.Size = new System.Drawing.Size(149, 20);
+            this.txtPrecioMayoreo.Size = new System.Drawing.Size(124, 20);
             this.txtPrecioMayoreo.StyleController = this.lyCtrlDatosProducto;
             this.txtPrecioMayoreo.TabIndex = 20;
             // 
@@ -143,7 +137,7 @@
             0,
             0,
             0});
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(137, 66);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(159, 71);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -159,18 +153,18 @@
             0,
             0,
             0});
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(149, 20);
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(124, 20);
             this.txtPrecioUnitario.StyleController = this.lyCtrlDatosProducto;
             this.txtPrecioUnitario.TabIndex = 19;
             // 
             // txtUnidades
             // 
             this.txtUnidades.EditValue = new decimal(new int[] {
-            1,
+            0,
             0,
             0,
             0});
-            this.txtUnidades.Location = new System.Drawing.Point(403, 90);
+            this.txtUnidades.Location = new System.Drawing.Point(432, 105);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -183,33 +177,28 @@
             0,
             0,
             0});
-            this.txtUnidades.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtUnidades.Size = new System.Drawing.Size(150, 20);
+            this.txtUnidades.Size = new System.Drawing.Size(114, 20);
             this.txtUnidades.StyleController = this.lyCtrlDatosProducto;
             this.txtUnidades.TabIndex = 25;
             // 
             // cbxCategoria
             // 
-            this.cbxCategoria.Location = new System.Drawing.Point(403, 66);
+            this.cbxCategoria.Location = new System.Drawing.Point(432, 71);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxCategoria.Size = new System.Drawing.Size(150, 20);
+            this.cbxCategoria.Size = new System.Drawing.Size(114, 20);
             this.cbxCategoria.StyleController = this.lyCtrlDatosProducto;
             this.cbxCategoria.TabIndex = 21;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(137, 42);
+            this.txtDescripcion.Location = new System.Drawing.Point(159, 37);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Properties.NullValuePrompt = "Descripción del producto";
             this.txtDescripcion.Properties.NullValuePromptShowForEmptyValue = true;
             this.txtDescripcion.Properties.ShowNullValuePromptWhenFocused = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(416, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(387, 20);
             this.txtDescripcion.StyleController = this.lyCtrlDatosProducto;
             this.txtDescripcion.TabIndex = 7;
             // 
@@ -221,7 +210,7 @@
             this.lyGroupBoxDatosProducto});
             this.lyCtrlGroupDatosProducto.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatosProducto.Name = "Root";
-            this.lyCtrlGroupDatosProducto.Size = new System.Drawing.Size(577, 134);
+            this.lyCtrlGroupDatosProducto.Size = new System.Drawing.Size(570, 149);
             this.lyCtrlGroupDatosProducto.TextVisible = false;
             // 
             // lyGroupBoxDatosProducto
@@ -231,10 +220,14 @@
             this.CtrlItemPrecioUnitario,
             this.CtrlitemPrecioMayoreo,
             this.CtrlItemCategoria,
-            this.CtrlItemUnidades});
+            this.CtrlItemUnidades,
+            this.emptySpaceItem1,
+            this.emptySpaceItem2,
+            this.emptySpaceItem3,
+            this.emptySpaceItem4});
             this.lyGroupBoxDatosProducto.Location = new System.Drawing.Point(0, 0);
             this.lyGroupBoxDatosProducto.Name = "lyGroupBoxDatosProducto";
-            this.lyGroupBoxDatosProducto.Size = new System.Drawing.Size(557, 114);
+            this.lyGroupBoxDatosProducto.Size = new System.Drawing.Size(550, 129);
             this.lyGroupBoxDatosProducto.Text = "Datos del Producto";
             // 
             // CtrlItemDescripcion
@@ -242,60 +235,104 @@
             this.CtrlItemDescripcion.Control = this.txtDescripcion;
             this.CtrlItemDescripcion.Location = new System.Drawing.Point(0, 0);
             this.CtrlItemDescripcion.Name = "CtrlItemDescripcion";
-            this.CtrlItemDescripcion.Size = new System.Drawing.Size(533, 24);
+            this.CtrlItemDescripcion.Size = new System.Drawing.Size(526, 24);
             this.CtrlItemDescripcion.Text = "Descripción";
-            this.CtrlItemDescripcion.TextSize = new System.Drawing.Size(110, 13);
+            this.CtrlItemDescripcion.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemPrecioUnitario
             // 
             this.CtrlItemPrecioUnitario.Control = this.txtPrecioUnitario;
-            this.CtrlItemPrecioUnitario.Location = new System.Drawing.Point(0, 24);
+            this.CtrlItemPrecioUnitario.Location = new System.Drawing.Point(0, 34);
             this.CtrlItemPrecioUnitario.Name = "CtrlItemPrecioUnitario";
             this.CtrlItemPrecioUnitario.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.CtrlItemPrecioUnitario.Size = new System.Drawing.Size(266, 24);
+            this.CtrlItemPrecioUnitario.Size = new System.Drawing.Size(263, 24);
             this.CtrlItemPrecioUnitario.Text = "Precio de Venta";
-            this.CtrlItemPrecioUnitario.TextSize = new System.Drawing.Size(110, 13);
+            this.CtrlItemPrecioUnitario.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlitemPrecioMayoreo
             // 
             this.CtrlitemPrecioMayoreo.Control = this.txtPrecioMayoreo;
-            this.CtrlitemPrecioMayoreo.Location = new System.Drawing.Point(0, 48);
+            this.CtrlitemPrecioMayoreo.Location = new System.Drawing.Point(0, 68);
             this.CtrlitemPrecioMayoreo.Name = "CtrlitemPrecioMayoreo";
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.ColumnIndex = 1;
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.RowIndex = 1;
-            this.CtrlitemPrecioMayoreo.Size = new System.Drawing.Size(266, 24);
+            this.CtrlitemPrecioMayoreo.Size = new System.Drawing.Size(263, 24);
             this.CtrlitemPrecioMayoreo.Text = "Precio de Mayoreo";
-            this.CtrlitemPrecioMayoreo.TextSize = new System.Drawing.Size(110, 13);
+            this.CtrlitemPrecioMayoreo.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemCategoria
             // 
             this.CtrlItemCategoria.Control = this.cbxCategoria;
-            this.CtrlItemCategoria.Location = new System.Drawing.Point(266, 24);
+            this.CtrlItemCategoria.Location = new System.Drawing.Point(273, 34);
             this.CtrlItemCategoria.Name = "CtrlItemCategoria";
             this.CtrlItemCategoria.OptionsTableLayoutItem.RowIndex = 1;
-            this.CtrlItemCategoria.Size = new System.Drawing.Size(267, 24);
-            this.CtrlItemCategoria.Text = "Categoría del Producto";
-            this.CtrlItemCategoria.TextSize = new System.Drawing.Size(110, 13);
+            this.CtrlItemCategoria.Size = new System.Drawing.Size(253, 24);
+            this.CtrlItemCategoria.Text = "Departamento del Producto";
+            this.CtrlItemCategoria.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemUnidades
             // 
             this.CtrlItemUnidades.Control = this.txtUnidades;
-            this.CtrlItemUnidades.Location = new System.Drawing.Point(266, 48);
+            this.CtrlItemUnidades.Location = new System.Drawing.Point(273, 68);
             this.CtrlItemUnidades.Name = "CtrlItemUnidades";
             this.CtrlItemUnidades.OptionsTableLayoutItem.RowIndex = 2;
-            this.CtrlItemUnidades.Size = new System.Drawing.Size(267, 24);
+            this.CtrlItemUnidades.Size = new System.Drawing.Size(253, 24);
             this.CtrlItemUnidades.Text = "Unidades";
-            this.CtrlItemUnidades.TextSize = new System.Drawing.Size(110, 13);
+            this.CtrlItemUnidades.TextSize = new System.Drawing.Size(132, 13);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 24);
+            this.emptySpaceItem1.MaxSize = new System.Drawing.Size(0, 10);
+            this.emptySpaceItem1.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(526, 10);
+            this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 58);
+            this.emptySpaceItem2.MaxSize = new System.Drawing.Size(0, 10);
+            this.emptySpaceItem2.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(526, 10);
+            this.emptySpaceItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(263, 34);
+            this.emptySpaceItem3.MaxSize = new System.Drawing.Size(10, 0);
+            this.emptySpaceItem3.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(10, 24);
+            this.emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem4
+            // 
+            this.emptySpaceItem4.AllowHotTrack = false;
+            this.emptySpaceItem4.Location = new System.Drawing.Point(263, 68);
+            this.emptySpaceItem4.MaxSize = new System.Drawing.Size(10, 0);
+            this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 10);
+            this.emptySpaceItem4.Name = "emptySpaceItem4";
+            this.emptySpaceItem4.Size = new System.Drawing.Size(10, 24);
+            this.emptySpaceItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // btnCancelarProducto
             // 
             this.btnCancelarProducto.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarProducto.Appearance.Options.UseFont = true;
             this.btnCancelarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarProducto.ImageOptions.Image")));
-            this.btnCancelarProducto.Location = new System.Drawing.Point(382, 227);
+            this.btnCancelarProducto.Location = new System.Drawing.Point(364, 203);
             this.btnCancelarProducto.Name = "btnCancelarProducto";
             this.btnCancelarProducto.Size = new System.Drawing.Size(134, 45);
-            this.btnCancelarProducto.TabIndex = 25;
+            this.btnCancelarProducto.TabIndex = 27;
             this.btnCancelarProducto.Text = "Cancelar";
             this.btnCancelarProducto.Click += new System.EventHandler(this.btnCancelarProducto_Click);
             // 
@@ -304,10 +341,10 @@
             this.btnGuardarProducto.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProducto.Appearance.Options.UseFont = true;
             this.btnGuardarProducto.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGuardarProducto.ImageOptions.Image")));
-            this.btnGuardarProducto.Location = new System.Drawing.Point(109, 227);
+            this.btnGuardarProducto.Location = new System.Drawing.Point(91, 203);
             this.btnGuardarProducto.Name = "btnGuardarProducto";
             this.btnGuardarProducto.Size = new System.Drawing.Size(134, 45);
-            this.btnGuardarProducto.TabIndex = 24;
+            this.btnGuardarProducto.TabIndex = 26;
             this.btnGuardarProducto.Text = "Guardar";
             this.btnGuardarProducto.Click += new System.EventHandler(this.btnGuardarProducto_Click);
             // 
@@ -315,23 +352,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 296);
+            this.ClientSize = new System.Drawing.Size(588, 296);
             this.Controls.Add(this.btnCancelarProducto);
             this.Controls.Add(this.btnGuardarProducto);
             this.Controls.Add(this.lyCtrlDatosProducto);
             this.Controls.Add(this.lblIDProducto);
             this.Controls.Add(this.txtIDProducto);
-            this.Controls.Add(this.ribCtrlMenuProductosEdicion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(634, 301);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(634, 301);
             this.Name = "frmXtraEdicionProductos";
-            this.Ribbon = this.ribCtrlMenuProductosEdicion;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "-----";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraEdicionProductos_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuProductosEdicion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDProducto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosProducto)).EndInit();
             this.lyCtrlDatosProducto.ResumeLayout(false);
@@ -347,13 +380,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlitemPrecioMayoreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemCategoria)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemUnidades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribCtrlMenuProductosEdicion;
         private DevExpress.XtraEditors.LabelControl lblIDProducto;
         private DevExpress.XtraEditors.TextEdit txtIDProducto;
         private DevExpress.XtraLayout.LayoutControl lyCtrlDatosProducto;
@@ -369,6 +405,10 @@
         private DevExpress.XtraLayout.LayoutControlItem CtrlitemPrecioMayoreo;
         private DevExpress.XtraLayout.LayoutControlItem CtrlItemCategoria;
         private DevExpress.XtraLayout.LayoutControlItem CtrlItemUnidades;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem4;
         private DevExpress.XtraEditors.SimpleButton btnCancelarProducto;
         private DevExpress.XtraEditors.SimpleButton btnGuardarProducto;
     }

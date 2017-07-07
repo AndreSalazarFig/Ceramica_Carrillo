@@ -122,7 +122,7 @@
             // 
             // CategoriaTipo
             // 
-            this.CategoriaTipo.Caption = "Categoría y Tipo";
+            this.CategoriaTipo.Caption = "Departamento y Tipo";
             this.CategoriaTipo.FieldName = "CategoriaTipo";
             this.CategoriaTipo.Name = "CategoriaTipo";
             this.CategoriaTipo.Visible = true;

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraAnomalias));
-            this.ribCtrlMenuCompras = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.lyCtrlDatosAnomalia = new DevExpress.XtraLayout.LayoutControl();
             this.lyCtrlDatos = new DevExpress.XtraLayout.LayoutControl();
             this.txtUsuario = new DevExpress.XtraEditors.TextEdit();
@@ -50,7 +49,6 @@
             this.CtrlItemDatos = new DevExpress.XtraLayout.LayoutControlItem();
             this.btnCancelarAnomalia = new DevExpress.XtraEditors.SimpleButton();
             this.btnReportarAnomalia = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosAnomalia)).BeginInit();
             this.lyCtrlDatosAnomalia.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatos)).BeginInit();
@@ -69,22 +67,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemDatos)).BeginInit();
             this.SuspendLayout();
             // 
-            // ribCtrlMenuCompras
-            // 
-            this.ribCtrlMenuCompras.ExpandCollapseItem.Id = 0;
-            this.ribCtrlMenuCompras.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribCtrlMenuCompras.ExpandCollapseItem});
-            this.ribCtrlMenuCompras.Location = new System.Drawing.Point(0, 0);
-            this.ribCtrlMenuCompras.MaxItemId = 1;
-            this.ribCtrlMenuCompras.Name = "ribCtrlMenuCompras";
-            this.ribCtrlMenuCompras.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuCompras.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
-            this.ribCtrlMenuCompras.Size = new System.Drawing.Size(444, 49);
-            // 
             // lyCtrlDatosAnomalia
             // 
             this.lyCtrlDatosAnomalia.Controls.Add(this.lyCtrlDatos);
-            this.lyCtrlDatosAnomalia.Location = new System.Drawing.Point(12, 55);
+            this.lyCtrlDatosAnomalia.Location = new System.Drawing.Point(12, 13);
             this.lyCtrlDatosAnomalia.Name = "lyCtrlDatosAnomalia";
             this.lyCtrlDatosAnomalia.Root = this.lyCtrlGroupDatosAnomalia;
             this.lyCtrlDatosAnomalia.Size = new System.Drawing.Size(414, 250);
@@ -106,8 +92,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(153, 42);
-            this.txtUsuario.MenuManager = this.ribCtrlMenuCompras;
+            this.txtUsuario.Location = new System.Drawing.Point(153, 37);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(213, 20);
             this.txtUsuario.StyleController = this.lyCtrlDatos;
@@ -116,8 +101,7 @@
             // txtDescripcionProducto
             // 
             this.txtDescripcionProducto.Enabled = false;
-            this.txtDescripcionProducto.Location = new System.Drawing.Point(153, 76);
-            this.txtDescripcionProducto.MenuManager = this.ribCtrlMenuCompras;
+            this.txtDescripcionProducto.Location = new System.Drawing.Point(153, 71);
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.Size = new System.Drawing.Size(213, 20);
             this.txtDescripcionProducto.StyleController = this.lyCtrlDatos;
@@ -125,10 +109,9 @@
             // 
             // txtDescripcionAnomalia
             // 
-            this.txtDescripcionAnomalia.Location = new System.Drawing.Point(153, 110);
-            this.txtDescripcionAnomalia.MenuManager = this.ribCtrlMenuCompras;
+            this.txtDescripcionAnomalia.Location = new System.Drawing.Point(153, 105);
             this.txtDescripcionAnomalia.Name = "txtDescripcionAnomalia";
-            this.txtDescripcionAnomalia.Size = new System.Drawing.Size(213, 92);
+            this.txtDescripcionAnomalia.Size = new System.Drawing.Size(213, 97);
             this.txtDescripcionAnomalia.StyleController = this.lyCtrlDatos;
             this.txtDescripcionAnomalia.TabIndex = 5;
             // 
@@ -141,14 +124,14 @@
             this.lyCtrlGroupDatos.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.lyCtrlGroupDatos.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatos.Name = "lyCtrlGroupDatos";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 100D;
+            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5.Width = 100D;
             this.lyCtrlGroupDatos.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1});
-            rowDefinition1.Height = 100D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition5});
+            rowDefinition5.Height = 100D;
+            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
             this.lyCtrlGroupDatos.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1});
+            rowDefinition5});
             this.lyCtrlGroupDatos.Size = new System.Drawing.Size(390, 226);
             this.lyCtrlGroupDatos.TextVisible = false;
             // 
@@ -172,7 +155,7 @@
             this.CtrlItemDescripcionAnomalia.Control = this.txtDescripcionAnomalia;
             this.CtrlItemDescripcionAnomalia.Location = new System.Drawing.Point(0, 68);
             this.CtrlItemDescripcionAnomalia.Name = "CtrlItemDescripcionAnomalia";
-            this.CtrlItemDescripcionAnomalia.Size = new System.Drawing.Size(346, 96);
+            this.CtrlItemDescripcionAnomalia.Size = new System.Drawing.Size(346, 101);
             this.CtrlItemDescripcionAnomalia.Text = "Descripción de la Anomalía";
             this.CtrlItemDescripcionAnomalia.TextLocation = DevExpress.Utils.Locations.Left;
             this.CtrlItemDescripcionAnomalia.TextSize = new System.Drawing.Size(126, 13);
@@ -226,14 +209,14 @@
             this.lyCtrlGroupDatosAnomalia.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.lyCtrlGroupDatosAnomalia.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatosAnomalia.Name = "lyCtrlGroupDatosAnomalia";
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 100D;
+            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition6.Width = 100D;
             this.lyCtrlGroupDatosAnomalia.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition2});
-            rowDefinition2.Height = 100D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition6});
+            rowDefinition6.Height = 100D;
+            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
             this.lyCtrlGroupDatosAnomalia.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition2});
+            rowDefinition6});
             this.lyCtrlGroupDatosAnomalia.Size = new System.Drawing.Size(414, 250);
             this.lyCtrlGroupDatosAnomalia.TextVisible = false;
             // 
@@ -251,7 +234,7 @@
             this.btnCancelarAnomalia.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarAnomalia.Appearance.Options.UseFont = true;
             this.btnCancelarAnomalia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarAnomalia.ImageOptions.Image")));
-            this.btnCancelarAnomalia.Location = new System.Drawing.Point(256, 328);
+            this.btnCancelarAnomalia.Location = new System.Drawing.Point(256, 286);
             this.btnCancelarAnomalia.Name = "btnCancelarAnomalia";
             this.btnCancelarAnomalia.Size = new System.Drawing.Size(134, 45);
             this.btnCancelarAnomalia.TabIndex = 29;
@@ -263,7 +246,7 @@
             this.btnReportarAnomalia.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportarAnomalia.Appearance.Options.UseFont = true;
             this.btnReportarAnomalia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReportarAnomalia.ImageOptions.Image")));
-            this.btnReportarAnomalia.Location = new System.Drawing.Point(36, 328);
+            this.btnReportarAnomalia.Location = new System.Drawing.Point(36, 286);
             this.btnReportarAnomalia.Name = "btnReportarAnomalia";
             this.btnReportarAnomalia.Size = new System.Drawing.Size(134, 45);
             this.btnReportarAnomalia.TabIndex = 28;
@@ -274,21 +257,17 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 403);
+            this.ClientSize = new System.Drawing.Size(444, 361);
             this.Controls.Add(this.btnCancelarAnomalia);
             this.Controls.Add(this.btnReportarAnomalia);
             this.Controls.Add(this.lyCtrlDatosAnomalia);
-            this.Controls.Add(this.ribCtrlMenuCompras);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(454, 408);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(454, 408);
             this.Name = "frmXtraAnomalias";
-            this.Ribbon = this.ribCtrlMenuCompras;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reportar Anomalías del Producto";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmXtraAnomalias_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.ribCtrlMenuCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatosAnomalia)).EndInit();
             this.lyCtrlDatosAnomalia.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatos)).EndInit();
@@ -306,13 +285,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlGroupDatosAnomalia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemDatos)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribCtrlMenuCompras;
         private DevExpress.XtraLayout.LayoutControl lyCtrlDatosAnomalia;
         private DevExpress.XtraLayout.LayoutControlGroup lyCtrlGroupDatosAnomalia;
         private DevExpress.XtraLayout.LayoutControl lyCtrlDatos;

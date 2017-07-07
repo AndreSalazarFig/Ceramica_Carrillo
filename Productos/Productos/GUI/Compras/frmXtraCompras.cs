@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace Productos.GUI.Compras
 {
-    public partial class frmXtraCompras : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmXtraCompras : DevExpress.XtraEditors.XtraForm
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
         public static String strProducto;
@@ -31,9 +31,14 @@ namespace Productos.GUI.Compras
             GuardarCompra();
         }
 
-        private void btnCancelarProducto_Click(object sender, EventArgs e)
+        private void btnCancelarCompra_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtValues_EditValueChanged(object sender, EventArgs e)
+        {
+            txtTotal.Value = txtUnidades.Value * txtPrecioCompra.Value;
         }
 
         private void frmXtraCompras_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,9 +86,9 @@ namespace Productos.GUI.Compras
                 oCompras = new Model.Compras()
                 {
                     IdProductos = DatosProducto.IdProductos,
-                    Unidades = Convert.ToInt32(txtUnidades.Text.Trim()),
-                    Precio = Convert.ToDouble(txtPrecioCompra.Text.Trim()),
-                    Total = Convert.ToDouble(txtTotal.Text.Trim()),
+                    Unidades = Convert.ToInt32(txtUnidades.Value),
+                    Precio = Convert.ToDouble(txtPrecioCompra.Value),
+                    Total = Convert.ToDouble(txtTotal.Value),
                     Fecha = DateTime.Now.Date
                 };
 
@@ -100,6 +105,14 @@ namespace Productos.GUI.Compras
         private void MostrarInfo()
         {
             txtDescripcionProducto.Text = strProducto;
+
+            AsignarEventos();
+        }
+
+        private void AsignarEventos()
+        {
+            txtUnidades.EditValueChanged += txtValues_EditValueChanged;
+            txtPrecioCompra.EditValueChanged += txtValues_EditValueChanged;
         }
     }
 }

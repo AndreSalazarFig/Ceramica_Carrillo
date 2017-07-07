@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace Productos.GUI.TiposCategorias
 {
-    public partial class frmXtraEdicionTipos : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmXtraEdicionTipos : DevExpress.XtraEditors.XtraForm
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
         public static String strFormTitulo;

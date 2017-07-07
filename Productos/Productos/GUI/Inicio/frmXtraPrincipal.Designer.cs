@@ -150,7 +150,7 @@
             // 
             this.btnCategorias_Tipos.Name = "btnCategorias_Tipos";
             this.btnCategorias_Tipos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.btnCategorias_Tipos.Text = "Tipos y Categorías";
+            this.btnCategorias_Tipos.Text = "Tipos y Departamentos";
             // 
             // tabbedView
             // 

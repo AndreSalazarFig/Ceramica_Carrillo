@@ -11,7 +11,7 @@ using DevExpress.XtraEditors;
 
 namespace Productos.GUI.Anomalias
 {
-    public partial class frmXtraAnomalias : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class frmXtraAnomalias : DevExpress.XtraEditors.XtraForm
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
         public static String strUsuario;

@@ -49,7 +49,7 @@ namespace Productos.GUI.Inicio
                 case "Productos":
                     frmUserControl = frmProductosUC;
                     break;
-                case "Tipos y Categorías":
+                case "Tipos y Departamentos":
                     frmUserControl = frmCategoriasTiposUC;
                     break;
                 case "Punto de Venta":
@@ -111,8 +111,8 @@ namespace Productos.GUI.Inicio
                 case "Productos":
                     frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
                     break;
-                case "Tipos y Categorías":
-                    frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
+                case "Tipos y Departamentos":
+                    frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
                     break;
                 case "Punto de Venta":
                     frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
@@ -132,7 +132,7 @@ namespace Productos.GUI.Inicio
             Ventas.frmXtraUCPuntoVenta.datos = bdCarrillo;
 
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
-            frmCategoriasTiposUC = CreateUserControl("Tipos y Categorías", new TiposCategorias.frmXtraUCTiposCategorias());
+            frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
             frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
         }
 

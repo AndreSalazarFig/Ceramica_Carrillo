@@ -178,7 +178,7 @@
             this.txtEmpleado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpleado.Properties.Appearance.Options.UseFont = true;
             this.txtEmpleado.Properties.ReadOnly = true;
-            this.txtEmpleado.Size = new System.Drawing.Size(244, 22);
+            this.txtEmpleado.Size = new System.Drawing.Size(208, 22);
             this.txtEmpleado.StyleController = this.layoutControl2;
             this.txtEmpleado.TabIndex = 5;
             // 
@@ -189,7 +189,7 @@
             this.txtPuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPuesto.Properties.Appearance.Options.UseFont = true;
             this.txtPuesto.Properties.ReadOnly = true;
-            this.txtPuesto.Size = new System.Drawing.Size(244, 22);
+            this.txtPuesto.Size = new System.Drawing.Size(208, 22);
             this.txtPuesto.StyleController = this.layoutControl2;
             this.txtPuesto.TabIndex = 6;
             // 
@@ -223,6 +223,7 @@
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureEdit1.Properties.ZoomAccelerationFactor = 1D;
@@ -288,7 +289,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 2;
-            this.layoutControlItem4.Size = new System.Drawing.Size(301, 26);
+            this.layoutControlItem4.Size = new System.Drawing.Size(265, 26);
             this.layoutControlItem4.Text = "Nombre:";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -299,7 +300,7 @@
             this.layoutControlItem5.Control = this.txtPuesto;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(301, 36);
+            this.layoutControlItem5.Size = new System.Drawing.Size(265, 36);
             this.layoutControlItem5.Text = "Puesto:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 16);
             // 
