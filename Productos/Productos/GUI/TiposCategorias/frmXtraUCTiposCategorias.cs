@@ -9,15 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.Entity;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.TiposCategorias
 {
     public partial class frmXtraUCTiposCategorias : DevExpress.XtraEditors.XtraUserControl
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static Model.Sesiones sesion = null;
+        public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         List<String> lstDatosTipo = null;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
+        ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraUCTiposCategorias()
         {

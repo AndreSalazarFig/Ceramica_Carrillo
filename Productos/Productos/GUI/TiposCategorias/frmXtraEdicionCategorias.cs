@@ -8,16 +8,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionCategorias : DevExpress.XtraEditors.XtraForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static String strNombreTipo;
         public static Boolean boolAdministrador;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
-        Model.Categorias oCategorias;
+        ArchivosLocales oExtras = new ArchivosLocales();
+        Categorias oCategorias;
 
         public frmXtraEdicionCategorias()
         {
@@ -142,7 +143,7 @@ namespace Productos.GUI.TiposCategorias
             }
         }
 
-        private Model.Categorias RecuperarDatosCategoria()
+        private Categorias RecuperarDatosCategoria()
         {
             var IDTipo = (from tbTipos in bdCarrillo.TipoProductos
                           where tbTipos.NombreTipo == txtNombreTipo.Text.Trim()
@@ -150,7 +151,7 @@ namespace Productos.GUI.TiposCategorias
 
             if (IDTipo > 0)
             {
-                oCategorias = new Model.Categorias()
+                oCategorias = new Categorias()
                 {
                     NombreCategoria = txtNombreCategoria.Text.Trim(),
                     idTipoProducto = IDTipo

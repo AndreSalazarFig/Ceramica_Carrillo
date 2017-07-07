@@ -8,14 +8,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using Productos.Model;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Ventas
 {
     public partial class frmXtraCobroA : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities datos = null;
-        List<Model.Productos> Compra;
+        List<CeramicaCarrillo.Model.Productos> Compra;
         List<int> Cantidad;
         double total = 0;
 
@@ -78,7 +78,7 @@ namespace Productos.GUI.Ventas
                 {
                     detalle = new DetalleFolio();
                     detalle.IdFolio = idFolio;
-                    Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
+                    CeramicaCarrillo.Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
                     producto.Unidades -= Cantidad[i];
                     detalle.IdProductos = producto.IdProductos;
                     detalle.Precio = producto.PrecioVenta;

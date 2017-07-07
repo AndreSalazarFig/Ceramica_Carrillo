@@ -8,8 +8,8 @@
     <ProjectGuid>{00CC6AED-4404-4F36-ABD1-4B4EB2594648}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Productos</RootNamespace>
-    <AssemblyName>Productos</AssemblyName>
+    <RootNamespace>CeramicaCarrillo</RootNamespace>
+    <AssemblyName>CeramicaCarrillo</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -104,10 +104,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\Anomalias\frmXtraAnomalias.cs">
+    <Compile Include="GUI\Anomalia\frmXtraAnomalias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Anomalias\frmXtraAnomalias.Designer.cs">
+    <Compile Include="GUI\Anomalia\frmXtraAnomalias.Designer.cs">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Apartado\frmXtraUCSistemaA.cs">
@@ -182,11 +182,11 @@
     <Compile Include="GUI\Ventas\frmXtraUCPuntoVenta.Designer.cs">
       <DependentUpon>frmXtraUCPuntoVenta.cs</DependentUpon>
     </Compile>
-    <Compile Include="GUI\Ventas\frmXtraUCRegistroV.cs">
+    <Compile Include="GUI\Ventas\frmXtraUCRegistroVentas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="GUI\Ventas\frmXtraUCRegistroV.Designer.cs">
-      <DependentUpon>frmXtraUCRegistroV.cs</DependentUpon>
+    <Compile Include="GUI\Ventas\frmXtraUCRegistroVentas.Designer.cs">
+      <DependentUpon>frmXtraUCRegistroVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Actividades.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
@@ -203,6 +203,14 @@
     </Compile>
     <Compile Include="Model\DetalleFolio.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dsPrueba.cs">
+      <DependentUpon>dsPrueba.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model\dsPrueba.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPrueba.xsd</DependentUpon>
     </Compile>
     <Compile Include="Model\Folio.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
@@ -243,7 +251,7 @@
     <Compile Include="GUI\Inicio\frmXtraPrincipal.Designer.cs">
       <DependentUpon>frmXtraPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
+    <EmbeddedResource Include="GUI\Anomalia\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Apartado\frmXtraUCSistemaA.resx">
@@ -286,8 +294,8 @@
     <EmbeddedResource Include="GUI\Ventas\frmXtraUCPuntoVenta.resx">
       <DependentUpon>frmXtraUCPuntoVenta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GUI\Ventas\frmXtraUCRegistroV.resx">
-      <DependentUpon>frmXtraUCRegistroV.cs</DependentUpon>
+    <EmbeddedResource Include="GUI\Ventas\frmXtraUCRegistroVentas.resx">
+      <DependentUpon>frmXtraUCRegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -305,6 +313,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>mdlCarrillo.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Model\dsPrueba.xsc">
+      <DependentUpon>dsPrueba.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsPrueba.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPrueba.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\dsPrueba.xss">
+      <DependentUpon>dsPrueba.xsd</DependentUpon>
+    </None>
     <None Include="Model\mdlCarrillo.edmx.diagram">
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>
     </None>

@@ -8,15 +8,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Compras
 {
     public partial class frmXtraCompras : DevExpress.XtraEditors.XtraForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static String strProducto;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
-        Model.Compras oCompras;
+        ArchivosLocales oExtras = new ArchivosLocales();
+        CeramicaCarrillo.Model.Compras oCompras;
         Boolean boolGuardar = false;
 
         public frmXtraCompras()
@@ -75,7 +76,7 @@ namespace Productos.GUI.Compras
             }
         }
 
-        private Model.Compras RecuperarDatosCompra()
+        private CeramicaCarrillo.Model.Compras RecuperarDatosCompra()
         {
             var DatosProducto = (from tbProducto in bdCarrillo.Productos
                                  where tbProducto.Descripcion == txtDescripcionProducto.Text.Trim()
@@ -83,7 +84,7 @@ namespace Productos.GUI.Compras
 
             if (DatosProducto.IdProductos > 0)
             {
-                oCompras = new Model.Compras()
+                oCompras = new CeramicaCarrillo.Model.Compras()
                 {
                     IdProductos = DatosProducto.IdProductos,
                     Unidades = Convert.ToInt32(txtUnidades.Value),

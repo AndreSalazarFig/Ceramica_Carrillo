@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Productos.Model
+namespace CeramicaCarrillo.Model
 {
     using System;
     using System.Data.Entity;

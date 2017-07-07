@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-using Productos.Model;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Ventas
 {
@@ -12,7 +12,7 @@ namespace Productos.GUI.Ventas
     {
         public static BDCarrilloEntities datos = null;
         public static Sesiones sesion = null;
-        List<Model.Productos> Compra;
+        List<CeramicaCarrillo.Model.Productos> _compra;
         List<int> Cantidad;
         bool seleccionado = false;
         int posicion = -1, unidades = 0;
@@ -21,7 +21,7 @@ namespace Productos.GUI.Ventas
         public frmXtraUCPuntoVenta()
         {
             InitializeComponent();
-            Compra = new List<Model.Productos>();
+            _compra = new List<CeramicaCarrillo.Model.Productos>();
             Cantidad = new List<int>();
         }
 
@@ -49,10 +49,10 @@ namespace Productos.GUI.Ventas
 
         private void agregarProducto(int id)
         {
-            Model.Productos producto = datos.Productos.Find(id);
+            CeramicaCarrillo.Model.Productos producto = datos.Productos.Find(id);
             Categorias cat = datos.Categorias.Find(producto.idCategoria);
             TipoProductos tp = datos.TipoProductos.Find(cat.idTipoProducto);
-            Compra.Add(producto);
+            _compra.Add(producto);
             Cantidad.Add(0);
             float total = obtenerTotal(0, producto.PrecioVenta);
             gvDatos.Rows.Add(producto.Descripcion, tp.NombreTipo + "/" + cat.NombreCategoria, producto.PrecioVenta, 0, total);
@@ -108,7 +108,7 @@ namespace Productos.GUI.Ventas
             {
                 foreach (var item in datasource.ToArray())
                 {
-                    foreach (var prod in Compra)
+                    foreach (var prod in _compra)
                     {
                         if (item.IdProductos == prod.IdProductos)
                         {
@@ -143,7 +143,7 @@ namespace Productos.GUI.Ventas
         {
             if (seleccionado)
             {
-                Compra.RemoveAt(posicion);
+                _compra.RemoveAt(posicion);
                 Cantidad.RemoveAt(posicion);
                 gvDatos.Rows.RemoveAt(posicion);
                 quitarSeleccion(sender, e);
@@ -154,10 +154,10 @@ namespace Productos.GUI.Ventas
 
         private void btnCobrar_Click(object sender, EventArgs e)
         {
-            if (Compra.Count > 0)
+            if (_compra.Count > 0)
             {
                 frmXtraCobroV.datos = datos;
-                frmXtraCobroV cobro = new frmXtraCobroV(Compra, Cantidad, txtTotal.Text);
+                frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text);
                 cobro.ShowDialog();
             }
             else
@@ -172,7 +172,7 @@ namespace Productos.GUI.Ventas
         {
             if (seleccionado)
             {
-                int disponibles = Convert.ToInt32(Compra[posicion].Unidades);
+                int disponibles = Convert.ToInt32(_compra[posicion].Unidades);
                 unidades = Convert.ToInt32(seUnidades.EditValue);
                 if (disponibles >= unidades)
                 {
@@ -197,10 +197,10 @@ namespace Productos.GUI.Ventas
 
         private void btnApartar_Click(object sender, EventArgs e)
         {
-            if (Compra.Count > 0)
+            if (_compra.Count > 0)
             {
                 frmXtraCobroV.datos = datos;
-                frmXtraCobroV cobro = new frmXtraCobroV(Compra, Cantidad, txtTotal.Text);
+                frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text);
                 cobro.ShowDialog();
             }
             else
@@ -232,7 +232,7 @@ namespace Productos.GUI.Ventas
         {
             quitarSeleccion(sender, e);
             gvDatos.Rows.Clear();
-            Compra = new List<Model.Productos>();
+            _compra = new List<CeramicaCarrillo.Model.Productos>();
             Cantidad = new List<int>();
             precio = 0;
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Productos.Properties {
+namespace CeramicaCarrillo.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -31,6 +31,17 @@ namespace Productos.Properties {
         public string bdCarrilloConnectionString {
             get {
                 return ((string)(this["bdCarrilloConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=bdcarrillo.chv5yv9jro37.us-east-2.rds.amazonaws.com;Initial Catalog=B" +
+            "DCarrillo;Persist Security Info=True;User ID=sa;Password=atomiclotus3")]
+        public string BDCarrillo {
+            get {
+                return ((string)(this["BDCarrillo"]));
             }
         }
     }

@@ -8,18 +8,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Productos
 {
     public partial class frmXtraEdicionProductos : DevExpress.XtraEditors.XtraForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static String strFormTitulo;
         public static Char chAccion;
         public static List<String> lstDatosProducto = null;
         Boolean boolGuardar = false;
-        Model.Productos oProductos;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
+        CeramicaCarrillo.Model.Productos oProductos;
+        ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraEdicionProductos()
         {
@@ -133,7 +134,7 @@ namespace Productos.GUI.Productos
             cbxCategoria.SelectedIndex = 0;
         }
 
-        private Model.Productos RecuperarDatosProducto()
+        private CeramicaCarrillo.Model.Productos RecuperarDatosProducto()
         {
             var IDCategoria = (from tbCategorias in bdCarrillo.Categorias
                                join tbTipos in bdCarrillo.TipoProductos on tbCategorias.idTipoProducto equals tbTipos.idTipoProducto
@@ -143,7 +144,7 @@ namespace Productos.GUI.Productos
 
             if (IDCategoria > 0)
             {
-                oProductos = new Model.Productos()
+                oProductos = new CeramicaCarrillo.Model.Productos()
                 {
                     Descripcion = txtDescripcion.Text.Trim(),
                     PrecioVenta = Convert.ToDouble(txtPrecioUnitario.Text.Trim()),

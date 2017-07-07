@@ -12,15 +12,16 @@ using DevExpress.XtraLayout;
 using DevExpress.XtraLayout.Helpers;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Productos
 {
     public partial class frmXtraUCProductos : DevExpress.XtraEditors.XtraUserControl
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static Model.Sesiones sesion = null;
+        public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         List<String> lstDatosProducto = null;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
+        ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraUCProductos()
         {

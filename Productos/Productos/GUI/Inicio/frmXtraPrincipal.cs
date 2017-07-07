@@ -11,13 +11,14 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Views;
 using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Inicio
 {
     public partial class frmXtraPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static Model.Sesiones sesion = null;
+        public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         XtraUserControl frmProductosUC;
         XtraUserControl frmCategoriasTiposUC;
         XtraUserControl frmPuntoVentaUC;
@@ -128,7 +129,7 @@ namespace Productos.GUI.Inicio
                     frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
                     break;
                 case "Ventas":
-                    frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroV());
+                    frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
                     break;
             }
         }
@@ -143,7 +144,7 @@ namespace Productos.GUI.Inicio
 
             Ventas.frmXtraUCPuntoVenta.datos = bdCarrillo;
             Ventas.frmXtraUCPuntoVenta.sesion = sesion;
-            Ventas.frmXtraUCRegistroV.datos = bdCarrillo;
+            Ventas.frmXtraUCRegistroVentas.datos = bdCarrillo;
 
             Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
@@ -151,7 +152,7 @@ namespace Productos.GUI.Inicio
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
             frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
             frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
-            frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroV());
+            frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)

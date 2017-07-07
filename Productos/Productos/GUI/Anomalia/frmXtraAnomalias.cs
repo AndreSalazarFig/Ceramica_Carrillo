@@ -8,16 +8,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.Anomalias
 {
     public partial class frmXtraAnomalias : DevExpress.XtraEditors.XtraForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static String strUsuario;
         public static String strProducto;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
-        Model.Anomalias oAnomalias;
+        ArchivosLocales oExtras = new ArchivosLocales();
+        CeramicaCarrillo.Model.Anomalias oAnomalias;
         Boolean boolGuardar = false;
 
         public frmXtraAnomalias()
@@ -71,7 +72,7 @@ namespace Productos.GUI.Anomalias
             }
         }
 
-        private Model.Anomalias RecuperarDatosCompra()
+        private CeramicaCarrillo.Model.Anomalias RecuperarDatosCompra()
         {
             var IDProducto = (from tbProducto in bdCarrillo.Productos
                               where tbProducto.Descripcion == txtDescripcionProducto.Text.Trim()
@@ -83,7 +84,7 @@ namespace Productos.GUI.Anomalias
 
             if (IDProducto > 0 && IDUsuario > 0)
             {
-                oAnomalias = new Model.Anomalias()
+                oAnomalias = new CeramicaCarrillo.Model.Anomalias()
                 {
                     Descripcion = txtDescripcionAnomalia.Text.Trim(),
                     Fecha = DateTime.Now.Date,

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using DevExpress.XtraEditors;
-using Productos.Model;
+using CeramicaCarrillo.Model;
 using System.Windows.Forms;
 using System.Drawing;
 
@@ -12,11 +12,11 @@ namespace Productos.GUI.Ventas
     public partial class frmXtraCobroV : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities datos = null;
-        List<Model.Productos> Compra;
+        List<CeramicaCarrillo.Model.Productos> Compra;
         List<int> Cantidad;
         double total = 0;
 
-        public frmXtraCobroV(List<Model.Productos> lista, List<int> unidades, String Total)
+        public frmXtraCobroV(List<CeramicaCarrillo.Model.Productos> lista, List<int> unidades, String Total)
         {
             InitializeComponent();
             Compra = lista;
@@ -60,7 +60,7 @@ namespace Productos.GUI.Ventas
                 {
                     detalle = new DetalleFolio();
                     detalle.IdFolio = idFolio;
-                    Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
+                    CeramicaCarrillo.Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
                     producto.Unidades -= Cantidad[i];
                     detalle.IdProductos = producto.IdProductos;
                     detalle.Precio = producto.PrecioVenta;

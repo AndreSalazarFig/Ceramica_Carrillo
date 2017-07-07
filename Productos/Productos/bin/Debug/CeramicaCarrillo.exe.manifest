@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="Productos.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="CeramicaCarrillo.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="Productos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-    <commandLine file="Productos.exe" parameters="" />
+    <assemblyIdentity name="CeramicaCarrillo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="CeramicaCarrillo.exe" parameters="" />
   </entryPoint>
   <trustInfo>
     <security>
@@ -44,6 +44,18 @@
   <dependency>
     <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
       <assemblyIdentity name="DevExpress.Images.v17.1" version="17.1.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CeramicaCarrillo.exe" size="335840">
+      <assemblyIdentity name="CeramicaCarrillo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>RTXDLJ3PbyEWgETjQRY4MwXHLIQAMZkABXWwSD+67R0=</dsig:DigestValue>
+      </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
@@ -1114,18 +1126,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
-  <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Productos.exe" size="304096">
-      <assemblyIdentity name="Productos" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
-      <hash>
-        <dsig:Transforms>
-          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-        </dsig:Transforms>
-        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>TxLkAxKxuiaaKJ+naRNmXqv9WjqGNJIJKnKw76tHrCY=</dsig:DigestValue>
-      </hash>
-    </dependentAssembly>
-  </dependency>
+  <file name="CeramicaCarrillo.exe.config" size="1937">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uP9iP6oE9TdWzTYGzir0t43B/VBiw/5nOPQ42dG0/vQ=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Model\mdlCarrillo.Context.tt" size="22935">
     <hash>
       <dsig:Transforms>
@@ -1142,15 +1151,6 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>lCq/HPycWn1faZ3T4JB06WPifosJzDPynTfb2erqtBA=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Productos.exe.config" size="1400">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>Qtcti+QMCAB0oPuMMC71vCfcF51WhLqZ7GHpXYCxTLE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

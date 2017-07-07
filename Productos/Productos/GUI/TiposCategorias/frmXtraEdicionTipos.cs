@@ -8,19 +8,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model;
 
 namespace Productos.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionTipos : DevExpress.XtraEditors.XtraForm
     {
-        public static Model.BDCarrilloEntities bdCarrillo = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static String strFormTitulo;
         public static Char chAccion;
         public static List<String> lstDatosTipo = null;
         public static Boolean boolAdministrador;
         Boolean boolGuardar = false;
-        Model.TipoProductos oTiposProducto;
-        Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
+        TipoProductos oTiposProducto;
+        ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraEdicionTipos()
         {
@@ -106,9 +107,9 @@ namespace Productos.GUI.TiposCategorias
             }
         }
 
-        private Model.TipoProductos RecuperarDatosTipo()
+        private TipoProductos RecuperarDatosTipo()
         {
-            oTiposProducto = new Model.TipoProductos()
+            oTiposProducto = new TipoProductos()
             {
                 NombreTipo = txtNombreTipo.Text.Trim()
             };
