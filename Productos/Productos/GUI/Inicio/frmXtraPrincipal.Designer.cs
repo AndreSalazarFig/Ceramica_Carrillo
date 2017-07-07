@@ -44,6 +44,10 @@
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.btnSistemaAp = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnRegistroCompra = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.btnRegistroVenta = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             this.dockPanelNavegacion.SuspendLayout();
             this.dockPanel_Container.SuspendLayout();
@@ -99,7 +103,8 @@
             this.accordionCtrlNavegacion.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
             this.mainAccordionGroup,
             this.btnVentas,
-            this.btnBodega});
+            this.btnBodega,
+            this.accordionControlElement1});
             this.accordionCtrlNavegacion.Location = new System.Drawing.Point(0, 0);
             this.accordionCtrlNavegacion.Name = "accordionCtrlNavegacion";
             this.accordionCtrlNavegacion.Size = new System.Drawing.Size(193, 509);
@@ -117,7 +122,8 @@
             // btnVentas
             // 
             this.btnVentas.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.btnPuntoVenta});
+            this.btnPuntoVenta,
+            this.btnSistemaAp});
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Text = "Ventas";
             // 
@@ -181,6 +187,33 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
             // 
+            // btnSistemaAp
+            // 
+            this.btnSistemaAp.Name = "btnSistemaAp";
+            this.btnSistemaAp.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnSistemaAp.Text = "Sistema de Apartado";
+            // 
+            // accordionControlElement1
+            // 
+            this.accordionControlElement1.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.btnRegistroCompra,
+            this.btnRegistroVenta});
+            this.accordionControlElement1.Expanded = true;
+            this.accordionControlElement1.Name = "accordionControlElement1";
+            this.accordionControlElement1.Text = "Registros";
+            // 
+            // btnRegistroCompra
+            // 
+            this.btnRegistroCompra.Name = "btnRegistroCompra";
+            this.btnRegistroCompra.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRegistroCompra.Text = "Compras";
+            // 
+            // btnRegistroVenta
+            // 
+            this.btnRegistroVenta.Name = "btnRegistroVenta";
+            this.btnRegistroVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.btnRegistroVenta.Text = "Ventas";
+            // 
             // frmXtraPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,5 +257,9 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnVentas;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnPuntoVenta;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnSistemaAp;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement1;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegistroCompra;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegistroVenta;
     }
 }

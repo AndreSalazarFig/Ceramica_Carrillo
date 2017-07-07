@@ -125,13 +125,10 @@
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtUnidades.Properties.IsFloatValue = false;
+            this.txtUnidades.Properties.Mask.EditMask = "N00";
             this.txtUnidades.Properties.MaxValue = new decimal(new int[] {
             999999,
-            0,
-            0,
-            0});
-            this.txtUnidades.Properties.MinValue = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -155,11 +152,6 @@
             0,
             0,
             0});
-            this.txtPrecioCompra.Properties.MinValue = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.txtPrecioCompra.Size = new System.Drawing.Size(76, 20);
             this.txtPrecioCompra.StyleController = this.lyCtrlDatos;
             this.txtPrecioCompra.TabIndex = 9;
@@ -177,11 +169,6 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtTotal.Properties.MaxValue = new decimal(new int[] {
             999999,
-            0,
-            0,
-            0});
-            this.txtTotal.Properties.MinValue = new decimal(new int[] {
-            1,
             0,
             0,
             0});
@@ -369,7 +356,7 @@
             // 
             this.btnCancelarCompra.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelarCompra.Appearance.Options.UseFont = true;
-            this.btnCancelarCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarProducto.ImageOptions.Image")));
+            this.btnCancelarCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarCompra.ImageOptions.Image")));
             this.btnCancelarCompra.Location = new System.Drawing.Point(319, 244);
             this.btnCancelarCompra.Name = "btnCancelarCompra";
             this.btnCancelarCompra.Size = new System.Drawing.Size(134, 45);

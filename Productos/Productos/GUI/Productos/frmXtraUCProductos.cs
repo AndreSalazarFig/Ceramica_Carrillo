@@ -18,8 +18,7 @@ namespace Productos.GUI.Productos
     public partial class frmXtraUCProductos : DevExpress.XtraEditors.XtraUserControl
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static String strNombreUsuario;
-        public static Boolean boolAdministrador;
+        public static Model.Sesiones sesion = null;
         List<String> lstDatosProducto = null;
         Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
 
@@ -83,7 +82,7 @@ namespace Productos.GUI.Productos
         private void AbrirFormularioAnomalias(Int32 IndexFila)
         {
             Anomalias.frmXtraAnomalias.strProducto = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim();
-            Anomalias.frmXtraAnomalias.strUsuario = strNombreUsuario;
+            Anomalias.frmXtraAnomalias.strUsuario = sesion.Usuario;
 
             Anomalias.frmXtraAnomalias.bdCarrillo = bdCarrillo;
 
@@ -149,7 +148,7 @@ namespace Productos.GUI.Productos
 
         private void Administrador()
         {
-            if (boolAdministrador != true)
+            if (sesion.Admin != true)
             {
                 ItemButtonAccionesProductos.Buttons[0].Enabled = false;
                 ItemButtonAccionesProductos.Buttons[1].Enabled = false;

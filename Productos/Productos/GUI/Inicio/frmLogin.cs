@@ -14,8 +14,8 @@ namespace Productos.GUI.Inicio
     public partial class frmLogin : Form
     {
         BDCarrilloEntities bdCarrillo = new BDCarrilloEntities();
+        Sesiones sesion = new Sesiones();
         String strNombreUsuario;
-        Boolean boolAdministrador;
 
         public frmLogin()
         {
@@ -36,12 +36,12 @@ namespace Productos.GUI.Inicio
                     frmXtraPrincipal.bdCarrillo = bdCarrillo;
                     strNombreUsuario = Usuario.FirstOrDefault().Usuario;
 
-                    boolAdministrador = (Usuario.FirstOrDefault().Puesto.Trim() == "Administrador") ? true : false;
+                    sesion.Admin = (Usuario.FirstOrDefault().Puesto.Trim() == "Administrador") ? true : false;
+                    sesion.Usuario = strNombreUsuario;
 
-                    frmXtraPrincipal.strNombreUsuario = strNombreUsuario;
-                    frmXtraPrincipal.boolAdministrador = boolAdministrador;
-
+                    frmXtraPrincipal.sesion = sesion;
                     frmXtraPrincipal frm = new frmXtraPrincipal();
+                    
 
                     frm.Show();
                     this.Hide();

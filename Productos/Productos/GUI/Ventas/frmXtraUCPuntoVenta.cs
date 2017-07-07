@@ -11,6 +11,7 @@ namespace Productos.GUI.Ventas
     public partial class frmXtraUCPuntoVenta : DevExpress.XtraEditors.XtraUserControl
     {
         public static BDCarrilloEntities datos = null;
+        public static Sesiones sesion = null;
         List<Model.Productos> Compra;
         List<int> Cantidad;
         bool seleccionado = false;
@@ -26,6 +27,8 @@ namespace Productos.GUI.Ventas
 
         private void prueba_Load(object sender, EventArgs e)
         {
+            tmrHora.Start();
+            asignarEmpleado();
             cargarDatos();
             quitarSeleccion(sender, e);
         }
@@ -145,6 +148,7 @@ namespace Productos.GUI.Ventas
                 gvDatos.Rows.RemoveAt(posicion);
                 quitarSeleccion(sender, e);
                 cargarDatos();
+                obtenerTotalCompra();
             }
         }
 
@@ -203,6 +207,25 @@ namespace Productos.GUI.Ventas
             {
                 XtraMessageBox.Show("No tiene produtos en la lista.");
             }
+        }
+
+        private void tmrHora_Tick(object sender, EventArgs e)
+        {
+            txtFecha.Text = DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+            txtHora.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+        }
+
+        private void asignarEmpleado()
+        {
+            var empleado = (from e in datos.Personal
+                               where e.Usuario == sesion.Usuario
+                               select new {
+                                   e.Nombre,
+                                   e.Apellido,
+                                   e.Puesto
+                               }).First();
+            txtEmpleado.Text = empleado.Nombre + " " + empleado.Apellido;
+            txtPuesto.Text = empleado.Puesto;
         }
 
         private void limpiarCompra(object sender, EventArgs e)

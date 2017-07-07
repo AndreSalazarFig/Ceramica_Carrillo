@@ -17,11 +17,12 @@ namespace Productos.GUI.Inicio
     public partial class frmXtraPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static String strNombreUsuario;
-        public static Boolean boolAdministrador;
+        public static Model.Sesiones sesion = null;
         XtraUserControl frmProductosUC;
         XtraUserControl frmCategoriasTiposUC;
         XtraUserControl frmPuntoVentaUC;
+        XtraUserControl frmRegistroComprasUC;
+        XtraUserControl frmRegistroVentasUC;
 
         public frmXtraPrincipal()
         {
@@ -54,6 +55,12 @@ namespace Productos.GUI.Inicio
                     break;
                 case "Punto de Venta":
                     frmUserControl = frmPuntoVentaUC;
+                    break;
+                case "Compras":
+                    frmUserControl = frmRegistroComprasUC;
+                    break;
+                case "Ventas":
+                    frmUserControl = frmRegistroVentasUC;
                     break;
                 default:
                     frmUserControl = null;
@@ -117,23 +124,34 @@ namespace Productos.GUI.Inicio
                 case "Punto de Venta":
                     frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
                     break;
+                case "Compras":
+                    frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
+                    break;
+                case "Ventas":
+                    frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroV());
+                    break;
             }
         }
 
         private void CargarFormularios()
         {
             Productos.frmXtraUCProductos.bdCarrillo = bdCarrillo;
-            Productos.frmXtraUCProductos.strNombreUsuario = strNombreUsuario;
-            Productos.frmXtraUCProductos.boolAdministrador = boolAdministrador;
+            Productos.frmXtraUCProductos.sesion = sesion;
 
-            TiposCategorias.frmXtraUCTiposCategorias.boolAdministrador = boolAdministrador;
+            TiposCategorias.frmXtraUCTiposCategorias.sesion = sesion;
             TiposCategorias.frmXtraUCTiposCategorias.bdCarrillo = bdCarrillo;
 
             Ventas.frmXtraUCPuntoVenta.datos = bdCarrillo;
+            Ventas.frmXtraUCPuntoVenta.sesion = sesion;
+            Ventas.frmXtraUCRegistroV.datos = bdCarrillo;
+
+            Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
             frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
+            frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
+            frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroV());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)

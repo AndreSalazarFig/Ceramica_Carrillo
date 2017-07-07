@@ -15,7 +15,7 @@ namespace Productos.GUI.TiposCategorias
     public partial class frmXtraUCTiposCategorias : DevExpress.XtraEditors.XtraUserControl
     {
         public static Model.BDCarrilloEntities bdCarrillo = null;
-        public static Boolean boolAdministrador;
+        public static Model.Sesiones sesion = null;
         List<String> lstDatosTipo = null;
         Model.ArchivosLocales oExtras = new Model.ArchivosLocales();
 
@@ -90,7 +90,7 @@ namespace Productos.GUI.TiposCategorias
             frmXtraEdicionTipos.chAccion = chAccion;
             frmXtraEdicionTipos.lstDatosTipo = lstDatosTipo;
             frmXtraEdicionTipos.bdCarrillo = bdCarrillo;
-            frmXtraEdicionTipos.boolAdministrador = boolAdministrador;
+            frmXtraEdicionTipos.boolAdministrador = sesion.Admin;
 
             frmXtraEdicionTipos frm = new frmXtraEdicionTipos();
 
@@ -105,7 +105,7 @@ namespace Productos.GUI.TiposCategorias
         {
             frmXtraEdicionCategorias.bdCarrillo = bdCarrillo;
             frmXtraEdicionCategorias.strNombreTipo = strNombreTipo;
-            frmXtraEdicionCategorias.boolAdministrador = boolAdministrador;
+            frmXtraEdicionCategorias.boolAdministrador = sesion.Admin;
 
             frmXtraEdicionCategorias frm = new frmXtraEdicionCategorias();
 
