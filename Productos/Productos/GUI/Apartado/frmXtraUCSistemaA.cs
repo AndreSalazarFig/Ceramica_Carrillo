@@ -16,6 +16,13 @@ namespace CeramicaCarrillo.GUI.Apartado
         public frmXtraUCSistemaA()
         {
             InitializeComponent();
+            CargarDatos();
+        }
+
+        private void CargarDatos()
+        {
+            folioApartadoTableAdapter.Fill(dsSisApartado.FolioApartado);
+            abonosTableAdapter1.Fill(dsSisApartado.Abonos);
         }
     }
 }

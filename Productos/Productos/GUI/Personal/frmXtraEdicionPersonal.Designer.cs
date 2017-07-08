@@ -45,7 +45,6 @@
             this.txtCelular = new DevExpress.XtraEditors.TextEdit();
             this.txtDireccion = new DevExpress.XtraEditors.TextEdit();
             this.dtpNacimiento = new DevExpress.XtraEditors.DateEdit();
-            this.txtPuesto = new DevExpress.XtraEditors.TextEdit();
             this.txtContrasena = new DevExpress.XtraEditors.TextEdit();
             this.lyCtrlGroupDatos = new DevExpress.XtraLayout.LayoutControlGroup();
             this.lyGroupBoxDatosPersonales = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -62,10 +61,11 @@
             this.Space3 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.lyGroupBoxDatosUsuario = new DevExpress.XtraLayout.LayoutControlGroup();
             this.CtrlItemUsuario = new DevExpress.XtraLayout.LayoutControlItem();
-            this.CtrlItemPuesto = new DevExpress.XtraLayout.LayoutControlItem();
             this.CtrlItemContrasena = new DevExpress.XtraLayout.LayoutControlItem();
             this.Space6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.Space7 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.txtPuesto = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.txtIDPersonal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlDatos)).BeginInit();
             this.lyCtrlDatos.SuspendLayout();
@@ -77,7 +77,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccion.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNacimiento.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNacimiento.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPuesto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlGroupDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyGroupBoxDatosPersonales)).BeginInit();
@@ -94,10 +93,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Space3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyGroupBoxDatosUsuario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemUsuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlItemPuesto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemContrasena)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Space6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Space7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuesto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelarPersonal
@@ -143,6 +143,7 @@
             // 
             // lyCtrlDatos
             // 
+            this.lyCtrlDatos.Controls.Add(this.txtPuesto);
             this.lyCtrlDatos.Controls.Add(this.txtUsuario);
             this.lyCtrlDatos.Controls.Add(this.txtNombres);
             this.lyCtrlDatos.Controls.Add(this.txtApellidos);
@@ -150,7 +151,6 @@
             this.lyCtrlDatos.Controls.Add(this.txtCelular);
             this.lyCtrlDatos.Controls.Add(this.txtDireccion);
             this.lyCtrlDatos.Controls.Add(this.dtpNacimiento);
-            this.lyCtrlDatos.Controls.Add(this.txtPuesto);
             this.lyCtrlDatos.Controls.Add(this.txtContrasena);
             this.lyCtrlDatos.Location = new System.Drawing.Point(12, 12);
             this.lyCtrlDatos.Name = "lyCtrlDatos";
@@ -220,14 +220,6 @@
             this.dtpNacimiento.Size = new System.Drawing.Size(209, 20);
             this.dtpNacimiento.StyleController = this.lyCtrlDatos;
             this.dtpNacimiento.TabIndex = 10;
-            // 
-            // txtPuesto
-            // 
-            this.txtPuesto.Location = new System.Drawing.Point(479, 37);
-            this.txtPuesto.Name = "txtPuesto";
-            this.txtPuesto.Size = new System.Drawing.Size(209, 20);
-            this.txtPuesto.StyleController = this.lyCtrlDatos;
-            this.txtPuesto.TabIndex = 11;
             // 
             // txtContrasena
             // 
@@ -396,10 +388,10 @@
             // 
             this.lyGroupBoxDatosUsuario.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.CtrlItemUsuario,
-            this.CtrlItemPuesto,
             this.CtrlItemContrasena,
             this.Space6,
-            this.Space7});
+            this.Space7,
+            this.layoutControlItem1});
             this.lyGroupBoxDatosUsuario.Location = new System.Drawing.Point(353, 0);
             this.lyGroupBoxDatosUsuario.Name = "lyGroupBoxDatosUsuario";
             this.lyGroupBoxDatosUsuario.OptionsTableLayoutItem.ColumnIndex = 2;
@@ -415,15 +407,6 @@
             this.CtrlItemUsuario.Size = new System.Drawing.Size(315, 24);
             this.CtrlItemUsuario.Text = "Nombre de Usuario";
             this.CtrlItemUsuario.TextSize = new System.Drawing.Size(99, 13);
-            // 
-            // CtrlItemPuesto
-            // 
-            this.CtrlItemPuesto.Control = this.txtPuesto;
-            this.CtrlItemPuesto.Location = new System.Drawing.Point(0, 0);
-            this.CtrlItemPuesto.Name = "CtrlItemPuesto";
-            this.CtrlItemPuesto.Size = new System.Drawing.Size(315, 24);
-            this.CtrlItemPuesto.Text = "Puesto";
-            this.CtrlItemPuesto.TextSize = new System.Drawing.Size(99, 13);
             // 
             // CtrlItemContrasena
             // 
@@ -456,6 +439,29 @@
             this.Space7.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.Space7.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // txtPuesto
+            // 
+            this.txtPuesto.EditValue = "Empleado";
+            this.txtPuesto.Location = new System.Drawing.Point(479, 37);
+            this.txtPuesto.Name = "txtPuesto";
+            this.txtPuesto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtPuesto.Properties.Items.AddRange(new object[] {
+            "Empleado",
+            "Administrador"});
+            this.txtPuesto.Size = new System.Drawing.Size(209, 20);
+            this.txtPuesto.StyleController = this.lyCtrlDatos;
+            this.txtPuesto.TabIndex = 13;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.txtPuesto;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(315, 24);
+            this.layoutControlItem1.Text = "Puesto";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(99, 13);
+            // 
             // frmXtraEdicionPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,7 +488,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtDireccion.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNacimiento.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtpNacimiento.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtPuesto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtContrasena.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyCtrlGroupDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyGroupBoxDatosPersonales)).EndInit();
@@ -499,10 +504,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Space3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lyGroupBoxDatosUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemUsuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CtrlItemPuesto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CtrlItemContrasena)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Space6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Space7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtPuesto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -527,7 +533,6 @@
         private DevExpress.XtraEditors.TextEdit txtCelular;
         private DevExpress.XtraEditors.TextEdit txtDireccion;
         private DevExpress.XtraEditors.DateEdit dtpNacimiento;
-        private DevExpress.XtraEditors.TextEdit txtPuesto;
         private DevExpress.XtraEditors.TextEdit txtContrasena;
         private DevExpress.XtraLayout.LayoutControlItem CtrlItemApellidos;
         private DevExpress.XtraLayout.LayoutControlItem CtrlItemTelefono;
@@ -539,9 +544,10 @@
         private DevExpress.XtraLayout.EmptySpaceItem Space1;
         private DevExpress.XtraLayout.EmptySpaceItem Space2;
         private DevExpress.XtraLayout.EmptySpaceItem Space3;
-        private DevExpress.XtraLayout.LayoutControlItem CtrlItemPuesto;
         private DevExpress.XtraLayout.LayoutControlItem CtrlItemContrasena;
         private DevExpress.XtraLayout.EmptySpaceItem Space6;
         private DevExpress.XtraLayout.EmptySpaceItem Space7;
+        private DevExpress.XtraEditors.ComboBoxEdit txtPuesto;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
     }
 }

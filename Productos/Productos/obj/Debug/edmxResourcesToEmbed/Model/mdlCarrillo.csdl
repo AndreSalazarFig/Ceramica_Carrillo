@@ -71,6 +71,7 @@
     <NavigationProperty Name="Personal" Relationship="Self.RefPersonal7" FromRole="Folio" ToRole="Personal" />
     <Property Name="Status" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Abonos" Relationship="BDCarrilloModel.RefFolio16" FromRole="Folio" ToRole="Abonos" />
+    <Property Name="Faltante" Type="Double" Nullable="false" />
   </EntityType>
   <EntityType Name="Personal">
     <Key>

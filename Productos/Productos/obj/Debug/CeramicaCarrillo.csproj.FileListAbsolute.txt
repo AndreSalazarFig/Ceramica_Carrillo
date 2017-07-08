@@ -249,21 +249,6 @@ C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpre
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraTreeList.v17.1.resources.dll
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraTreeList.v17.1.resources.dll
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.csprojResolveAssemblyReference.cache
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Anomalias.frmXtraAnomalias.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Apartado.frmXtraUCSistemaA.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Compras.frmXtraCompras.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Compras.frmXtraUCRegistroC.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Inicio.frmLogin.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Inicio.frmXtraPrincipal.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Productos.frmXtraEdicionProductos.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Productos.frmXtraUCProductos.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.TiposCategorias.frmXtraEdicionCategorias.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.TiposCategorias.frmXtraEdicionTipos.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.TiposCategorias.frmXtraUCTiposCategorias.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Ventas.frmXtraCobroA.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Ventas.frmXtraCobroV.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Ventas.frmXtraUCPuntoVenta.resources
-C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\Productos.GUI.Ventas.frmXtraUCRegistroVentas.resources
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.Properties.Resources.resources
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.csproj.GenerateResource.Cache
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.exe.licenses
@@ -410,3 +395,21 @@ C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.pdb
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Personal.frmXtraUCPersonal.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraCierre.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Anomalias.frmXtraAnomalias.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Apartado.frmXtraUCSistemaA.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Compras.frmXtraCompras.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Compras.frmXtraUCRegistroC.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmLogin.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraCierre.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraPrincipal.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Personal.frmXtraEdicionPersonal.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Personal.frmXtraUCPersonal.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraEdicionProductos.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraUCProductos.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.TiposCategorias.frmXtraEdicionCategorias.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.TiposCategorias.frmXtraEdicionTipos.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.TiposCategorias.frmXtraUCTiposCategorias.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraCobroA.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraCobroV.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraUCPuntoVenta.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraUCRegistroVentas.resources

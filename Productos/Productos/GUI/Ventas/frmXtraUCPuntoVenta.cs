@@ -157,7 +157,7 @@ namespace CeramicaCarrillo.GUI.Ventas
             if (_compra.Count > 0)
             {
                 frmXtraCobroV.datos = datos;
-                frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text);
+                frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text, sesion);
                 cobro.ShowDialog();
             }
             else
@@ -199,8 +199,8 @@ namespace CeramicaCarrillo.GUI.Ventas
         {
             if (_compra.Count > 0)
             {
-                frmXtraCobroV.datos = datos;
-                frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text);
+                frmXtraCobroA.datos = datos;
+                frmXtraCobroA cobro = new frmXtraCobroA(_compra, Cantidad, txtTotal.Text, sesion);
                 cobro.ShowDialog();
             }
             else

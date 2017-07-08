@@ -22,18 +22,16 @@ namespace CeramicaCarrillo.GUI.Inicio
         public static BDCarrilloEntities bdCarrillo = null;
         public static Sesiones sesion = null;
         ArchivosLocales oExtras = new ArchivosLocales();
-        XtraUserControl frmProductosUC;
-        XtraUserControl frmCategoriasTiposUC;
-        XtraUserControl frmPuntoVentaUC;
-        XtraUserControl frmRegistroComprasUC;
-        XtraUserControl frmRegistroVentasUC;
-        XtraUserControl frmPersonalUC;
+        XtraUserControl frmProductosUC, frmCategoriasTiposUC, frmPuntoVentaUC, frmRegistroComprasUC,
+            frmRegistroVentasUC, frmPersonalUC, frmSisApartadoUC;
+        
 
         public frmXtraPrincipal()
         {
             InitializeComponent();
 
             CargarFormularios();
+            ValidarAdmin();
         }
 
         XtraUserControl CreateUserControl(String strNombreUserControl, XtraUserControl frmXtraUC)
@@ -69,6 +67,9 @@ namespace CeramicaCarrillo.GUI.Inicio
                     break;
                 case "Personal":
                     frmUserControl = frmPersonalUC;
+                    break;
+                case "Sistema de Apartado":
+                    frmUserControl = frmSisApartadoUC;
                     break;
                 default:
                     frmUserControl = null;
@@ -141,6 +142,9 @@ namespace CeramicaCarrillo.GUI.Inicio
                 case "Personal":
                     frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
                     break;
+                case "Sistema de Apartado":
+                    frmPersonalUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
+                    break;
             }
         }
 
@@ -159,7 +163,7 @@ namespace CeramicaCarrillo.GUI.Inicio
             Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
             Personal.frmXtraUCPersonal.bdCarrillo = bdCarrillo;
-            Personal.frmXtraUCPersonal.sesion = sesion;
+            Personal.frmXtraUCPersonal.sesion = sesion;            
 
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
@@ -167,6 +171,7 @@ namespace CeramicaCarrillo.GUI.Inicio
             frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
             frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
             frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
+            frmSisApartadoUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)
@@ -190,6 +195,14 @@ namespace CeramicaCarrillo.GUI.Inicio
                 default:
                     e.Cancel = true;
                     break;
+            }
+        }
+
+        private void ValidarAdmin()
+        {
+            if (!sesion.Admin)
+            {
+                gpPersonal.Visible = false;
             }
         }
     }

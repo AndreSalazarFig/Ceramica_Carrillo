@@ -68,6 +68,7 @@
     <Property Name="TotalVenta" Type="float" Nullable="false" />
     <Property Name="FechaVenta" Type="date" Nullable="false" />
     <Property Name="Status" Type="bit" Nullable="false" />
+    <Property Name="Faltante" Type="float" Nullable="false" />
     <Property Name="IdPersonal" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personal">

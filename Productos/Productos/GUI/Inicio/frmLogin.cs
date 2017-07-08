@@ -38,6 +38,7 @@ namespace CeramicaCarrillo.GUI.Inicio
 
                     sesion.Admin = (Usuario.FirstOrDefault().Puesto.Trim() == "Administrador") ? true : false;
                     sesion.Usuario = strNombreUsuario;
+                    sesion.Id = Usuario.FirstOrDefault().IdPersonal;
 
                     frmXtraPrincipal.sesion = sesion;
                     frmXtraPrincipal frm = new frmXtraPrincipal();

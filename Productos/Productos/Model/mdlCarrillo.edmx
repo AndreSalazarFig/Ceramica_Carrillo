@@ -73,6 +73,7 @@
           <Property Name="TotalVenta" Type="float" Nullable="false" />
           <Property Name="FechaVenta" Type="date" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
+          <Property Name="Faltante" Type="float" Nullable="false" />
           <Property Name="IdPersonal" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Personal">
@@ -399,6 +400,7 @@
           <NavigationProperty Name="Personal" Relationship="Self.RefPersonal7" FromRole="Folio" ToRole="Personal" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Abonos" Relationship="BDCarrilloModel.RefFolio16" FromRole="Folio" ToRole="Abonos" />
+          <Property Name="Faltante" Type="Double" Nullable="false" />
         </EntityType>
         <EntityType Name="Personal">
           <Key>
@@ -736,6 +738,7 @@
           <EntitySetMapping Name="Folio">
             <EntityTypeMapping TypeName="BDCarrilloModel.Folio">
               <MappingFragment StoreEntitySet="Folio">
+                <ScalarProperty Name="Faltante" ColumnName="Faltante" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
                 <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />

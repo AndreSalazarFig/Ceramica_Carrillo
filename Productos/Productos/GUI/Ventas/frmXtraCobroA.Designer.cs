@@ -58,16 +58,16 @@
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
             this.txtMonto = new DevExpress.XtraEditors.TextEdit();
+            this.txtFaltante = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtFaltante = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
@@ -84,16 +84,16 @@
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -276,6 +276,18 @@
             this.txtMonto.TabIndex = 10;
             this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
             // 
+            // txtFaltante
+            // 
+            this.txtFaltante.Location = new System.Drawing.Point(136, 43);
+            this.txtFaltante.Name = "txtFaltante";
+            this.txtFaltante.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFaltante.Properties.Appearance.Options.UseFont = true;
+            this.txtFaltante.Properties.ReadOnly = true;
+            this.txtFaltante.Size = new System.Drawing.Size(106, 22);
+            this.txtFaltante.StyleController = this.layoutControl2;
+            this.txtFaltante.TabIndex = 11;
+            this.txtFaltante.TabStop = false;
+            // 
             // Root
             // 
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -326,6 +338,18 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(234, 32);
             this.layoutControlItem4.Text = "Monto: $";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(121, 16);
+            // 
+            // layoutControlItem9
+            // 
+            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem9.Control = this.txtFaltante;
+            this.layoutControlItem9.Location = new System.Drawing.Point(0, 31);
+            this.layoutControlItem9.Name = "layoutControlItem9";
+            this.layoutControlItem9.OptionsTableLayoutItem.RowIndex = 1;
+            this.layoutControlItem9.Size = new System.Drawing.Size(234, 31);
+            this.layoutControlItem9.Text = "Total faltante: $";
+            this.layoutControlItem9.TextSize = new System.Drawing.Size(121, 16);
             // 
             // layoutControlGroup1
             // 
@@ -410,30 +434,6 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
-            // txtFaltante
-            // 
-            this.txtFaltante.Location = new System.Drawing.Point(136, 43);
-            this.txtFaltante.Name = "txtFaltante";
-            this.txtFaltante.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFaltante.Properties.Appearance.Options.UseFont = true;
-            this.txtFaltante.Properties.ReadOnly = true;
-            this.txtFaltante.Size = new System.Drawing.Size(106, 22);
-            this.txtFaltante.StyleController = this.layoutControl2;
-            this.txtFaltante.TabIndex = 11;
-            this.txtFaltante.TabStop = false;
-            // 
-            // layoutControlItem9
-            // 
-            this.layoutControlItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem9.Control = this.txtFaltante;
-            this.layoutControlItem9.Location = new System.Drawing.Point(0, 31);
-            this.layoutControlItem9.Name = "layoutControlItem9";
-            this.layoutControlItem9.OptionsTableLayoutItem.RowIndex = 1;
-            this.layoutControlItem9.Size = new System.Drawing.Size(234, 31);
-            this.layoutControlItem9.Text = "Total faltante: $";
-            this.layoutControlItem9.TextSize = new System.Drawing.Size(121, 16);
-            // 
             // frmXtraCobroA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -444,6 +444,7 @@
             this.Name = "frmXtraCobroA";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cobrar";
+            this.Load += new System.EventHandler(this.frmXtraCobroA_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
@@ -460,16 +461,16 @@
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleSeparator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             this.ResumeLayout(false);
 
         }

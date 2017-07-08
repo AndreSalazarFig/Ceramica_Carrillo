@@ -4,7 +4,7 @@
  * Project :      Modelo Relacional.DM1
  * Author :       ANDRE
  *
- * Date Created : Friday, July 07, 2017 22:02:52
+ * Date Created : Saturday, July 08, 2017 14:37:14
  * Target DBMS : Microsoft SQL Server 2008
  */
 
@@ -155,6 +155,7 @@ CREATE TABLE Folio(
     TotalVenta    float    NOT NULL,
     FechaVenta    date     NOT NULL,
     Status        bit      NOT NULL,
+    Faltante      float    NOT NULL,
     IdPersonal    int      NOT NULL,
     CONSTRAINT PK6 PRIMARY KEY NONCLUSTERED (IdFolio)
 )

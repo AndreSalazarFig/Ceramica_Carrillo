@@ -12,16 +12,18 @@ namespace CeramicaCarrillo.GUI.Ventas
     public partial class frmXtraCobroV : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities datos = null;
-        List<CeramicaCarrillo.Model.Productos> Compra;
+        Sesiones sesion;
+        List<Model.Productos> Compra;
         List<int> Cantidad;
         double total = 0;
 
-        public frmXtraCobroV(List<CeramicaCarrillo.Model.Productos> lista, List<int> unidades, String Total)
+        public frmXtraCobroV(List<Model.Productos> lista, List<int> unidades, String Total, Sesiones ses)
         {
             InitializeComponent();
             Compra = lista;
             Cantidad = unidades;
             txtTotal.Text = Total;
+            sesion = ses;
         }
 
         private void btnCobrar_Click(object sender, EventArgs e)
@@ -51,7 +53,9 @@ namespace CeramicaCarrillo.GUI.Ventas
                 double totalVenta = 0;
                 Folio folio = new Folio();
                 folio.FechaVenta = DateTime.Now;
-                folio.IdPersonal = 1; // Cambiar
+                folio.IdPersonal = sesion.Id;
+                folio.Status = true;
+                folio.Faltante = 0;
                 datos.Folio.Add(folio);
                 datos.SaveChanges();
                 int idFolio = Convert.ToInt32((from f in datos.Folio orderby f.IdFolio descending select f.IdFolio).ToList()[0]);
@@ -60,7 +64,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                 {
                     detalle = new DetalleFolio();
                     detalle.IdFolio = idFolio;
-                    CeramicaCarrillo.Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
+                    Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
                     producto.Unidades -= Cantidad[i];
                     detalle.IdProductos = producto.IdProductos;
                     detalle.Precio = producto.PrecioVenta;

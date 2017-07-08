@@ -28,6 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
@@ -36,31 +39,116 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            this.gvDatos = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdFolio1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaAbono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMontoAbono = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dtgDatos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gvDatos = new DevExpress.XtraGrid.GridControl();
-            this.dtgDatos = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.dsSisApartado = new CeramicaCarrillo.Model.dsSisApartado();
+            this.folioApartadoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.folioApartadoTableAdapter = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.FolioApartadoTableAdapter();
+            this.colIdFolio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFechaVenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombredelEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotalVenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.productosApartadoTableAdapter1 = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.ProductosApartadoTableAdapter();
+            this.abonosTableAdapter1 = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.AbonosTableAdapter();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdProductos = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSisApartado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folioApartadoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // gvDatos
+            // 
+            this.gvDatos.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.gvDatos.DataSource = this.folioApartadoBindingSource;
+            gridLevelNode1.LevelTemplate = this.gridView1;
+            gridLevelNode1.RelationName = "Productos";
+            gridLevelNode2.LevelTemplate = this.gridView2;
+            gridLevelNode2.RelationName = "Abonos";
+            this.gvDatos.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1,
+            gridLevelNode2});
+            this.gvDatos.Location = new System.Drawing.Point(12, 86);
+            this.gvDatos.MainView = this.dtgDatos;
+            this.gvDatos.Name = "gvDatos";
+            this.gvDatos.Size = new System.Drawing.Size(572, 342);
+            this.gvDatos.TabIndex = 5;
+            this.gvDatos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2,
+            this.dtgDatos,
+            this.gridView1});
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdFolio1,
+            this.colFechaAbono,
+            this.colMontoAbono});
+            this.gridView2.GridControl = this.gvDatos;
+            this.gridView2.Name = "gridView2";
+            // 
+            // colIdFolio1
+            // 
+            this.colIdFolio1.FieldName = "IdFolio";
+            this.colIdFolio1.Name = "colIdFolio1";
+            this.colIdFolio1.Visible = true;
+            this.colIdFolio1.VisibleIndex = 0;
+            // 
+            // colFechaAbono
+            // 
+            this.colFechaAbono.FieldName = "FechaAbono";
+            this.colFechaAbono.Name = "colFechaAbono";
+            this.colFechaAbono.Visible = true;
+            this.colFechaAbono.VisibleIndex = 1;
+            // 
+            // colMontoAbono
+            // 
+            this.colMontoAbono.FieldName = "MontoAbono";
+            this.colMontoAbono.Name = "colMontoAbono";
+            this.colMontoAbono.Visible = true;
+            this.colMontoAbono.VisibleIndex = 2;
+            // 
+            // dtgDatos
+            // 
+            this.dtgDatos.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdFolio,
+            this.colFechaVenta,
+            this.colNombredelEmpleado,
+            this.colTotalVenta});
+            this.dtgDatos.GridControl = this.gvDatos;
+            this.dtgDatos.Name = "dtgDatos";
+            this.dtgDatos.OptionsView.ShowGroupPanel = false;
             // 
             // layoutControl1
             // 
@@ -134,16 +222,6 @@
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
-            // gvDatos
-            // 
-            this.gvDatos.Location = new System.Drawing.Point(12, 86);
-            this.gvDatos.MainView = this.dtgDatos;
-            this.gvDatos.Name = "gvDatos";
-            this.gvDatos.Size = new System.Drawing.Size(572, 342);
-            this.gvDatos.TabIndex = 5;
-            this.gvDatos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.dtgDatos});
-            // 
             // labelControl1
             // 
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -214,6 +292,102 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // dsSisApartado
+            // 
+            this.dsSisApartado.DataSetName = "dsSisApartado";
+            this.dsSisApartado.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // folioApartadoBindingSource
+            // 
+            this.folioApartadoBindingSource.DataMember = "FolioApartado";
+            this.folioApartadoBindingSource.DataSource = this.dsSisApartado;
+            // 
+            // folioApartadoTableAdapter
+            // 
+            this.folioApartadoTableAdapter.ClearBeforeFill = true;
+            // 
+            // colIdFolio
+            // 
+            this.colIdFolio.FieldName = "IdFolio";
+            this.colIdFolio.Name = "colIdFolio";
+            this.colIdFolio.Visible = true;
+            this.colIdFolio.VisibleIndex = 0;
+            // 
+            // colFechaVenta
+            // 
+            this.colFechaVenta.FieldName = "FechaVenta";
+            this.colFechaVenta.Name = "colFechaVenta";
+            this.colFechaVenta.Visible = true;
+            this.colFechaVenta.VisibleIndex = 1;
+            // 
+            // colNombredelEmpleado
+            // 
+            this.colNombredelEmpleado.FieldName = "Nombre del Empleado";
+            this.colNombredelEmpleado.Name = "colNombredelEmpleado";
+            this.colNombredelEmpleado.Visible = true;
+            this.colNombredelEmpleado.VisibleIndex = 2;
+            // 
+            // colTotalVenta
+            // 
+            this.colTotalVenta.FieldName = "TotalVenta";
+            this.colTotalVenta.Name = "colTotalVenta";
+            this.colTotalVenta.Visible = true;
+            this.colTotalVenta.VisibleIndex = 3;
+            // 
+            // productosApartadoTableAdapter1
+            // 
+            this.productosApartadoTableAdapter1.ClearBeforeFill = true;
+            // 
+            // abonosTableAdapter1
+            // 
+            this.abonosTableAdapter1.ClearBeforeFill = true;
+            // 
+            // gridView1
+            // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colIdProductos,
+            this.colDescripcion,
+            this.colPrecio,
+            this.colUnidades,
+            this.colTotal});
+            this.gridView1.GridControl = this.gvDatos;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colIdProductos
+            // 
+            this.colIdProductos.FieldName = "IdProductos";
+            this.colIdProductos.Name = "colIdProductos";
+            this.colIdProductos.Visible = true;
+            this.colIdProductos.VisibleIndex = 0;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 1;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.FieldName = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.Visible = true;
+            this.colPrecio.VisibleIndex = 2;
+            // 
+            // colUnidades
+            // 
+            this.colUnidades.FieldName = "Unidades";
+            this.colUnidades.Name = "colUnidades";
+            this.colUnidades.Visible = true;
+            this.colUnidades.VisibleIndex = 3;
+            // 
+            // colTotal
+            // 
+            this.colTotal.FieldName = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 4;
+            // 
             // frmXtraUCSistemaA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -221,18 +395,22 @@
             this.Controls.Add(this.layoutControl1);
             this.Name = "frmXtraUCSistemaA";
             this.Size = new System.Drawing.Size(596, 514);
+            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsSisApartado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.folioApartadoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -257,5 +435,24 @@
         private DevExpress.XtraGrid.Columns.GridColumn Unidades;
         private DevExpress.XtraGrid.Columns.GridColumn Total;
         private DevExpress.XtraGrid.Columns.GridColumn Fecha;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdFolio1;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaAbono;
+        private DevExpress.XtraGrid.Columns.GridColumn colMontoAbono;
+        private System.Windows.Forms.BindingSource folioApartadoBindingSource;
+        private Model.dsSisApartado dsSisApartado;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdFolio;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaVenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombredelEmpleado;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalVenta;
+        private Model.dsSisApartadoTableAdapters.FolioApartadoTableAdapter folioApartadoTableAdapter;
+        private Model.dsSisApartadoTableAdapters.ProductosApartadoTableAdapter productosApartadoTableAdapter1;
+        private Model.dsSisApartadoTableAdapters.AbonosTableAdapter abonosTableAdapter1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdProductos;
+        private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
+        private DevExpress.XtraGrid.Columns.GridColumn colPrecio;
+        private DevExpress.XtraGrid.Columns.GridColumn colUnidades;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotal;
     }
 }

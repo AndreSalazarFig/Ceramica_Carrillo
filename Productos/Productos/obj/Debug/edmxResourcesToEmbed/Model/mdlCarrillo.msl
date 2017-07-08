@@ -60,6 +60,7 @@
     <EntitySetMapping Name="Folio">
       <EntityTypeMapping TypeName="BDCarrilloModel.Folio">
         <MappingFragment StoreEntitySet="Folio">
+          <ScalarProperty Name="Faltante" ColumnName="Faltante" />
           <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
           <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />
