@@ -18,15 +18,19 @@ namespace CeramicaCarrillo.Model
         public Folio()
         {
             this.DetalleFolio = new HashSet<DetalleFolio>();
+            this.Abonos = new HashSet<Abonos>();
         }
     
         public int IdFolio { get; set; }
         public double TotalVenta { get; set; }
         public System.DateTime FechaVenta { get; set; }
         public int IdPersonal { get; set; }
+        public bool Status { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetalleFolio> DetalleFolio { get; set; }
         public virtual Personal Personal { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Abonos> Abonos { get; set; }
     }
 }

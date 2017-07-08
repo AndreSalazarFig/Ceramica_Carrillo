@@ -188,6 +188,9 @@
     <Compile Include="GUI\Ventas\frmXtraUCRegistroVentas.Designer.cs">
       <DependentUpon>frmXtraUCRegistroVentas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Abonos.cs">
+      <DependentUpon>mdlCarrillo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Actividades.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>

@@ -35,5 +35,6 @@ namespace CeramicaCarrillo.Model
         public virtual DbSet<Productos> Productos { get; set; }
         public virtual DbSet<Solicitudes> Solicitudes { get; set; }
         public virtual DbSet<TipoProductos> TipoProductos { get; set; }
+        public virtual DbSet<Abonos> Abonos { get; set; }
     }
 }

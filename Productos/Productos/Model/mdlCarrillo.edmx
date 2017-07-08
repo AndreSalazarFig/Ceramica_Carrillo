@@ -5,6 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="BDCarrilloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Abonos">
+          <Key>
+            <PropertyRef Name="IdAbono" />
+          </Key>
+          <Property Name="IdAbono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MontoAbono" Type="float" Nullable="false" />
+          <Property Name="FechaAbono" Type="date" Nullable="false" />
+          <Property Name="IdFolio" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Actividades">
           <Key>
             <PropertyRef Name="IdActividad" />
@@ -63,6 +72,7 @@
           <Property Name="IdFolio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TotalVenta" Type="float" Nullable="false" />
           <Property Name="FechaVenta" Type="date" Nullable="false" />
+          <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="IdPersonal" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Personal">
@@ -118,6 +128,18 @@
             </Principal>
             <Dependent Role="Productos">
               <PropertyRef Name="idCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="RefFolio16">
+          <End Role="Folio" Type="Self.Folio" Multiplicity="1" />
+          <End Role="Abonos" Type="Self.Abonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="IdFolio" />
+            </Principal>
+            <Dependent Role="Abonos">
+              <PropertyRef Name="IdFolio" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -242,6 +264,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="BDCarrilloModelStoreContainer">
+          <EntitySet Name="Abonos" EntityType="Self.Abonos" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Anomalias" EntityType="Self.Anomalias" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
@@ -255,6 +278,10 @@
           <AssociationSet Name="RefCategorias13" Association="Self.RefCategorias13">
             <End Role="Categorias" EntitySet="Categorias" />
             <End Role="Productos" EntitySet="Productos" />
+          </AssociationSet>
+          <AssociationSet Name="RefFolio16" Association="Self.RefFolio16">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="Abonos" EntitySet="Abonos" />
           </AssociationSet>
           <AssociationSet Name="RefFolio8" Association="Self.RefFolio8">
             <End Role="Folio" EntitySet="Folio" />
@@ -370,6 +397,8 @@
           <Property Name="IdPersonal" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DetalleFolio" Relationship="Self.RefFolio8" FromRole="Folio" ToRole="DetalleFolio" />
           <NavigationProperty Name="Personal" Relationship="Self.RefPersonal7" FromRole="Folio" ToRole="Personal" />
+          <Property Name="Status" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Abonos" Relationship="BDCarrilloModel.RefFolio16" FromRole="Folio" ToRole="Abonos" />
         </EntityType>
         <EntityType Name="Personal">
           <Key>
@@ -614,7 +643,34 @@
             <End Role="Productos" EntitySet="Productos" />
             <End Role="Solicitudes" EntitySet="Solicitudes" />
           </AssociationSet>
+          <EntitySet Name="Abonos" EntityType="BDCarrilloModel.Abonos" />
+          <AssociationSet Name="RefFolio16" Association="BDCarrilloModel.RefFolio16">
+            <End Role="Folio" EntitySet="Folio" />
+            <End Role="Abonos" EntitySet="Abonos" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Abonos">
+          <Key>
+            <PropertyRef Name="IdAbono" />
+          </Key>
+          <Property Name="IdAbono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MontoAbono" Type="Double" Nullable="false" />
+          <Property Name="FechaAbono" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="IdFolio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Folio" Relationship="BDCarrilloModel.RefFolio16" FromRole="Abonos" ToRole="Folio" />
+        </EntityType>
+        <Association Name="RefFolio16">
+          <End Type="BDCarrilloModel.Folio" Role="Folio" Multiplicity="1" />
+          <End Type="BDCarrilloModel.Abonos" Role="Abonos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Folio">
+              <PropertyRef Name="IdFolio" />
+            </Principal>
+            <Dependent Role="Abonos">
+              <PropertyRef Name="IdFolio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -680,6 +736,7 @@
           <EntitySetMapping Name="Folio">
             <EntityTypeMapping TypeName="BDCarrilloModel.Folio">
               <MappingFragment StoreEntitySet="Folio">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
                 <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />
                 <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
@@ -732,6 +789,16 @@
               <MappingFragment StoreEntitySet="TipoProductos">
                 <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
                 <ScalarProperty Name="NombreTipo" ColumnName="NombreTipo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Abonos">
+            <EntityTypeMapping TypeName="BDCarrilloModel.Abonos">
+              <MappingFragment StoreEntitySet="Abonos">
+                <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
+                <ScalarProperty Name="FechaAbono" ColumnName="FechaAbono" />
+                <ScalarProperty Name="MontoAbono" ColumnName="MontoAbono" />
+                <ScalarProperty Name="IdAbono" ColumnName="IdAbono" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -4,7 +4,7 @@
  * Project :      Modelo Relacional.DM1
  * Author :       ANDRE
  *
- * Date Created : Friday, June 30, 2017 15:41:58
+ * Date Created : Friday, July 07, 2017 22:02:52
  * Target DBMS : Microsoft SQL Server 2008
  */
 
@@ -14,6 +14,27 @@ CREATE DATABASE BDCarrillo
 go
 USE BDCarrillo
 go
+/* 
+ * TABLE: Abonos 
+ */
+
+CREATE TABLE Abonos(
+    IdAbono       int      IDENTITY(1,1),
+    MontoAbono    float    NOT NULL,
+    FechaAbono    date     NOT NULL,
+    IdFolio       int      NOT NULL,
+    CONSTRAINT PK13 PRIMARY KEY NONCLUSTERED (IdAbono)
+)
+go
+
+
+
+IF OBJECT_ID('Abonos') IS NOT NULL
+    PRINT '<<< CREATED TABLE Abonos >>>'
+ELSE
+    PRINT '<<< FAILED CREATING TABLE Abonos >>>'
+go
+
 /* 
  * TABLE: Actividades 
  */
@@ -133,6 +154,7 @@ CREATE TABLE Folio(
     IdFolio       int      IDENTITY(1,1),
     TotalVenta    float    NOT NULL,
     FechaVenta    date     NOT NULL,
+    Status        bit      NOT NULL,
     IdPersonal    int      NOT NULL,
     CONSTRAINT PK6 PRIMARY KEY NONCLUSTERED (IdFolio)
 )
@@ -237,6 +259,16 @@ IF OBJECT_ID('TipoProductos') IS NOT NULL
 ELSE
     PRINT '<<< FAILED CREATING TABLE TipoProductos >>>'
 go
+
+/* 
+ * TABLE: Abonos 
+ */
+
+ALTER TABLE Abonos ADD CONSTRAINT RefFolio16 
+    FOREIGN KEY (IdFolio)
+    REFERENCES Folio(IdFolio)
+go
+
 
 /* 
  * TABLE: Actividades 

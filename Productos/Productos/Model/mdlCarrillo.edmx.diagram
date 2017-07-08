@@ -26,6 +26,8 @@
         <AssociationConnector Association="BDCarrilloModel.RefPersonal7" ManuallyRouted="false" />
         <AssociationConnector Association="BDCarrilloModel.RefPersonal1" ManuallyRouted="false" />
         <AssociationConnector Association="BDCarrilloModel.RefProductos2" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BDCarrilloModel.Abonos" Width="1.5" PointX="10.5" PointY="13.75" />
+        <AssociationConnector Association="BDCarrilloModel.RefFolio16" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
