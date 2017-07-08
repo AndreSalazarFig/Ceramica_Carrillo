@@ -13,17 +13,21 @@ using DevExpress.XtraBars;
 using DevExpress.XtraBars.Navigation;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.Inicio
+namespace CeramicaCarrillo.GUI.Inicio
 {
     public partial class frmXtraPrincipal : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        Cierre oCierre = new Cierre();
+
         public static BDCarrilloEntities bdCarrillo = null;
         public static Sesiones sesion = null;
+        ArchivosLocales oExtras = new ArchivosLocales();
         XtraUserControl frmProductosUC;
         XtraUserControl frmCategoriasTiposUC;
         XtraUserControl frmPuntoVentaUC;
         XtraUserControl frmRegistroComprasUC;
         XtraUserControl frmRegistroVentasUC;
+        XtraUserControl frmPersonalUC;
 
         public frmXtraPrincipal()
         {
@@ -43,7 +47,7 @@ namespace Productos.GUI.Inicio
         void accordionControl_SelectedElementChanged(object sender, SelectedElementChangedEventArgs e)
         {
             if (e.Element == null) return;
-            //XtraUserControl userControl = e.Element.Text == "Productos" ? employeesUserControl : customersUserControl;
+
             XtraUserControl frmUserControl = null;
 
             switch (e.Element.Text)
@@ -62,6 +66,9 @@ namespace Productos.GUI.Inicio
                     break;
                 case "Ventas":
                     frmUserControl = frmRegistroVentasUC;
+                    break;
+                case "Personal":
+                    frmUserControl = frmPersonalUC;
                     break;
                 default:
                     frmUserControl = null;
@@ -131,6 +138,9 @@ namespace Productos.GUI.Inicio
                 case "Ventas":
                     frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
                     break;
+                case "Personal":
+                    frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
+                    break;
             }
         }
 
@@ -148,16 +158,44 @@ namespace Productos.GUI.Inicio
 
             Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
+            Personal.frmXtraUCPersonal.bdCarrillo = bdCarrillo;
+            Personal.frmXtraUCPersonal.sesion = sesion;
+
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
             frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
             frmRegistroComprasUC = CreateUserControl("Compras", new Compras.frmXtraUCRegistroC());
             frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
+            frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (oCierre.Accion != 'A' && oCierre.Accion != 'S')
+            {
+                frmXtraCierre frmCierre = new frmXtraCierre(oCierre);
+
+                frmCierre.ShowDialog();
+            }
+
+            switch (oCierre.Accion)
+            {
+                case 'S':
+                    frmLogin frmLogin = new frmLogin();
+                    frmLogin.Show();
+                    break;
+                case 'A':
+                    Application.Exit();
+                    break;
+                default:
+                    e.Cancel = true;
+                    break;
+            }
         }
+    }
+
+    public class Cierre
+    {
+        public Char Accion { set; get; }
     }
 }

@@ -14,13 +14,14 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.Productos
+namespace CeramicaCarrillo.GUI.Productos
 {
     public partial class frmXtraUCProductos : DevExpress.XtraEditors.XtraUserControl
     {
         public static BDCarrilloEntities bdCarrillo = null;
         public static Sesiones sesion = null;
-        List<String> lstDatosProducto = null;
+        Model.Productos oDatosProducto = null;
+        String CategoriaProducto = null;
         ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraUCProductos()
@@ -68,14 +69,14 @@ namespace Productos.GUI.Productos
         {
             frmXtraEdicionProductos.strFormTitulo = strTitulo;
             frmXtraEdicionProductos.chAccion = chAccion;
-            frmXtraEdicionProductos.lstDatosProducto = lstDatosProducto;
+            frmXtraEdicionProductos.oDatosProducto = oDatosProducto;
             frmXtraEdicionProductos.bdCarrillo = bdCarrillo;
 
             frmXtraEdicionProductos frm = new frmXtraEdicionProductos();
 
             frm.ShowDialog();
 
-            lstDatosProducto = null;
+            oDatosProducto = null;
 
             VistaDatos();
         }
@@ -109,14 +110,16 @@ namespace Productos.GUI.Productos
 
         private void GetDatosEdicion(Int32 IndexFila)
         {
-            lstDatosProducto = new List<string>();
+            oDatosProducto = new Model.Productos
+            {
+                IdProductos = Convert.ToInt32(dtgVistaProductos.GetRowCellValue(IndexFila, IdProductos).ToString().Trim()),
+                Descripcion = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim(),
+                PrecioVenta = Convert.ToDouble(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioVenta).ToString().Trim()),
+                PrecioMayoreo = Convert.ToDouble(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioMayoreo).ToString().Trim()),
+                Unidades = Convert.ToInt32(dtgVistaProductos.GetRowCellValue(IndexFila, CategoriaTipo).ToString().Trim())
+            };
 
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, IdProductos).ToString().Trim());
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim());
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioVenta).ToString().Trim());
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, PrecioMayoreo).ToString().Trim());
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, Unidades).ToString().Trim());
-            lstDatosProducto.Add(dtgVistaProductos.GetRowCellValue(IndexFila, CategoriaTipo).ToString().Trim());
+            CategoriaProducto = dtgVistaProductos.GetRowCellValue(IndexFila, CategoriaTipo).ToString().Trim();
         }
 
         private void EliminarProducto(Int32 IndexFila)

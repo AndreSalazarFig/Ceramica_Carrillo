@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BDCarrilloModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Abonos">
+    <Key>
+      <PropertyRef Name="IdAbono" />
+    </Key>
+    <Property Name="IdAbono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MontoAbono" Type="float" Nullable="false" />
+    <Property Name="FechaAbono" Type="date" Nullable="false" />
+    <Property Name="IdFolio" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Actividades">
     <Key>
       <PropertyRef Name="IdActividad" />
@@ -58,6 +67,7 @@
     <Property Name="IdFolio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TotalVenta" Type="float" Nullable="false" />
     <Property Name="FechaVenta" Type="date" Nullable="false" />
+    <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="IdPersonal" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Personal">
@@ -113,6 +123,18 @@
       </Principal>
       <Dependent Role="Productos">
         <PropertyRef Name="idCategoria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="RefFolio16">
+    <End Role="Folio" Type="Self.Folio" Multiplicity="1" />
+    <End Role="Abonos" Type="Self.Abonos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Folio">
+        <PropertyRef Name="IdFolio" />
+      </Principal>
+      <Dependent Role="Abonos">
+        <PropertyRef Name="IdFolio" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -237,6 +259,7 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="BDCarrilloModelStoreContainer">
+    <EntitySet Name="Abonos" EntityType="Self.Abonos" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Actividades" EntityType="Self.Actividades" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Anomalias" EntityType="Self.Anomalias" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categorias" EntityType="Self.Categorias" Schema="dbo" store:Type="Tables" />
@@ -250,6 +273,10 @@
     <AssociationSet Name="RefCategorias13" Association="Self.RefCategorias13">
       <End Role="Categorias" EntitySet="Categorias" />
       <End Role="Productos" EntitySet="Productos" />
+    </AssociationSet>
+    <AssociationSet Name="RefFolio16" Association="Self.RefFolio16">
+      <End Role="Folio" EntitySet="Folio" />
+      <End Role="Abonos" EntitySet="Abonos" />
     </AssociationSet>
     <AssociationSet Name="RefFolio8" Association="Self.RefFolio8">
       <End Role="Folio" EntitySet="Folio" />

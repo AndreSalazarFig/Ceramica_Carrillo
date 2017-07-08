@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.Anomalias
+namespace CeramicaCarrillo.GUI.Anomalias
 {
     public partial class frmXtraAnomalias : DevExpress.XtraEditors.XtraForm
     {

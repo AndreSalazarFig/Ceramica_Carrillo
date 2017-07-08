@@ -7,7 +7,7 @@ using CeramicaCarrillo.Model;
 using System.Windows.Forms;
 using System.Drawing;
 
-namespace Productos.GUI.Ventas
+namespace CeramicaCarrillo.GUI.Ventas
 {
     public partial class frmXtraCobroV : DevExpress.XtraEditors.XtraForm
     {

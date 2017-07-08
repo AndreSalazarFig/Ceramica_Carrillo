@@ -131,6 +131,11 @@ namespace CeramicaCarrillo.Model
                     Botones = MessageBoxButtons.YesNo;
                     Icono = MessageBoxIcon.Warning;
                     break;
+                case '<':
+                    MSG = "Se cerrará la sesión actual, ¿Desea continuar?";
+                    Botones = MessageBoxButtons.YesNo;
+                    Icono = MessageBoxIcon.Question;
+                    break;
                 default:
                     MSG = "Ha ocurrido un error inesperado.\r" +
                           "     Esto se puede ocacionar por una falta de conexión a la red." +

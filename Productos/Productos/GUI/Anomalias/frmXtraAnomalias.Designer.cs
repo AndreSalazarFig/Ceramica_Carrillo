@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.Anomalias
+﻿namespace CeramicaCarrillo.GUI.Anomalias
 {
     partial class frmXtraAnomalias
     {

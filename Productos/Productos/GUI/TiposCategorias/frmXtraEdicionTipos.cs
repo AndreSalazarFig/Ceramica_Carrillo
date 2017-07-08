@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.TiposCategorias
+namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionTipos : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
         public static String strFormTitulo;
         public static Char chAccion;
-        public static List<String> lstDatosTipo = null;
+        public static Model.TipoProductos oDatosTipo = null;
         public static Boolean boolAdministrador;
         Boolean boolGuardar = false;
         TipoProductos oTiposProducto;
@@ -126,10 +126,10 @@ namespace Productos.GUI.TiposCategorias
         {
             this.Text = strFormTitulo;
 
-            if (lstDatosTipo != null)
+            if (oDatosTipo != null)
             {
-                txtIDTipo.Text = lstDatosTipo[0];
-                txtNombreTipo.Text = lstDatosTipo[1];
+                txtIDTipo.Text = oDatosTipo.idTipoProducto.ToString();
+                txtNombreTipo.Text = oDatosTipo.NombreTipo;
             }
         }
     }

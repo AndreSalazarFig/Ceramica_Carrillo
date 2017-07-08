@@ -104,10 +104,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GUI\Anomalia\frmXtraAnomalias.cs">
+    <Compile Include="GUI\Anomalias\frmXtraAnomalias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GUI\Anomalia\frmXtraAnomalias.Designer.cs">
+    <Compile Include="GUI\Anomalias\frmXtraAnomalias.Designer.cs">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Apartado\frmXtraUCSistemaA.cs">
@@ -127,6 +127,24 @@
     </Compile>
     <Compile Include="GUI\Compras\frmXtraUCRegistroC.Designer.cs">
       <DependentUpon>frmXtraUCRegistroC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Inicio\frmXtraCierre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Inicio\frmXtraCierre.Designer.cs">
+      <DependentUpon>frmXtraCierre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Personal\frmXtraEdicionPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Personal\frmXtraEdicionPersonal.Designer.cs">
+      <DependentUpon>frmXtraEdicionPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Personal\frmXtraUCPersonal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Personal\frmXtraUCPersonal.Designer.cs">
+      <DependentUpon>frmXtraUCPersonal.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Inicio\frmLogin.cs">
       <SubType>Form</SubType>
@@ -215,6 +233,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPrueba.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\dsRegCompras.cs">
+      <DependentUpon>dsRegCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\dsRegCompras.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -259,7 +280,7 @@
     <Compile Include="GUI\Inicio\frmXtraPrincipal.Designer.cs">
       <DependentUpon>frmXtraPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="GUI\Anomalia\frmXtraAnomalias.resx">
+    <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Apartado\frmXtraUCSistemaA.resx">
@@ -274,8 +295,17 @@
     <EmbeddedResource Include="GUI\Inicio\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Inicio\frmXtraCierre.resx">
+      <DependentUpon>frmXtraCierre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Inicio\frmXtraPrincipal.resx">
       <DependentUpon>frmXtraPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Personal\frmXtraEdicionPersonal.resx">
+      <DependentUpon>frmXtraEdicionPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Personal\frmXtraUCPersonal.resx">
+      <DependentUpon>frmXtraUCPersonal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Productos\frmXtraEdicionProductos.resx">
       <DependentUpon>frmXtraEdicionProductos.cs</DependentUpon>
@@ -384,6 +414,8 @@
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>
       <LastGenOutput>mdlCarrillo.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\shutdown.png" />
+    <None Include="Resources\Logout.png" />
     <None Include="Resources\venta.png" />
   </ItemGroup>
   <ItemGroup />

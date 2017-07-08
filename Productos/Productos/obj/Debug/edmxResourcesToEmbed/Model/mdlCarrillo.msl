@@ -60,6 +60,7 @@
     <EntitySetMapping Name="Folio">
       <EntityTypeMapping TypeName="BDCarrilloModel.Folio">
         <MappingFragment StoreEntitySet="Folio">
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
           <ScalarProperty Name="TotalVenta" ColumnName="TotalVenta" />
           <ScalarProperty Name="FechaVenta" ColumnName="FechaVenta" />
@@ -112,6 +113,16 @@
         <MappingFragment StoreEntitySet="TipoProductos">
           <ScalarProperty Name="idTipoProducto" ColumnName="idTipoProducto" />
           <ScalarProperty Name="NombreTipo" ColumnName="NombreTipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Abonos">
+      <EntityTypeMapping TypeName="BDCarrilloModel.Abonos">
+        <MappingFragment StoreEntitySet="Abonos">
+          <ScalarProperty Name="IdFolio" ColumnName="IdFolio" />
+          <ScalarProperty Name="FechaAbono" ColumnName="FechaAbono" />
+          <ScalarProperty Name="MontoAbono" ColumnName="MontoAbono" />
+          <ScalarProperty Name="IdAbono" ColumnName="IdAbono" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

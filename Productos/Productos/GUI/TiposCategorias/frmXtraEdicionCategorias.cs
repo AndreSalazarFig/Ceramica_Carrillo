@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.TiposCategorias
+namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionCategorias : DevExpress.XtraEditors.XtraForm
     {

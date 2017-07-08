@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.Ventas
+﻿namespace CeramicaCarrillo.GUI.Ventas
 {
     partial class frmXtraUCPuntoVenta
     {

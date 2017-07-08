@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.Apartado
+﻿namespace CeramicaCarrillo.GUI.Apartado
 {
     partial class frmXtraUCSistemaA
     {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.Inicio
+namespace CeramicaCarrillo.GUI.Inicio
 {
     public partial class frmLogin : Form
     {

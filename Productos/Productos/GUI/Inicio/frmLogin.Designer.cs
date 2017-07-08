@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.Inicio
+﻿namespace CeramicaCarrillo.GUI.Inicio
 {
     partial class frmLogin
     {

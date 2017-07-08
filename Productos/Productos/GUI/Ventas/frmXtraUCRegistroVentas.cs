@@ -12,7 +12,7 @@ using CeramicaCarrillo.Model;
 using DevExpress.XtraGrid.Views.Grid;
 using System.Data.Entity;
 
-namespace Productos.GUI.Ventas
+namespace CeramicaCarrillo.GUI.Ventas
 {
     public partial class frmXtraUCRegistroVentas : DevExpress.XtraEditors.XtraUserControl
     {
@@ -25,9 +25,6 @@ namespace Productos.GUI.Ventas
 
         private void frmXtraUCRegistroV_Load(object sender, EventArgs e)
         {
-            //CargarDatosMaestro();
-            //dtgDatos.OptionsDetail.EnableMasterViewMode = true;
-            //dtgDatos.SetMasterRowExpanded(1, true);
             folioTableAdapter.Fill(dsPrueba1.Folio);
             detalleTableAdapter1.Fill(dsPrueba1.Detalle);
         }

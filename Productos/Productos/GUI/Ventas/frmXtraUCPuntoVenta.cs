@@ -6,13 +6,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.Ventas
+namespace CeramicaCarrillo.GUI.Ventas
 {
     public partial class frmXtraUCPuntoVenta : DevExpress.XtraEditors.XtraUserControl
     {
         public static BDCarrilloEntities datos = null;
         public static Sesiones sesion = null;
-        List<CeramicaCarrillo.Model.Productos> _compra;
+        List<Model.Productos> _compra;
         List<int> Cantidad;
         bool seleccionado = false;
         int posicion = -1, unidades = 0;
@@ -21,7 +21,7 @@ namespace Productos.GUI.Ventas
         public frmXtraUCPuntoVenta()
         {
             InitializeComponent();
-            _compra = new List<CeramicaCarrillo.Model.Productos>();
+            _compra = new List<Model.Productos>();
             Cantidad = new List<int>();
         }
 

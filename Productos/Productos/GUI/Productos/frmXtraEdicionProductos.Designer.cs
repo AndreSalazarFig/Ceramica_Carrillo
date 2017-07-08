@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.Productos
+﻿namespace CeramicaCarrillo.GUI.Productos
 {
     partial class frmXtraEdicionProductos
     {
@@ -99,7 +99,7 @@
             this.lyCtrlDatosProducto.Name = "lyCtrlDatosProducto";
             this.lyCtrlDatosProducto.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(564, 20, 450, 400);
             this.lyCtrlDatosProducto.Root = this.lyCtrlGroupDatosProducto;
-            this.lyCtrlDatosProducto.Size = new System.Drawing.Size(570, 149);
+            this.lyCtrlDatosProducto.Size = new System.Drawing.Size(570, 154);
             this.lyCtrlDatosProducto.TabIndex = 23;
             this.lyCtrlDatosProducto.Text = "layoutControl1";
             // 
@@ -110,7 +110,7 @@
             0,
             0,
             0});
-            this.txtPrecioMayoreo.Location = new System.Drawing.Point(159, 105);
+            this.txtPrecioMayoreo.Location = new System.Drawing.Point(159, 110);
             this.txtPrecioMayoreo.Name = "txtPrecioMayoreo";
             this.txtPrecioMayoreo.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -126,7 +126,7 @@
             0,
             0,
             0});
-            this.txtPrecioMayoreo.Size = new System.Drawing.Size(124, 20);
+            this.txtPrecioMayoreo.Size = new System.Drawing.Size(123, 20);
             this.txtPrecioMayoreo.StyleController = this.lyCtrlDatosProducto;
             this.txtPrecioMayoreo.TabIndex = 20;
             // 
@@ -137,7 +137,7 @@
             0,
             0,
             0});
-            this.txtPrecioUnitario.Location = new System.Drawing.Point(159, 71);
+            this.txtPrecioUnitario.Location = new System.Drawing.Point(159, 76);
             this.txtPrecioUnitario.Name = "txtPrecioUnitario";
             this.txtPrecioUnitario.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -153,7 +153,7 @@
             0,
             0,
             0});
-            this.txtPrecioUnitario.Size = new System.Drawing.Size(124, 20);
+            this.txtPrecioUnitario.Size = new System.Drawing.Size(123, 20);
             this.txtPrecioUnitario.StyleController = this.lyCtrlDatosProducto;
             this.txtPrecioUnitario.TabIndex = 19;
             // 
@@ -164,7 +164,7 @@
             0,
             0,
             0});
-            this.txtUnidades.Location = new System.Drawing.Point(432, 105);
+            this.txtUnidades.Location = new System.Drawing.Point(431, 110);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -177,23 +177,23 @@
             0,
             0,
             0});
-            this.txtUnidades.Size = new System.Drawing.Size(114, 20);
+            this.txtUnidades.Size = new System.Drawing.Size(115, 20);
             this.txtUnidades.StyleController = this.lyCtrlDatosProducto;
             this.txtUnidades.TabIndex = 25;
             // 
             // cbxCategoria
             // 
-            this.cbxCategoria.Location = new System.Drawing.Point(432, 71);
+            this.cbxCategoria.Location = new System.Drawing.Point(431, 76);
             this.cbxCategoria.Name = "cbxCategoria";
             this.cbxCategoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbxCategoria.Size = new System.Drawing.Size(114, 20);
+            this.cbxCategoria.Size = new System.Drawing.Size(115, 20);
             this.cbxCategoria.StyleController = this.lyCtrlDatosProducto;
             this.cbxCategoria.TabIndex = 21;
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(159, 37);
+            this.txtDescripcion.Location = new System.Drawing.Point(159, 42);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Properties.NullValuePrompt = "Descripción del producto";
             this.txtDescripcion.Properties.NullValuePromptShowForEmptyValue = true;
@@ -210,7 +210,7 @@
             this.lyGroupBoxDatosProducto});
             this.lyCtrlGroupDatosProducto.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatosProducto.Name = "Root";
-            this.lyCtrlGroupDatosProducto.Size = new System.Drawing.Size(570, 149);
+            this.lyCtrlGroupDatosProducto.Size = new System.Drawing.Size(570, 154);
             this.lyCtrlGroupDatosProducto.TextVisible = false;
             // 
             // lyGroupBoxDatosProducto
@@ -227,7 +227,7 @@
             this.emptySpaceItem4});
             this.lyGroupBoxDatosProducto.Location = new System.Drawing.Point(0, 0);
             this.lyGroupBoxDatosProducto.Name = "lyGroupBoxDatosProducto";
-            this.lyGroupBoxDatosProducto.Size = new System.Drawing.Size(550, 129);
+            this.lyGroupBoxDatosProducto.Size = new System.Drawing.Size(550, 134);
             this.lyGroupBoxDatosProducto.Text = "Datos del Producto";
             // 
             // CtrlItemDescripcion
@@ -245,7 +245,7 @@
             this.CtrlItemPrecioUnitario.Location = new System.Drawing.Point(0, 34);
             this.CtrlItemPrecioUnitario.Name = "CtrlItemPrecioUnitario";
             this.CtrlItemPrecioUnitario.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.CtrlItemPrecioUnitario.Size = new System.Drawing.Size(263, 24);
+            this.CtrlItemPrecioUnitario.Size = new System.Drawing.Size(262, 24);
             this.CtrlItemPrecioUnitario.Text = "Precio de Venta";
             this.CtrlItemPrecioUnitario.TextSize = new System.Drawing.Size(132, 13);
             // 
@@ -256,27 +256,27 @@
             this.CtrlitemPrecioMayoreo.Name = "CtrlitemPrecioMayoreo";
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.ColumnIndex = 1;
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.RowIndex = 1;
-            this.CtrlitemPrecioMayoreo.Size = new System.Drawing.Size(263, 24);
+            this.CtrlitemPrecioMayoreo.Size = new System.Drawing.Size(262, 24);
             this.CtrlitemPrecioMayoreo.Text = "Precio de Mayoreo";
             this.CtrlitemPrecioMayoreo.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemCategoria
             // 
             this.CtrlItemCategoria.Control = this.cbxCategoria;
-            this.CtrlItemCategoria.Location = new System.Drawing.Point(273, 34);
+            this.CtrlItemCategoria.Location = new System.Drawing.Point(272, 34);
             this.CtrlItemCategoria.Name = "CtrlItemCategoria";
             this.CtrlItemCategoria.OptionsTableLayoutItem.RowIndex = 1;
-            this.CtrlItemCategoria.Size = new System.Drawing.Size(253, 24);
+            this.CtrlItemCategoria.Size = new System.Drawing.Size(254, 24);
             this.CtrlItemCategoria.Text = "Departamento del Producto";
             this.CtrlItemCategoria.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemUnidades
             // 
             this.CtrlItemUnidades.Control = this.txtUnidades;
-            this.CtrlItemUnidades.Location = new System.Drawing.Point(273, 68);
+            this.CtrlItemUnidades.Location = new System.Drawing.Point(272, 68);
             this.CtrlItemUnidades.Name = "CtrlItemUnidades";
             this.CtrlItemUnidades.OptionsTableLayoutItem.RowIndex = 2;
-            this.CtrlItemUnidades.Size = new System.Drawing.Size(253, 24);
+            this.CtrlItemUnidades.Size = new System.Drawing.Size(254, 24);
             this.CtrlItemUnidades.Text = "Unidades";
             this.CtrlItemUnidades.TextSize = new System.Drawing.Size(132, 13);
             // 
@@ -305,7 +305,7 @@
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(263, 34);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(262, 34);
             this.emptySpaceItem3.MaxSize = new System.Drawing.Size(10, 0);
             this.emptySpaceItem3.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
@@ -316,7 +316,7 @@
             // emptySpaceItem4
             // 
             this.emptySpaceItem4.AllowHotTrack = false;
-            this.emptySpaceItem4.Location = new System.Drawing.Point(263, 68);
+            this.emptySpaceItem4.Location = new System.Drawing.Point(262, 68);
             this.emptySpaceItem4.MaxSize = new System.Drawing.Size(10, 0);
             this.emptySpaceItem4.MinSize = new System.Drawing.Size(10, 10);
             this.emptySpaceItem4.Name = "emptySpaceItem4";

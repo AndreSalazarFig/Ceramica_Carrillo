@@ -11,13 +11,13 @@ using DevExpress.XtraEditors;
 using System.Data.Entity;
 using CeramicaCarrillo.Model;
 
-namespace Productos.GUI.TiposCategorias
+namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     public partial class frmXtraUCTiposCategorias : DevExpress.XtraEditors.XtraUserControl
     {
         public static BDCarrilloEntities bdCarrillo = null;
         public static Sesiones sesion = null;
-        List<String> lstDatosTipo = null;
+        Model.TipoProductos oDatosTipo = null;
         ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraUCTiposCategorias()
@@ -61,9 +61,11 @@ namespace Productos.GUI.TiposCategorias
 
         private void GetDatosEdicion(Int32 IndexFila)
         {
-            lstDatosTipo = new List<string>();
-            lstDatosTipo.Add(dtgVistaTipos.GetRowCellValue(IndexFila, idTipoProducto).ToString().Trim());
-            lstDatosTipo.Add(dtgVistaTipos.GetRowCellValue(IndexFila, NombreTipo).ToString().Trim());
+            oDatosTipo = new Model.TipoProductos
+            {
+                idTipoProducto = Convert.ToInt32(dtgVistaTipos.GetRowCellValue(IndexFila, idTipoProducto).ToString().Trim()),
+                NombreTipo = dtgVistaTipos.GetRowCellValue(IndexFila, NombreTipo).ToString().Trim()
+            };
         }
 
         private void EliminarTipo(Int32 IndexFila)
@@ -89,7 +91,7 @@ namespace Productos.GUI.TiposCategorias
         {
             frmXtraEdicionTipos.strFormTitulo = strTitulo;
             frmXtraEdicionTipos.chAccion = chAccion;
-            frmXtraEdicionTipos.lstDatosTipo = lstDatosTipo;
+            frmXtraEdicionTipos.oDatosTipo = oDatosTipo;
             frmXtraEdicionTipos.bdCarrillo = bdCarrillo;
             frmXtraEdicionTipos.boolAdministrador = sesion.Admin;
 
@@ -97,7 +99,7 @@ namespace Productos.GUI.TiposCategorias
 
             frm.ShowDialog();
 
-            lstDatosTipo = null;
+            oDatosTipo = null;
 
             VistaDatos();
         }

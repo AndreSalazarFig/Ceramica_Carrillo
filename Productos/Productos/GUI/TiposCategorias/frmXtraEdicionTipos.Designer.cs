@@ -1,4 +1,4 @@
-﻿namespace Productos.GUI.TiposCategorias
+﻿namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     partial class frmXtraEdicionTipos
     {

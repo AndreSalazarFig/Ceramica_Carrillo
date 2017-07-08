@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
-namespace Productos.GUI.Apartado
+namespace CeramicaCarrillo.GUI.Apartado
 {
     public partial class frmXtraUCSistemaA : DevExpress.XtraEditors.XtraUserControl
     {
