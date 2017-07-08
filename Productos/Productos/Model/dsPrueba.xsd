@@ -60,7 +60,7 @@ on df.IdProductos = pd.IdProductos</CommandText>
   <xs:element name="dsPrueba" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPrueba" msprop:Generator_UserDSName="dsPrueba">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Folio" msprop:Generator_TableClassName="FolioDataTable" msprop:Generator_TableVarName="tableFolio" msprop:Generator_RowChangedName="FolioRowChanged" msprop:Generator_TablePropName="Folio" msprop:Generator_RowDeletingName="FolioRowDeleting" msprop:Generator_RowChangingName="FolioRowChanging" msprop:Generator_RowEvHandlerName="FolioRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioRowDeleted" msprop:Generator_RowClassName="FolioRow" msprop:Generator_UserTableName="Folio" msprop:Generator_RowEvArgName="FolioRowChangeEvent">
+        <xs:element name="Folio" msprop:Generator_TableClassName="FolioDataTable" msprop:Generator_TableVarName="tableFolio" msprop:Generator_TablePropName="Folio" msprop:Generator_RowDeletingName="FolioRowDeleting" msprop:Generator_RowChangingName="FolioRowChanging" msprop:Generator_RowEvHandlerName="FolioRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioRowDeleted" msprop:Generator_UserTableName="Folio" msprop:Generator_RowChangedName="FolioRowChanged" msprop:Generator_RowEvArgName="FolioRowChangeEvent" msprop:Generator_RowClassName="FolioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdFolio" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdFolio" msprop:Generator_ColumnPropNameInRow="IdFolio" msprop:Generator_ColumnPropNameInTable="IdFolioColumn" msprop:Generator_UserColumnName="IdFolio" type="xs:int" />
@@ -76,7 +76,7 @@ on df.IdProductos = pd.IdProductos</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowClassName="DetalleRow" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowEvArgName="DetalleRowChangeEvent">
+        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_RowClassName="DetalleRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdProductos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProductos" msprop:Generator_ColumnPropNameInRow="IdProductos" msprop:Generator_ColumnPropNameInTable="IdProductosColumn" msprop:Generator_UserColumnName="IdProductos" type="xs:int" />
@@ -107,7 +107,7 @@ on df.IdProductos = pd.IdProductos</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="RefFolio83" msdata:parent="Folio" msdata:child="Detalle" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="RefFolio83" msprop:Generator_RelationVarName="relationRefFolio83" msprop:Generator_UserParentTable="Folio" msprop:Generator_ParentPropName="FolioRow" />
+      <msdata:Relationship name="Detalle" msdata:parent="Folio" msdata:child="Detalle" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Detalle" msprop:Generator_ParentPropName="FolioRow" msprop:Generator_RelationVarName="relationDetalle" msprop:Generator_UserParentTable="Folio" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

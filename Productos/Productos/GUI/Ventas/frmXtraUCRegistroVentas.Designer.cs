@@ -32,6 +32,11 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdProductos = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.folioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsPrueba1 = new CeramicaCarrillo.Model.dsPrueba();
@@ -52,11 +57,6 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.folioTableAdapter = new CeramicaCarrillo.Model.dsPruebaTableAdapters.FolioTableAdapter();
             this.detalleTableAdapter1 = new CeramicaCarrillo.Model.dsPruebaTableAdapters.DetalleTableAdapter();
-            this.colIdProductos = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.folioBindingSource)).BeginInit();
@@ -82,14 +82,51 @@
             this.colPrecio,
             this.colUnidades,
             this.colTotal});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView2.GridControl = this.gridControl1;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsDetail.ShowDetailTabs = false;
+            // 
+            // colIdProductos
+            // 
+            this.colIdProductos.FieldName = "IdProductos";
+            this.colIdProductos.Name = "colIdProductos";
+            this.colIdProductos.Visible = true;
+            this.colIdProductos.VisibleIndex = 0;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 1;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.FieldName = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.Visible = true;
+            this.colPrecio.VisibleIndex = 2;
+            // 
+            // colUnidades
+            // 
+            this.colUnidades.FieldName = "Unidades";
+            this.colUnidades.Name = "colUnidades";
+            this.colUnidades.Visible = true;
+            this.colUnidades.VisibleIndex = 3;
+            // 
+            // colTotal
+            // 
+            this.colTotal.FieldName = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 4;
             // 
             // gridControl1
             // 
             this.gridControl1.DataSource = this.folioBindingSource;
             gridLevelNode1.LevelTemplate = this.gridView2;
-            gridLevelNode1.RelationName = "RefFolio83";
+            gridLevelNode1.RelationName = "Detalle";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
             this.gridControl1.Location = new System.Drawing.Point(12, 97);
@@ -106,6 +143,11 @@
             this.folioBindingSource.DataMember = "Folio";
             this.folioBindingSource.DataSource = this.dsPrueba1;
             // 
+            // dsPrueba1
+            // 
+            this.dsPrueba1.DataSetName = "dsPrueba";
+            this.dsPrueba1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -113,8 +155,13 @@
             this.colTotalVenta,
             this.colFechaVenta,
             this.colNombredelempleado});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFechaVenta, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colIdFolio
             // 
@@ -128,21 +175,21 @@
             this.colTotalVenta.FieldName = "TotalVenta";
             this.colTotalVenta.Name = "colTotalVenta";
             this.colTotalVenta.Visible = true;
-            this.colTotalVenta.VisibleIndex = 1;
+            this.colTotalVenta.VisibleIndex = 2;
             // 
             // colFechaVenta
             // 
             this.colFechaVenta.FieldName = "FechaVenta";
             this.colFechaVenta.Name = "colFechaVenta";
             this.colFechaVenta.Visible = true;
-            this.colFechaVenta.VisibleIndex = 2;
+            this.colFechaVenta.VisibleIndex = 1;
             // 
             // colNombredelempleado
             // 
             this.colNombredelempleado.FieldName = "Nombre del empleado";
             this.colNombredelempleado.Name = "colNombredelempleado";
             this.colNombredelempleado.Visible = true;
-            this.colNombredelempleado.VisibleIndex = 3;
+            this.colNombredelempleado.VisibleIndex = 1;
             // 
             // layoutControl1
             // 
@@ -294,41 +341,6 @@
             // 
             this.detalleTableAdapter1.ClearBeforeFill = true;
             // 
-            // colIdProductos
-            // 
-            this.colIdProductos.FieldName = "IdProductos";
-            this.colIdProductos.Name = "colIdProductos";
-            this.colIdProductos.Visible = true;
-            this.colIdProductos.VisibleIndex = 0;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 1;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.FieldName = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.Visible = true;
-            this.colPrecio.VisibleIndex = 2;
-            // 
-            // colUnidades
-            // 
-            this.colUnidades.FieldName = "Unidades";
-            this.colUnidades.Name = "colUnidades";
-            this.colUnidades.Visible = true;
-            this.colUnidades.VisibleIndex = 3;
-            // 
-            // colTotal
-            // 
-            this.colTotal.FieldName = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 4;
-            // 
             // frmXtraUCRegistroVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,21 +380,21 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private CeramicaCarrillo.Model.dsPrueba dsPrueba;
         private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private System.Windows.Forms.BindingSource folioBindingSource;
         private CeramicaCarrillo.Model.dsPrueba dsPrueba1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
-        private DevExpress.XtraGrid.Columns.GridColumn colIdFolio;
-        private DevExpress.XtraGrid.Columns.GridColumn colTotalVenta;
-        private DevExpress.XtraGrid.Columns.GridColumn colFechaVenta;
-        private DevExpress.XtraGrid.Columns.GridColumn colNombredelempleado;
-        private CeramicaCarrillo.Model.dsPruebaTableAdapters.FolioTableAdapter folioTableAdapter;
-        private CeramicaCarrillo.Model.dsPruebaTableAdapters.DetalleTableAdapter detalleTableAdapter1;
         private DevExpress.XtraGrid.Columns.GridColumn colIdProductos;
         private DevExpress.XtraGrid.Columns.GridColumn colDescripcion;
         private DevExpress.XtraGrid.Columns.GridColumn colPrecio;
         private DevExpress.XtraGrid.Columns.GridColumn colUnidades;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colIdFolio;
+        private DevExpress.XtraGrid.Columns.GridColumn colTotalVenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colFechaVenta;
+        private DevExpress.XtraGrid.Columns.GridColumn colNombredelempleado;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private CeramicaCarrillo.Model.dsPruebaTableAdapters.FolioTableAdapter folioTableAdapter;
+        private CeramicaCarrillo.Model.dsPruebaTableAdapters.DetalleTableAdapter detalleTableAdapter1;
     }
 }

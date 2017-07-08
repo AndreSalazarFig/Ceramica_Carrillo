@@ -25,12 +25,11 @@ namespace Productos.GUI.Ventas
 
         private void frmXtraUCRegistroV_Load(object sender, EventArgs e)
         {
-            dsPrueba = new dsPrueba();
             //CargarDatosMaestro();
             //dtgDatos.OptionsDetail.EnableMasterViewMode = true;
             //dtgDatos.SetMasterRowExpanded(1, true);
-            folioTableAdapter.Fill(dsPrueba.Folio);
-            detalleTableAdapter1.Fill(dsPrueba.Detalle);
+            folioTableAdapter.Fill(dsPrueba1.Folio);
+            detalleTableAdapter1.Fill(dsPrueba1.Detalle);
         }
     }
 }

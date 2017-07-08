@@ -212,6 +212,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPrueba.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\dsRegCompras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRegCompras.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\Folio.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
@@ -323,6 +328,17 @@
     </None>
     <None Include="Model\dsPrueba.xss">
       <DependentUpon>dsPrueba.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegCompras.xsc">
+      <DependentUpon>dsRegCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegCompras.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRegCompras.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\dsRegCompras.xss">
+      <DependentUpon>dsRegCompras.xsd</DependentUpon>
     </None>
     <None Include="Model\mdlCarrillo.edmx.diagram">
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>

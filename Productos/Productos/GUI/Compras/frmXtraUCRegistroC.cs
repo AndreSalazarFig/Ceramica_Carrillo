@@ -23,23 +23,7 @@ namespace Productos.GUI.Compras
 
         private void frmXtraUCRegistroC_Load(object sender, EventArgs e)
         {
-            CargarDatos();
-        }
-
-        private void CargarDatos()
-        {
-            var compras = (from c in datos.Compras
-                           join p in datos.Productos on c.IdProductos equals p.IdProductos
-                           select new
-                           {
-                               c.IdCompras,
-                               p.Descripcion,
-                               c.Fecha,
-                               c.Precio,
-                               c.Unidades,
-                               c.Total
-                           }).ToList();
-            gvDatos.DataSource = compras;
+            comprasTableAdapter.Fill(dsRegCompras.Compras);
         }
     }
 }
