@@ -23,6 +23,22 @@ namespace CeramicaCarrillo.GUI.Apartado
         {
             folioApartadoTableAdapter.Fill(dsSisApartado.FolioApartado);
             abonosTableAdapter1.Fill(dsSisApartado.Abonos);
+            productosApartadoTableAdapter1.Fill(dsSisApartado.ProductosApartado);
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            VerReporte();
+        }
+
+        private void VerReporte()
+        {
+            frmXtraReporteApartado frm = new frmXtraReporteApartado();
+            using (DevExpress.XtraReports.UI.ReportPrintTool imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm))
+            {
+                imprimir.ShowPreviewDialog();
+            }
+            
         }
     }
 }
