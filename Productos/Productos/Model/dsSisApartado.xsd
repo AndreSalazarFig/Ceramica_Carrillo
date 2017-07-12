@@ -9,14 +9,13 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="FolioApartadoTableAdapter" GeneratorDataComponentClassName="FolioApartadoTableAdapter" Name="FolioApartado" UserDataComponentName="FolioApartadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectName="BDCarrillo.dbo.Folio" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectName="BDCarrillo.dbo.Folio" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>select f.IdFolio, f.FechaVenta, p.Nombre + ' ' + p.Apellido as [Nombre del Empleado] , f.TotalVenta, f.Faltante
 from Folio f
 join Personal p on p.IdPersonal = f.IdPersonal
-where f.Status = 0
-</CommandText>
+where f.Status = 0</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -31,12 +30,33 @@ where f.Status = 0
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductosApartadoTableAdapter" GeneratorDataComponentClassName="ProductosApartadoTableAdapter" Name="ProductosApartado" UserDataComponentName="ProductosApartadoTableAdapter">
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AbonosApartadoTableAdapter" GeneratorDataComponentClassName="AbonosApartadoTableAdapter" Name="AbonosApartado" UserDataComponentName="AbonosApartadoTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectName="BDCarrillo.dbo.Abonos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select pd.IdProductos, pd.Descripcion, df.Precio, df.Unidades,
+                    <CommandText>SELECT        a.IdAbono, a.IdFolio, a.FechaAbono, a.MontoAbono
+FROM            Abonos AS a INNER JOIN
+                         Folio AS f ON a.IdFolio = f.IdFolio</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="IdAbono" DataSetColumn="IdAbono" />
+              <Mapping SourceColumn="IdFolio" DataSetColumn="IdFolio" />
+              <Mapping SourceColumn="FechaAbono" DataSetColumn="FechaAbono" />
+              <Mapping SourceColumn="MontoAbono" DataSetColumn="MontoAbono" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProductosApartadoTableAdapter" GeneratorDataComponentClassName="ProductosApartadoTableAdapter" Name="ProductosApartado" UserDataComponentName="ProductosApartadoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select pd.Descripcion, df.Precio, df.Unidades,
 df.Total, df.IdFolio
 from Productos pd join DetalleFolio df
 on df.IdProductos = pd.IdProductos</CommandText>
@@ -46,33 +66,11 @@ on df.IdProductos = pd.IdProductos</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="IdProductos" DataSetColumn="IdProductos" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
               <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
               <Mapping SourceColumn="Total" DataSetColumn="Total" />
               <Mapping SourceColumn="IdFolio" DataSetColumn="IdFolio" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AbonosTableAdapter" GeneratorDataComponentClassName="AbonosTableAdapter" Name="Abonos" UserDataComponentName="AbonosTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectName="BDCarrillo.dbo.Abonos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select a.IdAbono, a.IdFolio, a.FechaAbono, a.MontoAbono
-from Abonos a
-join Folio f on a.IdFolio = f.IdFolio</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="IdFolio" DataSetColumn="IdFolio" />
-              <Mapping SourceColumn="FechaAbono" DataSetColumn="FechaAbono" />
-              <Mapping SourceColumn="MontoAbono" DataSetColumn="MontoAbono" />
-              <Mapping SourceColumn="IdAbono" DataSetColumn="IdAbono" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -84,7 +82,7 @@ join Folio f on a.IdFolio = f.IdFolio</CommandText>
   <xs:element name="dsSisApartado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsSisApartado" msprop:Generator_UserDSName="dsSisApartado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="FolioApartado" msprop:Generator_TableClassName="FolioApartadoDataTable" msprop:Generator_TableVarName="tableFolioApartado" msprop:Generator_RowChangedName="FolioApartadoRowChanged" msprop:Generator_TablePropName="FolioApartado" msprop:Generator_RowDeletingName="FolioApartadoRowDeleting" msprop:Generator_RowChangingName="FolioApartadoRowChanging" msprop:Generator_RowEvHandlerName="FolioApartadoRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioApartadoRowDeleted" msprop:Generator_RowClassName="FolioApartadoRow" msprop:Generator_UserTableName="FolioApartado" msprop:Generator_RowEvArgName="FolioApartadoRowChangeEvent">
+        <xs:element name="FolioApartado" msprop:Generator_TableClassName="FolioApartadoDataTable" msprop:Generator_TableVarName="tableFolioApartado" msprop:Generator_TablePropName="FolioApartado" msprop:Generator_RowDeletingName="FolioApartadoRowDeleting" msprop:Generator_RowChangingName="FolioApartadoRowChanging" msprop:Generator_RowEvHandlerName="FolioApartadoRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioApartadoRowDeleted" msprop:Generator_UserTableName="FolioApartado" msprop:Generator_RowChangedName="FolioApartadoRowChanged" msprop:Generator_RowEvArgName="FolioApartadoRowChangeEvent" msprop:Generator_RowClassName="FolioApartadoRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdFolio" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdFolio" msprop:Generator_ColumnPropNameInRow="IdFolio" msprop:Generator_ColumnPropNameInTable="IdFolioColumn" msprop:Generator_UserColumnName="IdFolio" type="xs:int" />
@@ -101,10 +99,19 @@ join Folio f on a.IdFolio = f.IdFolio</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ProductosApartado" msprop:Generator_TableClassName="ProductosApartadoDataTable" msprop:Generator_TableVarName="tableProductosApartado" msprop:Generator_RowChangedName="ProductosApartadoRowChanged" msprop:Generator_TablePropName="ProductosApartado" msprop:Generator_RowDeletingName="ProductosApartadoRowDeleting" msprop:Generator_RowChangingName="ProductosApartadoRowChanging" msprop:Generator_RowEvHandlerName="ProductosApartadoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosApartadoRowDeleted" msprop:Generator_RowClassName="ProductosApartadoRow" msprop:Generator_UserTableName="ProductosApartado" msprop:Generator_RowEvArgName="ProductosApartadoRowChangeEvent">
+        <xs:element name="AbonosApartado" msprop:Generator_TableClassName="AbonosApartadoDataTable" msprop:Generator_TableVarName="tableAbonosApartado" msprop:Generator_TablePropName="AbonosApartado" msprop:Generator_RowDeletingName="AbonosApartadoRowDeleting" msprop:Generator_RowChangingName="AbonosApartadoRowChanging" msprop:Generator_RowEvHandlerName="AbonosApartadoRowChangeEventHandler" msprop:Generator_RowDeletedName="AbonosApartadoRowDeleted" msprop:Generator_UserTableName="AbonosApartado" msprop:Generator_RowChangedName="AbonosApartadoRowChanged" msprop:Generator_RowEvArgName="AbonosApartadoRowChangeEvent" msprop:Generator_RowClassName="AbonosApartadoRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdProductos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProductos" msprop:Generator_ColumnPropNameInRow="IdProductos" msprop:Generator_ColumnPropNameInTable="IdProductosColumn" msprop:Generator_UserColumnName="IdProductos" type="xs:int" />
+              <xs:element name="IdAbono" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdAbono" msprop:Generator_ColumnPropNameInRow="IdAbono" msprop:Generator_ColumnPropNameInTable="IdAbonoColumn" msprop:Generator_UserColumnName="IdAbono" type="xs:int" />
+              <xs:element name="IdFolio" msprop:Generator_ColumnVarNameInTable="columnIdFolio" msprop:Generator_ColumnPropNameInRow="IdFolio" msprop:Generator_ColumnPropNameInTable="IdFolioColumn" msprop:Generator_UserColumnName="IdFolio" type="xs:int" />
+              <xs:element name="FechaAbono" msprop:Generator_ColumnVarNameInTable="columnFechaAbono" msprop:Generator_ColumnPropNameInRow="FechaAbono" msprop:Generator_ColumnPropNameInTable="FechaAbonoColumn" msprop:Generator_UserColumnName="FechaAbono" type="xs:dateTime" />
+              <xs:element name="MontoAbono" msprop:Generator_ColumnVarNameInTable="columnMontoAbono" msprop:Generator_ColumnPropNameInRow="MontoAbono" msprop:Generator_ColumnPropNameInTable="MontoAbonoColumn" msprop:Generator_UserColumnName="MontoAbono" type="xs:double" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ProductosApartado" msprop:Generator_TableClassName="ProductosApartadoDataTable" msprop:Generator_TableVarName="tableProductosApartado" msprop:Generator_TablePropName="ProductosApartado" msprop:Generator_RowDeletingName="ProductosApartadoRowDeleting" msprop:Generator_RowChangingName="ProductosApartadoRowChanging" msprop:Generator_RowEvHandlerName="ProductosApartadoRowChangeEventHandler" msprop:Generator_RowDeletedName="ProductosApartadoRowDeleted" msprop:Generator_UserTableName="ProductosApartado" msprop:Generator_RowChangedName="ProductosApartadoRowChanged" msprop:Generator_RowEvArgName="ProductosApartadoRowChangeEvent" msprop:Generator_RowClassName="ProductosApartadoRow">
+          <xs:complexType>
+            <xs:sequence>
               <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -119,35 +126,21 @@ join Folio f on a.IdFolio = f.IdFolio</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Abonos" msprop:Generator_TableClassName="AbonosDataTable" msprop:Generator_TableVarName="tableAbonos" msprop:Generator_RowChangedName="AbonosRowChanged" msprop:Generator_TablePropName="Abonos" msprop:Generator_RowDeletingName="AbonosRowDeleting" msprop:Generator_RowChangingName="AbonosRowChanging" msprop:Generator_RowEvHandlerName="AbonosRowChangeEventHandler" msprop:Generator_RowDeletedName="AbonosRowDeleted" msprop:Generator_RowClassName="AbonosRow" msprop:Generator_UserTableName="Abonos" msprop:Generator_RowEvArgName="AbonosRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="IdFolio" msprop:Generator_ColumnVarNameInTable="columnIdFolio" msprop:Generator_ColumnPropNameInRow="IdFolio" msprop:Generator_ColumnPropNameInTable="IdFolioColumn" msprop:Generator_UserColumnName="IdFolio" type="xs:int" />
-              <xs:element name="FechaAbono" msprop:Generator_ColumnVarNameInTable="columnFechaAbono" msprop:Generator_ColumnPropNameInRow="FechaAbono" msprop:Generator_ColumnPropNameInTable="FechaAbonoColumn" msprop:Generator_UserColumnName="FechaAbono" type="xs:dateTime" />
-              <xs:element name="MontoAbono" msprop:Generator_ColumnVarNameInTable="columnMontoAbono" msprop:Generator_ColumnPropNameInRow="MontoAbono" msprop:Generator_ColumnPropNameInTable="MontoAbonoColumn" msprop:Generator_UserColumnName="MontoAbono" type="xs:double" />
-              <xs:element name="IdAbono" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdAbono" msprop:Generator_ColumnPropNameInRow="IdAbono" msprop:Generator_ColumnPropNameInTable="IdAbonoColumn" msprop:Generator_UserColumnName="IdAbono" type="xs:int" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:FolioApartado" />
       <xs:field xpath="mstns:IdFolio" />
     </xs:unique>
-    <xs:unique name="ProductosApartado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:ProductosApartado" />
-      <xs:field xpath="mstns:IdProductos" />
-    </xs:unique>
-    <xs:unique name="Abonos_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Abonos" />
+    <xs:unique name="AbonosApartado_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:AbonosApartado" />
       <xs:field xpath="mstns:IdAbono" />
     </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Productos" msdata:parent="FolioApartado" msdata:child="ProductosApartado" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="ProductosApartado" msprop:Generator_ChildPropName="GetProductosApartadoRows" msprop:Generator_UserRelationName="Productos" msprop:Generator_RelationVarName="relationProductos" msprop:Generator_UserParentTable="FolioApartado" msprop:Generator_ParentPropName="FolioRow" />
-      <msdata:Relationship name="Abonos" msdata:parent="FolioApartado" msdata:child="Abonos" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="Abonos" msprop:Generator_ChildPropName="GetAbonosRows" msprop:Generator_UserRelationName="Abonos" msprop:Generator_RelationVarName="relationAbonos" msprop:Generator_UserParentTable="FolioApartado" msprop:Generator_ParentPropName="FolioRow" />
+      <msdata:Relationship name="Abonos" msdata:parent="FolioApartado" msdata:child="AbonosApartado" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="AbonosApartado" msprop:Generator_ChildPropName="GetAbonosApartadoRows" msprop:Generator_UserRelationName="Abonos" msprop:Generator_ParentPropName="FolioApartadoRow" msprop:Generator_RelationVarName="relationAbonos" msprop:Generator_UserParentTable="FolioApartado" />
+      <msdata:Relationship name="Productos" msdata:parent="FolioApartado" msdata:child="ProductosApartado" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="ProductosApartado" msprop:Generator_ChildPropName="GetProductosApartadoRows" msprop:Generator_UserRelationName="Productos" msprop:Generator_ParentPropName="FolioApartadoRow" msprop:Generator_RelationVarName="relationProductos" msprop:Generator_UserParentTable="FolioApartado" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

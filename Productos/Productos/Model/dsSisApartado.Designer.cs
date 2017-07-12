@@ -26,13 +26,13 @@ namespace CeramicaCarrillo.Model {
         
         private FolioApartadoDataTable tableFolioApartado;
         
+        private AbonosApartadoDataTable tableAbonosApartado;
+        
         private ProductosApartadoDataTable tableProductosApartado;
         
-        private AbonosDataTable tableAbonos;
+        private global::System.Data.DataRelation relationAbonos;
         
         private global::System.Data.DataRelation relationProductos;
-        
-        private global::System.Data.DataRelation relationAbonos;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -65,11 +65,11 @@ namespace CeramicaCarrillo.Model {
                 if ((ds.Tables["FolioApartado"] != null)) {
                     base.Tables.Add(new FolioApartadoDataTable(ds.Tables["FolioApartado"]));
                 }
+                if ((ds.Tables["AbonosApartado"] != null)) {
+                    base.Tables.Add(new AbonosApartadoDataTable(ds.Tables["AbonosApartado"]));
+                }
                 if ((ds.Tables["ProductosApartado"] != null)) {
                     base.Tables.Add(new ProductosApartadoDataTable(ds.Tables["ProductosApartado"]));
-                }
-                if ((ds.Tables["Abonos"] != null)) {
-                    base.Tables.Add(new AbonosDataTable(ds.Tables["Abonos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -103,9 +103,9 @@ namespace CeramicaCarrillo.Model {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ProductosApartadoDataTable ProductosApartado {
+        public AbonosApartadoDataTable AbonosApartado {
             get {
-                return this.tableProductosApartado;
+                return this.tableAbonosApartado;
             }
         }
         
@@ -113,9 +113,9 @@ namespace CeramicaCarrillo.Model {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AbonosDataTable Abonos {
+        public ProductosApartadoDataTable ProductosApartado {
             get {
-                return this.tableAbonos;
+                return this.tableProductosApartado;
             }
         }
         
@@ -189,11 +189,11 @@ namespace CeramicaCarrillo.Model {
                 if ((ds.Tables["FolioApartado"] != null)) {
                     base.Tables.Add(new FolioApartadoDataTable(ds.Tables["FolioApartado"]));
                 }
+                if ((ds.Tables["AbonosApartado"] != null)) {
+                    base.Tables.Add(new AbonosApartadoDataTable(ds.Tables["AbonosApartado"]));
+                }
                 if ((ds.Tables["ProductosApartado"] != null)) {
                     base.Tables.Add(new ProductosApartadoDataTable(ds.Tables["ProductosApartado"]));
-                }
-                if ((ds.Tables["Abonos"] != null)) {
-                    base.Tables.Add(new AbonosDataTable(ds.Tables["Abonos"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -234,20 +234,20 @@ namespace CeramicaCarrillo.Model {
                     this.tableFolioApartado.InitVars();
                 }
             }
+            this.tableAbonosApartado = ((AbonosApartadoDataTable)(base.Tables["AbonosApartado"]));
+            if ((initTable == true)) {
+                if ((this.tableAbonosApartado != null)) {
+                    this.tableAbonosApartado.InitVars();
+                }
+            }
             this.tableProductosApartado = ((ProductosApartadoDataTable)(base.Tables["ProductosApartado"]));
             if ((initTable == true)) {
                 if ((this.tableProductosApartado != null)) {
                     this.tableProductosApartado.InitVars();
                 }
             }
-            this.tableAbonos = ((AbonosDataTable)(base.Tables["Abonos"]));
-            if ((initTable == true)) {
-                if ((this.tableAbonos != null)) {
-                    this.tableAbonos.InitVars();
-                }
-            }
-            this.relationProductos = this.Relations["Productos"];
             this.relationAbonos = this.Relations["Abonos"];
+            this.relationProductos = this.Relations["Productos"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -260,18 +260,18 @@ namespace CeramicaCarrillo.Model {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableFolioApartado = new FolioApartadoDataTable();
             base.Tables.Add(this.tableFolioApartado);
+            this.tableAbonosApartado = new AbonosApartadoDataTable();
+            base.Tables.Add(this.tableAbonosApartado);
             this.tableProductosApartado = new ProductosApartadoDataTable();
             base.Tables.Add(this.tableProductosApartado);
-            this.tableAbonos = new AbonosDataTable();
-            base.Tables.Add(this.tableAbonos);
+            this.relationAbonos = new global::System.Data.DataRelation("Abonos", new global::System.Data.DataColumn[] {
+                        this.tableFolioApartado.IdFolioColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAbonosApartado.IdFolioColumn}, false);
+            this.Relations.Add(this.relationAbonos);
             this.relationProductos = new global::System.Data.DataRelation("Productos", new global::System.Data.DataColumn[] {
                         this.tableFolioApartado.IdFolioColumn}, new global::System.Data.DataColumn[] {
                         this.tableProductosApartado.IdFolioColumn}, false);
             this.Relations.Add(this.relationProductos);
-            this.relationAbonos = new global::System.Data.DataRelation("Abonos", new global::System.Data.DataColumn[] {
-                        this.tableFolioApartado.IdFolioColumn}, new global::System.Data.DataColumn[] {
-                        this.tableAbonos.IdFolioColumn}, false);
-            this.Relations.Add(this.relationAbonos);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -282,13 +282,13 @@ namespace CeramicaCarrillo.Model {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeProductosApartado() {
+        private bool ShouldSerializeAbonosApartado() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeAbonos() {
+        private bool ShouldSerializeProductosApartado() {
             return false;
         }
         
@@ -351,10 +351,10 @@ namespace CeramicaCarrillo.Model {
         public delegate void FolioApartadoRowChangeEventHandler(object sender, FolioApartadoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void ProductosApartadoRowChangeEventHandler(object sender, ProductosApartadoRowChangeEvent e);
+        public delegate void AbonosApartadoRowChangeEventHandler(object sender, AbonosApartadoRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void AbonosRowChangeEventHandler(object sender, AbonosRowChangeEvent e);
+        public delegate void ProductosApartadoRowChangeEventHandler(object sender, ProductosApartadoRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -684,9 +684,317 @@ namespace CeramicaCarrillo.Model {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ProductosApartadoDataTable : global::System.Data.TypedTableBase<ProductosApartadoRow> {
+        public partial class AbonosApartadoDataTable : global::System.Data.TypedTableBase<AbonosApartadoRow> {
             
-            private global::System.Data.DataColumn columnIdProductos;
+            private global::System.Data.DataColumn columnIdAbono;
+            
+            private global::System.Data.DataColumn columnIdFolio;
+            
+            private global::System.Data.DataColumn columnFechaAbono;
+            
+            private global::System.Data.DataColumn columnMontoAbono;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoDataTable() {
+                this.TableName = "AbonosApartado";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal AbonosApartadoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected AbonosApartadoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdAbonoColumn {
+                get {
+                    return this.columnIdAbono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdFolioColumn {
+                get {
+                    return this.columnIdFolio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FechaAbonoColumn {
+                get {
+                    return this.columnFechaAbono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn MontoAbonoColumn {
+                get {
+                    return this.columnMontoAbono;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoRow this[int index] {
+                get {
+                    return ((AbonosApartadoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AbonosApartadoRowChangeEventHandler AbonosApartadoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AbonosApartadoRowChangeEventHandler AbonosApartadoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AbonosApartadoRowChangeEventHandler AbonosApartadoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event AbonosApartadoRowChangeEventHandler AbonosApartadoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AddAbonosApartadoRow(AbonosApartadoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoRow AddAbonosApartadoRow(FolioApartadoRow parentFolioApartadoRowByAbonos, System.DateTime FechaAbono, double MontoAbono) {
+                AbonosApartadoRow rowAbonosApartadoRow = ((AbonosApartadoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        FechaAbono,
+                        MontoAbono};
+                if ((parentFolioApartadoRowByAbonos != null)) {
+                    columnValuesArray[1] = parentFolioApartadoRowByAbonos[0];
+                }
+                rowAbonosApartadoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowAbonosApartadoRow);
+                return rowAbonosApartadoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoRow FindByIdAbono(int IdAbono) {
+                return ((AbonosApartadoRow)(this.Rows.Find(new object[] {
+                            IdAbono})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                AbonosApartadoDataTable cln = ((AbonosApartadoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new AbonosApartadoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnIdAbono = base.Columns["IdAbono"];
+                this.columnIdFolio = base.Columns["IdFolio"];
+                this.columnFechaAbono = base.Columns["FechaAbono"];
+                this.columnMontoAbono = base.Columns["MontoAbono"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnIdAbono = new global::System.Data.DataColumn("IdAbono", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdAbono);
+                this.columnIdFolio = new global::System.Data.DataColumn("IdFolio", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdFolio);
+                this.columnFechaAbono = new global::System.Data.DataColumn("FechaAbono", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFechaAbono);
+                this.columnMontoAbono = new global::System.Data.DataColumn("MontoAbono", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMontoAbono);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnIdAbono}, true));
+                this.columnIdAbono.AutoIncrement = true;
+                this.columnIdAbono.AutoIncrementSeed = -1;
+                this.columnIdAbono.AutoIncrementStep = -1;
+                this.columnIdAbono.AllowDBNull = false;
+                this.columnIdAbono.ReadOnly = true;
+                this.columnIdAbono.Unique = true;
+                this.columnIdFolio.AllowDBNull = false;
+                this.columnFechaAbono.AllowDBNull = false;
+                this.columnMontoAbono.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoRow NewAbonosApartadoRow() {
+                return ((AbonosApartadoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new AbonosApartadoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(AbonosApartadoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.AbonosApartadoRowChanged != null)) {
+                    this.AbonosApartadoRowChanged(this, new AbonosApartadoRowChangeEvent(((AbonosApartadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.AbonosApartadoRowChanging != null)) {
+                    this.AbonosApartadoRowChanging(this, new AbonosApartadoRowChangeEvent(((AbonosApartadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.AbonosApartadoRowDeleted != null)) {
+                    this.AbonosApartadoRowDeleted(this, new AbonosApartadoRowChangeEvent(((AbonosApartadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.AbonosApartadoRowDeleting != null)) {
+                    this.AbonosApartadoRowDeleting(this, new AbonosApartadoRowChangeEvent(((AbonosApartadoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveAbonosApartadoRow(AbonosApartadoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                dsSisApartado ds = new dsSisApartado();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "AbonosApartadoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class ProductosApartadoDataTable : global::System.Data.TypedTableBase<ProductosApartadoRow> {
             
             private global::System.Data.DataColumn columnDescripcion;
             
@@ -729,14 +1037,6 @@ namespace CeramicaCarrillo.Model {
             protected ProductosApartadoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdProductosColumn {
-                get {
-                    return this.columnIdProductos;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,25 +1119,17 @@ namespace CeramicaCarrillo.Model {
             public ProductosApartadoRow AddProductosApartadoRow(string Descripcion, double Precio, int Unidades, double Total, FolioApartadoRow parentFolioApartadoRowByProductos) {
                 ProductosApartadoRow rowProductosApartadoRow = ((ProductosApartadoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Descripcion,
                         Precio,
                         Unidades,
                         Total,
                         null};
                 if ((parentFolioApartadoRowByProductos != null)) {
-                    columnValuesArray[5] = parentFolioApartadoRowByProductos[0];
+                    columnValuesArray[4] = parentFolioApartadoRowByProductos[0];
                 }
                 rowProductosApartadoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowProductosApartadoRow);
                 return rowProductosApartadoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductosApartadoRow FindByIdProductos(int IdProductos) {
-                return ((ProductosApartadoRow)(this.Rows.Find(new object[] {
-                            IdProductos})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -857,7 +1149,6 @@ namespace CeramicaCarrillo.Model {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnIdProductos = base.Columns["IdProductos"];
                 this.columnDescripcion = base.Columns["Descripcion"];
                 this.columnPrecio = base.Columns["Precio"];
                 this.columnUnidades = base.Columns["Unidades"];
@@ -868,8 +1159,6 @@ namespace CeramicaCarrillo.Model {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnIdProductos = new global::System.Data.DataColumn("IdProductos", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdProductos);
                 this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescripcion);
                 this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(double), null, global::System.Data.MappingType.Element);
@@ -880,14 +1169,6 @@ namespace CeramicaCarrillo.Model {
                 base.Columns.Add(this.columnTotal);
                 this.columnIdFolio = new global::System.Data.DataColumn("IdFolio", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdFolio);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdProductos}, true));
-                this.columnIdProductos.AutoIncrement = true;
-                this.columnIdProductos.AutoIncrementSeed = -1;
-                this.columnIdProductos.AutoIncrementStep = -1;
-                this.columnIdProductos.AllowDBNull = false;
-                this.columnIdProductos.ReadOnly = true;
-                this.columnIdProductos.Unique = true;
                 this.columnDescripcion.AllowDBNull = false;
                 this.columnDescripcion.MaxLength = 100;
                 this.columnPrecio.AllowDBNull = false;
@@ -1021,316 +1302,6 @@ namespace CeramicaCarrillo.Model {
         }
         
         /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AbonosDataTable : global::System.Data.TypedTableBase<AbonosRow> {
-            
-            private global::System.Data.DataColumn columnIdFolio;
-            
-            private global::System.Data.DataColumn columnFechaAbono;
-            
-            private global::System.Data.DataColumn columnMontoAbono;
-            
-            private global::System.Data.DataColumn columnIdAbono;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosDataTable() {
-                this.TableName = "Abonos";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AbonosDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected AbonosDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdFolioColumn {
-                get {
-                    return this.columnIdFolio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FechaAbonoColumn {
-                get {
-                    return this.columnFechaAbono;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn MontoAbonoColumn {
-                get {
-                    return this.columnMontoAbono;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdAbonoColumn {
-                get {
-                    return this.columnIdAbono;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow this[int index] {
-                get {
-                    return ((AbonosRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AbonosRowChangeEventHandler AbonosRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AbonosRowChangeEventHandler AbonosRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AbonosRowChangeEventHandler AbonosRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event AbonosRowChangeEventHandler AbonosRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddAbonosRow(AbonosRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow AddAbonosRow(FolioApartadoRow parentFolioApartadoRowByAbonos, System.DateTime FechaAbono, double MontoAbono) {
-                AbonosRow rowAbonosRow = ((AbonosRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        FechaAbono,
-                        MontoAbono,
-                        null};
-                if ((parentFolioApartadoRowByAbonos != null)) {
-                    columnValuesArray[0] = parentFolioApartadoRowByAbonos[0];
-                }
-                rowAbonosRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAbonosRow);
-                return rowAbonosRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow FindByIdAbono(int IdAbono) {
-                return ((AbonosRow)(this.Rows.Find(new object[] {
-                            IdAbono})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                AbonosDataTable cln = ((AbonosDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new AbonosDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal void InitVars() {
-                this.columnIdFolio = base.Columns["IdFolio"];
-                this.columnFechaAbono = base.Columns["FechaAbono"];
-                this.columnMontoAbono = base.Columns["MontoAbono"];
-                this.columnIdAbono = base.Columns["IdAbono"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            private void InitClass() {
-                this.columnIdFolio = new global::System.Data.DataColumn("IdFolio", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdFolio);
-                this.columnFechaAbono = new global::System.Data.DataColumn("FechaAbono", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFechaAbono);
-                this.columnMontoAbono = new global::System.Data.DataColumn("MontoAbono", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnMontoAbono);
-                this.columnIdAbono = new global::System.Data.DataColumn("IdAbono", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdAbono);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdAbono}, true));
-                this.columnIdFolio.AllowDBNull = false;
-                this.columnFechaAbono.AllowDBNull = false;
-                this.columnMontoAbono.AllowDBNull = false;
-                this.columnIdAbono.AutoIncrement = true;
-                this.columnIdAbono.AutoIncrementSeed = -1;
-                this.columnIdAbono.AutoIncrementStep = -1;
-                this.columnIdAbono.AllowDBNull = false;
-                this.columnIdAbono.ReadOnly = true;
-                this.columnIdAbono.Unique = true;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow NewAbonosRow() {
-                return ((AbonosRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AbonosRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AbonosRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AbonosRowChanged != null)) {
-                    this.AbonosRowChanged(this, new AbonosRowChangeEvent(((AbonosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AbonosRowChanging != null)) {
-                    this.AbonosRowChanging(this, new AbonosRowChangeEvent(((AbonosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AbonosRowDeleted != null)) {
-                    this.AbonosRowDeleted(this, new AbonosRowChangeEvent(((AbonosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AbonosRowDeleting != null)) {
-                    this.AbonosRowDeleting(this, new AbonosRowChangeEvent(((AbonosRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveAbonosRow(AbonosRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsSisApartado ds = new dsSisApartado();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AbonosDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class FolioApartadoRow : global::System.Data.DataRow {
@@ -1419,6 +1390,17 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public AbonosApartadoRow[] GetAbonosApartadoRows() {
+                if ((this.Table.ChildRelations["Abonos"] == null)) {
+                    return new AbonosApartadoRow[0];
+                }
+                else {
+                    return ((AbonosApartadoRow[])(base.GetChildRows(this.Table.ChildRelations["Abonos"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ProductosApartadoRow[] GetProductosApartadoRows() {
                 if ((this.Table.ChildRelations["Productos"] == null)) {
                     return new ProductosApartadoRow[0];
@@ -1427,15 +1409,74 @@ namespace CeramicaCarrillo.Model {
                     return ((ProductosApartadoRow[])(base.GetChildRows(this.Table.ChildRelations["Productos"])));
                 }
             }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class AbonosApartadoRow : global::System.Data.DataRow {
+            
+            private AbonosApartadoDataTable tableAbonosApartado;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow[] GetAbonosRows() {
-                if ((this.Table.ChildRelations["Abonos"] == null)) {
-                    return new AbonosRow[0];
+            internal AbonosApartadoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableAbonosApartado = ((AbonosApartadoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdAbono {
+                get {
+                    return ((int)(this[this.tableAbonosApartado.IdAbonoColumn]));
                 }
-                else {
-                    return ((AbonosRow[])(base.GetChildRows(this.Table.ChildRelations["Abonos"])));
+                set {
+                    this[this.tableAbonosApartado.IdAbonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int IdFolio {
+                get {
+                    return ((int)(this[this.tableAbonosApartado.IdFolioColumn]));
+                }
+                set {
+                    this[this.tableAbonosApartado.IdFolioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime FechaAbono {
+                get {
+                    return ((global::System.DateTime)(this[this.tableAbonosApartado.FechaAbonoColumn]));
+                }
+                set {
+                    this[this.tableAbonosApartado.FechaAbonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double MontoAbono {
+                get {
+                    return ((double)(this[this.tableAbonosApartado.MontoAbonoColumn]));
+                }
+                set {
+                    this[this.tableAbonosApartado.MontoAbonoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FolioApartadoRow FolioApartadoRow {
+                get {
+                    return ((FolioApartadoRow)(this.GetParentRow(this.Table.ParentRelations["Abonos"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Abonos"]);
                 }
             }
         }
@@ -1452,17 +1493,6 @@ namespace CeramicaCarrillo.Model {
             internal ProductosApartadoRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableProductosApartado = ((ProductosApartadoDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IdProductos {
-                get {
-                    return ((int)(this[this.tableProductosApartado.IdProductosColumn]));
-                }
-                set {
-                    this[this.tableProductosApartado.IdProductosColumn] = value;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1522,82 +1552,12 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioApartadoRow FolioRow {
+            public FolioApartadoRow FolioApartadoRow {
                 get {
                     return ((FolioApartadoRow)(this.GetParentRow(this.Table.ParentRelations["Productos"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["Productos"]);
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class AbonosRow : global::System.Data.DataRow {
-            
-            private AbonosDataTable tableAbonos;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal AbonosRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableAbonos = ((AbonosDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IdFolio {
-                get {
-                    return ((int)(this[this.tableAbonos.IdFolioColumn]));
-                }
-                set {
-                    this[this.tableAbonos.IdFolioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FechaAbono {
-                get {
-                    return ((global::System.DateTime)(this[this.tableAbonos.FechaAbonoColumn]));
-                }
-                set {
-                    this[this.tableAbonos.FechaAbonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double MontoAbono {
-                get {
-                    return ((double)(this[this.tableAbonos.MontoAbonoColumn]));
-                }
-                set {
-                    this[this.tableAbonos.MontoAbonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IdAbono {
-                get {
-                    return ((int)(this[this.tableAbonos.IdAbonoColumn]));
-                }
-                set {
-                    this[this.tableAbonos.IdAbonoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioApartadoRow FolioRow {
-                get {
-                    return ((FolioApartadoRow)(this.GetParentRow(this.Table.ParentRelations["Abonos"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Abonos"]);
                 }
             }
         }
@@ -1640,22 +1600,22 @@ namespace CeramicaCarrillo.Model {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class ProductosApartadoRowChangeEvent : global::System.EventArgs {
+        public class AbonosApartadoRowChangeEvent : global::System.EventArgs {
             
-            private ProductosApartadoRow eventRow;
+            private AbonosApartadoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductosApartadoRowChangeEvent(ProductosApartadoRow row, global::System.Data.DataRowAction action) {
+            public AbonosApartadoRowChangeEvent(AbonosApartadoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ProductosApartadoRow Row {
+            public AbonosApartadoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1674,22 +1634,22 @@ namespace CeramicaCarrillo.Model {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class AbonosRowChangeEvent : global::System.EventArgs {
+        public class ProductosApartadoRowChangeEvent : global::System.EventArgs {
             
-            private AbonosRow eventRow;
+            private ProductosApartadoRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRowChangeEvent(AbonosRow row, global::System.Data.DataRowAction action) {
+            public ProductosApartadoRowChangeEvent(ProductosApartadoRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AbonosRow Row {
+            public ProductosApartadoRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1852,7 +1812,7 @@ namespace CeramicaCarrillo.Model.dsSisApartadoTableAdapters {
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "select f.IdFolio, f.FechaVenta, p.Nombre + \' \' + p.Apellido as [Nombre del Emplea" +
                 "do] , f.TotalVenta, f.Faltante\r\nfrom Folio f\r\njoin Personal p on p.IdPersonal = " +
-                "f.IdPersonal\r\nwhere f.Status = 0\r\n";
+                "f.IdPersonal\r\nwhere f.Status = 0";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1876,6 +1836,178 @@ namespace CeramicaCarrillo.Model.dsSisApartadoTableAdapters {
         public virtual dsSisApartado.FolioApartadoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             dsSisApartado.FolioApartadoDataTable dataTable = new dsSisApartado.FolioApartadoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class AbonosApartadoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public AbonosApartadoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "AbonosApartado";
+            tableMapping.ColumnMappings.Add("IdAbono", "IdAbono");
+            tableMapping.ColumnMappings.Add("IdFolio", "IdFolio");
+            tableMapping.ColumnMappings.Add("FechaAbono", "FechaAbono");
+            tableMapping.ColumnMappings.Add("MontoAbono", "MontoAbono");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::CeramicaCarrillo.Properties.Settings.Default.BDCarrillo;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        a.IdAbono, a.IdFolio, a.FechaAbono, a.MontoAbono\r\nFROM            A" +
+                "bonos AS a INNER JOIN\r\n                         Folio AS f ON a.IdFolio = f.IdFo" +
+                "lio";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(dsSisApartado.AbonosApartadoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual dsSisApartado.AbonosApartadoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            dsSisApartado.AbonosApartadoDataTable dataTable = new dsSisApartado.AbonosApartadoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2002,7 +2134,6 @@ namespace CeramicaCarrillo.Model.dsSisApartadoTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "ProductosApartado";
-            tableMapping.ColumnMappings.Add("IdProductos", "IdProductos");
             tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
             tableMapping.ColumnMappings.Add("Precio", "Precio");
             tableMapping.ColumnMappings.Add("Unidades", "Unidades");
@@ -2024,8 +2155,8 @@ namespace CeramicaCarrillo.Model.dsSisApartadoTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select pd.IdProductos, pd.Descripcion, df.Precio, df.Unidades,\r\ndf.Total, df.IdFo" +
-                "lio\r\nfrom Productos pd join DetalleFolio df\r\non df.IdProductos = pd.IdProductos";
+            this._commandCollection[0].CommandText = "select pd.Descripcion, df.Precio, df.Unidades,\r\ndf.Total, df.IdFolio\r\nfrom Produc" +
+                "tos pd join DetalleFolio df\r\non df.IdProductos = pd.IdProductos";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2049,177 +2180,6 @@ namespace CeramicaCarrillo.Model.dsSisApartadoTableAdapters {
         public virtual dsSisApartado.ProductosApartadoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             dsSisApartado.ProductosApartadoDataTable dataTable = new dsSisApartado.ProductosApartadoDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AbonosTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public AbonosTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Abonos";
-            tableMapping.ColumnMappings.Add("IdFolio", "IdFolio");
-            tableMapping.ColumnMappings.Add("FechaAbono", "FechaAbono");
-            tableMapping.ColumnMappings.Add("MontoAbono", "MontoAbono");
-            tableMapping.ColumnMappings.Add("IdAbono", "IdAbono");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::CeramicaCarrillo.Properties.Settings.Default.BDCarrillo;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select a.IdAbono, a.IdFolio, a.FechaAbono, a.MontoAbono\r\nfrom Abonos a\r\njoin Foli" +
-                "o f on a.IdFolio = f.IdFolio";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsSisApartado.AbonosDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsSisApartado.AbonosDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsSisApartado.AbonosDataTable dataTable = new dsSisApartado.AbonosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

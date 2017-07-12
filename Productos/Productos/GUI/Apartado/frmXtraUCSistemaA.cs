@@ -13,6 +13,7 @@ namespace CeramicaCarrillo.GUI.Apartado
 {
     public partial class frmXtraUCSistemaA : DevExpress.XtraEditors.XtraUserControl
     {
+        Model.ArchivosLocales al = new Model.ArchivosLocales();
         public frmXtraUCSistemaA()
         {
             InitializeComponent();
@@ -21,9 +22,13 @@ namespace CeramicaCarrillo.GUI.Apartado
 
         private void CargarDatos()
         {
-            folioApartadoTableAdapter.Fill(dsSisApartado.FolioApartado);
-            abonosTableAdapter1.Fill(dsSisApartado.Abonos);
-            productosApartadoTableAdapter1.Fill(dsSisApartado.ProductosApartado);
+            try
+            {
+                folioApartadoTableAdapter.Fill(dsSisApartado.FolioApartado);
+                abonosApartadoTableAdapter1.Fill(dsSisApartado.AbonosApartado);
+                productosApartadoTableAdapter1.Fill(dsSisApartado.ProductosApartado);
+            }
+            catch (Exception e) { al.Mensajes(' ',""); }
         }
 
         private void btnReporte_Click(object sender, EventArgs e)
@@ -36,7 +41,7 @@ namespace CeramicaCarrillo.GUI.Apartado
             frmXtraReporteApartado frm = new frmXtraReporteApartado();
             using (DevExpress.XtraReports.UI.ReportPrintTool imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm))
             {
-                imprimir.ShowPreviewDialog();
+                imprimir.ShowRibbonPreviewDialog();
             }
             
         }

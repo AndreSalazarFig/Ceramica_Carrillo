@@ -40,7 +40,17 @@
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dsRegCompras = new CeramicaCarrillo.Model.dsRegCompras();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colIdCompras = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombreCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNombreTipo = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -50,20 +60,12 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dsRegCompras = new CeramicaCarrillo.Model.dsRegCompras();
-            this.comprasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.comprasTableAdapter = new CeramicaCarrillo.Model.dsRegComprasTableAdapters.ComprasTableAdapter();
-            this.colIdCompras = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombreCategoria = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNombreTipo = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colUnidades = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPrecio = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTotal = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comprasBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRegCompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -73,8 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRegCompras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comprasBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -101,6 +101,16 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // comprasBindingSource
+            // 
+            this.comprasBindingSource.DataMember = "Compras";
+            this.comprasBindingSource.DataSource = this.dsRegCompras;
+            // 
+            // dsRegCompras
+            // 
+            this.dsRegCompras.DataSetName = "dsRegCompras";
+            this.dsRegCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -118,6 +128,62 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFecha, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colIdCompras
+            // 
+            this.colIdCompras.FieldName = "IdCompras";
+            this.colIdCompras.Name = "colIdCompras";
+            this.colIdCompras.Visible = true;
+            this.colIdCompras.VisibleIndex = 0;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 1;
+            // 
+            // colNombreCategoria
+            // 
+            this.colNombreCategoria.FieldName = "NombreCategoria";
+            this.colNombreCategoria.Name = "colNombreCategoria";
+            this.colNombreCategoria.Visible = true;
+            this.colNombreCategoria.VisibleIndex = 2;
+            // 
+            // colNombreTipo
+            // 
+            this.colNombreTipo.FieldName = "NombreTipo";
+            this.colNombreTipo.Name = "colNombreTipo";
+            this.colNombreTipo.Visible = true;
+            this.colNombreTipo.VisibleIndex = 3;
+            // 
+            // colUnidades
+            // 
+            this.colUnidades.FieldName = "Unidades";
+            this.colUnidades.Name = "colUnidades";
+            this.colUnidades.Visible = true;
+            this.colUnidades.VisibleIndex = 4;
+            // 
+            // colPrecio
+            // 
+            this.colPrecio.FieldName = "Precio";
+            this.colPrecio.Name = "colPrecio";
+            this.colPrecio.Visible = true;
+            this.colPrecio.VisibleIndex = 5;
+            // 
+            // colTotal
+            // 
+            this.colTotal.FieldName = "Total";
+            this.colTotal.Name = "colTotal";
+            this.colTotal.Visible = true;
+            this.colTotal.VisibleIndex = 6;
+            // 
+            // colFecha
+            // 
+            this.colFecha.FieldName = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.Visible = true;
+            this.colFecha.VisibleIndex = 7;
             // 
             // layoutControl2
             // 
@@ -249,75 +315,9 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // dsRegCompras
-            // 
-            this.dsRegCompras.DataSetName = "dsRegCompras";
-            this.dsRegCompras.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // comprasBindingSource
-            // 
-            this.comprasBindingSource.DataMember = "Compras";
-            this.comprasBindingSource.DataSource = this.dsRegCompras;
-            // 
             // comprasTableAdapter
             // 
             this.comprasTableAdapter.ClearBeforeFill = true;
-            // 
-            // colIdCompras
-            // 
-            this.colIdCompras.FieldName = "IdCompras";
-            this.colIdCompras.Name = "colIdCompras";
-            this.colIdCompras.Visible = true;
-            this.colIdCompras.VisibleIndex = 0;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 1;
-            // 
-            // colNombreCategoria
-            // 
-            this.colNombreCategoria.FieldName = "NombreCategoria";
-            this.colNombreCategoria.Name = "colNombreCategoria";
-            this.colNombreCategoria.Visible = true;
-            this.colNombreCategoria.VisibleIndex = 2;
-            // 
-            // colNombreTipo
-            // 
-            this.colNombreTipo.FieldName = "NombreTipo";
-            this.colNombreTipo.Name = "colNombreTipo";
-            this.colNombreTipo.Visible = true;
-            this.colNombreTipo.VisibleIndex = 3;
-            // 
-            // colUnidades
-            // 
-            this.colUnidades.FieldName = "Unidades";
-            this.colUnidades.Name = "colUnidades";
-            this.colUnidades.Visible = true;
-            this.colUnidades.VisibleIndex = 4;
-            // 
-            // colPrecio
-            // 
-            this.colPrecio.FieldName = "Precio";
-            this.colPrecio.Name = "colPrecio";
-            this.colPrecio.Visible = true;
-            this.colPrecio.VisibleIndex = 5;
-            // 
-            // colTotal
-            // 
-            this.colTotal.FieldName = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.Visible = true;
-            this.colTotal.VisibleIndex = 6;
-            // 
-            // colFecha
-            // 
-            this.colFecha.FieldName = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 7;
             // 
             // frmXtraUCRegistroC
             // 
@@ -330,6 +330,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.comprasBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsRegCompras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
@@ -339,8 +341,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dsRegCompras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comprasBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
