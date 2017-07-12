@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CeramicaCarrillo.exe" size="508384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CeramicaCarrillo.exe" size="542688">
       <assemblyIdentity name="CeramicaCarrillo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bhGKCIGRZH3RY1nGX3Ae2QASM1hdXEaVLo6JNplumUY=</dsig:DigestValue>
+        <dsig:DigestValue>+B0LgQbllhmA4708ouOBJT4mWTqn766X+55ffmuDxR8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1003,6 +1003,18 @@
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
         <dsig:DigestValue>R3kl8xQ1qLapVmXfYweNn10VkaIstumwU4DFjSxaecA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevExpress.XtraCharts.v17.1.UI.dll" size="208112">
+      <assemblyIdentity name="DevExpress.XtraCharts.v17.1.UI" version="17.1.3.0" publicKeyToken="B88D1754D700E49A" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>IZh/L4rkNcOSLKC5yPvOwvj2ToQV1HTx5bX4Y2j53Is=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

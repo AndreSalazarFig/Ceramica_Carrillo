@@ -20,21 +20,19 @@ namespace CeramicaCarrillo.Model {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsPrueba")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsEstadisticas")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsPrueba : global::System.Data.DataSet {
+    public partial class dsEstadisticas : global::System.Data.DataSet {
         
-        private FolioDataTable tableFolio;
+        private ComprasEstadisticasDataTable tableComprasEstadisticas;
         
-        private DetalleDataTable tableDetalle;
-        
-        private global::System.Data.DataRelation relationDetalle;
+        private VentasEstadisticasDataTable tableVentasEstadisticas;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public dsPrueba() {
+        public dsEstadisticas() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -45,7 +43,7 @@ namespace CeramicaCarrillo.Model {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected dsPrueba(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsEstadisticas(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -58,11 +56,11 @@ namespace CeramicaCarrillo.Model {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["Folio"] != null)) {
-                    base.Tables.Add(new FolioDataTable(ds.Tables["Folio"]));
+                if ((ds.Tables["ComprasEstadisticas"] != null)) {
+                    base.Tables.Add(new ComprasEstadisticasDataTable(ds.Tables["ComprasEstadisticas"]));
                 }
-                if ((ds.Tables["Detalle"] != null)) {
-                    base.Tables.Add(new DetalleDataTable(ds.Tables["Detalle"]));
+                if ((ds.Tables["VentasEstadisticas"] != null)) {
+                    base.Tables.Add(new VentasEstadisticasDataTable(ds.Tables["VentasEstadisticas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -86,9 +84,9 @@ namespace CeramicaCarrillo.Model {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public FolioDataTable Folio {
+        public ComprasEstadisticasDataTable ComprasEstadisticas {
             get {
-                return this.tableFolio;
+                return this.tableComprasEstadisticas;
             }
         }
         
@@ -96,9 +94,9 @@ namespace CeramicaCarrillo.Model {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public DetalleDataTable Detalle {
+        public VentasEstadisticasDataTable VentasEstadisticas {
             get {
-                return this.tableDetalle;
+                return this.tableVentasEstadisticas;
             }
         }
         
@@ -144,7 +142,7 @@ namespace CeramicaCarrillo.Model {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsPrueba cln = ((dsPrueba)(base.Clone()));
+            dsEstadisticas cln = ((dsEstadisticas)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -169,11 +167,11 @@ namespace CeramicaCarrillo.Model {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["Folio"] != null)) {
-                    base.Tables.Add(new FolioDataTable(ds.Tables["Folio"]));
+                if ((ds.Tables["ComprasEstadisticas"] != null)) {
+                    base.Tables.Add(new ComprasEstadisticasDataTable(ds.Tables["ComprasEstadisticas"]));
                 }
-                if ((ds.Tables["Detalle"] != null)) {
-                    base.Tables.Add(new DetalleDataTable(ds.Tables["Detalle"]));
+                if ((ds.Tables["VentasEstadisticas"] != null)) {
+                    base.Tables.Add(new VentasEstadisticasDataTable(ds.Tables["VentasEstadisticas"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -208,48 +206,43 @@ namespace CeramicaCarrillo.Model {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableFolio = ((FolioDataTable)(base.Tables["Folio"]));
+            this.tableComprasEstadisticas = ((ComprasEstadisticasDataTable)(base.Tables["ComprasEstadisticas"]));
             if ((initTable == true)) {
-                if ((this.tableFolio != null)) {
-                    this.tableFolio.InitVars();
+                if ((this.tableComprasEstadisticas != null)) {
+                    this.tableComprasEstadisticas.InitVars();
                 }
             }
-            this.tableDetalle = ((DetalleDataTable)(base.Tables["Detalle"]));
+            this.tableVentasEstadisticas = ((VentasEstadisticasDataTable)(base.Tables["VentasEstadisticas"]));
             if ((initTable == true)) {
-                if ((this.tableDetalle != null)) {
-                    this.tableDetalle.InitVars();
+                if ((this.tableVentasEstadisticas != null)) {
+                    this.tableVentasEstadisticas.InitVars();
                 }
             }
-            this.relationDetalle = this.Relations["Detalle"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsPrueba";
+            this.DataSetName = "dsEstadisticas";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsPrueba.xsd";
+            this.Namespace = "http://tempuri.org/dsEstadisticas.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableFolio = new FolioDataTable();
-            base.Tables.Add(this.tableFolio);
-            this.tableDetalle = new DetalleDataTable();
-            base.Tables.Add(this.tableDetalle);
-            this.relationDetalle = new global::System.Data.DataRelation("Detalle", new global::System.Data.DataColumn[] {
-                        this.tableFolio.IdFolioColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDetalle.IdFolioColumn}, false);
-            this.Relations.Add(this.relationDetalle);
+            this.tableComprasEstadisticas = new ComprasEstadisticasDataTable();
+            base.Tables.Add(this.tableComprasEstadisticas);
+            this.tableVentasEstadisticas = new VentasEstadisticasDataTable();
+            base.Tables.Add(this.tableVentasEstadisticas);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeFolio() {
+        private bool ShouldSerializeComprasEstadisticas() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeDetalle() {
+        private bool ShouldSerializeVentasEstadisticas() {
             return false;
         }
         
@@ -264,7 +257,7 @@ namespace CeramicaCarrillo.Model {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsPrueba ds = new dsPrueba();
+            dsEstadisticas ds = new dsEstadisticas();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -309,30 +302,26 @@ namespace CeramicaCarrillo.Model {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void FolioRowChangeEventHandler(object sender, FolioRowChangeEvent e);
+        public delegate void ComprasEstadisticasRowChangeEventHandler(object sender, ComprasEstadisticasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void DetalleRowChangeEventHandler(object sender, DetalleRowChangeEvent e);
+        public delegate void VentasEstadisticasRowChangeEventHandler(object sender, VentasEstadisticasRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class FolioDataTable : global::System.Data.TypedTableBase<FolioRow> {
+        public partial class ComprasEstadisticasDataTable : global::System.Data.TypedTableBase<ComprasEstadisticasRow> {
             
-            private global::System.Data.DataColumn columnIdFolio;
+            private global::System.Data.DataColumn columnCompras_del_mes;
             
-            private global::System.Data.DataColumn columnTotalVenta;
-            
-            private global::System.Data.DataColumn columnFechaVenta;
-            
-            private global::System.Data.DataColumn columnNombre_del_empleado;
+            private global::System.Data.DataColumn columnMes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioDataTable() {
-                this.TableName = "Folio";
+            public ComprasEstadisticasDataTable() {
+                this.TableName = "ComprasEstadisticas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -340,7 +329,7 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FolioDataTable(global::System.Data.DataTable table) {
+            internal ComprasEstadisticasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -357,40 +346,24 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected FolioDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ComprasEstadisticasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdFolioColumn {
+            public global::System.Data.DataColumn Compras_del_mesColumn {
                 get {
-                    return this.columnIdFolio;
+                    return this.columnCompras_del_mes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotalVentaColumn {
+            public global::System.Data.DataColumn MesColumn {
                 get {
-                    return this.columnTotalVenta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn FechaVentaColumn {
-                get {
-                    return this.columnFechaVenta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn Nombre_del_empleadoColumn {
-                get {
-                    return this.columnNombre_del_empleado;
+                    return this.columnMes;
                 }
             }
             
@@ -405,55 +378,46 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow this[int index] {
+            public ComprasEstadisticasRow this[int index] {
                 get {
-                    return ((FolioRow)(this.Rows[index]));
+                    return ((ComprasEstadisticasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FolioRowChangeEventHandler FolioRowChanging;
+            public event ComprasEstadisticasRowChangeEventHandler ComprasEstadisticasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FolioRowChangeEventHandler FolioRowChanged;
+            public event ComprasEstadisticasRowChangeEventHandler ComprasEstadisticasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FolioRowChangeEventHandler FolioRowDeleting;
+            public event ComprasEstadisticasRowChangeEventHandler ComprasEstadisticasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event FolioRowChangeEventHandler FolioRowDeleted;
+            public event ComprasEstadisticasRowChangeEventHandler ComprasEstadisticasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddFolioRow(FolioRow row) {
+            public void AddComprasEstadisticasRow(ComprasEstadisticasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow AddFolioRow(double TotalVenta, System.DateTime FechaVenta, string Nombre_del_empleado) {
-                FolioRow rowFolioRow = ((FolioRow)(this.NewRow()));
+            public ComprasEstadisticasRow AddComprasEstadisticasRow(double Compras_del_mes, int Mes) {
+                ComprasEstadisticasRow rowComprasEstadisticasRow = ((ComprasEstadisticasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
-                        TotalVenta,
-                        FechaVenta,
-                        Nombre_del_empleado};
-                rowFolioRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowFolioRow);
-                return rowFolioRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow FindByIdFolio(int IdFolio) {
-                return ((FolioRow)(this.Rows.Find(new object[] {
-                            IdFolio})));
+                        Compras_del_mes,
+                        Mes};
+                rowComprasEstadisticasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowComprasEstadisticasRow);
+                return rowComprasEstadisticasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                FolioDataTable cln = ((FolioDataTable)(base.Clone()));
+                ComprasEstadisticasDataTable cln = ((ComprasEstadisticasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -461,67 +425,51 @@ namespace CeramicaCarrillo.Model {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new FolioDataTable();
+                return new ComprasEstadisticasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnIdFolio = base.Columns["IdFolio"];
-                this.columnTotalVenta = base.Columns["TotalVenta"];
-                this.columnFechaVenta = base.Columns["FechaVenta"];
-                this.columnNombre_del_empleado = base.Columns["Nombre del empleado"];
+                this.columnCompras_del_mes = base.Columns["Compras del mes"];
+                this.columnMes = base.Columns["Mes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnIdFolio = new global::System.Data.DataColumn("IdFolio", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdFolio);
-                this.columnTotalVenta = new global::System.Data.DataColumn("TotalVenta", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotalVenta);
-                this.columnFechaVenta = new global::System.Data.DataColumn("FechaVenta", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFechaVenta);
-                this.columnNombre_del_empleado = new global::System.Data.DataColumn("Nombre del empleado", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNombre_del_empleado);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnIdFolio}, true));
-                this.columnIdFolio.AutoIncrement = true;
-                this.columnIdFolio.AutoIncrementSeed = -1;
-                this.columnIdFolio.AutoIncrementStep = -1;
-                this.columnIdFolio.AllowDBNull = false;
-                this.columnIdFolio.ReadOnly = true;
-                this.columnIdFolio.Unique = true;
-                this.columnTotalVenta.AllowDBNull = false;
-                this.columnFechaVenta.AllowDBNull = false;
-                this.columnNombre_del_empleado.ReadOnly = true;
-                this.columnNombre_del_empleado.MaxLength = 151;
+                this.columnCompras_del_mes = new global::System.Data.DataColumn("Compras del mes", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCompras_del_mes);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnCompras_del_mes.ReadOnly = true;
+                this.columnMes.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow NewFolioRow() {
-                return ((FolioRow)(this.NewRow()));
+            public ComprasEstadisticasRow NewComprasEstadisticasRow() {
+                return ((ComprasEstadisticasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new FolioRow(builder);
+                return new ComprasEstadisticasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(FolioRow);
+                return typeof(ComprasEstadisticasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.FolioRowChanged != null)) {
-                    this.FolioRowChanged(this, new FolioRowChangeEvent(((FolioRow)(e.Row)), e.Action));
+                if ((this.ComprasEstadisticasRowChanged != null)) {
+                    this.ComprasEstadisticasRowChanged(this, new ComprasEstadisticasRowChangeEvent(((ComprasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -529,8 +477,8 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.FolioRowChanging != null)) {
-                    this.FolioRowChanging(this, new FolioRowChangeEvent(((FolioRow)(e.Row)), e.Action));
+                if ((this.ComprasEstadisticasRowChanging != null)) {
+                    this.ComprasEstadisticasRowChanging(this, new ComprasEstadisticasRowChangeEvent(((ComprasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -538,8 +486,8 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.FolioRowDeleted != null)) {
-                    this.FolioRowDeleted(this, new FolioRowChangeEvent(((FolioRow)(e.Row)), e.Action));
+                if ((this.ComprasEstadisticasRowDeleted != null)) {
+                    this.ComprasEstadisticasRowDeleted(this, new ComprasEstadisticasRowChangeEvent(((ComprasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -547,14 +495,14 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.FolioRowDeleting != null)) {
-                    this.FolioRowDeleting(this, new FolioRowChangeEvent(((FolioRow)(e.Row)), e.Action));
+                if ((this.ComprasEstadisticasRowDeleting != null)) {
+                    this.ComprasEstadisticasRowDeleting(this, new ComprasEstadisticasRowChangeEvent(((ComprasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveFolioRow(FolioRow row) {
+            public void RemoveComprasEstadisticasRow(ComprasEstadisticasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -563,7 +511,7 @@ namespace CeramicaCarrillo.Model {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsPrueba ds = new dsPrueba();
+                dsEstadisticas ds = new dsEstadisticas();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -581,7 +529,7 @@ namespace CeramicaCarrillo.Model {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "FolioDataTable";
+                attribute2.FixedValue = "ComprasEstadisticasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -627,22 +575,16 @@ namespace CeramicaCarrillo.Model {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class DetalleDataTable : global::System.Data.TypedTableBase<DetalleRow> {
+        public partial class VentasEstadisticasDataTable : global::System.Data.TypedTableBase<VentasEstadisticasRow> {
             
-            private global::System.Data.DataColumn columnDescripcion;
+            private global::System.Data.DataColumn columnVentas_del_mes;
             
-            private global::System.Data.DataColumn columnPrecio;
-            
-            private global::System.Data.DataColumn columnUnidades;
-            
-            private global::System.Data.DataColumn columnTotal;
-            
-            private global::System.Data.DataColumn columnIdFolio;
+            private global::System.Data.DataColumn columnMes;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleDataTable() {
-                this.TableName = "Detalle";
+            public VentasEstadisticasDataTable() {
+                this.TableName = "VentasEstadisticas";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -650,7 +592,7 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DetalleDataTable(global::System.Data.DataTable table) {
+            internal VentasEstadisticasDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -667,48 +609,24 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected DetalleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected VentasEstadisticasDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn DescripcionColumn {
+            public global::System.Data.DataColumn Ventas_del_mesColumn {
                 get {
-                    return this.columnDescripcion;
+                    return this.columnVentas_del_mes;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn PrecioColumn {
+            public global::System.Data.DataColumn MesColumn {
                 get {
-                    return this.columnPrecio;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn UnidadesColumn {
-                get {
-                    return this.columnUnidades;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn TotalColumn {
-                get {
-                    return this.columnTotal;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn IdFolioColumn {
-                get {
-                    return this.columnIdFolio;
+                    return this.columnMes;
                 }
             }
             
@@ -723,52 +641,46 @@ namespace CeramicaCarrillo.Model {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRow this[int index] {
+            public VentasEstadisticasRow this[int index] {
                 get {
-                    return ((DetalleRow)(this.Rows[index]));
+                    return ((VentasEstadisticasRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DetalleRowChangeEventHandler DetalleRowChanging;
+            public event VentasEstadisticasRowChangeEventHandler VentasEstadisticasRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DetalleRowChangeEventHandler DetalleRowChanged;
+            public event VentasEstadisticasRowChangeEventHandler VentasEstadisticasRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DetalleRowChangeEventHandler DetalleRowDeleting;
+            public event VentasEstadisticasRowChangeEventHandler VentasEstadisticasRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event DetalleRowChangeEventHandler DetalleRowDeleted;
+            public event VentasEstadisticasRowChangeEventHandler VentasEstadisticasRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddDetalleRow(DetalleRow row) {
+            public void AddVentasEstadisticasRow(VentasEstadisticasRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRow AddDetalleRow(string Descripcion, double Precio, int Unidades, double Total, FolioRow parentFolioRowByDetalle) {
-                DetalleRow rowDetalleRow = ((DetalleRow)(this.NewRow()));
+            public VentasEstadisticasRow AddVentasEstadisticasRow(double Ventas_del_mes, int Mes) {
+                VentasEstadisticasRow rowVentasEstadisticasRow = ((VentasEstadisticasRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        Descripcion,
-                        Precio,
-                        Unidades,
-                        Total,
-                        null};
-                if ((parentFolioRowByDetalle != null)) {
-                    columnValuesArray[4] = parentFolioRowByDetalle[0];
-                }
-                rowDetalleRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowDetalleRow);
-                return rowDetalleRow;
+                        Ventas_del_mes,
+                        Mes};
+                rowVentasEstadisticasRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowVentasEstadisticasRow);
+                return rowVentasEstadisticasRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                DetalleDataTable cln = ((DetalleDataTable)(base.Clone()));
+                VentasEstadisticasDataTable cln = ((VentasEstadisticasDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -776,64 +688,51 @@ namespace CeramicaCarrillo.Model {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new DetalleDataTable();
+                return new VentasEstadisticasDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
-                this.columnDescripcion = base.Columns["Descripcion"];
-                this.columnPrecio = base.Columns["Precio"];
-                this.columnUnidades = base.Columns["Unidades"];
-                this.columnTotal = base.Columns["Total"];
-                this.columnIdFolio = base.Columns["IdFolio"];
+                this.columnVentas_del_mes = base.Columns["Ventas del mes"];
+                this.columnMes = base.Columns["Mes"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             private void InitClass() {
-                this.columnDescripcion = new global::System.Data.DataColumn("Descripcion", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescripcion);
-                this.columnPrecio = new global::System.Data.DataColumn("Precio", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio);
-                this.columnUnidades = new global::System.Data.DataColumn("Unidades", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnUnidades);
-                this.columnTotal = new global::System.Data.DataColumn("Total", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTotal);
-                this.columnIdFolio = new global::System.Data.DataColumn("IdFolio", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnIdFolio);
-                this.columnDescripcion.AllowDBNull = false;
-                this.columnDescripcion.MaxLength = 100;
-                this.columnPrecio.AllowDBNull = false;
-                this.columnUnidades.AllowDBNull = false;
-                this.columnTotal.AllowDBNull = false;
-                this.columnIdFolio.AllowDBNull = false;
+                this.columnVentas_del_mes = new global::System.Data.DataColumn("Ventas del mes", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnVentas_del_mes);
+                this.columnMes = new global::System.Data.DataColumn("Mes", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMes);
+                this.columnVentas_del_mes.ReadOnly = true;
+                this.columnMes.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRow NewDetalleRow() {
-                return ((DetalleRow)(this.NewRow()));
+            public VentasEstadisticasRow NewVentasEstadisticasRow() {
+                return ((VentasEstadisticasRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new DetalleRow(builder);
+                return new VentasEstadisticasRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(DetalleRow);
+                return typeof(VentasEstadisticasRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.DetalleRowChanged != null)) {
-                    this.DetalleRowChanged(this, new DetalleRowChangeEvent(((DetalleRow)(e.Row)), e.Action));
+                if ((this.VentasEstadisticasRowChanged != null)) {
+                    this.VentasEstadisticasRowChanged(this, new VentasEstadisticasRowChangeEvent(((VentasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -841,8 +740,8 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.DetalleRowChanging != null)) {
-                    this.DetalleRowChanging(this, new DetalleRowChangeEvent(((DetalleRow)(e.Row)), e.Action));
+                if ((this.VentasEstadisticasRowChanging != null)) {
+                    this.VentasEstadisticasRowChanging(this, new VentasEstadisticasRowChangeEvent(((VentasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -850,8 +749,8 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.DetalleRowDeleted != null)) {
-                    this.DetalleRowDeleted(this, new DetalleRowChangeEvent(((DetalleRow)(e.Row)), e.Action));
+                if ((this.VentasEstadisticasRowDeleted != null)) {
+                    this.VentasEstadisticasRowDeleted(this, new VentasEstadisticasRowChangeEvent(((VentasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
@@ -859,14 +758,14 @@ namespace CeramicaCarrillo.Model {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.DetalleRowDeleting != null)) {
-                    this.DetalleRowDeleting(this, new DetalleRowChangeEvent(((DetalleRow)(e.Row)), e.Action));
+                if ((this.VentasEstadisticasRowDeleting != null)) {
+                    this.VentasEstadisticasRowDeleting(this, new VentasEstadisticasRowChangeEvent(((VentasEstadisticasRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveDetalleRow(DetalleRow row) {
+            public void RemoveVentasEstadisticasRow(VentasEstadisticasRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -875,7 +774,7 @@ namespace CeramicaCarrillo.Model {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsPrueba ds = new dsPrueba();
+                dsEstadisticas ds = new dsEstadisticas();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -893,7 +792,7 @@ namespace CeramicaCarrillo.Model {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "DetalleDataTable";
+                attribute2.FixedValue = "VentasEstadisticasDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -937,168 +836,144 @@ namespace CeramicaCarrillo.Model {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class FolioRow : global::System.Data.DataRow {
+        public partial class ComprasEstadisticasRow : global::System.Data.DataRow {
             
-            private FolioDataTable tableFolio;
+            private ComprasEstadisticasDataTable tableComprasEstadisticas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal FolioRow(global::System.Data.DataRowBuilder rb) : 
+            internal ComprasEstadisticasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableFolio = ((FolioDataTable)(this.Table));
+                this.tableComprasEstadisticas = ((ComprasEstadisticasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IdFolio {
-                get {
-                    return ((int)(this[this.tableFolio.IdFolioColumn]));
-                }
-                set {
-                    this[this.tableFolio.IdFolioColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double TotalVenta {
-                get {
-                    return ((double)(this[this.tableFolio.TotalVentaColumn]));
-                }
-                set {
-                    this[this.tableFolio.TotalVentaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public System.DateTime FechaVenta {
-                get {
-                    return ((global::System.DateTime)(this[this.tableFolio.FechaVentaColumn]));
-                }
-                set {
-                    this[this.tableFolio.FechaVentaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Nombre_del_empleado {
+            public double Compras_del_mes {
                 get {
                     try {
-                        return ((string)(this[this.tableFolio.Nombre_del_empleadoColumn]));
+                        return ((double)(this[this.tableComprasEstadisticas.Compras_del_mesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre del empleado\' de la tabla \'Folio\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Compras del mes\' de la tabla \'ComprasEstadisticas\' es DBN" +
+                                "ull.", e);
                     }
                 }
                 set {
-                    this[this.tableFolio.Nombre_del_empleadoColumn] = value;
+                    this[this.tableComprasEstadisticas.Compras_del_mesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsNombre_del_empleadoNull() {
-                return this.IsNull(this.tableFolio.Nombre_del_empleadoColumn);
+            public int Mes {
+                get {
+                    try {
+                        return ((int)(this[this.tableComprasEstadisticas.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'ComprasEstadisticas\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableComprasEstadisticas.MesColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetNombre_del_empleadoNull() {
-                this[this.tableFolio.Nombre_del_empleadoColumn] = global::System.Convert.DBNull;
+            public bool IsCompras_del_mesNull() {
+                return this.IsNull(this.tableComprasEstadisticas.Compras_del_mesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRow[] GetDetalleRows() {
-                if ((this.Table.ChildRelations["Detalle"] == null)) {
-                    return new DetalleRow[0];
-                }
-                else {
-                    return ((DetalleRow[])(base.GetChildRows(this.Table.ChildRelations["Detalle"])));
-                }
+            public void SetCompras_del_mesNull() {
+                this[this.tableComprasEstadisticas.Compras_del_mesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsMesNull() {
+                return this.IsNull(this.tableComprasEstadisticas.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableComprasEstadisticas.MesColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class DetalleRow : global::System.Data.DataRow {
+        public partial class VentasEstadisticasRow : global::System.Data.DataRow {
             
-            private DetalleDataTable tableDetalle;
+            private VentasEstadisticasDataTable tableVentasEstadisticas;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal DetalleRow(global::System.Data.DataRowBuilder rb) : 
+            internal VentasEstadisticasRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableDetalle = ((DetalleDataTable)(this.Table));
+                this.tableVentasEstadisticas = ((VentasEstadisticasDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string Descripcion {
+            public double Ventas_del_mes {
                 get {
-                    return ((string)(this[this.tableDetalle.DescripcionColumn]));
+                    try {
+                        return ((double)(this[this.tableVentasEstadisticas.Ventas_del_mesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Ventas del mes\' de la tabla \'VentasEstadisticas\' es DBNul" +
+                                "l.", e);
+                    }
                 }
                 set {
-                    this[this.tableDetalle.DescripcionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Precio {
-                get {
-                    return ((double)(this[this.tableDetalle.PrecioColumn]));
-                }
-                set {
-                    this[this.tableDetalle.PrecioColumn] = value;
+                    this[this.tableVentasEstadisticas.Ventas_del_mesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int Unidades {
+            public int Mes {
                 get {
-                    return ((int)(this[this.tableDetalle.UnidadesColumn]));
+                    try {
+                        return ((int)(this[this.tableVentasEstadisticas.MesColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Mes\' de la tabla \'VentasEstadisticas\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableDetalle.UnidadesColumn] = value;
+                    this[this.tableVentasEstadisticas.MesColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public double Total {
-                get {
-                    return ((double)(this[this.tableDetalle.TotalColumn]));
-                }
-                set {
-                    this[this.tableDetalle.TotalColumn] = value;
-                }
+            public bool IsVentas_del_mesNull() {
+                return this.IsNull(this.tableVentasEstadisticas.Ventas_del_mesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public int IdFolio {
-                get {
-                    return ((int)(this[this.tableDetalle.IdFolioColumn]));
-                }
-                set {
-                    this[this.tableDetalle.IdFolioColumn] = value;
-                }
+            public void SetVentas_del_mesNull() {
+                this[this.tableVentasEstadisticas.Ventas_del_mesColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow FolioRow {
-                get {
-                    return ((FolioRow)(this.GetParentRow(this.Table.ParentRelations["Detalle"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Detalle"]);
-                }
+            public bool IsMesNull() {
+                return this.IsNull(this.tableVentasEstadisticas.MesColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetMesNull() {
+                this[this.tableVentasEstadisticas.MesColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1106,22 +981,22 @@ namespace CeramicaCarrillo.Model {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class FolioRowChangeEvent : global::System.EventArgs {
+        public class ComprasEstadisticasRowChangeEvent : global::System.EventArgs {
             
-            private FolioRow eventRow;
+            private ComprasEstadisticasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRowChangeEvent(FolioRow row, global::System.Data.DataRowAction action) {
+            public ComprasEstadisticasRowChangeEvent(ComprasEstadisticasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FolioRow Row {
+            public ComprasEstadisticasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1140,22 +1015,22 @@ namespace CeramicaCarrillo.Model {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class DetalleRowChangeEvent : global::System.EventArgs {
+        public class VentasEstadisticasRowChangeEvent : global::System.EventArgs {
             
-            private DetalleRow eventRow;
+            private VentasEstadisticasRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRowChangeEvent(DetalleRow row, global::System.Data.DataRowAction action) {
+            public VentasEstadisticasRowChangeEvent(VentasEstadisticasRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DetalleRow Row {
+            public VentasEstadisticasRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -1171,7 +1046,7 @@ namespace CeramicaCarrillo.Model {
         }
     }
 }
-namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
+namespace CeramicaCarrillo.Model.dsEstadisticasTableAdapters {
     
     
     /// <summary>
@@ -1183,7 +1058,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class FolioTableAdapter : global::System.ComponentModel.Component {
+    public partial class ComprasEstadisticasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1197,7 +1072,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public FolioTableAdapter() {
+        public ComprasEstadisticasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1294,11 +1169,9 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Folio";
-            tableMapping.ColumnMappings.Add("IdFolio", "IdFolio");
-            tableMapping.ColumnMappings.Add("TotalVenta", "TotalVenta");
-            tableMapping.ColumnMappings.Add("FechaVenta", "FechaVenta");
-            tableMapping.ColumnMappings.Add("Nombre del empleado", "Nombre del empleado");
+            tableMapping.DataSetTable = "ComprasEstadisticas";
+            tableMapping.ColumnMappings.Add("Compras del mes", "Compras del mes");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1315,10 +1188,8 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        f.IdFolio, f.TotalVenta, f.FechaVenta, p.Nombre + \' \' + p.Apellido " +
-                "AS [Nombre del empleado]\r\nFROM            Folio AS f INNER JOIN\r\n               " +
-                "          Personal AS p ON f.IdPersonal = p.IdPersonal\r\nWHERE        f.Status = " +
-                "1";
+            this._commandCollection[0].CommandText = "select sum(Total) as [Compras del mes], MONTH(Fecha) as Mes from Compras where Ye" +
+                "ar(Fecha) = YEAR(getdate()) group by MONTH(Fecha)";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1326,7 +1197,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsPrueba.FolioDataTable dataTable) {
+        public virtual int Fill(dsEstadisticas.ComprasEstadisticasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1339,9 +1210,9 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsPrueba.FolioDataTable GetData() {
+        public virtual dsEstadisticas.ComprasEstadisticasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsPrueba.FolioDataTable dataTable = new dsPrueba.FolioDataTable();
+            dsEstadisticas.ComprasEstadisticasDataTable dataTable = new dsEstadisticas.ComprasEstadisticasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1356,7 +1227,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class DetalleTableAdapter : global::System.ComponentModel.Component {
+    public partial class VentasEstadisticasTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -1370,7 +1241,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DetalleTableAdapter() {
+        public VentasEstadisticasTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -1467,12 +1338,9 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Detalle";
-            tableMapping.ColumnMappings.Add("Descripcion", "Descripcion");
-            tableMapping.ColumnMappings.Add("Precio", "Precio");
-            tableMapping.ColumnMappings.Add("Unidades", "Unidades");
-            tableMapping.ColumnMappings.Add("Total", "Total");
-            tableMapping.ColumnMappings.Add("IdFolio", "IdFolio");
+            tableMapping.DataSetTable = "VentasEstadisticas";
+            tableMapping.ColumnMappings.Add("Ventas del mes", "Ventas del mes");
+            tableMapping.ColumnMappings.Add("Mes", "Mes");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1489,8 +1357,8 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "select pd.Descripcion, df.Precio, df.Unidades,\r\ndf.Total, df.IdFolio\r\nfrom Produc" +
-                "tos pd join DetalleFolio df\r\non df.IdProductos = pd.IdProductos";
+            this._commandCollection[0].CommandText = "select sum(TotalVenta) as [Ventas del mes], MONTH(FechaVenta) as Mes from Folio w" +
+                "here Year(FechaVenta) = YEAR(getdate()) group by MONTH(FechaVenta) ";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -1498,7 +1366,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dsPrueba.DetalleDataTable dataTable) {
+        public virtual int Fill(dsEstadisticas.VentasEstadisticasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -1511,9 +1379,9 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dsPrueba.DetalleDataTable GetData() {
+        public virtual dsEstadisticas.VentasEstadisticasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dsPrueba.DetalleDataTable dataTable = new dsPrueba.DetalleDataTable();
+            dsEstadisticas.VentasEstadisticasDataTable dataTable = new dsEstadisticas.VentasEstadisticasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1587,7 +1455,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(dsPrueba dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(dsEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1597,7 +1465,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(dsPrueba dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(dsEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             return result;
         }
@@ -1607,7 +1475,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(dsPrueba dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(dsEstadisticas dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             return result;
         }
@@ -1641,7 +1509,7 @@ namespace CeramicaCarrillo.Model.dsPruebaTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(dsPrueba dataSet) {
+        public virtual int UpdateAll(dsEstadisticas dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

@@ -23,7 +23,7 @@ namespace CeramicaCarrillo.GUI.Inicio
         public static Sesiones sesion = null;
         ArchivosLocales oExtras = new ArchivosLocales();
         XtraUserControl frmProductosUC, frmCategoriasTiposUC, frmPuntoVentaUC, frmRegistroComprasUC,
-            frmRegistroVentasUC, frmPersonalUC, frmSisApartadoUC;
+            frmRegistroVentasUC, frmPersonalUC, frmSisApartadoUC, frmEstadisticasUC;
         
 
         public frmXtraPrincipal()
@@ -70,6 +70,9 @@ namespace CeramicaCarrillo.GUI.Inicio
                     break;
                 case "Sistema de Apartado":
                     frmUserControl = frmSisApartadoUC;
+                    break;
+                case "Compra-Venta":
+                    frmUserControl = frmEstadisticasUC;
                     break;
                 default:
                     frmUserControl = null;
@@ -143,7 +146,10 @@ namespace CeramicaCarrillo.GUI.Inicio
                     frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
                     break;
                 case "Sistema de Apartado":
-                    frmPersonalUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
+                    frmSisApartadoUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
+                    break;
+                case "Compra-Venta":
+                    frmEstadisticasUC = CreateUserControl("Compra-Venta", new Estadisticas.frmXtraUCEstadisticas());
                     break;
             }
         }
@@ -172,6 +178,7 @@ namespace CeramicaCarrillo.GUI.Inicio
             frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
             frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
             frmSisApartadoUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
+            frmEstadisticasUC = CreateUserControl("Compra-Venta", new Estadisticas.frmXtraUCEstadisticas());
         }
 
         private void frmXtraPrincipal_FormClosing(object sender, FormClosingEventArgs e)

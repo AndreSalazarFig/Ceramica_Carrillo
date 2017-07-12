@@ -31,10 +31,10 @@ WHERE        f.Status = 1</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DetalleTableAdapter" GeneratorDataComponentClassName="DetalleTableAdapter" Name="Detalle" UserDataComponentName="DetalleTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="BDCarrillo (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>select pd.IdProductos, pd.Descripcion, df.Precio, df.Unidades,
+                    <CommandText>select pd.Descripcion, df.Precio, df.Unidades,
 df.Total, df.IdFolio
 from Productos pd join DetalleFolio df
 on df.IdProductos = pd.IdProductos</CommandText>
@@ -44,7 +44,6 @@ on df.IdProductos = pd.IdProductos</CommandText>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="IdProductos" DataSetColumn="IdProductos" />
               <Mapping SourceColumn="Descripcion" DataSetColumn="Descripcion" />
               <Mapping SourceColumn="Precio" DataSetColumn="Precio" />
               <Mapping SourceColumn="Unidades" DataSetColumn="Unidades" />
@@ -61,7 +60,7 @@ on df.IdProductos = pd.IdProductos</CommandText>
   <xs:element name="dsPrueba" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPrueba" msprop:Generator_UserDSName="dsPrueba">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Folio" msprop:Generator_TableClassName="FolioDataTable" msprop:Generator_TableVarName="tableFolio" msprop:Generator_RowChangedName="FolioRowChanged" msprop:Generator_TablePropName="Folio" msprop:Generator_RowDeletingName="FolioRowDeleting" msprop:Generator_RowChangingName="FolioRowChanging" msprop:Generator_RowEvHandlerName="FolioRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioRowDeleted" msprop:Generator_RowClassName="FolioRow" msprop:Generator_UserTableName="Folio" msprop:Generator_RowEvArgName="FolioRowChangeEvent">
+        <xs:element name="Folio" msprop:Generator_TableClassName="FolioDataTable" msprop:Generator_TableVarName="tableFolio" msprop:Generator_TablePropName="Folio" msprop:Generator_RowDeletingName="FolioRowDeleting" msprop:Generator_RowChangingName="FolioRowChanging" msprop:Generator_RowEvHandlerName="FolioRowChangeEventHandler" msprop:Generator_RowDeletedName="FolioRowDeleted" msprop:Generator_UserTableName="Folio" msprop:Generator_RowChangedName="FolioRowChanged" msprop:Generator_RowEvArgName="FolioRowChangeEvent" msprop:Generator_RowClassName="FolioRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="IdFolio" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdFolio" msprop:Generator_ColumnPropNameInRow="IdFolio" msprop:Generator_ColumnPropNameInTable="IdFolioColumn" msprop:Generator_UserColumnName="IdFolio" type="xs:int" />
@@ -77,10 +76,9 @@ on df.IdProductos = pd.IdProductos</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_RowClassName="DetalleRow" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowEvArgName="DetalleRowChangeEvent">
+        <xs:element name="Detalle" msprop:Generator_TableClassName="DetalleDataTable" msprop:Generator_TableVarName="tableDetalle" msprop:Generator_TablePropName="Detalle" msprop:Generator_RowDeletingName="DetalleRowDeleting" msprop:Generator_RowChangingName="DetalleRowChanging" msprop:Generator_RowEvHandlerName="DetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="DetalleRowDeleted" msprop:Generator_UserTableName="Detalle" msprop:Generator_RowChangedName="DetalleRowChanged" msprop:Generator_RowEvArgName="DetalleRowChangeEvent" msprop:Generator_RowClassName="DetalleRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="IdProductos" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnIdProductos" msprop:Generator_ColumnPropNameInRow="IdProductos" msprop:Generator_ColumnPropNameInTable="IdProductosColumn" msprop:Generator_UserColumnName="IdProductos" type="xs:int" />
               <xs:element name="Descripcion" msprop:Generator_ColumnVarNameInTable="columnDescripcion" msprop:Generator_ColumnPropNameInRow="Descripcion" msprop:Generator_ColumnPropNameInTable="DescripcionColumn" msprop:Generator_UserColumnName="Descripcion">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -101,14 +99,10 @@ on df.IdProductos = pd.IdProductos</CommandText>
       <xs:selector xpath=".//mstns:Folio" />
       <xs:field xpath="mstns:IdFolio" />
     </xs:unique>
-    <xs:unique name="Detalle_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:Detalle" />
-      <xs:field xpath="mstns:IdProductos" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="Detalle" msdata:parent="Folio" msdata:child="Detalle" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Detalle" msprop:Generator_RelationVarName="relationDetalle" msprop:Generator_UserParentTable="Folio" msprop:Generator_ParentPropName="FolioRow" />
+      <msdata:Relationship name="Detalle" msdata:parent="Folio" msdata:child="Detalle" msdata:parentkey="IdFolio" msdata:childkey="IdFolio" msprop:Generator_UserChildTable="Detalle" msprop:Generator_ChildPropName="GetDetalleRows" msprop:Generator_UserRelationName="Detalle" msprop:Generator_ParentPropName="FolioRow" msprop:Generator_RelationVarName="relationDetalle" msprop:Generator_UserParentTable="Folio" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

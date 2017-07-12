@@ -46,6 +46,8 @@
             this.btnRegistroVenta = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.gpPersonal = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement2 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -107,7 +109,8 @@
             this.btnVentas,
             this.btnBodega,
             this.accordionControlElement1,
-            this.gpPersonal});
+            this.gpPersonal,
+            this.accordionControlElement2});
             this.accordionCtrlNavegacion.Location = new System.Drawing.Point(0, 0);
             this.accordionCtrlNavegacion.Name = "accordionCtrlNavegacion";
             this.accordionCtrlNavegacion.Size = new System.Drawing.Size(193, 509);
@@ -138,6 +141,7 @@
             // 
             // btnPuntoVenta
             // 
+            this.btnPuntoVenta.Expanded = true;
             this.btnPuntoVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.ImageOptions.Image")));
             this.btnPuntoVenta.Name = "btnPuntoVenta";
             this.btnPuntoVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
@@ -226,6 +230,21 @@
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Personal";
             // 
+            // accordionControlElement2
+            // 
+            this.accordionControlElement2.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
+            this.accordionControlElement4});
+            this.accordionControlElement2.Expanded = true;
+            this.accordionControlElement2.Name = "accordionControlElement2";
+            this.accordionControlElement2.Text = "Estadísticas";
+            // 
+            // accordionControlElement4
+            // 
+            this.accordionControlElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement4.ImageOptions.Image")));
+            this.accordionControlElement4.Name = "accordionControlElement4";
+            this.accordionControlElement4.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement4.Text = "Compra-Venta";
+            // 
             // tabbedView
             // 
             this.tabbedView.RootContainer.Element = null;
@@ -307,5 +326,7 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnRegistroVenta;
         private DevExpress.XtraBars.Navigation.AccordionControlElement gpPersonal;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
     }
 }
