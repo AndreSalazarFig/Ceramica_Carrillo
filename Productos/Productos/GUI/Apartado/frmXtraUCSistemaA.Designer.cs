@@ -31,11 +31,13 @@
             this.components = new System.ComponentModel.Container();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraUCSistemaA));
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition4 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
@@ -57,6 +59,7 @@
             this.colFechaVenta = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNombredelEmpleado = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalVenta = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFaltante = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
@@ -70,7 +73,8 @@
             this.folioApartadoTableAdapter = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.FolioApartadoTableAdapter();
             this.productosApartadoTableAdapter1 = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.ProductosApartadoTableAdapter();
             this.abonosTableAdapter1 = new CeramicaCarrillo.Model.dsSisApartadoTableAdapters.AbonosTableAdapter();
-            this.colFaltante = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.btnNuevo = new DevExpress.XtraEditors.SimpleButton();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.folioApartadoBindingSource)).BeginInit();
@@ -87,6 +91,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // gridView1
@@ -99,6 +104,7 @@
             this.colTotal});
             this.gridView1.GridControl = this.gvDatos;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             // 
             // colIdProductos
             // 
@@ -137,7 +143,7 @@
             // 
             // gvDatos
             // 
-            this.gvDatos.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.gvDatos.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.gvDatos.DataSource = this.folioApartadoBindingSource;
             gridLevelNode1.LevelTemplate = this.gridView1;
             gridLevelNode1.RelationName = "Productos";
@@ -174,6 +180,7 @@
             this.colMontoAbono});
             this.gridView2.GridControl = this.gvDatos;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.ShowGroupPanel = false;
             // 
             // colIdFolio1
             // 
@@ -205,8 +212,11 @@
             this.colTotalVenta,
             this.colFaltante});
             this.dtgDatos.GridControl = this.gvDatos;
+            this.dtgDatos.GroupCount = 1;
             this.dtgDatos.Name = "dtgDatos";
             this.dtgDatos.OptionsView.ShowGroupPanel = false;
+            this.dtgDatos.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFechaVenta, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colIdFolio
             // 
@@ -227,14 +237,21 @@
             this.colNombredelEmpleado.FieldName = "Nombre del Empleado";
             this.colNombredelEmpleado.Name = "colNombredelEmpleado";
             this.colNombredelEmpleado.Visible = true;
-            this.colNombredelEmpleado.VisibleIndex = 2;
+            this.colNombredelEmpleado.VisibleIndex = 1;
             // 
             // colTotalVenta
             // 
             this.colTotalVenta.FieldName = "TotalVenta";
             this.colTotalVenta.Name = "colTotalVenta";
             this.colTotalVenta.Visible = true;
-            this.colTotalVenta.VisibleIndex = 3;
+            this.colTotalVenta.VisibleIndex = 2;
+            // 
+            // colFaltante
+            // 
+            this.colFaltante.FieldName = "Faltante";
+            this.colFaltante.Name = "colFaltante";
+            this.colFaltante.Visible = true;
+            this.colFaltante.VisibleIndex = 3;
             // 
             // layoutControl1
             // 
@@ -252,6 +269,7 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.btnReporte);
+            this.layoutControl2.Controls.Add(this.btnNuevo);
             this.layoutControl2.Location = new System.Drawing.Point(12, 432);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.Root;
@@ -263,6 +281,7 @@
             // 
             this.btnReporte.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReporte.Appearance.Options.UseFont = true;
+            this.btnReporte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.ImageOptions.Image")));
             this.btnReporte.Location = new System.Drawing.Point(398, 12);
             this.btnReporte.Name = "btnReporte";
             this.btnReporte.Size = new System.Drawing.Size(162, 36);
@@ -275,17 +294,21 @@
             this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.Root.GroupBordersVisible = false;
             this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4});
+            this.layoutControlItem4,
+            this.layoutControlItem5});
             this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.Root.Location = new System.Drawing.Point(0, 0);
             this.Root.Name = "Root";
             columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 70D;
+            columnDefinition1.Width = 30D;
             columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 30D;
+            columnDefinition2.Width = 40D;
+            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition3.Width = 30D;
             this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
             columnDefinition1,
-            columnDefinition2});
+            columnDefinition2,
+            columnDefinition3});
             rowDefinition1.Height = 80D;
             rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             rowDefinition2.Height = 20D;
@@ -302,7 +325,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(386, 0);
             this.layoutControlItem4.MinSize = new System.Drawing.Size(80, 26);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 2;
             this.layoutControlItem4.Size = new System.Drawing.Size(166, 40);
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
@@ -330,10 +353,10 @@
             this.layoutControlGroup1.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
-            columnDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition3.Width = 100D;
+            columnDefinition4.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition4.Width = 100D;
             this.layoutControlGroup1.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition3});
+            columnDefinition4});
             rowDefinition3.Height = 15D;
             rowDefinition3.SizeType = System.Windows.Forms.SizeType.Percent;
             rowDefinition4.Height = 70D;
@@ -390,12 +413,26 @@
             // 
             this.abonosTableAdapter1.ClearBeforeFill = true;
             // 
-            // colFaltante
+            // btnNuevo
             // 
-            this.colFaltante.FieldName = "Faltante";
-            this.colFaltante.Name = "colFaltante";
-            this.colFaltante.Visible = true;
-            this.colFaltante.VisibleIndex = 4;
+            this.btnNuevo.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnNuevo.Location = new System.Drawing.Point(12, 12);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(161, 36);
+            this.btnNuevo.StyleController = this.layoutControl2;
+            this.btnNuevo.TabIndex = 5;
+            this.btnNuevo.Text = "Nuevo Apartado";
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.btnNuevo;
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem5.MinSize = new System.Drawing.Size(80, 26);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(165, 40);
+            this.layoutControlItem5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
             // 
             // frmXtraUCSistemaA
             // 
@@ -420,6 +457,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -464,5 +502,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colUnidades;
         private DevExpress.XtraGrid.Columns.GridColumn colTotal;
         private DevExpress.XtraGrid.Columns.GridColumn colFaltante;
+        private DevExpress.XtraEditors.SimpleButton btnNuevo;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

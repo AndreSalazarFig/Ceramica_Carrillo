@@ -138,13 +138,14 @@
             // 
             // btnPuntoVenta
             // 
+            this.btnPuntoVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPuntoVenta.ImageOptions.Image")));
             this.btnPuntoVenta.Name = "btnPuntoVenta";
             this.btnPuntoVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnPuntoVenta.Text = "Punto de Venta";
             // 
             // btnSistemaAp
             // 
-            this.btnSistemaAp.Enabled = false;
+            this.btnSistemaAp.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSistemaAp.ImageOptions.Image")));
             this.btnSistemaAp.Name = "btnSistemaAp";
             this.btnSistemaAp.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnSistemaAp.Text = "Sistema de Apartado";
@@ -165,12 +166,14 @@
             // 
             // btnProductos
             // 
+            this.btnProductos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnProductos.ImageOptions.Image")));
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnProductos.Text = "Productos";
             // 
             // btnCategorias_Tipos
             // 
+            this.btnCategorias_Tipos.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCategorias_Tipos.ImageOptions.Image")));
             this.btnCategorias_Tipos.Name = "btnCategorias_Tipos";
             this.btnCategorias_Tipos.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnCategorias_Tipos.Text = "Tipos y Departamentos";
@@ -191,12 +194,14 @@
             // 
             // btnRegistroCompra
             // 
+            this.btnRegistroCompra.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroCompra.ImageOptions.Image")));
             this.btnRegistroCompra.Name = "btnRegistroCompra";
             this.btnRegistroCompra.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnRegistroCompra.Text = "Compras";
             // 
             // btnRegistroVenta
             // 
+            this.btnRegistroVenta.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistroVenta.ImageOptions.Image")));
             this.btnRegistroVenta.Name = "btnRegistroVenta";
             this.btnRegistroVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnRegistroVenta.Text = "Ventas";
@@ -216,6 +221,7 @@
             // 
             // accordionControlElement3
             // 
+            this.accordionControlElement3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement3.ImageOptions.Image")));
             this.accordionControlElement3.Name = "accordionControlElement3";
             this.accordionControlElement3.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.accordionControlElement3.Text = "Personal";
