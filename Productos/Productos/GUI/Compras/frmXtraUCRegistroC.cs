@@ -25,5 +25,18 @@ namespace CeramicaCarrillo.GUI.Compras
         {
             comprasTableAdapter.Fill(dsRegCompras.Compras);
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            VerReporte();
+        }
+
+        private void VerReporte()
+        {
+            frmXtraReporteCompras frm = new frmXtraReporteCompras();
+
+            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm);
+            Imprimir.ShowRibbonPreviewDialog();
+        }
     }
 }

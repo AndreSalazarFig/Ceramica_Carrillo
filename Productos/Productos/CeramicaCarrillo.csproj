@@ -236,6 +236,12 @@
     <Compile Include="GUI\Ventas\frmXtraCobroV.Designer.cs">
       <DependentUpon>frmXtraCobroV.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Ventas\frmXtraReporteVentas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Ventas\frmXtraReporteVentas.Designer.cs">
+      <DependentUpon>frmXtraReporteVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Ventas\frmXtraUCPuntoVenta.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -395,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Ventas\frmXtraCobroV.resx">
       <DependentUpon>frmXtraCobroV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Ventas\frmXtraReporteVentas.resx">
+      <DependentUpon>frmXtraReporteVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Ventas\frmXtraUCPuntoVenta.resx">
       <DependentUpon>frmXtraUCPuntoVenta.cs</DependentUpon>

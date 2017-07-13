@@ -206,6 +206,7 @@
             this.btnReporte.StyleController = this.layoutControl2;
             this.btnReporte.TabIndex = 4;
             this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // Root
             // 

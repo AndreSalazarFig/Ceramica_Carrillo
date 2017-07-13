@@ -38,10 +38,7 @@ namespace CeramicaCarrillo.GUI.Productos
 
         private void btnReporteProductos_Click(object sender, EventArgs e)
         {
-            frmXtraReporteProductos frm = new frmXtraReporteProductos();
-            
-            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm);
-            Imprimir.ShowRibbonPreviewDialog();
+            VerReporte();
         }
 
         private void ItemButtonAccionesProductos_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
@@ -192,6 +189,14 @@ namespace CeramicaCarrillo.GUI.Productos
         {
             Administrador();
             VistaDatos();
+        }
+
+        private void VerReporte()
+        {
+            frmXtraReporteProductos frm = new frmXtraReporteProductos();
+
+            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm);
+            Imprimir.ShowRibbonPreviewDialog();
         }
     }
 }
