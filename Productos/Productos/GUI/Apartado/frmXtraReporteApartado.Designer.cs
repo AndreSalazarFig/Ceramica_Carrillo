@@ -110,7 +110,7 @@
             // xrLabel14
             // 
             this.xrLabel14.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.Faltante")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.Faltante", "{0:$0.00}")});
             this.xrLabel14.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel14.LocationFloat = new DevExpress.Utils.PointFloat(527.9529F, 0F);
             this.xrLabel14.Name = "xrLabel14";
@@ -138,7 +138,7 @@
             // xrLabel12
             // 
             this.xrLabel12.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.FechaVenta")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.FechaVenta", "{0:dd/MM/yyyy}")});
             this.xrLabel12.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel12.LocationFloat = new DevExpress.Utils.PointFloat(274.6241F, 0F);
             this.xrLabel12.Name = "xrLabel12";
@@ -152,7 +152,7 @@
             // xrLabel13
             // 
             this.xrLabel13.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.TotalVenta")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "Folio.TotalVenta", "{0:$0.00}")});
             this.xrLabel13.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel13.LocationFloat = new DevExpress.Utils.PointFloat(391.312F, 0F);
             this.xrLabel13.Name = "xrLabel13";
@@ -233,7 +233,9 @@
             this.xrLabel7.SizeF = new System.Drawing.SizeF(200F, 36F);
             this.xrLabel7.StyleName = "FieldCaption";
             this.xrLabel7.StylePriority.UseFont = false;
+            this.xrLabel7.StylePriority.UseTextAlignment = false;
             this.xrLabel7.Text = "Empleado";
+            this.xrLabel7.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel3
             // 
@@ -244,7 +246,9 @@
             this.xrLabel3.SizeF = new System.Drawing.SizeF(116.6877F, 36F);
             this.xrLabel3.StyleName = "FieldCaption";
             this.xrLabel3.StylePriority.UseFont = false;
+            this.xrLabel3.StylePriority.UseTextAlignment = false;
             this.xrLabel3.Text = "Fecha Venta";
+            this.xrLabel3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel4
             // 
@@ -255,7 +259,9 @@
             this.xrLabel4.SizeF = new System.Drawing.SizeF(136.6409F, 36F);
             this.xrLabel4.StyleName = "FieldCaption";
             this.xrLabel4.StylePriority.UseFont = false;
+            this.xrLabel4.StylePriority.UseTextAlignment = false;
             this.xrLabel4.Text = "Total de Venta";
+            this.xrLabel4.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel5
             // 
@@ -266,7 +272,9 @@
             this.xrLabel5.SizeF = new System.Drawing.SizeF(93.92319F, 36F);
             this.xrLabel5.StyleName = "FieldCaption";
             this.xrLabel5.StylePriority.UseFont = false;
+            this.xrLabel5.StylePriority.UseTextAlignment = false;
             this.xrLabel5.Text = "Faltante";
+            this.xrLabel5.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLabel6
             // 
@@ -277,7 +285,9 @@
             this.xrLabel6.SizeF = new System.Drawing.SizeF(68.62416F, 36F);
             this.xrLabel6.StyleName = "FieldCaption";
             this.xrLabel6.StylePriority.UseFont = false;
+            this.xrLabel6.StylePriority.UseTextAlignment = false;
             this.xrLabel6.Text = "# Folio";
+            this.xrLabel6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // xrLine1
             // 

@@ -62,7 +62,7 @@
             this.btnAgregarPersonal.Size = new System.Drawing.Size(206, 42);
             this.btnAgregarPersonal.TabIndex = 3;
             this.btnAgregarPersonal.Text = "Agregar Empleado";
-            this.btnAgregarPersonal.ToolTip = "Agregar nuevos productos al sistema";
+            this.btnAgregarPersonal.ToolTip = "Agregar nuevos empleados al sistema";
             this.btnAgregarPersonal.Click += new System.EventHandler(this.btnAgregarPersonal_Click);
             // 
             // dtgVista

@@ -35,7 +35,15 @@ namespace CeramicaCarrillo.GUI.Productos
         {
             AbrirFormularioEdicion("Agregar Tipo de Producto", 'N');
         }
-        
+
+        private void btnReporteProductos_Click(object sender, EventArgs e)
+        {
+            frmXtraReporteProductos frm = new frmXtraReporteProductos();
+            
+            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm);
+            Imprimir.ShowRibbonPreviewDialog();
+        }
+
         private void ItemButtonAccionesProductos_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
         {
             try
