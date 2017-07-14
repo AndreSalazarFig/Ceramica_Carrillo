@@ -70,3 +70,14 @@ Sistema:
 		-Cambios de productos
 		-Registros de anomalías o defectos:
 			-mensajes de respuesta
+
+
+
+
+
+
+
+--- Apartir de 12 piezas de cualquier producto, se empieza a hacer uso del precio de mayoreo
+
+
+--- los precios de los productos se cambian a únicamente a Precio de Mayoreo y Precio a Mayorista
