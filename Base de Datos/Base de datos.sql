@@ -4,7 +4,7 @@
  * Project :      Modelo Relacional.DM1
  * Author :       ANDRE
  *
- * Date Created : Saturday, July 08, 2017 14:37:14
+ * Date Created : Monday, July 17, 2017 12:32:52
  * Target DBMS : Microsoft SQL Server 2008
  */
 
@@ -19,10 +19,10 @@ go
  */
 
 CREATE TABLE Abonos(
-    IdAbono       int      IDENTITY(1,1),
-    MontoAbono    float    NOT NULL,
-    FechaAbono    date     NOT NULL,
-    IdFolio       int      NOT NULL,
+    IdAbono       int             IDENTITY(1,1),
+    MontoAbono    float           NOT NULL,
+    FechaAbono    datetime2(7)    NOT NULL,
+    IdFolio       int             NOT NULL,
     CONSTRAINT PK13 PRIMARY KEY NONCLUSTERED (IdAbono)
 )
 go
@@ -36,14 +36,13 @@ ELSE
 go
 
 /* 
- * TABLE: Actividades 
+ * TABLE: Acciones 
  */
 
-CREATE TABLE Actividades(
+CREATE TABLE Acciones(
     IdActividad    int             IDENTITY(1,1),
-    Nombre         varchar(50)     NULL,
-    Descripcion    varchar(max)    NULL,
-    FechaLimite    date            NULL,
+    Descripcion    varchar(max)    NOT NULL,
+    Fecha          datetime2(7)    NOT NULL,
     IdPersonal     int             NOT NULL,
     CONSTRAINT PK5 PRIMARY KEY NONCLUSTERED (IdActividad)
 )
@@ -51,10 +50,10 @@ go
 
 
 
-IF OBJECT_ID('Actividades') IS NOT NULL
-    PRINT '<<< CREATED TABLE Actividades >>>'
+IF OBJECT_ID('Acciones') IS NOT NULL
+    PRINT '<<< CREATED TABLE Acciones >>>'
 ELSE
-    PRINT '<<< FAILED CREATING TABLE Actividades >>>'
+    PRINT '<<< FAILED CREATING TABLE Acciones >>>'
 go
 
 /* 
@@ -64,7 +63,7 @@ go
 CREATE TABLE Anomalias(
     IdAnomalias    int             IDENTITY(1,1),
     Descripcion    varchar(max)    NOT NULL,
-    Fecha          date            NOT NULL,
+    Fecha          datetime2(7)    NOT NULL,
     Respuesta      varchar(max)    NULL,
     IdPersonal     int             NOT NULL,
     IdProductos    int             NOT NULL,
@@ -105,12 +104,12 @@ go
  */
 
 CREATE TABLE Compras(
-    IdCompras      int      IDENTITY(1,1),
-    IdProductos    int      NOT NULL,
-    Unidades       int      NOT NULL,
-    Precio         float    NOT NULL,
-    Total          float    NOT NULL,
-    Fecha          date     NOT NULL,
+    IdCompras      int             IDENTITY(1,1),
+    IdProductos    int             NOT NULL,
+    Unidades       int             NOT NULL,
+    Precio         float           NOT NULL,
+    Total          float           NOT NULL,
+    Fecha          datetime2(7)    NOT NULL,
     CONSTRAINT PK12 PRIMARY KEY NONCLUSTERED (IdCompras)
 )
 go
@@ -151,12 +150,12 @@ go
  */
 
 CREATE TABLE Folio(
-    IdFolio       int      IDENTITY(1,1),
-    TotalVenta    float    NOT NULL,
-    FechaVenta    date     NOT NULL,
-    Status        bit      NOT NULL,
-    Faltante      float    NOT NULL,
-    IdPersonal    int      NOT NULL,
+    IdFolio       int             IDENTITY(1,1),
+    TotalVenta    float           NOT NULL,
+    FechaVenta    datetime2(7)    NOT NULL,
+    Status        bit             NOT NULL,
+    Faltante      float           NOT NULL,
+    IdPersonal    int             NOT NULL,
     CONSTRAINT PK6 PRIMARY KEY NONCLUSTERED (IdFolio)
 )
 go
@@ -184,6 +183,7 @@ CREATE TABLE Personal(
     Direccion          varchar(100)    NULL,
     FechaNacimiento    date            NULL,
     Puesto             varchar(20)     NOT NULL,
+    Status             bit             NOT NULL,
     CONSTRAINT PK2 PRIMARY KEY NONCLUSTERED (IdPersonal)
 )
 go
@@ -221,28 +221,6 @@ ELSE
 go
 
 /* 
- * TABLE: Solicitudes 
- */
-
-CREATE TABLE Solicitudes(
-    idSolicitudes    char(10)        NOT NULL,
-    Descripcion      varchar(max)    NULL,
-    Status           varchar(20)     NULL,
-    IdPersonal       int             NOT NULL,
-    IdProductos      int             NOT NULL,
-    CONSTRAINT PK3 PRIMARY KEY NONCLUSTERED (idSolicitudes)
-)
-go
-
-
-
-IF OBJECT_ID('Solicitudes') IS NOT NULL
-    PRINT '<<< CREATED TABLE Solicitudes >>>'
-ELSE
-    PRINT '<<< FAILED CREATING TABLE Solicitudes >>>'
-go
-
-/* 
  * TABLE: TipoProductos 
  */
 
@@ -272,10 +250,10 @@ go
 
 
 /* 
- * TABLE: Actividades 
+ * TABLE: Acciones 
  */
 
-ALTER TABLE Actividades ADD CONSTRAINT RefPersonal6 
+ALTER TABLE Acciones ADD CONSTRAINT RefPersonal6 
     FOREIGN KEY (IdPersonal)
     REFERENCES Personal(IdPersonal)
 go
@@ -350,21 +328,7 @@ ALTER TABLE Productos ADD CONSTRAINT RefCategorias13
     REFERENCES Categorias(idCategoria)
 go
 
-
-/* 
- * TABLE: Solicitudes 
- */
-
-ALTER TABLE Solicitudes ADD CONSTRAINT RefPersonal1 
-    FOREIGN KEY (IdPersonal)
-    REFERENCES Personal(IdPersonal)
+INSERT INTO Personal(Nombre, Apellido, Usuario, Contrasena, Movil, Puesto, Status)
+VALUES('Ponciano','Carrillo','administrador','p0nc14n0','7341043252','Administrador', 1)
 go
 
-ALTER TABLE Solicitudes ADD CONSTRAINT RefProductos2 
-    FOREIGN KEY (IdProductos)
-    REFERENCES Productos(IdProductos)
-go
-
-INSERT INTO Personal(Nombre, Apellido, Usuario, Contrasena, Movil, Puesto)
-VALUES('Ponciano','Carrillo','administrador','p0nc14n0','7341043252','Administrador')
-go

@@ -257,7 +257,7 @@
     <Compile Include="Model\Abonos.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\Actividades.cs">
+    <Compile Include="Model\Acciones.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Anomalias.cs">
@@ -320,16 +320,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Model\Mensajes\Mensaje.cs" />
+    <Compile Include="Model\Mensajes\MensajeLogin.cs" />
+    <Compile Include="Model\Mensajes\MensajeProductos.cs" />
     <Compile Include="Model\Personal.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Productos.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\RegistroA.cs" />
     <Compile Include="Model\Sesiones.cs" />
-    <Compile Include="Model\Solicitudes.cs">
-      <DependentUpon>mdlCarrillo.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\TipoProductos.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>

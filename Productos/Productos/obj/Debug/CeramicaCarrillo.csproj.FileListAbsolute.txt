@@ -1003,3 +1003,28 @@ C:\Users\CT 04\Desktop\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaC
 C:\Users\CT 04\Desktop\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.application
 C:\Users\CT 04\Desktop\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.exe
 C:\Users\CT 04\Desktop\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.pdb
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.RichEdit.v17.1.Export.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraCharts.v17.1.UI.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Reporting.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraCharts.v17.1.UI.xml
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.xml
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Reporting.xml
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Compras.frmXtraReporteCompras.resources
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Estadisticas.frmXtraUCEstadisticas.resources
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraReporteProductos.resources
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraReporteVentas.resources
