@@ -239,7 +239,7 @@
     <Compile Include="GUI\Ventas\frmXtraReporteVentas.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="GUI\Ventas\frmXtraReporteVentas.Designer.cs">
+    <Compile Include="GUI\Ventas\frmXtraReporteVentas.designer.cs">
       <DependentUpon>frmXtraReporteVentas.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\Ventas\frmXtraUCPuntoVenta.cs">

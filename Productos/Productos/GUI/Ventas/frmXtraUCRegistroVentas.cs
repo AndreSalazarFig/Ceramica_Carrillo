@@ -28,5 +28,18 @@ namespace CeramicaCarrillo.GUI.Ventas
             folioTableAdapter.Fill(dsPrueba1.Folio);
             detalleTableAdapter1.Fill(dsPrueba1.Detalle);
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            VerReporte();
+        }
+
+        private void VerReporte()
+        {
+            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new
+                DevExpress.XtraReports.UI.ReportPrintTool(new frmXtraReporteVentas());
+
+            Imprimir.ShowRibbonPreviewDialog();
+        }
     }
 }

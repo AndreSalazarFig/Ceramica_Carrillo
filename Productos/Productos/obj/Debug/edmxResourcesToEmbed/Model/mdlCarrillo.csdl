@@ -6,7 +6,7 @@
     </Key>
     <Property Name="IdAnomalias" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="IdPersonal" Type="Int32" Nullable="false" />
     <Property Name="IdProductos" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Personal" Relationship="Self.RefPersonal4" FromRole="Anomalias" ToRole="Personal" />
@@ -33,7 +33,7 @@
     <Property Name="Precio" Type="Double" Nullable="false" />
     <Property Name="Total" Type="Double" Nullable="false" />
     <NavigationProperty Name="Productos" Relationship="Self.RefProductos15" FromRole="Compras" ToRole="Productos" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="7" />
   </EntityType>
   <EntityType Name="DetalleFolio">
     <Key>
@@ -54,7 +54,7 @@
     </Key>
     <Property Name="IdFolio" Type="Int32" Nullable="false" />
     <Property Name="TotalVenta" Type="Double" Nullable="false" />
-    <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaVenta" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="IdPersonal" Type="Int32" Nullable="false" />
     <NavigationProperty Name="DetalleFolio" Relationship="Self.RefFolio8" FromRole="Folio" ToRole="DetalleFolio" />
     <NavigationProperty Name="Personal" Relationship="Self.RefPersonal7" FromRole="Folio" ToRole="Personal" />
@@ -259,7 +259,7 @@
     </Key>
     <Property Name="IdAbono" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="MontoAbono" Type="Double" Nullable="false" />
-    <Property Name="FechaAbono" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FechaAbono" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="IdFolio" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Folio" Relationship="BDCarrilloModel.RefFolio16" FromRole="Abonos" ToRole="Folio" />
   </EntityType>
@@ -281,7 +281,7 @@
     </Key>
     <Property Name="IdActividad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Descripcion" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
-    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="7" />
     <Property Name="IdPersonal" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Personal" Relationship="BDCarrilloModel.RefPersonal61" FromRole="Acciones" ToRole="Personal" />
   </EntityType>

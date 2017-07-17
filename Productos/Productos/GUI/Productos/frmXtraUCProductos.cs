@@ -193,9 +193,9 @@ namespace CeramicaCarrillo.GUI.Productos
 
         private void VerReporte()
         {
-            frmXtraReporteProductos frm = new frmXtraReporteProductos();
+            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new 
+                DevExpress.XtraReports.UI.ReportPrintTool(new frmXtraReporteProductos());
 
-            DevExpress.XtraReports.UI.ReportPrintTool Imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm);
             Imprimir.ShowRibbonPreviewDialog();
         }
     }

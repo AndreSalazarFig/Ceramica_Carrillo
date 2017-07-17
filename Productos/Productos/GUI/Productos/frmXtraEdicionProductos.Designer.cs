@@ -246,18 +246,21 @@
             this.CtrlItemPrecioUnitario.Name = "CtrlItemPrecioUnitario";
             this.CtrlItemPrecioUnitario.OptionsTableLayoutItem.ColumnIndex = 1;
             this.CtrlItemPrecioUnitario.Size = new System.Drawing.Size(262, 24);
-            this.CtrlItemPrecioUnitario.Text = "Precio de Venta";
+            this.CtrlItemPrecioUnitario.Text = "Precio al Mayoreo";
             this.CtrlItemPrecioUnitario.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlitemPrecioMayoreo
             // 
             this.CtrlitemPrecioMayoreo.Control = this.txtPrecioMayoreo;
             this.CtrlitemPrecioMayoreo.Location = new System.Drawing.Point(0, 68);
+            this.CtrlitemPrecioMayoreo.MaxSize = new System.Drawing.Size(262, 24);
+            this.CtrlitemPrecioMayoreo.MinSize = new System.Drawing.Size(262, 24);
             this.CtrlitemPrecioMayoreo.Name = "CtrlitemPrecioMayoreo";
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.ColumnIndex = 1;
             this.CtrlitemPrecioMayoreo.OptionsTableLayoutItem.RowIndex = 1;
             this.CtrlitemPrecioMayoreo.Size = new System.Drawing.Size(262, 24);
-            this.CtrlitemPrecioMayoreo.Text = "Precio de Mayoreo";
+            this.CtrlitemPrecioMayoreo.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
+            this.CtrlitemPrecioMayoreo.Text = "Precio al Mayorista";
             this.CtrlitemPrecioMayoreo.TextSize = new System.Drawing.Size(132, 13);
             // 
             // CtrlItemCategoria
@@ -279,6 +282,7 @@
             this.CtrlItemUnidades.Size = new System.Drawing.Size(254, 24);
             this.CtrlItemUnidades.Text = "Unidades";
             this.CtrlItemUnidades.TextSize = new System.Drawing.Size(132, 13);
+            this.CtrlItemUnidades.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // emptySpaceItem1
             // 

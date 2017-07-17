@@ -6,7 +6,7 @@
     </Key>
     <Property Name="IdAbono" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="MontoAbono" Type="float" Nullable="false" />
-    <Property Name="FechaAbono" Type="date" Nullable="false" />
+    <Property Name="FechaAbono" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="IdFolio" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Acciones">
@@ -15,7 +15,7 @@
     </Key>
     <Property Name="IdActividad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
-    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Fecha" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="IdPersonal" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Anomalias">
@@ -24,7 +24,7 @@
     </Key>
     <Property Name="IdAnomalias" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Descripcion" Type="varchar(max)" Nullable="false" />
-    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Fecha" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="Respuesta" Type="varchar(max)" />
     <Property Name="IdPersonal" Type="int" Nullable="false" />
     <Property Name="IdProductos" Type="int" Nullable="false" />
@@ -46,7 +46,7 @@
     <Property Name="Unidades" Type="int" Nullable="false" />
     <Property Name="Precio" Type="float" Nullable="false" />
     <Property Name="Total" Type="float" Nullable="false" />
-    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Fecha" Type="datetime2" Precision="7" Nullable="false" />
   </EntityType>
   <EntityType Name="DetalleFolio">
     <Key>
@@ -65,7 +65,7 @@
     </Key>
     <Property Name="IdFolio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TotalVenta" Type="float" Nullable="false" />
-    <Property Name="FechaVenta" Type="date" Nullable="false" />
+    <Property Name="FechaVenta" Type="datetime2" Precision="7" Nullable="false" />
     <Property Name="Status" Type="bit" Nullable="false" />
     <Property Name="Faltante" Type="float" Nullable="false" />
     <Property Name="IdPersonal" Type="int" Nullable="false" />
