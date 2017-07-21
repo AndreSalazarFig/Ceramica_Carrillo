@@ -75,11 +75,14 @@
             this.Unidades,
             this.CategoriaTipo,
             this.Acciones});
+            this.dtgVistaProductos.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.dtgVistaProductos.GridControl = this.dtgVista;
             this.dtgVistaProductos.Name = "dtgVistaProductos";
             this.dtgVistaProductos.OptionsBehavior.ReadOnly = true;
             this.dtgVistaProductos.OptionsFind.AlwaysVisible = true;
             this.dtgVistaProductos.OptionsFind.FindNullPrompt = "Búsquedas...";
+            this.dtgVistaProductos.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.dtgVistaProductos.OptionsSelection.EnableAppearanceHideSelection = false;
             // 
             // IdProductos
             // 

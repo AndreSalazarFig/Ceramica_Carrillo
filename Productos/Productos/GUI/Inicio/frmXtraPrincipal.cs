@@ -78,7 +78,7 @@ namespace CeramicaCarrillo.GUI.Inicio
                     frmUserControl = null;
                     break;
             }
-
+            frmUserControl.Refresh();
             tabbedView.AddDocument(frmUserControl);
             tabbedView.ActivateDocument(frmUserControl);
         }
@@ -97,24 +97,7 @@ namespace CeramicaCarrillo.GUI.Inicio
 
         void SetAccordionSelectedElement(DocumentEventArgs e)
         {
-            //    if (tabbedView.Documents.Count != 0)
-            //    {
-            //        if (e.Document.Caption == "Employees") accordionCtrlNavegacion.SelectedElement = btnProductos;
-            //        else accordionCtrlNavegacion.SelectedElement = employeesAccordionControlElement;
-            //switch (e.Document.Caption)
-            //{
-            //    case "Productos":
-            //        accordionCtrlNavegacion.SelectedElement = btnProductos;
-            //        break;
-            //    case "Tipos y Categorías":
-            //        accordionCtrlNavegacion.SelectedElement = btnCategorias_Tipos;
-            //        break;
-            //}
-            //    }
-            //    else
-            //    {
-                    accordionCtrlNavegacion.SelectedElement = null;
-            //    }
+            accordionCtrlNavegacion.SelectedElement = null;
             if (tabbedView.Documents.Count == 0)
             {
                 accordionCtrlNavegacion.SelectedElement = null;
@@ -123,8 +106,6 @@ namespace CeramicaCarrillo.GUI.Inicio
 
         void RecreateUserControls(DocumentEventArgs e)
         {
-            //if (e.Document.Caption == "Productos") employeesUserControl = CreateUserControl("Productos");
-            //else customersUserControl = CreateUserControl("Customers");
             switch (e.Document.Caption)
             {
                 case "Productos":
@@ -169,7 +150,9 @@ namespace CeramicaCarrillo.GUI.Inicio
             Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
             Personal.frmXtraUCPersonal.bdCarrillo = bdCarrillo;
-            Personal.frmXtraUCPersonal.sesion = sesion;            
+            Personal.frmXtraUCPersonal.sesion = sesion;
+
+            Apartado.frmXtraUCSistemaA.datos = bdCarrillo;
 
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());

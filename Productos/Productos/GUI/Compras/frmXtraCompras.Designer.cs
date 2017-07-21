@@ -108,7 +108,7 @@
             // 
             // txtDescripcionCompra
             // 
-            this.txtDescripcionCompra.Location = new System.Drawing.Point(147, 76);
+            this.txtDescripcionCompra.Location = new System.Drawing.Point(147, 71);
             this.txtDescripcionCompra.Name = "txtDescripcionCompra";
             this.txtDescripcionCompra.Size = new System.Drawing.Size(282, 20);
             this.txtDescripcionCompra.StyleController = this.lyCtrlDatos;
@@ -121,7 +121,7 @@
             0,
             0,
             0});
-            this.txtUnidades.Location = new System.Drawing.Point(147, 110);
+            this.txtUnidades.Location = new System.Drawing.Point(147, 105);
             this.txtUnidades.Name = "txtUnidades";
             this.txtUnidades.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -143,7 +143,7 @@
             0,
             0,
             0});
-            this.txtPrecioCompra.Location = new System.Drawing.Point(147, 144);
+            this.txtPrecioCompra.Location = new System.Drawing.Point(147, 139);
             this.txtPrecioCompra.Name = "txtPrecioCompra";
             this.txtPrecioCompra.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -163,7 +163,7 @@
             0,
             0,
             0});
-            this.txtTotal.Location = new System.Drawing.Point(360, 144);
+            this.txtTotal.Location = new System.Drawing.Point(360, 139);
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -172,6 +172,7 @@
             0,
             0,
             0});
+            this.txtTotal.Properties.ReadOnly = true;
             this.txtTotal.Size = new System.Drawing.Size(69, 20);
             this.txtTotal.StyleController = this.lyCtrlDatos;
             this.txtTotal.TabIndex = 10;
@@ -179,7 +180,7 @@
             // txtDescripcionProducto
             // 
             this.txtDescripcionProducto.Enabled = false;
-            this.txtDescripcionProducto.Location = new System.Drawing.Point(147, 42);
+            this.txtDescripcionProducto.Location = new System.Drawing.Point(147, 37);
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.Size = new System.Drawing.Size(282, 20);
             this.txtDescripcionProducto.StyleController = this.lyCtrlDatos;
@@ -247,7 +248,7 @@
             this.CtrlItemPrecioCompra.Control = this.txtPrecioCompra;
             this.CtrlItemPrecioCompra.Location = new System.Drawing.Point(0, 102);
             this.CtrlItemPrecioCompra.Name = "CtrlItemPrecioCompra";
-            this.CtrlItemPrecioCompra.Size = new System.Drawing.Size(203, 24);
+            this.CtrlItemPrecioCompra.Size = new System.Drawing.Size(203, 29);
             this.CtrlItemPrecioCompra.Text = "Precio de Compra";
             this.CtrlItemPrecioCompra.TextSize = new System.Drawing.Size(120, 13);
             // 
@@ -256,7 +257,7 @@
             this.CtrlItemTotal.Control = this.txtTotal;
             this.CtrlItemTotal.Location = new System.Drawing.Point(213, 102);
             this.CtrlItemTotal.Name = "CtrlItemTotal";
-            this.CtrlItemTotal.Size = new System.Drawing.Size(196, 24);
+            this.CtrlItemTotal.Size = new System.Drawing.Size(196, 29);
             this.CtrlItemTotal.Text = "Total de la Compra";
             this.CtrlItemTotal.TextSize = new System.Drawing.Size(120, 13);
             // 
@@ -321,7 +322,7 @@
             this.Space5.MaxSize = new System.Drawing.Size(10, 0);
             this.Space5.MinSize = new System.Drawing.Size(10, 10);
             this.Space5.Name = "Space5";
-            this.Space5.Size = new System.Drawing.Size(10, 24);
+            this.Space5.Size = new System.Drawing.Size(10, 29);
             this.Space5.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.Space5.TextSize = new System.Drawing.Size(0, 0);
             // 

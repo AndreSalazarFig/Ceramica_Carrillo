@@ -122,6 +122,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GUI\Actividades\frmXtraUCRegistroAcciones.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Actividades\frmXtraUCRegistroAcciones.Designer.cs">
+      <DependentUpon>frmXtraUCRegistroAcciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Anomalias\frmXtraAnomalias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -294,6 +300,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsRegCompras.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\dsRegistroActividades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRegistroActividades.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\dsSisApartado.cs">
       <DependentUpon>dsSisApartado.xsd</DependentUpon>
     </Compile>
@@ -342,6 +353,9 @@
     <Compile Include="GUI\Inicio\frmXtraPrincipal.Designer.cs">
       <DependentUpon>frmXtraPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="GUI\Actividades\frmXtraUCRegistroAcciones.resx">
+      <DependentUpon>frmXtraUCRegistroAcciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </EmbeddedResource>
@@ -460,6 +474,17 @@
     </None>
     <None Include="Model\dsRegCompras.xss">
       <DependentUpon>dsRegCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegistroActividades.xsc">
+      <DependentUpon>dsRegistroActividades.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegistroActividades.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRegistroActividades.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\dsRegistroActividades.xss">
+      <DependentUpon>dsRegistroActividades.xsd</DependentUpon>
     </None>
     <None Include="Model\dsSisApartado.xsc">
       <DependentUpon>dsSisApartado.xsd</DependentUpon>
