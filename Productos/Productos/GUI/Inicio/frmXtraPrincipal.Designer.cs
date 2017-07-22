@@ -52,6 +52,7 @@
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             this.dockPanelNavegacion.SuspendLayout();
             this.dockPanel_Container.SuspendLayout();
@@ -213,7 +214,8 @@
             // gpPersonal
             // 
             this.gpPersonal.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
-            this.accordionControlElement3});
+            this.accordionControlElement3,
+            this.accordionControlElement5});
             this.gpPersonal.Expanded = true;
             this.gpPersonal.HeaderTemplate.AddRange(new DevExpress.XtraBars.Navigation.HeaderElementInfo[] {
             new DevExpress.XtraBars.Navigation.HeaderElementInfo(DevExpress.XtraBars.Navigation.HeaderElementType.Text),
@@ -276,6 +278,13 @@
             // 
             this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
             // 
+            // accordionControlElement5
+            // 
+            this.accordionControlElement5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement5.ImageOptions.Image")));
+            this.accordionControlElement5.Name = "accordionControlElement5";
+            this.accordionControlElement5.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement5.Text = "Registro de Actividades";
+            // 
             // frmXtraPrincipal
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.True;
@@ -328,5 +337,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement3;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement2;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
+        private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
     }
 }
