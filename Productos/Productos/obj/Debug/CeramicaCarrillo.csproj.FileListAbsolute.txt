@@ -1358,3 +1358,29 @@ C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Estadisticas.frmXtraUCEstadisticas.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraReporteProductos.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraReporteVentas.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.RichEdit.v17.1.Export.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraCharts.v17.1.UI.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Core.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Reporting.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraCharts.v17.1.UI.xml
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.xml
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Core.xml
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\DevExpress.XtraScheduler.v17.1.Reporting.xml
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.Core.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\de\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\es\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ja\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\bin\Debug\ru\DevExpress.XtraScheduler.v17.1.Reporting.resources.dll
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frmXtraUCRegistroAcciones.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Compras.frmXtraReporteCompras.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Estadisticas.frmXtraUCEstadisticas.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraReporteProductos.resources
+C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraReporteVentas.resources

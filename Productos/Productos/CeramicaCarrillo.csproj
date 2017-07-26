@@ -128,6 +128,12 @@
     <Compile Include="GUI\Actividades\frmXtraUCRegistroAcciones.Designer.cs">
       <DependentUpon>frmXtraUCRegistroAcciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Actividades\frnXtraReporteActividades.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Actividades\frnXtraReporteActividades.Designer.cs">
+      <DependentUpon>frnXtraReporteActividades.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Anomalias\frmXtraAnomalias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +362,9 @@
     <EmbeddedResource Include="GUI\Actividades\frmXtraUCRegistroAcciones.resx">
       <DependentUpon>frmXtraUCRegistroAcciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Actividades\frnXtraReporteActividades.resx">
+      <DependentUpon>frnXtraReporteActividades.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </EmbeddedResource>
@@ -426,6 +435,7 @@
     <EmbeddedResource Include="GUI\Ventas\frmXtraUCRegistroVentas.resx">
       <DependentUpon>frmXtraUCRegistroVentas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

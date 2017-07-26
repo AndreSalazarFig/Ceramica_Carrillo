@@ -17,5 +17,19 @@ namespace CeramicaCarrillo.GUI.Actividades
         {
             InitializeComponent();
         }
+
+        private void frmXtraUCRegistroAcciones_Load(object sender, EventArgs e)
+        {
+            actividadesTableAdapter.Fill(dsRegistroActividades.Actividades);
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            frnXtraReporteActividades frm = new frnXtraReporteActividades();
+            using (DevExpress.XtraReports.UI.ReportPrintTool imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(frm))
+            {
+                imprimir.ShowRibbonPreviewDialog();
+            }
+        }
     }
 }
