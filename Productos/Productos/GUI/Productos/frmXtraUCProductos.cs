@@ -7,11 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
-using DevExpress.XtraLayout;
-using DevExpress.XtraLayout.Helpers;
-using System.ComponentModel.DataAnnotations;
-using System.IO;
+using CeramicaCarrillo.Model.Mensajes;
 using CeramicaCarrillo.Model;
 
 namespace CeramicaCarrillo.GUI.Productos
@@ -55,6 +51,7 @@ namespace CeramicaCarrillo.GUI.Productos
                         break;
                     case "EliminarProducto":
                         EliminarProducto(IndexFila);
+                        new MSalidaProductos(sesion.Id);
                         break;
                     case "ReportarAnomalias":
                         AbrirFormularioAnomalias(IndexFila);
@@ -76,6 +73,7 @@ namespace CeramicaCarrillo.GUI.Productos
             frmXtraEdicionProductos.chAccion = chAccion;
             frmXtraEdicionProductos.oDatosProducto = oDatosProducto;
             frmXtraEdicionProductos.bdCarrillo = bdCarrillo;
+            frmXtraEdicionProductos.sesion = sesion;
 
             frmXtraEdicionProductos frm = new frmXtraEdicionProductos();
 

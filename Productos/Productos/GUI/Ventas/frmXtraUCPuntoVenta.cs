@@ -160,7 +160,11 @@ namespace CeramicaCarrillo.GUI.Ventas
                 frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text, sesion);
                 if (cobro.ShowDialog() == DialogResult.OK)
                 {
-                    gvDatos.Rows.Clear();
+                    for (int i = 0; i < gvDatos.Rows.Count; i++)
+                    {
+                        gvDatos.Rows.RemoveAt(i);
+                    }
+                    limpiarCompra(sender, e);
                 }
             }
             else
@@ -210,6 +214,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                     {
                         gvDatos.Rows.RemoveAt(i);
                     }
+                    limpiarCompra(sender, e);
                 }
             }
             else
@@ -241,9 +246,10 @@ namespace CeramicaCarrillo.GUI.Ventas
         {
             quitarSeleccion(sender, e);
             gvDatos.Rows.Clear();
-            _compra = new List<CeramicaCarrillo.Model.Productos>();
+            _compra = new List<Model.Productos>();
             Cantidad = new List<int>();
             precio = 0;
+            cargarDatos();
         }
 
     }

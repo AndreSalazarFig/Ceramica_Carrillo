@@ -1,19 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using DevExpress.XtraEditors;
+using CeramicaCarrillo.Model.Mensajes;
+using CeramicaCarrillo.Model;
 
 namespace CeramicaCarrillo.GUI.Inicio
 {
     public partial class frmXtraCierre : DevExpress.XtraEditors.XtraForm
     {
         Cierre _cierre;
+        public static Sesiones sesion = null;
 
         public frmXtraCierre(object oCierre)
         {
@@ -26,12 +20,14 @@ namespace CeramicaCarrillo.GUI.Inicio
         private void pbxCerrarSesion_Click(object sender, EventArgs e)
         {
             _cierre.Accion = 'S';
+            new MensajeLogOut(sesion.Id);
             this.Close();
         }
 
         private void pbxSalirAplicacion_Click(object sender, EventArgs e)
         {
             _cierre.Accion = 'A';
+            new MensajeLogOut(sesion.Id);
             this.Close();
         }
     }

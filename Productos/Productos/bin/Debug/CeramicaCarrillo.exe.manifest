@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CeramicaCarrillo.exe" size="593376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CeramicaCarrillo.exe" size="603104">
       <assemblyIdentity name="CeramicaCarrillo" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>k+QSTIwsXY7ovO/GtzhyubDYaLIqXJlgJOAu7VglDhE=</dsig:DigestValue>
+        <dsig:DigestValue>g0ups2jZVEGPj2TXN/EKE4M0JgvuZ74bbLQ4xl+uw6I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

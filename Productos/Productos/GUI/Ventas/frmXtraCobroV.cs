@@ -99,17 +99,21 @@ namespace CeramicaCarrillo.GUI.Ventas
 
         private void txtMonto_TextChanged(object sender, EventArgs e)
         {
-            double cambio = total - Convert.ToInt32(txtMonto.Text);
-            if (cambio < 0)
+            if (txtMonto.Text != string.Empty)
             {
-                txtCambio.ForeColor = Color.Black;
-                txtCambio.Text = (cambio * -1).ToString();
+                double cambio = total - Convert.ToInt32(txtMonto.Text);
+                if (cambio >= 0)
+                {
+                    txtCambio.ForeColor = Color.Green;
+                    txtCambio.Text = "0";
+                }
+                else
+                {
+                    txtCambio.ForeColor = Color.Black;
+                    txtCambio.Text = (cambio * -1).ToString();
+                }
             }
-            else
-            {
-                txtCambio.ForeColor = Color.Red;
-                txtCambio.Text = (cambio * -1).ToString();
-            }
+            else { txtCambio.Text = "0"; }
         }
     }
 }

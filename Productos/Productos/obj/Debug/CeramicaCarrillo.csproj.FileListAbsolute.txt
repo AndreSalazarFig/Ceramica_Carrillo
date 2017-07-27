@@ -1384,3 +1384,5 @@ C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCar
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Estadisticas.frmXtraUCEstadisticas.resources
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Productos.frmXtraReporteProductos.resources
 C:\Proyectos Android\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Ventas.frmXtraReporteVentas.resources
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frmXtraUCRegistroAcciones.resources
+C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frnXtraReporteActividades.resources

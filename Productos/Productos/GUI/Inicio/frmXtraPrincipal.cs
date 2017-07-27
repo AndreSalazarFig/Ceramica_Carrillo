@@ -175,6 +175,7 @@ namespace CeramicaCarrillo.GUI.Inicio
         {
             if (oCierre.Accion != 'A' && oCierre.Accion != 'S')
             {
+                frmXtraCierre.sesion = sesion;
                 frmXtraCierre frmCierre = new frmXtraCierre(oCierre);
 
                 frmCierre.ShowDialog();

@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraUCRegistroAcciones));
             DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
             DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraUCRegistroAcciones));
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition3 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition3 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition4 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
+            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.actividadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dsRegistroActividades = new CeramicaCarrillo.Model.dsRegistroActividades();
@@ -48,18 +52,19 @@
             this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colIdPersonal = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPuesto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colHora = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.actividadesTableAdapter = new CeramicaCarrillo.Model.dsRegistroActividadesTableAdapters.ActividadesTableAdapter();
-            this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.actividadesTableAdapter = new CeramicaCarrillo.Model.dsRegistroActividadesTableAdapters.ActividadesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            this.layoutControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRegistroActividades)).BeginInit();
@@ -67,11 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -86,6 +87,65 @@
             this.layoutControl1.Size = new System.Drawing.Size(571, 497);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // layoutControl2
+            // 
+            this.layoutControl2.Controls.Add(this.btnReporte);
+            this.layoutControl2.Location = new System.Drawing.Point(12, 417);
+            this.layoutControl2.Name = "layoutControl2";
+            this.layoutControl2.Root = this.Root;
+            this.layoutControl2.Size = new System.Drawing.Size(547, 68);
+            this.layoutControl2.TabIndex = 7;
+            this.layoutControl2.Text = "layoutControl2";
+            // 
+            // btnReporte
+            // 
+            this.btnReporte.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.Appearance.Options.UseFont = true;
+            this.btnReporte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.ImageOptions.Image")));
+            this.btnReporte.Location = new System.Drawing.Point(381, 12);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(154, 38);
+            this.btnReporte.StyleController = this.layoutControl2;
+            this.btnReporte.TabIndex = 5;
+            this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
+            // Root
+            // 
+            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.Root.GroupBordersVisible = false;
+            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem4});
+            this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
+            this.Root.Location = new System.Drawing.Point(0, 0);
+            this.Root.Name = "Root";
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1.Width = 70D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition2.Width = 30D;
+            this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
+            columnDefinition1,
+            columnDefinition2});
+            rowDefinition1.Height = 90D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            rowDefinition2.Height = 10D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
+            rowDefinition1,
+            rowDefinition2});
+            this.Root.Size = new System.Drawing.Size(547, 68);
+            this.Root.TextVisible = false;
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.Control = this.btnReporte;
+            this.layoutControlItem4.Location = new System.Drawing.Point(369, 0);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
+            this.layoutControlItem4.Size = new System.Drawing.Size(158, 43);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem4.TextVisible = false;
             // 
             // gridControl1
             // 
@@ -115,9 +175,13 @@
             this.colDescripcion,
             this.colFecha,
             this.colIdPersonal,
-            this.colPuesto});
+            this.colPuesto,
+            this.colHora});
             this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFecha, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
             // colIdActividad
             // 
@@ -139,7 +203,7 @@
             // 
             // colFecha
             // 
-            this.colFecha.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss";
+            this.colFecha.DisplayFormat.FormatString = "dd/MM/yyyy";
             this.colFecha.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colFecha.FieldName = "Fecha";
             this.colFecha.Name = "colFecha";
@@ -163,6 +227,16 @@
             this.colPuesto.Visible = true;
             this.colPuesto.VisibleIndex = 4;
             this.colPuesto.Width = 79;
+            // 
+            // colHora
+            // 
+            this.colHora.Caption = "Hora";
+            this.colHora.DisplayFormat.FormatString = "hh:mm:ss";
+            this.colHora.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colHora.FieldName = "Fecha";
+            this.colHora.Name = "colHora";
+            this.colHora.Visible = true;
+            this.colHora.VisibleIndex = 1;
             // 
             // labelControl1
             // 
@@ -224,20 +298,6 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
-            // actividadesTableAdapter
-            // 
-            this.actividadesTableAdapter.ClearBeforeFill = true;
-            // 
-            // layoutControl2
-            // 
-            this.layoutControl2.Controls.Add(this.btnReporte);
-            this.layoutControl2.Location = new System.Drawing.Point(12, 417);
-            this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.Root;
-            this.layoutControl2.Size = new System.Drawing.Size(547, 68);
-            this.layoutControl2.TabIndex = 7;
-            this.layoutControl2.Text = "layoutControl2";
-            // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.Control = this.layoutControl2;
@@ -248,54 +308,9 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
-            // Root
+            // actividadesTableAdapter
             // 
-            this.Root.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.Root.GroupBordersVisible = false;
-            this.Root.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4});
-            this.Root.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
-            this.Root.Location = new System.Drawing.Point(0, 0);
-            this.Root.Name = "Root";
-            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition1.Width = 70D;
-            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition2.Width = 30D;
-            this.Root.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition1,
-            columnDefinition2});
-            rowDefinition1.Height = 90D;
-            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
-            rowDefinition2.Height = 10D;
-            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
-            this.Root.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition1,
-            rowDefinition2});
-            this.Root.Size = new System.Drawing.Size(547, 68);
-            this.Root.TextVisible = false;
-            // 
-            // btnReporte
-            // 
-            this.btnReporte.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReporte.Appearance.Options.UseFont = true;
-            this.btnReporte.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReporte.ImageOptions.Image")));
-            this.btnReporte.Location = new System.Drawing.Point(381, 12);
-            this.btnReporte.Name = "btnReporte";
-            this.btnReporte.Size = new System.Drawing.Size(154, 38);
-            this.btnReporte.StyleController = this.layoutControl2;
-            this.btnReporte.TabIndex = 5;
-            this.btnReporte.Text = "Generar Reporte";
-            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
-            // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.Control = this.btnReporte;
-            this.layoutControlItem4.Location = new System.Drawing.Point(369, 0);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.OptionsTableLayoutItem.ColumnIndex = 1;
-            this.layoutControlItem4.Size = new System.Drawing.Size(158, 43);
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem4.TextVisible = false;
+            this.actividadesTableAdapter.ClearBeforeFill = true;
             // 
             // frmXtraUCRegistroAcciones
             // 
@@ -307,6 +322,10 @@
             this.Load += new System.EventHandler(this.frmXtraUCRegistroAcciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            this.layoutControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.actividadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsRegistroActividades)).EndInit();
@@ -314,11 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +360,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.SimpleButton btnReporte;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Columns.GridColumn colHora;
     }
 }

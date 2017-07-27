@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Productos
 {
     public partial class frmXtraEdicionProductos : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strFormTitulo;
         public static Char chAccion;
         public static Model.Productos oDatosProducto = null;
         public static String CategoriaProducto = null;
         Boolean boolGuardar = false;
-        CeramicaCarrillo.Model.Productos oProductos;
+        Model.Productos oProductos;
         ArchivosLocales oExtras = new ArchivosLocales();
 
         public frmXtraEdicionProductos()
@@ -73,7 +69,7 @@ namespace CeramicaCarrillo.GUI.Productos
                 oExtras.Mensajes('S', "Éxito");
 
                 boolGuardar = true;
-
+                new MIngresoProductos(sesion.Id);
                 this.Close();
             }
             catch (Exception f)
@@ -103,7 +99,7 @@ namespace CeramicaCarrillo.GUI.Productos
                     oExtras.Mensajes('U', "Éxito");
 
                     boolGuardar = true;
-
+                    new MCambioProductos(sesion.Id);
                     this.Close();
                 }
             }

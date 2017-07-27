@@ -18,4 +18,17 @@ namespace CeramicaCarrillo.Model.Mensajes
         }
 
     }
+
+    public class MensajeLogOut : Mensaje
+    {
+        public MensajeLogOut(int personal) : base(personal)
+        {
+        }
+
+        public override void IngresarAccion(int personal)
+        {
+            TextoMensaje = BuscarPersonal(personal) + " ha cerrado sesión.";
+        }
+
+    }
 }
