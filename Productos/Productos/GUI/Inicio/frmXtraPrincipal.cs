@@ -23,7 +23,8 @@ namespace CeramicaCarrillo.GUI.Inicio
         public static Sesiones sesion = null;
         ArchivosLocales oExtras = new ArchivosLocales();
         XtraUserControl frmProductosUC, frmCategoriasTiposUC, frmPuntoVentaUC, frmRegistroComprasUC,
-            frmRegistroVentasUC, frmPersonalUC, frmActividadesUC, frmSisApartadoUC, frmEstadisticasUC;
+            frmRegistroVentasUC, frmPersonalUC, frmActividadesUC, frmSisApartadoUC, frmEstadisticasUC,
+            frmRegistroAnomaliasUC;
         
 
         public frmXtraPrincipal()
@@ -70,6 +71,9 @@ namespace CeramicaCarrillo.GUI.Inicio
                     break;
                 case "Registro de Actividades":
                     frmUserControl = frmActividadesUC;
+                    break;
+                case "Anomalías":
+                    frmUserControl = frmRegistroAnomaliasUC;
                     break;
                 case "Sistema de Apartado":
                     frmUserControl = frmSisApartadoUC;
@@ -132,6 +136,9 @@ namespace CeramicaCarrillo.GUI.Inicio
                 case "Registro de Actividades":
                     frmActividadesUC = CreateUserControl("Registro de Actividades", new Actividades.frmXtraUCRegistroAcciones());
                     break;
+                case "Anomalías":
+                    frmRegistroAnomaliasUC = CreateUserControl("Anomalías", new Anomalias.frmXtraUCRegAnomalias());
+                    break;
                 case "Sistema de Apartado":
                     frmSisApartadoUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
                     break;
@@ -155,6 +162,8 @@ namespace CeramicaCarrillo.GUI.Inicio
 
             Compras.frmXtraUCRegistroC.datos = bdCarrillo;
 
+            Anomalias.frmXtraUCRegAnomalias.bdCarrillo = bdCarrillo;
+
             Personal.frmXtraUCPersonal.bdCarrillo = bdCarrillo;
             Personal.frmXtraUCPersonal.sesion = sesion;
 
@@ -167,6 +176,7 @@ namespace CeramicaCarrillo.GUI.Inicio
             frmRegistroVentasUC = CreateUserControl("Ventas", new Ventas.frmXtraUCRegistroVentas());
             frmPersonalUC = CreateUserControl("Personal", new Personal.frmXtraUCPersonal());
             frmActividadesUC = CreateUserControl("Registro de Actividades", new Actividades.frmXtraUCRegistroAcciones());
+            frmRegistroAnomaliasUC = CreateUserControl("Anomalías", new Anomalias.frmXtraUCRegAnomalias());
             frmSisApartadoUC = CreateUserControl("Sistema de Apartado", new Apartado.frmXtraUCSistemaA());
             frmEstadisticasUC = CreateUserControl("Compra-Venta", new Estadisticas.frmXtraUCEstadisticas());
         }

@@ -140,6 +140,12 @@
     <Compile Include="GUI\Anomalias\frmXtraAnomalias.Designer.cs">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Anomalias\frmXtraUCRegAnomalias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Anomalias\frmXtraUCRegAnomalias.Designer.cs">
+      <DependentUpon>frmXtraUCRegAnomalias.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Apartado\frmXtraReporteApartado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -298,6 +304,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dsPrueba.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Model\dsRegAnomalias.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsRegAnomalias.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Model\dsRegCompras.cs">
       <DependentUpon>dsRegCompras.xsd</DependentUpon>
     </Compile>
@@ -367,6 +378,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Anomalias\frmXtraUCRegAnomalias.resx">
+      <DependentUpon>frmXtraUCRegAnomalias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Apartado\frmXtraReporteApartado.resx">
       <DependentUpon>frmXtraReporteApartado.cs</DependentUpon>
@@ -472,6 +486,17 @@
     </None>
     <None Include="Model\dsPrueba.xss">
       <DependentUpon>dsPrueba.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegAnomalias.xsc">
+      <DependentUpon>dsRegAnomalias.xsd</DependentUpon>
+    </None>
+    <None Include="Model\dsRegAnomalias.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsRegAnomalias.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Model\dsRegAnomalias.xss">
+      <DependentUpon>dsRegAnomalias.xsd</DependentUpon>
     </None>
     <None Include="Model\dsRegCompras.xsc">
       <DependentUpon>dsRegCompras.xsd</DependentUpon>
