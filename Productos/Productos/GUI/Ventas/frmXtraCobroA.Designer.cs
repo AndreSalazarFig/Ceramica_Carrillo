@@ -57,7 +57,6 @@
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTotal = new DevExpress.XtraEditors.TextEdit();
-            this.txtMonto = new DevExpress.XtraEditors.TextEdit();
             this.txtFaltante = new DevExpress.XtraEditors.TextEdit();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -68,6 +67,7 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtMonto = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
@@ -83,7 +83,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
@@ -94,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -246,8 +246,8 @@
             // layoutControl2
             // 
             this.layoutControl2.Controls.Add(this.txtTotal);
-            this.layoutControl2.Controls.Add(this.txtMonto);
             this.layoutControl2.Controls.Add(this.txtFaltante);
+            this.layoutControl2.Controls.Add(this.txtMonto);
             this.layoutControl2.Location = new System.Drawing.Point(44, 29);
             this.layoutControl2.Name = "layoutControl2";
             this.layoutControl2.Root = this.Root;
@@ -266,15 +266,6 @@
             this.txtTotal.StyleController = this.layoutControl2;
             this.txtTotal.TabIndex = 9;
             this.txtTotal.TabStop = false;
-            // 
-            // txtMonto
-            // 
-            this.txtMonto.Location = new System.Drawing.Point(136, 74);
-            this.txtMonto.Name = "txtMonto";
-            this.txtMonto.Size = new System.Drawing.Size(106, 20);
-            this.txtMonto.StyleController = this.layoutControl2;
-            this.txtMonto.TabIndex = 10;
-            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
             // 
             // txtFaltante
             // 
@@ -434,6 +425,24 @@
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 
+            // txtMonto
+            // 
+            this.txtMonto.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtMonto.Location = new System.Drawing.Point(136, 74);
+            this.txtMonto.Name = "txtMonto";
+            this.txtMonto.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtMonto.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtMonto.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.txtMonto.Size = new System.Drawing.Size(106, 20);
+            this.txtMonto.StyleController = this.layoutControl2;
+            this.txtMonto.TabIndex = 10;
+            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
+            // 
             // frmXtraCobroA
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,7 +469,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFaltante.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
@@ -471,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMonto.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -495,11 +504,11 @@
         private DevExpress.XtraEditors.TextEdit txtCambio;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.TextEdit txtTotal;
-        private DevExpress.XtraEditors.TextEdit txtMonto;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraEditors.TextEdit txtFaltante;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
+        private DevExpress.XtraEditors.SpinEdit txtMonto;
     }
 }
