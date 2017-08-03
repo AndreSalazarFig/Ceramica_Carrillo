@@ -351,6 +351,7 @@
     <Compile Include="Model\Mensajes\Mensaje.cs" />
     <Compile Include="Model\Mensajes\MensajeLogin.cs" />
     <Compile Include="Model\Mensajes\MensajeProductos.cs" />
+    <Compile Include="Model\Mensajes\MensajeVentas.cs" />
     <Compile Include="Model\Personal.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
