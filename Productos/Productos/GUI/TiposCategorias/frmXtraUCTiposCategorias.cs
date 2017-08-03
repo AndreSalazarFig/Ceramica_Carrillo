@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using System.Data.Entity;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.TiposCategorias
 {
@@ -78,6 +79,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
                     bdCarrillo.TipoProductos.Remove(eliminar);
                     bdCarrillo.SaveChanges();
 
+                    new MSalidaCategoria(sesion.Id);
+
                     VistaDatos();
                 }
             }
@@ -94,6 +97,7 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
             frmXtraEdicionTipos.oDatosTipo = oDatosTipo;
             frmXtraEdicionTipos.bdCarrillo = bdCarrillo;
             frmXtraEdicionTipos.boolAdministrador = sesion.Admin;
+            frmXtraEdicionTipos.sesion = sesion;
 
             frmXtraEdicionTipos frm = new frmXtraEdicionTipos();
 
@@ -109,6 +113,7 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
             frmXtraEdicionCategorias.bdCarrillo = bdCarrillo;
             frmXtraEdicionCategorias.strNombreTipo = strNombreTipo;
             frmXtraEdicionCategorias.boolAdministrador = sesion.Admin;
+            frmXtraEdicionCategorias.sesion = sesion;
 
             frmXtraEdicionCategorias frm = new frmXtraEdicionCategorias();
 

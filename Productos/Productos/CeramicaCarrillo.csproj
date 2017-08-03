@@ -140,6 +140,12 @@
     <Compile Include="GUI\Anomalias\frmXtraAnomalias.Designer.cs">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Anomalias\frmXtraReporteAnomalias.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Anomalias\frmXtraReporteAnomalias.Designer.cs">
+      <DependentUpon>frmXtraReporteAnomalias.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Anomalias\frmXtraUCRegAnomalias.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,8 +355,12 @@
       <DependentUpon>mdlCarrillo.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Mensajes\Mensaje.cs" />
+    <Compile Include="Model\Mensajes\MensajeAnomalias.cs" />
+    <Compile Include="Model\Mensajes\MensajeCompras.cs" />
     <Compile Include="Model\Mensajes\MensajeLogin.cs" />
+    <Compile Include="Model\Mensajes\MensajePeronal.cs" />
     <Compile Include="Model\Mensajes\MensajeProductos.cs" />
+    <Compile Include="Model\Mensajes\MensajeTiposCategorias.cs" />
     <Compile Include="Model\Mensajes\MensajeVentas.cs" />
     <Compile Include="Model\Personal.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
@@ -379,6 +389,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Anomalias\frmXtraAnomalias.resx">
       <DependentUpon>frmXtraAnomalias.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Anomalias\frmXtraReporteAnomalias.resx">
+      <DependentUpon>frmXtraReporteAnomalias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Anomalias\frmXtraUCRegAnomalias.resx">
       <DependentUpon>frmXtraUCRegAnomalias.cs</DependentUpon>

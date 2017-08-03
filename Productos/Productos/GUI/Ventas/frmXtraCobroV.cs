@@ -7,6 +7,8 @@ using CeramicaCarrillo.Model;
 using System.Windows.Forms;
 using System.Drawing;
 
+using CeramicaCarrillo.Model.Mensajes;
+
 namespace CeramicaCarrillo.GUI.Ventas
 {
     public partial class frmXtraCobroV : DevExpress.XtraEditors.XtraForm
@@ -78,6 +80,9 @@ namespace CeramicaCarrillo.GUI.Ventas
                 folio = datos.Folio.Find(idFolio);
                 folio.TotalVenta = totalVenta;
                 datos.SaveChanges();
+
+                new MensajeVentaRealizada(sesion.Id);
+
                 Hide();
             }
             catch (Exception e) {

@@ -44,6 +44,10 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.btnReporte = new DevExpress.XtraEditors.SimpleButton();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -53,10 +57,6 @@
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colUsuario = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colProducto = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDescripcion = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colFecha = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dsRegAnomalias)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.anomaliasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -121,9 +121,40 @@
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFecha, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colFecha, DevExpress.Data.ColumnSortOrder.Descending)});
+            // 
+            // colUsuario
+            // 
+            this.colUsuario.Caption = "Usuario";
+            this.colUsuario.FieldName = "Usuario";
+            this.colUsuario.Name = "colUsuario";
+            this.colUsuario.Visible = true;
+            this.colUsuario.VisibleIndex = 0;
+            // 
+            // colProducto
+            // 
+            this.colProducto.Caption = "Producto";
+            this.colProducto.FieldName = "Producto";
+            this.colProducto.Name = "colProducto";
+            this.colProducto.Visible = true;
+            this.colProducto.VisibleIndex = 1;
+            // 
+            // colDescripcion
+            // 
+            this.colDescripcion.Caption = "Anomalía";
+            this.colDescripcion.FieldName = "Descripcion";
+            this.colDescripcion.Name = "colDescripcion";
+            this.colDescripcion.Visible = true;
+            this.colDescripcion.VisibleIndex = 2;
+            // 
+            // colFecha
+            // 
+            this.colFecha.Caption = "Fecha";
+            this.colFecha.FieldName = "Fecha";
+            this.colFecha.Name = "colFecha";
+            this.colFecha.Visible = true;
+            this.colFecha.VisibleIndex = 3;
             // 
             // layoutControl2
             // 
@@ -146,6 +177,7 @@
             this.btnReporte.StyleController = this.layoutControl2;
             this.btnReporte.TabIndex = 4;
             this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
             // Root
             // 
@@ -184,7 +216,6 @@
             this.layoutControlItem4.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
-            this.layoutControlItem4.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
             // 
             // labelControl1
             // 
@@ -255,38 +286,6 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(576, 346);
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
-            // 
-            // colUsuario
-            // 
-            this.colUsuario.Caption = "Usuario";
-            this.colUsuario.FieldName = "Usuario";
-            this.colUsuario.Name = "colUsuario";
-            this.colUsuario.Visible = true;
-            this.colUsuario.VisibleIndex = 0;
-            // 
-            // colProducto
-            // 
-            this.colProducto.Caption = "Producto";
-            this.colProducto.FieldName = "Producto";
-            this.colProducto.Name = "colProducto";
-            this.colProducto.Visible = true;
-            this.colProducto.VisibleIndex = 1;
-            // 
-            // colDescripcion
-            // 
-            this.colDescripcion.Caption = "Anomalía";
-            this.colDescripcion.FieldName = "Descripcion";
-            this.colDescripcion.Name = "colDescripcion";
-            this.colDescripcion.Visible = true;
-            this.colDescripcion.VisibleIndex = 2;
-            // 
-            // colFecha
-            // 
-            this.colFecha.Caption = "Fecha";
-            this.colFecha.FieldName = "Fecha";
-            this.colFecha.Name = "colFecha";
-            this.colFecha.Visible = true;
-            this.colFecha.VisibleIndex = 3;
             // 
             // frmXtraUCRegAnomalias
             // 

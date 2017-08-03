@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Anomalias
 {
     public partial class frmXtraAnomalias : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strUsuario;
         public static String strProducto;
         ArchivosLocales oExtras = new ArchivosLocales();
@@ -63,6 +65,8 @@ namespace CeramicaCarrillo.GUI.Anomalias
                 oExtras.Mensajes('A', "Éxito");
 
                 boolGuardar = true;
+
+                new MensajeAnomalias(sesion.Id);
 
                 this.Close();
             }

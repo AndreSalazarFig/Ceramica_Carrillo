@@ -127,7 +127,8 @@
 from Productos p 
 join Compras c on c.IdProductos = p.IdProductos
 join Categorias ca on ca.idCategoria = p.idCategoria
-join TipoProductos tp on tp.idTipoProducto = ca.idTipoProducto</value>
+join TipoProductos tp on tp.idTipoProducto = ca.idTipoProducto
+order by c.IdCompras asc</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
     <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlJlcG9ydGVQcm9kdWN0b3MiPjxGaWVsZCBOYW1lPSJJZENvbXByYXMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJEZXNjcmlwY2lvbiIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJEZXBhcnRhbWVudG8iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iVW5pZGFkZXMiIFR5cGU9IkludDMyIiAvPjxGaWVsZCBOYW1lPSJQcmVjaW8iIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iVG90YWwiIFR5cGU9IkRvdWJsZSIgLz48RmllbGQgTmFtZT0iRmVjaGEiIFR5cGU9IkRhdGVUaW1lIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>

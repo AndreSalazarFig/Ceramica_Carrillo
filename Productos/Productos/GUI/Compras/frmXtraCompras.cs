@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Compras
 {
     public partial class frmXtraCompras : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strProducto;
         ArchivosLocales oExtras = new ArchivosLocales();
         CeramicaCarrillo.Model.Compras oCompras;
@@ -68,6 +70,8 @@ namespace CeramicaCarrillo.GUI.Compras
 
                 boolGuardar = true;
 
+                new MensajeCompras(sesion.Id);
+
                 this.Close();
             }
             catch (Exception f)
@@ -79,7 +83,8 @@ namespace CeramicaCarrillo.GUI.Compras
         private CeramicaCarrillo.Model.Compras RecuperarDatosCompra()
         {
             var DatosProducto = (from tbProducto in bdCarrillo.Productos
-                                 where tbProducto.Descripcion == txtDescripcionProducto.Text.Trim()
+                                 where tbProducto.Descripcion == txtDescripcionProducto.Text.Trim() &&
+                                       tbProducto.Status == true
                                  select tbProducto).ToList().FirstOrDefault();
 
             if (DatosProducto.IdProductos > 0)

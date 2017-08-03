@@ -117,21 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="efDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 56</value>
-  </metadata>
   <data name="customSqlQuery1.Sql" xml:space="preserve">
-    <value>select Acciones.*, Personal.Nombre + ' ' + Personal.Apellido as [Personal]
-  from ("dbo"."Acciones" "Acciones"
-  inner join "dbo"."Personal" "Personal"
-       on ("Personal"."IdPersonal" = "Acciones"."IdPersonal"))
-where Personal.Status = 1
-order by Acciones.IdActividad asc</value>
+    <value>select	A.IdAnomalias, A.Descripcion, A.Fecha, 
+		LTRIM(RTRIM(Per.Nombre)) + LTRIM(RTRIM(Per.Apellido)) as [Personal], 
+		LTRIM(RTRIM(Pro.Descripcion)) + '(' + LTRIM(RTRIM(C.NombreCategoria)) + '/' + LTRIM(RTRIM(T.NombreTipo)) +')' as [Producto]
+from Anomalias A 
+inner join Productos Pro on A.IdProductos = Pro.IdProductos 
+inner join Personal Per on A.IdPersonal = Per.IdPersonal
+inner join Categorias C on Pro.IdCategoria = C.idCategoria
+inner join TipoProductos T on C.idTipoProducto = T.idTipoProducto
+order by A.IdAnomalias asc;</value>
   </data>
   <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
-    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlJlcG9ydGVBY3RpdmlkYWRlcyI+PEZpZWxkIE5hbWU9IklkQWN0aXZpZGFkIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRGVzY3JpcGNpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRmVjaGEiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJJZFBlcnNvbmFsIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUGVyc29uYWwiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9InNxbEFub21hbGlhcyI+PEZpZWxkIE5hbWU9IklkQW5vbWFsaWFzIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iRGVzY3JpcGNpb24iIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iRmVjaGEiIFR5cGU9IkRhdGVUaW1lIiAvPjxGaWVsZCBOYW1lPSJQZXJzb25hbCIgVHlwZT0iU3RyaW5nIiAvPjxGaWVsZCBOYW1lPSJQcm9kdWN0byIgVHlwZT0iU3RyaW5nIiAvPjwvVmlldz48L0RhdGFTZXQ+</value>
   </data>
 </root>

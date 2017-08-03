@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Personal
 {
@@ -60,6 +61,7 @@ namespace CeramicaCarrillo.GUI.Personal
             frmXtraEdicionPersonal.chAccion = chAccion;
             frmXtraEdicionPersonal.oDatosPersonal = oDatosPersonal;
             frmXtraEdicionPersonal.bdCarrillo = bdCarrillo;
+            frmXtraEdicionPersonal.sesion = sesion;
 
             frmXtraEdicionPersonal frm = new frmXtraEdicionPersonal();
 
@@ -106,6 +108,8 @@ namespace CeramicaCarrillo.GUI.Personal
                         bdCarrillo.SaveChanges();
 
                         oExtras.Mensajes('D', "Éxito");
+
+                        new MSalidaPersonal(sesion.Id);
                     }
 
                     VistaDatos();

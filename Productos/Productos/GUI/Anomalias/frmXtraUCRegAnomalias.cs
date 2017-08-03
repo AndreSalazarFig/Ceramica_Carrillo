@@ -29,5 +29,11 @@ namespace CeramicaCarrillo.GUI.Anomalias
             anomaliasTableAdapter.Fill(dsRegAnomalias.Anomalias);
             gridControl1.DataSource = anomaliasBindingSource;
         }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            DevExpress.XtraReports.UI.ReportPrintTool imprimir = new DevExpress.XtraReports.UI.ReportPrintTool(new frmXtraReporteAnomalias());
+            imprimir.ShowRibbonPreviewDialog();
+        }
     }
 }

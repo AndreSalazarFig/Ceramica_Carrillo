@@ -88,7 +88,7 @@ namespace CeramicaCarrillo.GUI.Productos
         {
             Anomalias.frmXtraAnomalias.strProducto = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim();
             Anomalias.frmXtraAnomalias.strUsuario = sesion.Usuario;
-
+            Anomalias.frmXtraAnomalias.sesion = sesion;
             Anomalias.frmXtraAnomalias.bdCarrillo = bdCarrillo;
 
             Anomalias.frmXtraAnomalias frm = new Anomalias.frmXtraAnomalias();
@@ -103,6 +103,7 @@ namespace CeramicaCarrillo.GUI.Productos
             Compras.frmXtraCompras.strProducto = dtgVistaProductos.GetRowCellValue(IndexFila, Descripcion).ToString().Trim();
             
             Compras.frmXtraCompras.bdCarrillo = bdCarrillo;
+            Compras.frmXtraCompras.sesion = sesion;
 
             Compras.frmXtraCompras frm = new Compras.frmXtraCompras();
 

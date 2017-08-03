@@ -120,4 +120,18 @@
   <metadata name="efDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 56</value>
+  </metadata>
+  <data name="customSqlQuery1.Sql" xml:space="preserve">
+    <value>select Folio.*, Personal.Nombre + ' ' + Personal.Apellido as [Personal]
+  from ("dbo"."Folio" "Folio"
+  inner join "dbo"."Personal" "Personal"
+       on ("Personal"."IdPersonal" = "Folio"."IdPersonal"))
+where Folio.Status = 0
+order by Folio.IdFolio asc</value>
+  </data>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IlJlcG9ydGVBcGFydGFkb3MiPjxGaWVsZCBOYW1lPSJJZEZvbGlvIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iVG90YWxWZW50YSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJGZWNoYVZlbnRhIiBUeXBlPSJEYXRlVGltZSIgLz48RmllbGQgTmFtZT0iU3RhdHVzIiBUeXBlPSJCb29sZWFuIiAvPjxGaWVsZCBOYW1lPSJGYWx0YW50ZSIgVHlwZT0iRG91YmxlIiAvPjxGaWVsZCBOYW1lPSJJZFBlcnNvbmFsIiBUeXBlPSJJbnQzMiIgLz48RmllbGQgTmFtZT0iUGVyc29uYWwiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
 </root>

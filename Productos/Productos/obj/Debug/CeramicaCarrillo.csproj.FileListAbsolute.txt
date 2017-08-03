@@ -1389,3 +1389,8 @@ C:\Users\CT 08\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frnXtraReporteActividades.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Anomalias.frmXtraUCRegAnomalias.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.exe.licenses
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.csprojResolveAssemblyReference.cache
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frmXtraUCRegistroAcciones.resources
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Actividades.frnXtraReporteActividades.resources
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Anomalias.frmXtraUCRegAnomalias.resources
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Anomalias.frmXtraReporteAnomalias.resources

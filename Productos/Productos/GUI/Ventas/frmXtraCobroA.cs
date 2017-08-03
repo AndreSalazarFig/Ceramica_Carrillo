@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Ventas
 {
@@ -133,6 +134,9 @@ namespace CeramicaCarrillo.GUI.Ventas
                 abono.FechaAbono = DateTime.Now;
                 datos.Abonos.Add(abono);
                 datos.SaveChanges();
+
+                new MensajeApartadoRealizado(sesion.Id);
+
                 Hide();
             }
             catch (Exception e)

@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionTipos : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strFormTitulo;
         public static Char chAccion;
         public static Model.TipoProductos oDatosTipo = null;
@@ -74,6 +76,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
 
                 boolGuardar = true;
 
+                new MIngresoTipo(sesion.Id);
+
                 this.Close();
             }
             catch (Exception f)
@@ -97,6 +101,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
                     oExtras.Mensajes('U', "Éxito");
 
                     boolGuardar = true;
+
+                    new MCambioTipo(sesion.Id);
 
                     this.Close();
                 }

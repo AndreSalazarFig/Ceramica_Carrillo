@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.TiposCategorias
 {
     public partial class frmXtraEdicionCategorias : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strNombreTipo;
         public static Boolean boolAdministrador;
         ArchivosLocales oExtras = new ArchivosLocales();
@@ -81,6 +83,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
 
                 oExtras.Mensajes('S', "Éxito");
 
+                new MIngresoCategoria(sesion.Id);
+
                 NuevaCategoria();
                 VistaDatos();
             }
@@ -107,6 +111,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
 
                 oExtras.Mensajes('U', "Éxito");
 
+                new MCambioCategoria(sesion.Id);
+
                 NuevaCategoria();
                 VistaDatos();
                 OffBotonesEdicion(true);
@@ -131,6 +137,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
                     bdCarrillo.SaveChanges();
 
                     oExtras.Mensajes('D', "Éxito");
+
+                    new MSalidaCategoria(sesion.Id);
 
                     NuevaCategoria();
                     VistaDatos();

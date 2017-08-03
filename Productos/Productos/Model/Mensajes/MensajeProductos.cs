@@ -10,7 +10,6 @@ namespace CeramicaCarrillo.Model.Mensajes
     {
         public MensajeProductos(int personal) : base(personal)
         {
-            TextoMensaje = BuscarPersonal(personal);
         }
     }
 
@@ -22,7 +21,7 @@ namespace CeramicaCarrillo.Model.Mensajes
 
         public override void IngresarAccion(int personal)
         {
-            TextoMensaje += " ha ingresado un nuevo producto al catálogo.";
+            TextoMensaje = BuscarPersonal(personal) + " ha ingresado un nuevo producto al catálogo.";
         }
     }
 
@@ -34,7 +33,7 @@ namespace CeramicaCarrillo.Model.Mensajes
 
         public override void IngresarAccion(int personal)
         {
-            TextoMensaje += " ha eliminado un producto activo en el catálogo.";
+            TextoMensaje = BuscarPersonal(personal) + " ha eliminado un producto activo en el catálogo.";
         }
     }
 
@@ -46,8 +45,7 @@ namespace CeramicaCarrillo.Model.Mensajes
 
         public override void IngresarAccion(int personal)
         {
-            TextoMensaje += " ha cambiado la información de un producto del catálogo.";
+            TextoMensaje = BuscarPersonal(personal) + " ha cambiado la información de un producto del catálogo.";
         }
     }
-
 }

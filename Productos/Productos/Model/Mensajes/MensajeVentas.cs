@@ -14,7 +14,7 @@ namespace CeramicaCarrillo.Model.Mensajes
 
         public override void IngresarAccion(int personal)
         {
-            TextoMensaje += " realizó una venta";
+            TextoMensaje = BuscarPersonal(personal) + " realizó una venta";
         }
     }
 
@@ -26,7 +26,7 @@ namespace CeramicaCarrillo.Model.Mensajes
 
         public override void IngresarAccion(int personal)
         {
-            TextoMensaje += " realizó un apartado";
+            TextoMensaje += BuscarPersonal(personal) + " realizó un apartado";
         }
     }
 }

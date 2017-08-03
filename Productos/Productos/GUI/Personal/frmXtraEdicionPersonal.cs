@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using CeramicaCarrillo.Model;
+using CeramicaCarrillo.Model.Mensajes;
 
 namespace CeramicaCarrillo.GUI.Personal
 {
     public partial class frmXtraEdicionPersonal : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities bdCarrillo = null;
+        public static Sesiones sesion = null;
         public static String strFormTitulo;
         public static Char chAccion;
         public static Model.Personal oDatosPersonal = null;
@@ -73,6 +75,8 @@ namespace CeramicaCarrillo.GUI.Personal
 
                 boolGuardar = true;
 
+                new MIngresoPersonal(sesion.Id);
+
                 this.Close();
             }
             catch (Exception f)
@@ -106,6 +110,8 @@ namespace CeramicaCarrillo.GUI.Personal
                     oExtras.Mensajes('U', "Éxito");
 
                     boolGuardar = true;
+
+                    new MCambioPersonal(sesion.Id);
 
                     this.Close();
                 }
