@@ -130,6 +130,7 @@
             // 
             // colIdCompras
             // 
+            this.colIdCompras.Caption = "Clave de Compra";
             this.colIdCompras.FieldName = "IdCompras";
             this.colIdCompras.Name = "colIdCompras";
             this.colIdCompras.Visible = true;
@@ -137,6 +138,7 @@
             // 
             // colDescripcion
             // 
+            this.colDescripcion.Caption = "Producto";
             this.colDescripcion.FieldName = "Descripcion";
             this.colDescripcion.Name = "colDescripcion";
             this.colDescripcion.Visible = true;
@@ -152,6 +154,7 @@
             // 
             // colNombreTipo
             // 
+            this.colNombreTipo.Caption = "Tipo";
             this.colNombreTipo.FieldName = "NombreTipo";
             this.colNombreTipo.Name = "colNombreTipo";
             this.colNombreTipo.Visible = true;

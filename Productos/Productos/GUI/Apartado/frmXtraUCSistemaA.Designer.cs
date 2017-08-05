@@ -282,6 +282,7 @@
             this.ItemButtonApartados.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Glyph, "", -1, true, true, false, editorButtonImageOptions1, new DevExpress.Utils.KeyShortcut(System.Windows.Forms.Keys.None), "Abonar", "AbonarApartado")});
             this.ItemButtonApartados.Name = "ItemButtonApartados";
+            this.ItemButtonApartados.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.HideTextEditor;
             this.ItemButtonApartados.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.ItemButtonApartados_ButtonClick);
             // 
             // layoutControl1
