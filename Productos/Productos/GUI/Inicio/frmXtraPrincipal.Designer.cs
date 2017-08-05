@@ -44,6 +44,7 @@
             this.accordionControlElement1 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnRegistroCompra = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.btnRegistroVenta = new DevExpress.XtraBars.Navigation.AccordionControlElement();
+            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.gpPersonal = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement3 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.accordionControlElement5 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
@@ -53,7 +54,6 @@
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
-            this.accordionControlElement6 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             this.dockPanelNavegacion.SuspendLayout();
             this.dockPanel_Container.SuspendLayout();
@@ -85,20 +85,20 @@
             this.dockPanelNavegacion.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
             this.dockPanelNavegacion.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dockPanelNavegacion.ID = new System.Guid("a045df26-1503-4d9a-99c1-a531310af22b");
-            this.dockPanelNavegacion.Location = new System.Drawing.Point(0, 53);
+            this.dockPanelNavegacion.Location = new System.Drawing.Point(0, 52);
             this.dockPanelNavegacion.Name = "dockPanelNavegacion";
             this.dockPanelNavegacion.Options.ShowAutoHideButton = false;
             this.dockPanelNavegacion.Options.ShowCloseButton = false;
             this.dockPanelNavegacion.OriginalSize = new System.Drawing.Size(200, 200);
-            this.dockPanelNavegacion.Size = new System.Drawing.Size(200, 536);
+            this.dockPanelNavegacion.Size = new System.Drawing.Size(200, 537);
             this.dockPanelNavegacion.Text = "Navegación";
             // 
             // dockPanel_Container
             // 
             this.dockPanel_Container.Controls.Add(this.accordionCtrlNavegacion);
-            this.dockPanel_Container.Location = new System.Drawing.Point(3, 24);
+            this.dockPanel_Container.Location = new System.Drawing.Point(4, 25);
             this.dockPanel_Container.Name = "dockPanel_Container";
-            this.dockPanel_Container.Size = new System.Drawing.Size(193, 509);
+            this.dockPanel_Container.Size = new System.Drawing.Size(191, 508);
             this.dockPanel_Container.TabIndex = 0;
             // 
             // accordionCtrlNavegacion
@@ -115,7 +115,7 @@
             this.accordionControlElement2});
             this.accordionCtrlNavegacion.Location = new System.Drawing.Point(0, 0);
             this.accordionCtrlNavegacion.Name = "accordionCtrlNavegacion";
-            this.accordionCtrlNavegacion.Size = new System.Drawing.Size(193, 509);
+            this.accordionCtrlNavegacion.Size = new System.Drawing.Size(191, 508);
             this.accordionCtrlNavegacion.TabIndex = 0;
             this.accordionCtrlNavegacion.Text = "accordionControl";
             this.accordionCtrlNavegacion.SelectedElementChanged += new DevExpress.XtraBars.Navigation.SelectedElementChangedEventHandler(this.accordionControl_SelectedElementChanged);
@@ -213,6 +213,13 @@
             this.btnRegistroVenta.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
             this.btnRegistroVenta.Text = "Ventas";
             // 
+            // accordionControlElement6
+            // 
+            this.accordionControlElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
+            this.accordionControlElement6.Name = "accordionControlElement6";
+            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
+            this.accordionControlElement6.Text = "Anomalías";
+            // 
             // gpPersonal
             // 
             this.gpPersonal.Elements.AddRange(new DevExpress.XtraBars.Navigation.AccordionControlElement[] {
@@ -280,19 +287,12 @@
             this.ribCtrlMenuPrincipal.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribCtrlMenuPrincipal.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribCtrlMenuPrincipal.ShowToolbarCustomizeItem = false;
-            this.ribCtrlMenuPrincipal.Size = new System.Drawing.Size(778, 53);
+            this.ribCtrlMenuPrincipal.Size = new System.Drawing.Size(778, 52);
             this.ribCtrlMenuPrincipal.Toolbar.ShowCustomizeItem = false;
             // 
             // defaultLookAndFeel1
             // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "VS2010";
-            // 
-            // accordionControlElement6
-            // 
-            this.accordionControlElement6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("accordionControlElement6.ImageOptions.Image")));
-            this.accordionControlElement6.Name = "accordionControlElement6";
-            this.accordionControlElement6.Style = DevExpress.XtraBars.Navigation.ElementStyle.Item;
-            this.accordionControlElement6.Text = "Anomalías";
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Blue";
             // 
             // frmXtraPrincipal
             // 

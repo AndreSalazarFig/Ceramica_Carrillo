@@ -83,7 +83,6 @@ namespace CeramicaCarrillo.GUI.Ventas
                 btnEliminar.Enabled = true;
             }
             posicion = e.RowIndex;
-            seUnidades.ResetText();
             precio = Convert.ToDouble(gvDatos.Rows[posicion].Cells[2].Value);
             unidades = Convert.ToInt32(gvDatos.Rows[posicion].Cells[3].Value);
             seUnidades.Value = unidades;

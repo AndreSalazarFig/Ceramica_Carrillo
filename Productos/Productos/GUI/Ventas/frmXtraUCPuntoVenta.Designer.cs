@@ -175,7 +175,7 @@
             // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(240, 39);
+            this.txtEmpleado.Location = new System.Drawing.Point(240, 43);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpleado.Properties.Appearance.Options.UseFont = true;
@@ -183,10 +183,11 @@
             this.txtEmpleado.Size = new System.Drawing.Size(244, 22);
             this.txtEmpleado.StyleController = this.layoutControl2;
             this.txtEmpleado.TabIndex = 5;
+            this.txtEmpleado.TabStop = false;
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(240, 65);
+            this.txtPuesto.Location = new System.Drawing.Point(240, 69);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPuesto.Properties.Appearance.Options.UseFont = true;
@@ -194,10 +195,11 @@
             this.txtPuesto.Size = new System.Drawing.Size(244, 22);
             this.txtPuesto.StyleController = this.layoutControl2;
             this.txtPuesto.TabIndex = 6;
+            this.txtPuesto.TabStop = false;
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(601, 39);
+            this.txtFecha.Location = new System.Drawing.Point(601, 43);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Properties.Appearance.Options.UseFont = true;
@@ -205,10 +207,11 @@
             this.txtFecha.Size = new System.Drawing.Size(97, 22);
             this.txtFecha.StyleController = this.layoutControl2;
             this.txtFecha.TabIndex = 7;
+            this.txtFecha.TabStop = false;
             // 
             // txtHora
             // 
-            this.txtHora.Location = new System.Drawing.Point(601, 65);
+            this.txtHora.Location = new System.Drawing.Point(601, 69);
             this.txtHora.Name = "txtHora";
             this.txtHora.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHora.Properties.Appearance.Options.UseFont = true;
@@ -216,6 +219,7 @@
             this.txtHora.Size = new System.Drawing.Size(97, 22);
             this.txtHora.StyleController = this.layoutControl2;
             this.txtHora.TabIndex = 8;
+            this.txtHora.TabStop = false;
             // 
             // pictureEdit1
             // 
@@ -302,7 +306,7 @@
             this.layoutControlItem5.Control = this.txtPuesto;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(301, 36);
+            this.layoutControlItem5.Size = new System.Drawing.Size(301, 32);
             this.layoutControlItem5.Text = "Puesto:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -338,7 +342,7 @@
             this.layoutControlItem7.Control = this.txtHora;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(154, 36);
+            this.layoutControlItem7.Size = new System.Drawing.Size(154, 32);
             this.layoutControlItem7.Text = "Hora:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -601,6 +605,7 @@
             this.txtTotal.Size = new System.Drawing.Size(68, 22);
             this.txtTotal.StyleController = this.layoutControl4;
             this.txtTotal.TabIndex = 8;
+            this.txtTotal.TabStop = false;
             // 
             // layoutControlItem13
             // 

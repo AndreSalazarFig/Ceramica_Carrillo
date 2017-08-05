@@ -194,7 +194,7 @@ namespace CeramicaCarrillo.GUI.Inicio
             switch (oCierre.Accion)
             {
                 case 'S':
-                    frmLogin frmLogin = new frmLogin();
+                    frmXtraLogin frmLogin = new frmXtraLogin();
                     frmLogin.Show();
                     break;
                 case 'A':

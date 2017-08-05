@@ -22,7 +22,7 @@ namespace CeramicaCarrillo
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
             UserLookAndFeel.Default.SetSkinStyle("VS2010");
-            Application.Run(new GUI.Inicio.frmLogin());
+            Application.Run(new GUI.Inicio.frmXtraLogin());
         }
     }
 }
