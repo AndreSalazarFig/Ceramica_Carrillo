@@ -27,7 +27,22 @@ namespace CeramicaCarrillo.GUI.Estadisticas
         {
             comprasEstadisticasTableAdapter1.Fill(dsEstadisticas1.ComprasEstadisticas);
             ventasEstadisticasTableAdapter.Fill(dsEstadisticas.VentasEstadisticas);
+            tmrTiempo.Start();
         }
-        
+
+        private void CargarInformacion()
+        {
+            var totalVenta = (from f in datos.Folio
+                               join d in datos.DetalleFolio on f.IdFolio equals d.IdFolio
+                               where f.FechaVenta.Month == DateTime.Now.Month
+                               select f.TotalVenta);
+            
+        }
+
+        private void tmrTiempo_Tick(object sender, EventArgs e)
+        {
+            txtFecha.Text = DateTime.Now.Day + "/" + DateTime.Now.Month + "/" + DateTime.Now.Year;
+            txtHora.Text = DateTime.Now.Hour + ":" + DateTime.Now.Minute + ":" + DateTime.Now.Second;
+        }
     }
 }

@@ -248,16 +248,28 @@ namespace CeramicaCarrillo.GUI.Ventas
 
         private void cmbTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbTipoVenta.SelectedIndex == 0) { cambiarPrecios(true); }
-            else { cambiarPrecios(false); }
+            cambiarPrecios((cmbTipoVenta.SelectedIndex == 0) ? true : false);
         }
 
         private void cambiarPrecios(bool mayoreo)
         {
             if (mayoreo)
             {
-
+                for (int i = 0; i < gvDatos.Rows.Count; i++)
+                {
+                    gvDatos.Rows[i].Cells[2].Value = _compra[i].PrecioVenta;
+                    gvDatos.Rows[i].Cells[4].Value = _compra[i].PrecioVenta * Convert.ToInt32(gvDatos.Rows[i].Cells[3].Value);
+                }
             }
+            else
+            {
+                for (int i = 0; i < gvDatos.Rows.Count; i++)
+                {
+                    gvDatos.Rows[i].Cells[2].Value = _compra[i].PrecioMayoreo;
+                    gvDatos.Rows[i].Cells[4].Value = _compra[i].PrecioMayoreo * Convert.ToInt32(gvDatos.Rows[i].Cells[3].Value);
+                }
+            }
+            obtenerTotalCompra();
         }
 
         private void limpiarCompra(object sender, EventArgs e)

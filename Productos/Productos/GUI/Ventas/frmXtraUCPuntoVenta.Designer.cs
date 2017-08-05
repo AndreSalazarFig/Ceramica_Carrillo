@@ -75,6 +75,7 @@
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbTipoVenta = new DevExpress.XtraEditors.ComboBoxEdit();
             this.seUnidades = new DevExpress.XtraEditors.SpinEdit();
             this.lueBuscar = new DevExpress.XtraEditors.SearchLookUpEdit();
             this.searchLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -83,6 +84,7 @@
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btnApartar = new DevExpress.XtraEditors.SimpleButton();
@@ -108,8 +110,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.tmrHora = new System.Windows.Forms.Timer(this.components);
-            this.cmbTipoVenta = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtEmpleado.Properties)).BeginInit();
@@ -127,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoVenta.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seUnidades.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBuscar.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).BeginInit();
@@ -134,6 +135,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).BeginInit();
@@ -151,8 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoVenta.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl2
@@ -171,7 +171,7 @@
             // 
             // txtEmpleado
             // 
-            this.txtEmpleado.Location = new System.Drawing.Point(240, 43);
+            this.txtEmpleado.Location = new System.Drawing.Point(240, 45);
             this.txtEmpleado.Name = "txtEmpleado";
             this.txtEmpleado.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmpleado.Properties.Appearance.Options.UseFont = true;
@@ -183,7 +183,7 @@
             // 
             // txtPuesto
             // 
-            this.txtPuesto.Location = new System.Drawing.Point(240, 69);
+            this.txtPuesto.Location = new System.Drawing.Point(240, 71);
             this.txtPuesto.Name = "txtPuesto";
             this.txtPuesto.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPuesto.Properties.Appearance.Options.UseFont = true;
@@ -195,7 +195,7 @@
             // 
             // txtFecha
             // 
-            this.txtFecha.Location = new System.Drawing.Point(601, 43);
+            this.txtFecha.Location = new System.Drawing.Point(601, 45);
             this.txtFecha.Name = "txtFecha";
             this.txtFecha.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFecha.Properties.Appearance.Options.UseFont = true;
@@ -207,7 +207,7 @@
             // 
             // txtHora
             // 
-            this.txtHora.Location = new System.Drawing.Point(601, 69);
+            this.txtHora.Location = new System.Drawing.Point(601, 71);
             this.txtHora.Name = "txtHora";
             this.txtHora.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHora.Properties.Appearance.Options.UseFont = true;
@@ -302,7 +302,7 @@
             this.layoutControlItem5.Control = this.txtPuesto;
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(301, 32);
+            this.layoutControlItem5.Size = new System.Drawing.Size(301, 30);
             this.layoutControlItem5.Text = "Puesto:";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -338,7 +338,7 @@
             this.layoutControlItem7.Control = this.txtHora;
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(154, 32);
+            this.layoutControlItem7.Size = new System.Drawing.Size(154, 30);
             this.layoutControlItem7.Text = "Hora:";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(50, 16);
             // 
@@ -363,6 +363,23 @@
             this.layoutControl3.Size = new System.Drawing.Size(736, 78);
             this.layoutControl3.TabIndex = 6;
             this.layoutControl3.Text = "layoutControl3";
+            // 
+            // cmbTipoVenta
+            // 
+            this.cmbTipoVenta.EditValue = "Mayoreo";
+            this.cmbTipoVenta.Location = new System.Drawing.Point(12, 31);
+            this.cmbTipoVenta.Name = "cmbTipoVenta";
+            this.cmbTipoVenta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbTipoVenta.Properties.Appearance.Options.UseFont = true;
+            this.cmbTipoVenta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmbTipoVenta.Properties.Items.AddRange(new object[] {
+            "Mayoreo",
+            "Mayorista"});
+            this.cmbTipoVenta.Size = new System.Drawing.Size(151, 22);
+            this.cmbTipoVenta.StyleController = this.layoutControl3;
+            this.cmbTipoVenta.TabIndex = 9;
+            this.cmbTipoVenta.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVenta_SelectedIndexChanged);
             // 
             // seUnidades
             // 
@@ -419,7 +436,7 @@
             this.btnEliminar.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.ImageOptions.Image")));
             this.btnEliminar.Location = new System.Drawing.Point(561, 12);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(163, 54);
+            this.btnEliminar.Size = new System.Drawing.Size(163, 38);
             this.btnEliminar.StyleController = this.layoutControl3;
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
@@ -487,13 +504,23 @@
             // 
             this.layoutControlItem10.Control = this.btnEliminar;
             this.layoutControlItem10.Location = new System.Drawing.Point(549, 0);
-            this.layoutControlItem10.MinSize = new System.Drawing.Size(80, 26);
             this.layoutControlItem10.Name = "layoutControlItem10";
             this.layoutControlItem10.OptionsTableLayoutItem.ColumnIndex = 3;
             this.layoutControlItem10.Size = new System.Drawing.Size(167, 58);
-            this.layoutControlItem10.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem10.TextVisible = false;
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem18.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem18.Control = this.cmbTipoVenta;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(155, 58);
+            this.layoutControlItem18.Text = "Tipo de venta";
+            this.layoutControlItem18.TextLocation = DevExpress.Utils.Locations.Top;
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(114, 16);
             // 
             // layoutControl4
             // 
@@ -837,35 +864,6 @@
             this.tmrHora.Interval = 1000;
             this.tmrHora.Tick += new System.EventHandler(this.tmrHora_Tick);
             // 
-            // cmbTipoVenta
-            // 
-            this.cmbTipoVenta.EditValue = "Mayoreo";
-            this.cmbTipoVenta.Location = new System.Drawing.Point(12, 31);
-            this.cmbTipoVenta.Name = "cmbTipoVenta";
-            this.cmbTipoVenta.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbTipoVenta.Properties.Appearance.Options.UseFont = true;
-            this.cmbTipoVenta.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbTipoVenta.Properties.Items.AddRange(new object[] {
-            "Mayoreo",
-            "Mayorista"});
-            this.cmbTipoVenta.Size = new System.Drawing.Size(151, 22);
-            this.cmbTipoVenta.StyleController = this.layoutControl3;
-            this.cmbTipoVenta.TabIndex = 9;
-            this.cmbTipoVenta.SelectedIndexChanged += new System.EventHandler(this.cmbTipoVenta_SelectedIndexChanged);
-            // 
-            // layoutControlItem18
-            // 
-            this.layoutControlItem18.AppearanceItemCaption.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem18.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem18.Control = this.cmbTipoVenta;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(155, 58);
-            this.layoutControlItem18.Text = "Tipo de venta";
-            this.layoutControlItem18.TextLocation = DevExpress.Utils.Locations.Top;
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(114, 16);
-            // 
             // frmXtraUCPuntoVenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -892,6 +890,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoVenta.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seUnidades.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lueBuscar.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchLookUpEdit1View)).EndInit();
@@ -899,6 +898,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTotal.Properties)).EndInit();
@@ -916,8 +916,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvDatos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.cmbTipoVenta.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.ResumeLayout(false);
 
         }

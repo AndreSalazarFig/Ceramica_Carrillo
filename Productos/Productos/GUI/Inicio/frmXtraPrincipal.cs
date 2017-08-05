@@ -169,6 +169,8 @@ namespace CeramicaCarrillo.GUI.Inicio
 
             Apartado.frmXtraUCSistemaA.datos = bdCarrillo;
 
+            Estadisticas.frmXtraUCEstadisticas.datos = bdCarrillo;
+
             frmProductosUC = CreateUserControl("Productos", new Productos.frmXtraUCProductos());
             frmCategoriasTiposUC = CreateUserControl("Tipos y Departamentos", new TiposCategorias.frmXtraUCTiposCategorias());
             frmPuntoVentaUC = CreateUserControl("Punto de Venta", new Ventas.frmXtraUCPuntoVenta());
