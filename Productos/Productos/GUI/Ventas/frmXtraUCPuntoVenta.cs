@@ -54,8 +54,13 @@ namespace CeramicaCarrillo.GUI.Ventas
             TipoProductos tp = datos.TipoProductos.Find(cat.idTipoProducto);
             _compra.Add(producto);
             Cantidad.Add(0);
-            float total = obtenerTotal(0, producto.PrecioVenta);
-            gvDatos.Rows.Add(producto.Descripcion, tp.NombreTipo + "/" + cat.NombreCategoria, producto.PrecioVenta, 0, total);
+            double precioVenta = 0;
+            if (cmbTipoVenta.SelectedIndex == 0)
+            {
+                precioVenta = producto.PrecioVenta;
+            } else { precioVenta = producto.PrecioMayoreo; }
+            float total = obtenerTotal(0, precioVenta);
+            gvDatos.Rows.Add(producto.Descripcion, tp.NombreTipo + "/" + cat.NombreCategoria, precioVenta, 0, total);
             obtenerTotalCompra();
         }
 
@@ -239,6 +244,20 @@ namespace CeramicaCarrillo.GUI.Ventas
                                }).First();
             txtEmpleado.Text = empleado.Nombre + " " + empleado.Apellido;
             txtPuesto.Text = empleado.Puesto;
+        }
+
+        private void cmbTipoVenta_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTipoVenta.SelectedIndex == 0) { cambiarPrecios(true); }
+            else { cambiarPrecios(false); }
+        }
+
+        private void cambiarPrecios(bool mayoreo)
+        {
+            if (mayoreo)
+            {
+
+            }
         }
 
         private void limpiarCompra(object sender, EventArgs e)
