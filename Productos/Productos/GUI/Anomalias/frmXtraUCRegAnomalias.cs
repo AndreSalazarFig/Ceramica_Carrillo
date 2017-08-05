@@ -26,8 +26,7 @@ namespace CeramicaCarrillo.GUI.Anomalias
 
         private void CargarDatos()
         {
-            anomaliasTableAdapter.Fill(dsRegAnomalias.Anomalias);
-            gridControl1.DataSource = anomaliasBindingSource;
+            Actualizaciones.dtgAnomalias = gridControl1;
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

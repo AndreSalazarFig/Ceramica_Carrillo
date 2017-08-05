@@ -26,13 +26,7 @@ namespace CeramicaCarrillo.GUI.Apartado
 
         private void CargarDatos()
         {
-            try
-            {
-                folioApartadoTableAdapter.Fill(dsSisApartado.FolioApartado);
-                abonosApartadoTableAdapter1.Fill(dsSisApartado.AbonosApartado);
-                productosApartadoTableAdapter1.Fill(dsSisApartado.ProductosApartado);
-            }
-            catch (Exception e) { oExtras.Mensajes(' ',""); }
+            Actualizaciones.dtgApartados = gridControl1;
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

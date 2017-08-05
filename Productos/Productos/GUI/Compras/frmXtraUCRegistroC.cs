@@ -19,11 +19,12 @@ namespace CeramicaCarrillo.GUI.Compras
         public frmXtraUCRegistroC()
         {
             InitializeComponent();
+            Actualizaciones.dtgCompras = gridControl1;
         }
 
         private void frmXtraUCRegistroC_Load(object sender, EventArgs e)
         {
-            comprasTableAdapter.Fill(dsRegCompras.Compras);
+            //Actualizaciones.dtgCompras = gridControl1;
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

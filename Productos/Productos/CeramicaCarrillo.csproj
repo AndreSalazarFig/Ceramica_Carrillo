@@ -290,6 +290,7 @@
     <Compile Include="Model\Acciones.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Actualizaciones.cs" />
     <Compile Include="Model\Anomalias.cs">
       <DependentUpon>mdlCarrillo.tt</DependentUpon>
     </Compile>

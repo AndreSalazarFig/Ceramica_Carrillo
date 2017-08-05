@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 
+using CeramicaCarrillo.Model;
+
 namespace CeramicaCarrillo.GUI.Actividades
 {
     public partial class frmXtraUCRegistroAcciones : DevExpress.XtraEditors.XtraUserControl
@@ -16,11 +18,12 @@ namespace CeramicaCarrillo.GUI.Actividades
         public frmXtraUCRegistroAcciones()
         {
             InitializeComponent();
+            Actualizaciones.dtgAcciones = gridControl1;
         }
 
         private void frmXtraUCRegistroAcciones_Load(object sender, EventArgs e)
         {
-            actividadesTableAdapter.Fill(dsRegistroActividades.Actividades);
+            //Actualizaciones.dtgAcciones = gridControl1;
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

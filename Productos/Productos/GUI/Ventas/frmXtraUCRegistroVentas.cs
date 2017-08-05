@@ -21,12 +21,12 @@ namespace CeramicaCarrillo.GUI.Ventas
         public frmXtraUCRegistroVentas()
         {
             InitializeComponent();
+            Actualizaciones.dtgVentas = gridControl1;
         }
 
         private void frmXtraUCRegistroV_Load(object sender, EventArgs e)
         {
-            folioTableAdapter.Fill(dsPrueba1.Folio);
-            detalleTableAdapter1.Fill(dsPrueba1.Detalle);
+            //Actualizaciones.dtgVentas = gridControl1;
         }
 
         private void btnReporte_Click(object sender, EventArgs e)

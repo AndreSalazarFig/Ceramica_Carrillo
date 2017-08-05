@@ -26,7 +26,6 @@ namespace CeramicaCarrillo.GUI.Inicio
             frmRegistroVentasUC, frmPersonalUC, frmActividadesUC, frmSisApartadoUC, frmEstadisticasUC,
             frmRegistroAnomaliasUC;
         
-
         public frmXtraPrincipal()
         {
             InitializeComponent();
@@ -109,6 +108,27 @@ namespace CeramicaCarrillo.GUI.Inicio
             {
                 accordionCtrlNavegacion.SelectedElement = null;
             }
+        }
+
+        private void ActualizarDatos()
+        {
+            try
+            {
+                Actualizaciones.ActualizarAcciones();
+                Actualizaciones.ActualizarAnomalias();
+                Actualizaciones.ActualizarApartados();
+                Actualizaciones.ActualizarCompras();
+                Actualizaciones.ActualizarVentas();
+            }
+            catch(Exception f)
+            {
+                oExtras.Mensajes(' ', "");
+            }
+        }
+
+        private void tabbedView_DocumentActivated(object sender, DocumentEventArgs e)
+        {
+            ActualizarDatos();
         }
 
         void RecreateUserControls(DocumentEventArgs e)
