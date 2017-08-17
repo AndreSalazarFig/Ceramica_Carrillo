@@ -37,42 +37,56 @@ namespace CeramicaCarrillo.Model
 
         public static void ActualizarPersonal()
         {
-            dtgPersonal.DataSource = (from tbPersonal in bdCarrillo.Personal
-                                   let NombreCompleto = tbPersonal.Nombre + " " + tbPersonal.Apellido
-                                   where tbPersonal.Status == true
-                                   select new
-                                   {
-                                       tbPersonal.IdPersonal,
-                                       NombreCompleto,
-                                       tbPersonal.Usuario,
-                                       tbPersonal.Contrasena,
-                                       tbPersonal.Telefono,
-                                       tbPersonal.Movil,
-                                       tbPersonal.Direccion,
-                                       tbPersonal.FechaNacimiento,
-                                       tbPersonal.Puesto
-                                   }).ToList();
+            try
+            {
+                dtgPersonal.DataSource = (from tbPersonal in bdCarrillo.Personal
+                                          let NombreCompleto = tbPersonal.Nombre + " " + tbPersonal.Apellido
+                                          where tbPersonal.Status == true
+                                          select new
+                                          {
+                                              tbPersonal.IdPersonal,
+                                              NombreCompleto,
+                                              tbPersonal.Usuario,
+                                              tbPersonal.Contrasena,
+                                              tbPersonal.Telefono,
+                                              tbPersonal.Movil,
+                                              tbPersonal.Direccion,
+                                              tbPersonal.FechaNacimiento,
+                                              tbPersonal.Puesto
+                                          }).ToList();
+            }
+            catch (Exception f)
+            {
+                new ArchivosLocales().Mensajes('*', "");
+            }
         }
 
         public static void ActualizarProductos()
         {
-            dtgProductos.DataSource = (from tbProductos in bdCarrillo.Productos
-                                   join tbCategorias in bdCarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
-                                   from tbRight1 in tbLeft1.DefaultIfEmpty()
-                                   join tbTipos in bdCarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
-                                   from tbRight2 in tbLeft2.DefaultIfEmpty()
-                                   let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
-                                   where tbProductos.Status == true
-                                   select new
-                                   {
-                                       tbProductos.IdProductos,
-                                       tbProductos.Descripcion,
-                                       tbProductos.PrecioVenta,
-                                       tbProductos.PrecioMayoreo,
-                                       tbProductos.Unidades,
-                                       tbProductos.Status,
-                                       CategoriaTipo
-                                   }).ToList();
+            try
+            {
+                dtgProductos.DataSource = (from tbProductos in bdCarrillo.Productos
+                                           join tbCategorias in bdCarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
+                                           from tbRight1 in tbLeft1.DefaultIfEmpty()
+                                           join tbTipos in bdCarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
+                                           from tbRight2 in tbLeft2.DefaultIfEmpty()
+                                           let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
+                                           where tbProductos.Status == true
+                                           select new
+                                           {
+                                               tbProductos.IdProductos,
+                                               tbProductos.Descripcion,
+                                               tbProductos.PrecioVenta,
+                                               tbProductos.PrecioMayoreo,
+                                               tbProductos.Unidades,
+                                               tbProductos.Status,
+                                               CategoriaTipo
+                                           }).ToList();
+            }
+            catch (Exception f)
+            {
+                new ArchivosLocales().Mensajes('*', "");
+            }
         }
 
         public static void ActualizarTiposCategorias()

@@ -75,7 +75,7 @@ namespace CeramicaCarrillo.GUI.Apartado
             Ventas.frmXtraCobroA frmAbono = new Ventas.frmXtraCobroA();
             if (frmAbono.ShowDialog() == DialogResult.OK)
             {
-                
+                Actualizaciones.ActualizarApartados();
             }
         }
 
