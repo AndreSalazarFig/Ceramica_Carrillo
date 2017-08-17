@@ -216,6 +216,7 @@ namespace CeramicaCarrillo.GUI.Ventas
             if (_compra.Count > 0)
             {
                 frmXtraCobroA.datos = datos;
+                frmXtraCobroA._idFolio = 0;
                 frmXtraCobroA cobro = new frmXtraCobroA(_compra, Cantidad, txtTotal.Text, sesion);
                 if (cobro.ShowDialog() == DialogResult.OK)
                 {
