@@ -7,14 +7,14 @@
     <framework targetVersion="4.6" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="CeramicaCarrillo.exe.manifest" size="123522">
+    <dependentAssembly dependencyType="install" codebase="CeramicaCarrillo.exe.manifest" size="123490">
       <assemblyIdentity name="CeramicaCarrillo.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>GpCF5ZO8q4qbh0sxbm9tURE1JYf3vUh5evyMlan9g5U=</dsig:DigestValue>
+        <dsig:DigestValue>R34GpHH9l03G6WJr+ItEbH63qJ6Y0eTSt/BnsLJCshc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

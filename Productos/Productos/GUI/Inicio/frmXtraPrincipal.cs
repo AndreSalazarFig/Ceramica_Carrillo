@@ -114,6 +114,12 @@ namespace CeramicaCarrillo.GUI.Inicio
         {
             try
             {
+                Actualizaciones.bdCarrillo = bdCarrillo;
+
+                Actualizaciones.ActualizarPersonal();
+                Actualizaciones.ActualizarProductos();
+                Actualizaciones.ActualizarTiposCategorias();
+
                 Actualizaciones.ActualizarAcciones();
                 Actualizaciones.ActualizarAnomalias();
                 Actualizaciones.ActualizarApartados();

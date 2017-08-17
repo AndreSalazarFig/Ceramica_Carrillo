@@ -24,6 +24,7 @@ namespace CeramicaCarrillo.GUI.Personal
         {
             InitializeComponent();
 
+            Actualizaciones.dtgPersonal = dtgVista;
             CargarInfo();
         }
 

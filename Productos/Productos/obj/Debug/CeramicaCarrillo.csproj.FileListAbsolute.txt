@@ -1636,3 +1636,4 @@ C:\Users\André\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug
 C:\Users\André\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraLogin.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Anomalias.frmXtraReporteAnomalias.resources
 C:\Users\Stree\Documents\GitHub\Ceramica_Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraLogin.resources
+C:\Users\CT 04\Documents\GitHub\Ceramica Carrillo\Productos\Productos\obj\Debug\CeramicaCarrillo.GUI.Inicio.frmXtraLogin.resources

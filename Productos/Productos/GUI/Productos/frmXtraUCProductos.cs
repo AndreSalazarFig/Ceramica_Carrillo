@@ -24,6 +24,7 @@ namespace CeramicaCarrillo.GUI.Productos
         {
             InitializeComponent();
 
+            Actualizaciones.dtgProductos = dtgVista;
             CargarInfo();
         }
         

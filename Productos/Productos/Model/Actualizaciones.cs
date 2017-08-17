@@ -17,18 +17,80 @@ namespace CeramicaCarrillo.Model
     class Actualizaciones
     {
         private static BindingSource dataBindingSource = null;
+        public static BDCarrilloEntities bdCarrillo = null;
         public static DevExpress.XtraGrid.GridControl
+            dtgPersonal = null,
+            dtgProductos = null,
+            dtgTiposCategorias = null,
             dtgApartados = null,
-            dtgAcciones = null, 
-            dtgAnomalias = null, 
-            dtgCompras = null, 
+            dtgAcciones = null,
+            dtgAnomalias = null,
+            dtgCompras = null,
             dtgVentas = null;
 
         public Actualizaciones()
         {
 
         }
-        
+
+        #region Actualización de los Grids pertenecientes a los Catálogos
+
+        public static void ActualizarPersonal()
+        {
+            dtgPersonal.DataSource = (from tbPersonal in bdCarrillo.Personal
+                                   let NombreCompleto = tbPersonal.Nombre + " " + tbPersonal.Apellido
+                                   where tbPersonal.Status == true
+                                   select new
+                                   {
+                                       tbPersonal.IdPersonal,
+                                       NombreCompleto,
+                                       tbPersonal.Usuario,
+                                       tbPersonal.Contrasena,
+                                       tbPersonal.Telefono,
+                                       tbPersonal.Movil,
+                                       tbPersonal.Direccion,
+                                       tbPersonal.FechaNacimiento,
+                                       tbPersonal.Puesto
+                                   }).ToList();
+        }
+
+        public static void ActualizarProductos()
+        {
+            dtgProductos.DataSource = (from tbProductos in bdCarrillo.Productos
+                                   join tbCategorias in bdCarrillo.Categorias on tbProductos.idCategoria equals tbCategorias.idCategoria into tbLeft1
+                                   from tbRight1 in tbLeft1.DefaultIfEmpty()
+                                   join tbTipos in bdCarrillo.TipoProductos on tbRight1.idTipoProducto equals tbTipos.idTipoProducto into tbLeft2
+                                   from tbRight2 in tbLeft2.DefaultIfEmpty()
+                                   let CategoriaTipo = tbRight1.NombreCategoria + "-" + tbRight2.NombreTipo
+                                   where tbProductos.Status == true
+                                   select new
+                                   {
+                                       tbProductos.IdProductos,
+                                       tbProductos.Descripcion,
+                                       tbProductos.PrecioVenta,
+                                       tbProductos.PrecioMayoreo,
+                                       tbProductos.Unidades,
+                                       tbProductos.Status,
+                                       CategoriaTipo
+                                   }).ToList();
+        }
+
+        public static void ActualizarTiposCategorias()
+        {
+            try
+            {
+                dtgTiposCategorias.DataSource = bdCarrillo.TipoProductos.ToList();
+            }
+            catch (Exception f)
+            {
+                new ArchivosLocales().Mensajes('*', "");
+            }
+        }
+
+        #endregion
+
+        #region Actualización de los DataSet
+
         public static void ActualizarAcciones()
         {
             dataBindingSource = new BindingSource();
@@ -111,5 +173,7 @@ namespace CeramicaCarrillo.Model
 
             dtgVentas.DataSource = dataBindingSource;
         }
+
+        #endregion
     }
 }

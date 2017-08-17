@@ -24,7 +24,8 @@ namespace CeramicaCarrillo.GUI.TiposCategorias
         public frmXtraUCTiposCategorias()
         {
             InitializeComponent();
-
+            
+            Actualizaciones.dtgTiposCategorias = dtgVista;
             VistaDatos();
         }
 
