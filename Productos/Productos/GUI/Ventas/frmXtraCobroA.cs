@@ -16,6 +16,7 @@ namespace CeramicaCarrillo.GUI.Ventas
     public partial class frmXtraCobroA : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities datos = null;
+        public static bool mayorista = false;
         Sesiones sesion;
         public static int _idFolio = 0;
         List<Model.Productos> Compra;
@@ -118,7 +119,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                     Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
                     producto.Unidades -= Cantidad[i];
                     detalle.IdProductos = producto.IdProductos;
-                    detalle.Precio = producto.PrecioVenta;
+                    detalle.Precio = (mayorista) ? producto.PrecioMayoreo : producto.PrecioVenta;
                     detalle.Unidades = Cantidad[i];
                     detalle.Total = Cantidad[i] * detalle.Precio;
                     totalVenta += detalle.Total;

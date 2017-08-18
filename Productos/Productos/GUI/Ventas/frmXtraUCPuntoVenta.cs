@@ -14,7 +14,7 @@ namespace CeramicaCarrillo.GUI.Ventas
         public static Sesiones sesion = null;
         List<Model.Productos> _compra;
         List<int> Cantidad;
-        bool seleccionado = false;
+        bool seleccionado = false, mayorista = false;
         int posicion = -1, unidades = 0;
         double precio = 0;
 
@@ -52,13 +52,10 @@ namespace CeramicaCarrillo.GUI.Ventas
             Model.Productos producto = datos.Productos.Find(id);
             Categorias cat = datos.Categorias.Find(producto.idCategoria);
             TipoProductos tp = datos.TipoProductos.Find(cat.idTipoProducto);
+            double precioVenta = 0;
+            precioVenta = (mayorista) ? producto.PrecioMayoreo : producto.PrecioVenta;
             _compra.Add(producto);
             Cantidad.Add(0);
-            double precioVenta = 0;
-            if (cmbTipoVenta.SelectedIndex == 0)
-            {
-                precioVenta = producto.PrecioVenta;
-            } else { precioVenta = producto.PrecioMayoreo; }
             float total = obtenerTotal(0, precioVenta);
             gvDatos.Rows.Add(producto.Descripcion, tp.NombreTipo + "/" + cat.NombreCategoria, precioVenta, 0, total);
             obtenerTotalCompra();
@@ -166,6 +163,7 @@ namespace CeramicaCarrillo.GUI.Ventas
             if (_compra.Count > 0)
             {
                 frmXtraCobroV.datos = datos;
+                frmXtraCobroV.mayorista = mayorista;
                 frmXtraCobroV cobro = new frmXtraCobroV(_compra, Cantidad, txtTotal.Text, sesion);
                 if (cobro.ShowDialog() == DialogResult.OK)
                 {
@@ -217,6 +215,7 @@ namespace CeramicaCarrillo.GUI.Ventas
             {
                 frmXtraCobroA.datos = datos;
                 frmXtraCobroA._idFolio = 0;
+                frmXtraCobroA.mayorista = mayorista;
                 frmXtraCobroA cobro = new frmXtraCobroA(_compra, Cantidad, txtTotal.Text, sesion);
                 if (cobro.ShowDialog() == DialogResult.OK)
                 {
@@ -266,6 +265,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                     gvDatos.Rows[i].Cells[2].Value = _compra[i].PrecioVenta;
                     gvDatos.Rows[i].Cells[4].Value = _compra[i].PrecioVenta * Convert.ToInt32(gvDatos.Rows[i].Cells[3].Value);
                 }
+                mayorista = false;
             }
             else
             {
@@ -274,6 +274,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                     gvDatos.Rows[i].Cells[2].Value = _compra[i].PrecioMayoreo;
                     gvDatos.Rows[i].Cells[4].Value = _compra[i].PrecioMayoreo * Convert.ToInt32(gvDatos.Rows[i].Cells[3].Value);
                 }
+                mayorista = true;
             }
             obtenerTotalCompra();
         }

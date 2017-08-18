@@ -52,8 +52,8 @@
             this.accordionControlElement4 = new DevExpress.XtraBars.Navigation.AccordionControlElement();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.defaultLookAndFeel1 = new DevExpress.LookAndFeel.DefaultLookAndFeel(this.components);
+            this.ribCtrlMenuPrincipal = new DevExpress.XtraBars.Ribbon.RibbonControl();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager)).BeginInit();
             this.dockPanelNavegacion.SuspendLayout();
             this.dockPanel_Container.SuspendLayout();
@@ -277,6 +277,10 @@
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView});
             // 
+            // defaultLookAndFeel1
+            // 
+            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Blue";
+            // 
             // ribCtrlMenuPrincipal
             // 
             this.ribCtrlMenuPrincipal.ExpandCollapseItem.Id = 0;
@@ -290,10 +294,6 @@
             this.ribCtrlMenuPrincipal.ShowToolbarCustomizeItem = false;
             this.ribCtrlMenuPrincipal.Size = new System.Drawing.Size(778, 52);
             this.ribCtrlMenuPrincipal.Toolbar.ShowCustomizeItem = false;
-            // 
-            // defaultLookAndFeel1
-            // 
-            this.defaultLookAndFeel1.LookAndFeel.SkinName = "Office 2010 Blue";
             // 
             // frmXtraPrincipal
             // 
@@ -335,7 +335,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnBodega;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnProductos;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnCategorias_Tipos;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribCtrlMenuPrincipal;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnVentas;
         private DevExpress.XtraBars.Navigation.AccordionControlElement btnPuntoVenta;
         private DevExpress.LookAndFeel.DefaultLookAndFeel defaultLookAndFeel1;
@@ -349,5 +348,6 @@
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement4;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement5;
         private DevExpress.XtraBars.Navigation.AccordionControlElement accordionControlElement6;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribCtrlMenuPrincipal;
     }
 }

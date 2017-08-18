@@ -14,6 +14,7 @@ namespace CeramicaCarrillo.GUI.Ventas
     public partial class frmXtraCobroV : DevExpress.XtraEditors.XtraForm
     {
         public static BDCarrilloEntities datos = null;
+        public static bool mayorista = false;
         Sesiones sesion;
         List<Model.Productos> Compra;
         List<int> Cantidad;
@@ -31,16 +32,17 @@ namespace CeramicaCarrillo.GUI.Ventas
         private void btnCobrar_Click(object sender, EventArgs e)
         {
             validarCobro();
-            DialogResult = DialogResult.OK;
         }
 
         private void validarCobro()
         {
-            if (Convert.ToDouble(txtCambio.Text) >= 0)
+            double validar = Convert.ToDouble(txtTotal.Text) - Convert.ToDouble(txtMonto.Text);
+            if ((validar) <= 0)
             {
                 if (XtraMessageBox.Show("¿De sea realizar la compra?", "Cobrando", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     realizarCompra();
+                    DialogResult = DialogResult.OK;
                 }
             }
             else
@@ -70,7 +72,7 @@ namespace CeramicaCarrillo.GUI.Ventas
                     Model.Productos producto = datos.Productos.Find(Compra[i].IdProductos);
                     producto.Unidades -= Cantidad[i];
                     detalle.IdProductos = producto.IdProductos;
-                    detalle.Precio = producto.PrecioVenta;
+                    detalle.Precio = (mayorista) ? producto.PrecioMayoreo : producto.PrecioVenta;
                     detalle.Unidades = Cantidad[i];
                     detalle.Total = Cantidad[i] * detalle.Precio;
                     totalVenta += detalle.Total;
