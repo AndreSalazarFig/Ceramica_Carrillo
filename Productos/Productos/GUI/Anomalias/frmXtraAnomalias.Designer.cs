@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition5 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition5 = new DevExpress.XtraLayout.RowDefinition();
-            DevExpress.XtraLayout.ColumnDefinition columnDefinition6 = new DevExpress.XtraLayout.ColumnDefinition();
-            DevExpress.XtraLayout.RowDefinition rowDefinition6 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition1 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition1 = new DevExpress.XtraLayout.RowDefinition();
+            DevExpress.XtraLayout.ColumnDefinition columnDefinition2 = new DevExpress.XtraLayout.ColumnDefinition();
+            DevExpress.XtraLayout.RowDefinition rowDefinition2 = new DevExpress.XtraLayout.RowDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmXtraAnomalias));
             this.lyCtrlDatosAnomalia = new DevExpress.XtraLayout.LayoutControl();
             this.lyCtrlDatos = new DevExpress.XtraLayout.LayoutControl();
@@ -92,7 +92,7 @@
             // txtUsuario
             // 
             this.txtUsuario.Enabled = false;
-            this.txtUsuario.Location = new System.Drawing.Point(153, 37);
+            this.txtUsuario.Location = new System.Drawing.Point(153, 42);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(213, 20);
             this.txtUsuario.StyleController = this.lyCtrlDatos;
@@ -101,7 +101,7 @@
             // txtDescripcionProducto
             // 
             this.txtDescripcionProducto.Enabled = false;
-            this.txtDescripcionProducto.Location = new System.Drawing.Point(153, 71);
+            this.txtDescripcionProducto.Location = new System.Drawing.Point(153, 76);
             this.txtDescripcionProducto.Name = "txtDescripcionProducto";
             this.txtDescripcionProducto.Size = new System.Drawing.Size(213, 20);
             this.txtDescripcionProducto.StyleController = this.lyCtrlDatos;
@@ -109,9 +109,9 @@
             // 
             // txtDescripcionAnomalia
             // 
-            this.txtDescripcionAnomalia.Location = new System.Drawing.Point(153, 105);
+            this.txtDescripcionAnomalia.Location = new System.Drawing.Point(153, 110);
             this.txtDescripcionAnomalia.Name = "txtDescripcionAnomalia";
-            this.txtDescripcionAnomalia.Size = new System.Drawing.Size(213, 97);
+            this.txtDescripcionAnomalia.Size = new System.Drawing.Size(213, 92);
             this.txtDescripcionAnomalia.StyleController = this.lyCtrlDatos;
             this.txtDescripcionAnomalia.TabIndex = 5;
             // 
@@ -124,14 +124,14 @@
             this.lyCtrlGroupDatos.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.lyCtrlGroupDatos.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatos.Name = "lyCtrlGroupDatos";
-            columnDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition5.Width = 100D;
+            columnDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1.Width = 100D;
             this.lyCtrlGroupDatos.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition5});
-            rowDefinition5.Height = 100D;
-            rowDefinition5.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition1});
+            rowDefinition1.Height = 100D;
+            rowDefinition1.SizeType = System.Windows.Forms.SizeType.Percent;
             this.lyCtrlGroupDatos.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition5});
+            rowDefinition1});
             this.lyCtrlGroupDatos.Size = new System.Drawing.Size(390, 226);
             this.lyCtrlGroupDatos.TextVisible = false;
             // 
@@ -155,7 +155,7 @@
             this.CtrlItemDescripcionAnomalia.Control = this.txtDescripcionAnomalia;
             this.CtrlItemDescripcionAnomalia.Location = new System.Drawing.Point(0, 68);
             this.CtrlItemDescripcionAnomalia.Name = "CtrlItemDescripcionAnomalia";
-            this.CtrlItemDescripcionAnomalia.Size = new System.Drawing.Size(346, 101);
+            this.CtrlItemDescripcionAnomalia.Size = new System.Drawing.Size(346, 96);
             this.CtrlItemDescripcionAnomalia.Text = "Descripción de la Anomalía";
             this.CtrlItemDescripcionAnomalia.TextLocation = DevExpress.Utils.Locations.Left;
             this.CtrlItemDescripcionAnomalia.TextSize = new System.Drawing.Size(126, 13);
@@ -209,14 +209,14 @@
             this.lyCtrlGroupDatosAnomalia.LayoutMode = DevExpress.XtraLayout.Utils.LayoutMode.Table;
             this.lyCtrlGroupDatosAnomalia.Location = new System.Drawing.Point(0, 0);
             this.lyCtrlGroupDatosAnomalia.Name = "lyCtrlGroupDatosAnomalia";
-            columnDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
-            columnDefinition6.Width = 100D;
+            columnDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition2.Width = 100D;
             this.lyCtrlGroupDatosAnomalia.OptionsTableLayoutGroup.ColumnDefinitions.AddRange(new DevExpress.XtraLayout.ColumnDefinition[] {
-            columnDefinition6});
-            rowDefinition6.Height = 100D;
-            rowDefinition6.SizeType = System.Windows.Forms.SizeType.Percent;
+            columnDefinition2});
+            rowDefinition2.Height = 100D;
+            rowDefinition2.SizeType = System.Windows.Forms.SizeType.Percent;
             this.lyCtrlGroupDatosAnomalia.OptionsTableLayoutGroup.RowDefinitions.AddRange(new DevExpress.XtraLayout.RowDefinition[] {
-            rowDefinition6});
+            rowDefinition2});
             this.lyCtrlGroupDatosAnomalia.Size = new System.Drawing.Size(414, 250);
             this.lyCtrlGroupDatosAnomalia.TextVisible = false;
             // 
@@ -245,6 +245,7 @@
             // 
             this.btnReportarAnomalia.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReportarAnomalia.Appearance.Options.UseFont = true;
+            this.btnReportarAnomalia.Enabled = false;
             this.btnReportarAnomalia.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnReportarAnomalia.ImageOptions.Image")));
             this.btnReportarAnomalia.Location = new System.Drawing.Point(36, 286);
             this.btnReportarAnomalia.Name = "btnReportarAnomalia";

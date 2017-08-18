@@ -108,6 +108,17 @@ namespace CeramicaCarrillo.GUI.Anomalias
         {
             txtUsuario.Text = strUsuario;
             txtDescripcionProducto.Text = strProducto;
+
+            txtDescripcionAnomalia.TextChanged += ((sender, e) => {
+                if (txtDescripcionAnomalia.Text.Trim().Length > 0)
+                {
+                    btnReportarAnomalia.Enabled = true;
+
+                    return;
+                }
+
+                btnReportarAnomalia.Enabled = false;
+            });
         }
     }
 }
